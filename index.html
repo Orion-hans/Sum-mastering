@@ -75,6 +75,21 @@ header{position:sticky;top:0;z-index:20;background:linear-gradient(#0B1220,#0B12
 .phases.sub{padding-top:0;padding-bottom:8px;}
 .phases.sub .pchip{font-size:12.5px;padding:6px 11px;border-style:dashed;color:var(--dim);}
 .phases.sub .pchip.on{border-style:solid;color:#fff;}
+.pchecklist{margin:12px 0;}
+.pcbar{display:flex;align-items:center;justify-content:space-between;font-size:14px;color:var(--mut);margin-bottom:10px;}
+.pcbar .pcnt{color:var(--acc);font-size:16px;}
+.pcreset{background:#101B2D;border:1px solid var(--line);color:var(--mut);font-size:12px;padding:6px 12px;border-radius:9px;}
+.pgrp{margin-bottom:14px;}
+.pghd{font-size:13px;font-weight:800;color:#cfe;margin:8px 0 6px;padding-left:2px;}
+.pck{display:flex;align-items:center;gap:11px;padding:11px 12px;margin-bottom:6px;border-radius:11px;background:var(--panel2);border:1px solid var(--line);cursor:pointer;}
+.pck:active{filter:brightness(1.15);}
+.pck .pbx{flex:0 0 auto;width:24px;height:24px;border-radius:7px;border:2px solid var(--dim);display:flex;align-items:center;justify-content:center;}
+.pck .pbx svg{width:14px;height:14px;opacity:0;}
+.pck .ptx{font-size:15.5px;color:var(--txt);}
+.pck.on{border-color:var(--ok);background:linear-gradient(90deg,#123a33,#14263f);}
+.pck.on .pbx{background:var(--ok);border-color:var(--ok);}
+.pck.on .pbx svg{opacity:1;}
+.pck.on .ptx{color:#fff;}
 .searchbox{width:100%;padding:13px 15px;border-radius:13px;border:1px solid var(--line);background:var(--panel2);color:var(--txt);font-size:16px;margin:6px 0 12px;}
 .searchbox:focus{outline:none;border-color:var(--acc);}
 #searchRes .jump{border-bottom:1px solid #1c2840;border-radius:0;}
@@ -439,12 +454,36 @@ importmidi:{title:'앱 MIDI → 로직 열기', html:`
 <div class="lstep"><span class="ln">3</span><span class="lc"><b>템플릿 버스·마스터 가져오기:</b> File → Import → Logic Projects → 템플릿 선택 → <b>Sends 체크</b> → Add(리버브 Aux와 목적지 채널까지 통째로).<span class="path">File → Import → Logic Projects → Sends ✓ → Add</span></span></div>
 <div class="lstep"><span class="ln">4</span><span class="lc"><b>음원 로딩:</b> 트랙 선택 → 라이브러리 <span class="k">Y</span> → 저장한 프리셋/패치 클릭(GM 프로그램체인지는 무시 — 실악기로 안 바뀜).</span></div>`},
 
-channelstrip:{title:'채널 스트립 프리셋 저장·적용', html:`
-<p class="lead sm"><b>채널 스트립</b> = 믹서에서 트랙 한 줄(악기 + 인서트 FX + 센드 + 페이더 묶음). 그 세팅을 파일로 저장해 다른 트랙에 <b>클릭 한 번</b>으로 재사용하는 기능이다.</p>
-<div class="lstep"><span class="ln">1</span><span class="lc">악기+FX 체인을 다 건 채널에서 스트립 맨 위 <b>Setting ▾ → Save Channel Strip Setting</b> → 이름(예 <span class="v">록 기타 리듬</span>).<span class="path">채널 상단 [Setting ▾] → Save Channel Strip Setting</span></span></div>
-<div class="lstep"><span class="ln">2</span><span class="lc"><b>적용:</b> 새 트랙 선택 → Setting ▾에서 클릭 한 번. 인서트+EQ+센드가 통째로 걸림.</span></div>
-<div class="lstep"><span class="ln">3</span><span class="lc"><b>주의:</b> .cst엔 <span class="no">볼륨·팬 미포함</span> → 표대로 직접. 악기까지 포함하려면 Library 패널 → Save(패치).</span></div>
-<div class="box soft"><b>이름 규칙:</b> 「장르 역할」(예: 록 기타 리듬) — 같은 장르끼리 라이브러리에서 나란히 정렬된다.</div>`},
+reuse:{title:'한 번 저장하면 계속 쓰는 것 — 전체 지도', html:`
+<p class="lead sm">로직에서 <b>최초 1회</b> 만들어두면 이후 모든 곡에서 재사용되는 것들. 곡마다 다시 만들지 마라.</p>
+<div class="kicker">① 프로젝트 통째 — 템플릿</div>
+<div class="spec wide"><div class="srow"><span class="sk">무엇</span><span class="sv" style="font-size:15px">버스(리버브A/B·병렬·홀)·마스터 체인·기본값(48k·PDC·Pan Law)·트랙 배치</span></div>
+<div class="srow"><span class="sk">저장</span><span class="sv" style="font-size:15px">File → Save as Template → 이름</span></div>
+<div class="srow"><span class="sk">불러오기</span><span class="sv" style="font-size:15px">새 곡: 이 템플릿으로 시작 · 기존 곡에 버스만: File → Import → Logic Projects → Sends 체크</span></div></div>
+<div class="kicker">② 트랙 한 줄 — 채널 스트립 (.cst)</div>
+<div class="spec wide"><div class="srow"><span class="sk">무엇</span><span class="sv" style="font-size:15px">악기+인서트+파라미터+센드 양 (볼륨·팬 제외)</span></div>
+<div class="srow"><span class="sk">저장</span><span class="sv" style="font-size:15px">믹서 채널 Setting 막대 → Save Channel Strip Setting</span></div>
+<div class="srow"><span class="sk">쓰임</span><span class="sv" style="font-size:15px">장르 프리셋 6종을 이걸로 — 곡마다 클릭 한 번</span></div></div>
+<div class="kicker">③ 플러그인 하나 — 프리셋 (.pst)</div>
+<div class="spec wide"><div class="srow"><span class="sk">무엇</span><span class="sv" style="font-size:15px">플러그인 1개 값만(Channel EQ 곡선·Compressor 세팅·ChromaVerb 홀 등)</span></div>
+<div class="srow"><span class="sk">저장</span><span class="sv" style="font-size:15px">플러그인 창 상단 프리셋 메뉴(▾) → Save As</span></div></div>
+<div class="kicker">④ 악기+스마트컨트롤 — 패치</div>
+<div class="spec wide"><div class="srow"><span class="sk">무엇</span><span class="sv" style="font-size:15px">채널 스트립 + 스마트 컨트롤 매핑까지 (라이브러리 단위)</span></div>
+<div class="srow"><span class="sk">저장</span><span class="sv" style="font-size:15px">라이브러리(<span class="k">Y</span>) 하단 Save</span></div></div>
+<div class="kicker">⑤ 그 밖에 한 번만</div>
+<div class="spec wide"><div class="srow"><span class="sk">단축키</span><span class="sv" style="font-size:15px">Opt+K에서 크로스페이드 등 할당 → 앱 전체 유지</span></div>
+<div class="srow"><span class="sk">스크린셋</span><span class="sv" style="font-size:15px">창 배치를 숫자키 1–9에 저장(Screensets)</span></div>
+<div class="srow"><span class="sk">믹서 뷰</span><span class="sv" style="font-size:15px">View → Channel Strip Components 세팅은 저장됨</span></div>
+<div class="srow"><span class="sk">Fade 클릭존</span><span class="sv" style="font-size:15px">Settings → General → Editing에서 한 번</span></div></div>
+<div class="box tip"><b>순서:</b> 템플릿(버스 포함) 만들기 → 그 안에서 프리셋 6종을 .cst로 저장 → 이후 곡마다: 템플릿 열고 MIDI 임포트 → 트랙에 .cst 클릭 → 볼륨·팬만 표대로. 센드가 살아있으려면 <b>반드시 버스가 있는 템플릿 안에서 .cst를 저장</b>해야 한다.</div>`},channelstrip:{title:'채널 스트립 저장·적용 (한 번 만들어 재사용)', html:`
+<p class="lead sm"><b>채널 스트립</b> = 믹서에서 트랙 한 줄(악기 + 인서트 FX + 센드 + 페이더 묶음). 한 번 저장(.cst)하면 <b>모든 프로젝트에서 클릭 한 번</b>으로 재사용된다 — 앱이 파일을 대신 만들 순 없고, 로직에서 <b>최초 1회</b> 저장하면 영구히 쓴다.</p>
+<div class="kicker">0 · Setting 막대가 안 보이면 (먼저)</div>
+<div class="lstep"><span class="ln">0</span><span class="lc">믹서 채널 맨 위 <b>Setting 막대</b>가 안 보이면 켜야 한다: 믹서(<span class="k">X</span>) 상단 메뉴 <b>View → Channel Strip Components → Setting 체크</b>(Inserts·Sends·EQ도 켜져 있는지 확인). 그러면 각 채널 최상단에 가는 가로 막대가 생긴다.<span class="path">믹서 View → Channel Strip Components → Setting ✓</span></span></div>
+<div class="kicker">저장 · 적용</div>
+<div class="lstep"><span class="ln">1</span><span class="lc">악기+FX 체인을 다 건 채널에서 최상단 <b>Setting 막대 클릭 → Save Channel Strip Setting</b> → 이름 「장르 역할」(예 <span class="v">록 기타 리듬</span>).<span class="path">믹서 → 채널 최상단 막대 → Save Channel Strip Setting</span></span></div>
+<div class="lstep"><span class="ln">2</span><span class="lc"><b>적용:</b> 새 트랙의 Setting 막대 클릭 → 저장한 이름 선택. 또는 라이브러리(<span class="k">Y</span>)에서 클릭. 인서트+EQ+센드가 통째로 걸린다.</span></div>
+<div class="lstep"><span class="ln">3</span><span class="lc"><b>저장 위치:</b> <span class="mono">~/Music/Audio Music Apps/Channel Strip Settings/</span> — 폴더째 백업하면 다른 맥에서도 그대로.</span></div>
+<div class="box hot"><b class="no">⚠ .cst에 들어가는 것 / 안 되는 것</b> (실제 파일 확인). <b>들어감:</b> 악기·인서트(EQ·컴프 등)·모든 파라미터·센드 <b>양</b>. <b>안 들어감:</b> <span class="no">볼륨 페이더·팬</span> → 볼륨·팬 표대로 직접. 센드는 <b>대상 버스가 프로젝트에 있어야</b> 제대로 붙음 → 템플릿(버스) 먼저.</div>`},
 
 sampler808:{title:'Quick Sampler 808', html:`
 <div class="lstep"><span class="ln">1</span><span class="lc">트랙 악기 슬롯 → <b>Quick Sampler</b> → 파형 영역에 808 샘플 드래그.</span></div>
@@ -646,6 +685,21 @@ frameroute:{title:'프레임 · 트랙 1개로', html:`
 };
 
 const APP_SUM = {name:'Sum Wave', c1:'#63D6CC', c2:'#8394FF', steps:[
+{phase:'시작 전', kicker:'전체 그림 · 처음 한 번', title:'시작하기 전에 — 최초 세팅 흐름',
+ html:`<p class="lead">곡마다 반복하는 건 몇 가지뿐. 나머지는 <b>처음 한 번</b> 만들어 계속 재사용한다.</p>
+ <div class="spec wide"><div class="srow"><span class="sk">① 템플릿</span><span class="sv" style="font-size:15px">버스(리버브·병렬·홀)·마스터·기본값을 만들어 <b>Save as Template</b> — 곡마다 안 건드림</span></div>
+ <div class="srow"><span class="sk">② 프리셋</span><span class="sv" style="font-size:15px">그 템플릿 <b>안에서</b> 장르별 트랙 세팅을 <b>.cst로 저장</b>(센드 살리려면 버스가 있는 상태여야). 「저장 체크리스트」 탭 참고</span></div>
+ <div class="srow"><span class="sk">③ 곡마다</span><span class="sv" style="font-size:15px">템플릿 열기 → MIDI 임포트(트랙 생성) → 각 트랙에 .cst 클릭 → <b>볼륨·팬만</b> 표대로(프리셋에 안 담김)</span></div>
+ <div class="srow"><span class="sk">④ 오토·믹싱·마스터링</span><span class="sv" style="font-size:15px">구간 오토메이션 → 믹싱 → A는 여기서 마스터링 / B는 숨웨이브로</span></div></div>
+ <div class="box tip"><b>핵심:</b> .cst엔 볼륨·팬이 안 담기고, 센드는 버스가 있는 템플릿에서 저장해야 산다. 그래서 <b>템플릿 먼저 → 그 안에서 프리셋 저장</b> 순서가 중요.</div>
+ <button class="tapcard" data-d="reuse"><span class="chev">›</span><span class="tc-h">한 번 저장하면 계속 쓰는 것 전체</span><span class="tc-p">템플릿·.cst·.pst·패치·단축키 지도</span><span class="tc-go">지도 ›</span></button>
+ <button class="tapcard" data-d="channelstrip"><span class="chev">›</span><span class="tc-h">.cst 저장법 (Setting 막대 켜는 법)</span><span class="tc-go">로직 설정법 ›</span></button>`},
+{phase:'시작 전', kicker:'최초 1회 · 하나씩 체크', title:'프리셋 저장 체크리스트',
+ html:`<p class="lead sm">이 앱에서 <b>.cst로 저장할 프리셋 목록</b>. 로직에서 하나 만들 때마다 탭해서 체크 — 상태는 저장된다.</p>
+ <div class="box soft"><b>만드는 법:</b> 템플릿 안에서 트랙에 장르 카드 값대로 EQ·컴프·센드 → 믹서 채널 Setting 막대 → Save Channel Strip Setting → 이름 「장르 역할」. 비슷한 건 불러와서 값만 바꿔 다른 이름으로 저장하면 빠르다.</div>
+ {{CHECKLIST}}
+ <button class="tapcard" data-d="channelstrip"><span class="chev">›</span><span class="tc-h">채널 스트립 저장법 자세히</span><span class="tc-go">로직 설정법 ›</span></button>`},
+
 {phase:'시작 전', kicker:'이 프로젝트는', title:'기본 셋팅 프로젝트',
  html:`<p class="lead">프레임 · 바이노럴 · 자연음(마스킹)이 <b>이미 믹싱된 상태</b>. 한 번 만들어 Template 저장 → 계속 재사용.</p>
  <div class="spec"><div class="srow"><span class="sk">얹는 음악</span><span class="sv">Band / Beat / Play / Meditation 앱에서 제작</span></div>
@@ -762,7 +816,9 @@ const APP_SUM = {name:'Sum Wave', c1:'#63D6CC', c2:'#8394FF', steps:[
 {phase:'참고', kicker:'리전 전용', title:'리전 편집 단축키 (자르기·뮤트·크로스페이드)',
  html:CHEAT_MOUSE},
 {phase:'참고', kicker:'마우스 툴 · 치트키', title:'툴 활용법 (마키 · 클릭존)',
- html:DETAILS.tools.html}
+ html:DETAILS.tools.html},
+{phase:'참고', kicker:'최초 1회 → 영구 재사용', title:'한 번 저장하면 계속 쓰는 것',
+ html:DETAILS.reuse.html}
 ]};
 
 /* ===== Beat Maker ===== */
@@ -923,6 +979,21 @@ function beatGenreStep(g){
 }
 
 const APP_BEAT = {name:'Beat Maker', c1:'#4FD1A5', c2:'#3AA7C9', steps:[
+{phase:'시작 전', kicker:'전체 그림 · 처음 한 번', title:'시작하기 전에 — 최초 세팅 흐름',
+ html:`<p class="lead">곡마다 반복하는 건 몇 가지뿐. 나머지는 <b>처음 한 번</b> 만들어 계속 재사용한다.</p>
+ <div class="spec wide"><div class="srow"><span class="sk">① 템플릿</span><span class="sv" style="font-size:15px">버스(리버브·병렬·홀)·마스터·기본값을 만들어 <b>Save as Template</b> — 곡마다 안 건드림</span></div>
+ <div class="srow"><span class="sk">② 프리셋</span><span class="sv" style="font-size:15px">그 템플릿 <b>안에서</b> 장르별 트랙 세팅을 <b>.cst로 저장</b>(센드 살리려면 버스가 있는 상태여야). 「저장 체크리스트」 탭 참고</span></div>
+ <div class="srow"><span class="sk">③ 곡마다</span><span class="sv" style="font-size:15px">템플릿 열기 → MIDI 임포트(트랙 생성) → 각 트랙에 .cst 클릭 → <b>볼륨·팬만</b> 표대로(프리셋에 안 담김)</span></div>
+ <div class="srow"><span class="sk">④ 오토·믹싱·마스터링</span><span class="sv" style="font-size:15px">구간 오토메이션 → 믹싱 → A는 여기서 마스터링 / B는 숨웨이브로</span></div></div>
+ <div class="box tip"><b>핵심:</b> .cst엔 볼륨·팬이 안 담기고, 센드는 버스가 있는 템플릿에서 저장해야 산다. 그래서 <b>템플릿 먼저 → 그 안에서 프리셋 저장</b> 순서가 중요.</div>
+ <button class="tapcard" data-d="reuse"><span class="chev">›</span><span class="tc-h">한 번 저장하면 계속 쓰는 것 전체</span><span class="tc-p">템플릿·.cst·.pst·패치·단축키 지도</span><span class="tc-go">지도 ›</span></button>
+ <button class="tapcard" data-d="channelstrip"><span class="chev">›</span><span class="tc-h">.cst 저장법 (Setting 막대 켜는 법)</span><span class="tc-go">로직 설정법 ›</span></button>`},
+{phase:'시작 전', kicker:'최초 1회 · 하나씩 체크', title:'프리셋 저장 체크리스트',
+ html:`<p class="lead sm">이 앱에서 <b>.cst로 저장할 프리셋 목록</b>. 로직에서 하나 만들 때마다 탭해서 체크 — 상태는 저장된다.</p>
+ <div class="box soft"><b>만드는 법:</b> 템플릿 안에서 트랙에 장르 카드 값대로 EQ·컴프·센드 → 믹서 채널 Setting 막대 → Save Channel Strip Setting → 이름 「장르 역할」. 비슷한 건 불러와서 값만 바꿔 다른 이름으로 저장하면 빠르다.</div>
+ {{CHECKLIST}}
+ <button class="tapcard" data-d="channelstrip"><span class="chev">›</span><span class="tc-h">채널 스트립 저장법 자세히</span><span class="tc-go">로직 설정법 ›</span></button>`},
+
 {phase:'시작 전', kicker:'시작 전에 정한다', title:'A · B 경로',
  html:`<div class="ab">
  <div class="abcard a"><div class="abh"><span class="badge">A</span><span>독립 발매</span></div><div class="abd">믹싱 → 마스터링까지 → 스트리밍. <span class="v">-14 LUFS / -1 dBTP</span> 기본, 밀도 장르(EDM·러닝 등)만 <span class="v">-9</span> 하한.</div></div>
@@ -999,6 +1070,21 @@ const APP_BEAT = {name:'Beat Maker', c1:'#4FD1A5', c2:'#3AA7C9', steps:[
 
 /* ===== Meditation Builder ===== */
 const APP_MED = {name:'Medi Builder', c1:'#6FB7FF', c2:'#9E8CFF', steps:[
+{phase:'시작 전', kicker:'전체 그림 · 처음 한 번', title:'시작하기 전에 — 최초 세팅 흐름',
+ html:`<p class="lead">곡마다 반복하는 건 몇 가지뿐. 나머지는 <b>처음 한 번</b> 만들어 계속 재사용한다.</p>
+ <div class="spec wide"><div class="srow"><span class="sk">① 템플릿</span><span class="sv" style="font-size:15px">버스(리버브·병렬·홀)·마스터·기본값을 만들어 <b>Save as Template</b> — 곡마다 안 건드림</span></div>
+ <div class="srow"><span class="sk">② 프리셋</span><span class="sv" style="font-size:15px">그 템플릿 <b>안에서</b> 장르별 트랙 세팅을 <b>.cst로 저장</b>(센드 살리려면 버스가 있는 상태여야). 「저장 체크리스트」 탭 참고</span></div>
+ <div class="srow"><span class="sk">③ 곡마다</span><span class="sv" style="font-size:15px">템플릿 열기 → MIDI 임포트(트랙 생성) → 각 트랙에 .cst 클릭 → <b>볼륨·팬만</b> 표대로(프리셋에 안 담김)</span></div>
+ <div class="srow"><span class="sk">④ 오토·믹싱·마스터링</span><span class="sv" style="font-size:15px">구간 오토메이션 → 믹싱 → A는 여기서 마스터링 / B는 숨웨이브로</span></div></div>
+ <div class="box tip"><b>핵심:</b> .cst엔 볼륨·팬이 안 담기고, 센드는 버스가 있는 템플릿에서 저장해야 산다. 그래서 <b>템플릿 먼저 → 그 안에서 프리셋 저장</b> 순서가 중요.</div>
+ <button class="tapcard" data-d="reuse"><span class="chev">›</span><span class="tc-h">한 번 저장하면 계속 쓰는 것 전체</span><span class="tc-p">템플릿·.cst·.pst·패치·단축키 지도</span><span class="tc-go">지도 ›</span></button>
+ <button class="tapcard" data-d="channelstrip"><span class="chev">›</span><span class="tc-h">.cst 저장법 (Setting 막대 켜는 법)</span><span class="tc-go">로직 설정법 ›</span></button>`},
+{phase:'시작 전', kicker:'최초 1회 · 하나씩 체크', title:'프리셋 저장 체크리스트',
+ html:`<p class="lead sm">이 앱에서 <b>.cst로 저장할 프리셋 목록</b>. 로직에서 하나 만들 때마다 탭해서 체크 — 상태는 저장된다.</p>
+ <div class="box soft"><b>만드는 법:</b> 템플릿 안에서 트랙에 장르 카드 값대로 EQ·컴프·센드 → 믹서 채널 Setting 막대 → Save Channel Strip Setting → 이름 「장르 역할」. 비슷한 건 불러와서 값만 바꿔 다른 이름으로 저장하면 빠르다.</div>
+ {{CHECKLIST}}
+ <button class="tapcard" data-d="channelstrip"><span class="chev">›</span><span class="tc-h">채널 스트립 저장법 자세히</span><span class="tc-go">로직 설정법 ›</span></button>`},
+
 {phase:'시작 전', kicker:'시작 전에 정한다', title:'A · B 경로',
  html:`<div class="ab">
  <div class="abcard a"><div class="abh"><span class="badge">A</span><span>독립 발매</span></div><div class="abd">믹스→마스터 → 스트리밍. 웰니스 타깃 <span class="v">-16~-14 LUFS</span> / <span class="v">-1 dBTP</span> · 다이내믹 우선.</div></div>
@@ -1027,7 +1113,8 @@ const APP_MED = {name:'Medi Builder', c1:'#6FB7FF', c2:'#9E8CFF', steps:[
  <div class="srow"><span class="sk">명상 롱톤</span><span class="sv" style="font-size:15px">EQ LowCut150 → Comp <span class="v">Thr-22 · 80/400</span> → 리버브B <span class="v">50%</span><span class="sub">페이더 -6 · 롱톤 선율</span></span></div>
  <div class="srow"><span class="sk">명상 텍스처</span><span class="sv" style="font-size:15px">EQ LowCut300 · HiCut 9k → Comp <span class="v">Thr-24</span><span class="sub">페이더 -14 · 배경 결</span></span></div>
  <div class="srow"><span class="sk">명상 자연음</span><span class="sv" style="font-size:15px">EQ LowCut100 · 노이즈 대역만 다듬기<span class="sub">페이더 -18 · 자연음 필드</span></span></div></div>
- <button class="tapcard" data-d="channelstrip"><span class="chev">›</span><span class="tc-h">패치 저장·7클릭 적용법</span><span class="tc-p">Save Channel Strip Setting · 볼륨·팬은 별도(표대로)</span><span class="tc-go">로직 설정법 ›</span></button>`},
+ <button class="tapcard" data-d="channelstrip"><span class="chev">›</span><span class="tc-h">채널 스트립 저장·적용 (Setting 막대 켜는 법)</span><span class="tc-p">.cst 한 번 저장 → 곡마다 클릭 · 볼륨·팬 표대로</span><span class="tc-go">로직 설정법 ›</span></button>
+ <button class="tapcard" data-d="reuse"><span class="chev">›</span><span class="tc-h">한 번 저장하면 계속 쓰는 것 전체</span><span class="tc-p">템플릿·.cst·.pst·패치·단축키 지도</span><span class="tc-go">지도 ›</span></button>`},
 {phase:'템플릿', kicker:'최초 1회 · 표 C', title:'볼륨 · 팬 지도',
  html:`<p class="lead">Melody를 <span class="v">0</span> 기준(피크 <span class="v">-12 dBFS</span> 앵커)으로 나머지를 상대 배치.</p>
  <div class="spec"><div class="srow"><span class="sk">Melody</span><span class="sv"><span class="v">0</span> · C</span></div>
@@ -1168,13 +1255,29 @@ function bandSetStep(s){
    ${inst}
    <div class="kicker">트랙 프리셋 — Setting ▾에서 클릭 한 번</div>
    <div class="spec">${pr}</div>
-   <button class="tapcard" data-d="channelstrip"><span class="chev">›</span><span class="tc-h">프리셋 저장·적용하는 법</span><span class="tc-p">Save Channel Strip Setting · 볼륨·팬 미포함 주의</span><span class="tc-go">로직 설정법 ›</span></button>
+   <button class="tapcard" data-d="reuse"><span class="chev">›</span><span class="tc-h">한 번 저장하면 계속 쓰는 것</span><span class="tc-p">템플릿·.cst·.pst·패치 전체 지도</span><span class="tc-go">지도 ›</span></button>
+ <button class="tapcard" data-d="channelstrip"><span class="chev">›</span><span class="tc-h">프리셋 저장·적용하는 법</span><span class="tc-p">Save Channel Strip Setting · 볼륨·팬 미포함 주의</span><span class="tc-go">로직 설정법 ›</span></button>
    <div class="box soft"><b>마커 오토메이션:</b> ${s.auto}</div>
    <div class="box tip"><div class="bt">믹스 목표</div><p>${s.mixaim}</p></div>
    <div class="box warn"><div class="bt">함정</div><p>${s.trap}</p></div>${tap}`};
 }
 
 const APP_BAND = {name:'Band Composer', c1:'#C792EA', c2:'#F78FB3', steps:[
+{phase:'시작 전', kicker:'전체 그림 · 처음 한 번', title:'시작하기 전에 — 최초 세팅 흐름',
+ html:`<p class="lead">곡마다 반복하는 건 몇 가지뿐. 나머지는 <b>처음 한 번</b> 만들어 계속 재사용한다.</p>
+ <div class="spec wide"><div class="srow"><span class="sk">① 템플릿</span><span class="sv" style="font-size:15px">버스(리버브·병렬·홀)·마스터·기본값을 만들어 <b>Save as Template</b> — 곡마다 안 건드림</span></div>
+ <div class="srow"><span class="sk">② 프리셋</span><span class="sv" style="font-size:15px">그 템플릿 <b>안에서</b> 장르별 트랙 세팅을 <b>.cst로 저장</b>(센드 살리려면 버스가 있는 상태여야). 「저장 체크리스트」 탭 참고</span></div>
+ <div class="srow"><span class="sk">③ 곡마다</span><span class="sv" style="font-size:15px">템플릿 열기 → MIDI 임포트(트랙 생성) → 각 트랙에 .cst 클릭 → <b>볼륨·팬만</b> 표대로(프리셋에 안 담김)</span></div>
+ <div class="srow"><span class="sk">④ 오토·믹싱·마스터링</span><span class="sv" style="font-size:15px">구간 오토메이션 → 믹싱 → A는 여기서 마스터링 / B는 숨웨이브로</span></div></div>
+ <div class="box tip"><b>핵심:</b> .cst엔 볼륨·팬이 안 담기고, 센드는 버스가 있는 템플릿에서 저장해야 산다. 그래서 <b>템플릿 먼저 → 그 안에서 프리셋 저장</b> 순서가 중요.</div>
+ <button class="tapcard" data-d="reuse"><span class="chev">›</span><span class="tc-h">한 번 저장하면 계속 쓰는 것 전체</span><span class="tc-p">템플릿·.cst·.pst·패치·단축키 지도</span><span class="tc-go">지도 ›</span></button>
+ <button class="tapcard" data-d="channelstrip"><span class="chev">›</span><span class="tc-h">.cst 저장법 (Setting 막대 켜는 법)</span><span class="tc-go">로직 설정법 ›</span></button>`},
+{phase:'시작 전', kicker:'최초 1회 · 하나씩 체크', title:'프리셋 저장 체크리스트',
+ html:`<p class="lead sm">이 앱에서 <b>.cst로 저장할 프리셋 목록</b>. 로직에서 하나 만들 때마다 탭해서 체크 — 상태는 저장된다.</p>
+ <div class="box soft"><b>만드는 법:</b> 템플릿 안에서 트랙에 장르 카드 값대로 EQ·컴프·센드 → 믹서 채널 Setting 막대 → Save Channel Strip Setting → 이름 「장르 역할」. 비슷한 건 불러와서 값만 바꿔 다른 이름으로 저장하면 빠르다.</div>
+ {{CHECKLIST}}
+ <button class="tapcard" data-d="channelstrip"><span class="chev">›</span><span class="tc-h">채널 스트립 저장법 자세히</span><span class="tc-go">로직 설정법 ›</span></button>`},
+
 {phase:'시작 전', kicker:'시작 전에 정한다', title:'A · B 경로',
  html:`<div class="ab">
  <div class="abcard a"><div class="abh"><span class="badge">A</span><span>독립 발매</span></div><div class="abd">믹스→마스터 → 스트리밍. 세트별 타깃(기본 <span class="v">-14</span> · K팝댄스만 <span class="v">-9</span> 하한 · 발라드/오케 <span class="v">-16~-14</span>).</div></div>
@@ -1287,10 +1390,26 @@ function playFamStep(f){
    html:`<div class="kicker">트랙 체인 — 프리셋 「장르 역할」 · 회색 줄 끝 숫자 = <b>시작 페이더(dB)</b></div><div class="spec">${tr}</div>
    <div class="box tip"><div class="bt">포인트</div><p>${f.pt}</p></div>${tap}
    <button class="tapcard" data-d="musicterms"><span class="chev">›</span><span class="tc-h">낯선 음악 용어?</span><span class="tc-p">오스티나토 · 시머 · 컴핑 · 글라이드 …</span><span class="tc-go">용어 사전 ›</span></button>
-   <button class="tapcard" data-d="channelstrip"><span class="chev">›</span><span class="tc-h">프리셋 저장·적용하는 법</span><span class="tc-go">로직 설정법 ›</span></button>`};
+   <button class="tapcard" data-d="reuse"><span class="chev">›</span><span class="tc-h">한 번 저장하면 계속 쓰는 것</span><span class="tc-p">템플릿·.cst·.pst·패치 전체 지도</span><span class="tc-go">지도 ›</span></button>
+ <button class="tapcard" data-d="channelstrip"><span class="chev">›</span><span class="tc-h">프리셋 저장·적용하는 법</span><span class="tc-go">로직 설정법 ›</span></button>`};
 }
 
 const APP_PLAY = {name:'Play Composer', c1:'#5BD3A0', c2:'#F2C14E', steps:[
+{phase:'시작 전', kicker:'전체 그림 · 처음 한 번', title:'시작하기 전에 — 최초 세팅 흐름',
+ html:`<p class="lead">곡마다 반복하는 건 몇 가지뿐. 나머지는 <b>처음 한 번</b> 만들어 계속 재사용한다.</p>
+ <div class="spec wide"><div class="srow"><span class="sk">① 템플릿</span><span class="sv" style="font-size:15px">버스(리버브·병렬·홀)·마스터·기본값을 만들어 <b>Save as Template</b> — 곡마다 안 건드림</span></div>
+ <div class="srow"><span class="sk">② 프리셋</span><span class="sv" style="font-size:15px">그 템플릿 <b>안에서</b> 장르별 트랙 세팅을 <b>.cst로 저장</b>(센드 살리려면 버스가 있는 상태여야). 「저장 체크리스트」 탭 참고</span></div>
+ <div class="srow"><span class="sk">③ 곡마다</span><span class="sv" style="font-size:15px">템플릿 열기 → MIDI 임포트(트랙 생성) → 각 트랙에 .cst 클릭 → <b>볼륨·팬만</b> 표대로(프리셋에 안 담김)</span></div>
+ <div class="srow"><span class="sk">④ 오토·믹싱·마스터링</span><span class="sv" style="font-size:15px">구간 오토메이션 → 믹싱 → A는 여기서 마스터링 / B는 숨웨이브로</span></div></div>
+ <div class="box tip"><b>핵심:</b> .cst엔 볼륨·팬이 안 담기고, 센드는 버스가 있는 템플릿에서 저장해야 산다. 그래서 <b>템플릿 먼저 → 그 안에서 프리셋 저장</b> 순서가 중요.</div>
+ <button class="tapcard" data-d="reuse"><span class="chev">›</span><span class="tc-h">한 번 저장하면 계속 쓰는 것 전체</span><span class="tc-p">템플릿·.cst·.pst·패치·단축키 지도</span><span class="tc-go">지도 ›</span></button>
+ <button class="tapcard" data-d="channelstrip"><span class="chev">›</span><span class="tc-h">.cst 저장법 (Setting 막대 켜는 법)</span><span class="tc-go">로직 설정법 ›</span></button>`},
+{phase:'시작 전', kicker:'최초 1회 · 하나씩 체크', title:'프리셋 저장 체크리스트',
+ html:`<p class="lead sm">이 앱에서 <b>.cst로 저장할 프리셋 목록</b>. 로직에서 하나 만들 때마다 탭해서 체크 — 상태는 저장된다.</p>
+ <div class="box soft"><b>만드는 법:</b> 템플릿 안에서 트랙에 장르 카드 값대로 EQ·컴프·센드 → 믹서 채널 Setting 막대 → Save Channel Strip Setting → 이름 「장르 역할」. 비슷한 건 불러와서 값만 바꿔 다른 이름으로 저장하면 빠르다.</div>
+ {{CHECKLIST}}
+ <button class="tapcard" data-d="channelstrip"><span class="chev">›</span><span class="tc-h">채널 스트립 저장법 자세히</span><span class="tc-go">로직 설정법 ›</span></button>`},
+
 {phase:'시작 전', kicker:'시작 전에 정한다', title:'A · B 경로',
  html:`<div class="ab">
  <div class="abcard a"><div class="abh"><span class="badge">A</span><span>독립 발매</span></div><div class="abd">믹스→마스터 → 스트리밍. 장르별 타깃(A 앰비언트 <span class="v">-16~-18</span> ~ E EDM <span class="v">-9~-12</span>).</div></div>
@@ -1434,7 +1553,8 @@ let mem={};
 const store={read(){try{return JSON.parse(localStorage.getItem(KEY))||{}}catch(e){return mem}},
   write(o){try{localStorage.setItem(KEY,JSON.stringify(o))}catch(e){mem=o}}};
 const APP_ORDER=['sum','beat','med','band','play','master'];
-let state=Object.assign({app:'sum',idx:{},done:{},wake:false,big:false},store.read());
+let state=Object.assign({app:'sum',idx:{},done:{},presets:{},wake:false,big:false},store.read());
+ if(!state.presets)state.presets={};
 APP_ORDER.forEach(a=>{if(!(a in state.idx))state.idx[a]=0;if(!(a in state.done))state.done[a]={};});
 const save=()=>store.write(state);
 const $=id=>document.getElementById(id);
@@ -1473,6 +1593,8 @@ function render(){
   const nx=$('next');nx.classList.toggle('fin',last);nx.innerHTML=last?'끝':'다음&nbsp;›';
   document.body.classList.toggle('big',state.big);
   card.querySelectorAll('[data-d]').forEach(el=>el.onclick=()=>openSheet(el.dataset.d));
+  if(card.innerHTML.indexOf('{{CHECKLIST}}')>=0)card.innerHTML=card.innerHTML.replace('{{CHECKLIST}}', presetChecklist(state.app));
+  bindChecklist();
   buildSubtabs();
   save();
 }
@@ -1511,6 +1633,45 @@ function doSearch(q){
 }
 function openSearch(){const ov=$('srchOv');ov.classList.add('on');const i=$('srchInput');i.value='';doSearch('');setTimeout(()=>i.focus(),50);}
 function closeSearch(){$('srchOv').classList.remove('on');}
+
+/* ---- 프리셋 저장 체크리스트 ---- */
+function presetList(app){
+  const out=[];
+  if(app==='beat'){
+    BEAT_GENRES.forEach(g=>out.push({group:g.name, items:['킥','스네어/클랩','베이스/808','리드','패드/코드']}));
+  } else if(app==='band'){
+    BAND_SETS.forEach(x=>{const its=(x.presets||[]).map(pp=>pp[0]); out.push({group:x.name, items:its.length?its:['드럼','베이스','기타','키','보컬']});});
+  } else if(app==='play'){
+    PLAY_FAMS.forEach(f=>out.push({group:f.id+' · '+f.name, items:(f.tr||[]).map(t=>t[0])}));
+  } else if(app==='med'){
+    out.push({group:'명상 6종', items:['명상 패드','명상 드론','명상 벨','명상 롱톤','명상 텍스처','명상 자연음']});
+  } else if(app==='sum'){
+    out.push({group:'숨웨이브 배경', items:['음악','바이노럴','자연음','마스터']});
+  }
+  return out;
+}
+function presetChecklist(app){
+  const groups=presetList(app);
+  if(!groups.length)return '';
+  const pd=state.presets[app]||(state.presets[app]={});
+  let total=0,done=0;
+  const body=groups.map((g,gi)=>{
+    const rows=g.items.map((it,ii)=>{const key=gi+'_'+ii;total++;const ck=!!pd[key];if(ck)done++;
+      return '<div class="pck '+(ck?'on':'')+'" data-app="'+app+'" data-key="'+key+'"><span class="pbx"><svg viewBox="0 0 24 24" fill="none" stroke="#08111f" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span class="ptx">'+it+'</span></div>';}).join('');
+    return '<div class="pgrp"><div class="pghd">'+g.group+'</div>'+rows+'</div>';
+  }).join('');
+  return '<div class="pchecklist"><div class="pcbar"><span>저장 진행 <b class="pcnt">'+done+'/'+total+'</b></span><button class="pcreset" data-app="'+app+'">비우기</button></div>'+body+'</div>';
+}
+function bindChecklist(){
+  card.querySelectorAll('.pck').forEach(el=>el.onclick=()=>{
+    const app=el.dataset.app,key=el.dataset.key;
+    if(!state.presets[app])state.presets[app]={};
+    state.presets[app][key]=!state.presets[app][key];save();render();
+  });
+  const rb=card.querySelector('.pcreset');
+  if(rb)rb.onclick=()=>{if(confirm('이 앱 프리셋 체크를 비울까요?')){state.presets[rb.dataset.app]={};save();render();}};
+}
+
 function renderAll(){buildAppTabs();buildPhases();render();}
 function go(d){const ap=A();state.idx[state.app]=Math.max(0,Math.min(ap.steps.length-1,state.idx[state.app]+d));buildPhases();render();}
 
