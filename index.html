@@ -675,16 +675,35 @@ articulation:{title:'오케 가상악기 · 아티큘레이션 (Logic 11 내장)
 <div class="lstep"><span class="ln">5</span><span class="lc"><b>짧은 주법은 벨로시티:</b> Staccato·Spiccato·브라스 히트의 강약은 노트 <b>벨로시티</b>로(CC 아님). 롱톤=CC1 · 쇼트=벨로시티 — 이 구분이 실감의 핵심.</span></div>
 <div class="box soft"><b>무대 배치 팬:</b> 1st Vn <span class="v">L30</span> · 2nd Vn <span class="v">L15</span> · Va <span class="v">R10</span> · Vc <span class="v">R25</span> · Cb <span class="v">R35</span> · 혼 <span class="v">L20</span> · Tpt <span class="v">R15</span> · 팀파니 C(뒤). 깊이는 섹션 트랙 딜레이(현 뒤 <span class="v">-60ms</span> · 목관 <span class="v">-40ms</span>)로.</div>`},
 
-frameroute:{title:'프레임 · 트랙 1개로', html:`
+frameroute:{title:'프레임 · 트랙 1개로 (전체 수치)', html:`
 <p class="lead sm">버스 불필요 — 자연소리 트랙 <b>1개</b>에 플러그인 3개 직접 + 오토메이션. 음악은 안 건드림.</p>
 <div class="lstep"><span class="ln">1</span><span class="lc">자연소리 트랙 1개, 인트로·아우트로에 소스 배치.</span></div>
-<div class="lstep"><span class="ln">2</span><span class="lc"><b>FX 3개:</b> ① ChromaVerb(EDM=Synth Hall / 앰비언트=Dark Room · Mix <span class="v">50%</span>) ② Direction Mixer(Spread 시작 <span class="v">1.0</span>) ③ Channel EQ(밴드8 하이컷 ON · 시작 <span class="v">20,000Hz</span> · <span class="v">24dB/Oct</span>).</span></div>
-<div class="lstep"><span class="ln">3</span><span class="lc"><b>오토메이션:</b> <span class="k">A</span> → Volume / Direction Mixer Spread / Channel EQ <b>High Cut Frequency</b>(이름 그대로 찾기).</span></div>
-<div class="lstep"><span class="ln">4</span><span class="lc"><b>EDM:</b> Vol <span class="v">0→−∞</span>(0.5s) · Spread <span class="v">1.9→0.3</span> · EQ <span class="v">500Hz→20kHz</span>. <b>앰비언트:</b> Vol 3s 완만 · EQ <span class="v">2kHz→20kHz</span>. 아우트로는 같은 공간으로 복귀.</span></div>
-<div class="box tip">경계: 페이드아웃 <span class="v">1.0s</span>, 꼬리가 음악 첫 마디를 1초 넘게 물리게(하드컷 금지).</div>`},
+<div class="kicker">FX ① ChromaVerb — Main 뷰</div>
+<div class="spec wide"><div class="srow"><span class="sk">Room Type</span><span class="sv">EDM <span class="v">Synth Hall</span> / 앰비언트 <span class="v">Dark Room</span></span></div>
+<div class="srow"><span class="sk">Attack</span><span class="sv">EDM <span class="v">15%</span> · 앰비언트 <span class="v">25%</span> <span class="sub">이 룸타입은 밀도 차오름 시간</span></span></div>
+<div class="srow"><span class="sk">Size / Density</span><span class="sv">EDM <span class="v">90 / 75%</span> · 앰비 <span class="v">55 / 55%</span></span></div>
+<div class="srow"><span class="sk">Decay / Predelay</span><span class="sv">EDM <span class="v">3.75s / 40ms</span> · 앰비 <span class="v">2.0s / 20ms</span></span></div>
+<div class="srow"><span class="sk">Distance / Mix</span><span class="sv">EDM <span class="v">65 / 50%</span> · 앰비 <span class="v">35 / 40%</span></span></div></div>
+<div class="kicker">ChromaVerb — Damping EQ (Main 그래픽, decay 색)</div>
+<div class="spec wide"><div class="srow"><span class="sk">Low Shelf</span><span class="sv">Freq <span class="v">200Hz</span> · Ratio <span class="v">0.7</span> <span class="sub">저역 꼬리 짧게 → 안 뭉침</span></span></div>
+<div class="srow"><span class="sk">High Shelf</span><span class="sv">Freq <span class="v">8kHz</span> · Ratio <span class="v">EDM 1.2(시머) / 앰비 0.8(어두움)</span></span></div>
+<div class="srow"><span class="sk">입력법</span><span class="sv" style="font-size:14.5px">그래픽 점 좌우=Freq · 상하=Ratio(decay 시간비) · Opt+Cmd 세로드래그=Q</span></div></div>
+<div class="kicker">ChromaVerb — Output EQ (Details 뷰, 6밴드)</div>
+<div class="spec wide"><div class="srow"><span class="sk">밴드1 HPF</span><span class="sv"><span class="v">80Hz</span> <span class="sub">리버브 저역 정리</span></span></div>
+<div class="srow"><span class="sk">밴드6 LPF</span><span class="sv"><span class="v">12kHz</span> <span class="sub">거친 고역 정리</span></span></div>
+<div class="srow"><span class="sk">Details 기타</span><span class="sv">Width <span class="v">100</span> · Dry <span class="v">0</span> / Wet <span class="v">100</span>(센드 아닌 인서트면 Mix로)</span></div></div>
+<div class="kicker">FX ② Direction Mixer · ③ Channel EQ</div>
+<div class="spec wide"><div class="srow"><span class="sk">Direction Mixer</span><span class="sv">Spread 시작 <span class="v">1.0</span> (오토메이션 대상)</span></div>
+<div class="srow"><span class="sk">Channel EQ</span><span class="sv">밴드8 하이컷 ON · 시작 <span class="v">20,000Hz</span> · <span class="v">24dB/Oct</span></span></div></div>
+<div class="kicker">오토메이션 (A → 파라미터)</div>
+<div class="lstep"><span class="ln">4</span><span class="lc"><b>대상:</b> Volume · Direction Mixer <b>Spread</b> · Channel EQ <b>High Cut Frequency</b>(이름 그대로 찾기).</span></div>
+<div class="lstep"><span class="ln">5</span><span class="lc"><b>EDM:</b> Vol <span class="v">0→−∞</span>(0.5s) · Spread <span class="v">1.9→0.3</span> · HiCut <span class="v">500Hz→20kHz</span>. <b>앰비언트:</b> Vol 3s 완만 · HiCut <span class="v">2kHz→20kHz</span>. 아우트로는 같은 공간으로 복귀.</span></div>
+<div class="box tip">경계: 페이드아웃 <span class="v">1.0s</span>, 꼬리가 음악 첫 마디를 1초 넘게 물리게(하드컷 금지).</div>
+<div class="box soft"><b>Damping EQ vs Output EQ:</b> Damping은 <b>decay(꼬리)의 주파수별 길이</b>를 바꿈(저역 컷=덜 부밍·고역 업=시머) · Output EQ는 리버브 <b>최종 출력 톤</b>을 깎음. 둘은 다른 것 — Damping은 Main, Output은 Details.</div>`},
 };
 
 const APP_SUM = {name:'Sum Wave', c1:'#63D6CC', c2:'#8394FF', steps:[
+
 {phase:'시작 전', kicker:'전체 그림 · 처음 한 번', title:'시작하기 전에 — 최초 세팅 흐름',
  html:`<p class="lead">곡마다 반복하는 건 몇 가지뿐. 나머지는 <b>처음 한 번</b> 만들어 계속 재사용한다.</p>
  <div class="spec wide"><div class="srow"><span class="sk">① 템플릿</span><span class="sv" style="font-size:15px">버스(리버브·병렬·홀)·마스터·기본값을 만들어 <b>Save as Template</b> — 곡마다 안 건드림</span></div>
@@ -797,6 +816,13 @@ const APP_SUM = {name:'Sum Wave', c1:'#63D6CC', c2:'#8394FF', steps:[
  <div class="srow"><span class="sk">Output EQ</span><span class="sv"><span class="v">200Hz</span> 아래 컷 · <span class="v">8kHz</span> 위 롤오프</span></div></div>
  <div class="box hot"><b class="no">⚠</b> 이 Send는 <b>자연음에만</b>. 비트·음악은 이 버스로 안 보냄.</div>
  <button class="tapcard" data-d="reverbsend"><span class="chev">›</span><span class="tc-h">리버브 Send 거는 법</span><span class="tc-p">Bus 4 · Wet 100/Dry 0</span><span class="tc-go">로직 설정법 ›</span></button>`},
+{phase:'프레임', kicker:'앞뒤 자연공간 · 곡마다', title:'프레임 세팅',
+ html:`<p class="lead">장르 무관. 음악은 그대로 가운데, 손댈 건 <b>앞뒤 3초 자연공간뿐</b> — 트랙 1개 · FX 3개 · 오토메이션.</p>
+ <div class="flow">[ 자연공간 3초 ] ─▶ 음악 (그대로) ─▶ [ 자연공간 3초 ]</div>
+ <div class="spec"><div class="srow"><span class="sk">EDM (열림)</span><span class="sv" style="font-size:14.5px"><span class="v">Synth Hall</span> · Attack <span class="v">15%</span> · Size <span class="v">90%</span> · Density <span class="v">75%</span> · Decay <span class="v">3.75s</span> · Predelay <span class="v">40ms</span> · Distance <span class="v">65%</span> · Mix <span class="v">50%</span></span></div>
+ <div class="srow"><span class="sk">앰비언트 (닫힘)</span><span class="sv" style="font-size:14.5px"><span class="v">Dark Room</span> · Attack <span class="v">25%</span> · Size <span class="v">55%</span> · Density <span class="v">55%</span> · Decay <span class="v">2.0s</span> · Predelay <span class="v">20ms</span> · Distance <span class="v">35%</span> · Mix <span class="v">40%</span></span></div></div>
+ <div class="box soft"><b>Attack</b>=이 두 룸타입에선 밀도가 차오르는 시간(볼륨 아님) · <b>Density</b>=반사 촘촘함(낮으면 알갱이, 높으면 매끈). Damping EQ·Output EQ 값은 「프레임 만드는 법」에.</div>
+ <button class="tapcard" data-d="frameroute"><span class="chev">›</span><span class="tc-h">프레임 만드는 법</span><span class="tc-p">FX 3개 + 오토메이션 대상·값</span><span class="tc-go">로직 설정법 ›</span></button>`},
 {phase:'참고', kicker:'빠른 참조', title:'용어 · 플러그인 입력법',
  html:`<div class="spec wide"><div class="srow"><span class="sk">LUFS / dBTP</span><span class="sv" style="font-size:15.5px">체감 음량(전체 평균) / 실제 최대(−1로 왜곡 방지)</span></div>
  <div class="srow"><span class="sk">사이드체인 / GR</span><span class="sv" style="font-size:15.5px">킥으로 컴프 눌러 자리 양보 / 누른 dB</span></div>
@@ -1532,14 +1558,8 @@ const APP_MASTER = {name:'Sum Mastering', c1:'#FFB86B', c2:'#FF7683', steps:[
  <div class="srow"><span class="sk">③ 비트 1종</span><span class="sv" style="font-size:15.5px">목적 바이노럴만 언뮤트(수면=델타 · 명상=세타 · 이완=알파 · 집중=베타)</span></div>
  <div class="srow"><span class="sk">④ 자연음</span><span class="sv" style="font-size:15.5px">2~3종만(비+계곡 / 파도+바람 / 폭포 단독)</span></div>
  <div class="srow"><span class="sk">⑤ 밸런스 체크</span><span class="sv" style="font-size:15.5px">음악 뮤트=배경 편안 / 켜면 앞. 맥놀이 거슬리면 비트 서밍 <span class="v">-2~3dB</span></span></div></div>
- <div class="box soft"><b>다음:</b> 프레임(앞뒤 자연공간) → 마스터 → 바운스.</div>`},
-{phase:'숨웨이브 최종', kicker:'곡마다 ② · 앞뒤 자연공간', title:'프레임 세팅',
- html:`<p class="lead">장르 무관. 음악은 그대로 가운데, 손댈 건 <b>앞뒤 3초 자연공간뿐</b> — 트랙 1개 · FX 3개 · 오토메이션.</p>
- <div class="flow">[ 자연공간 3초 ] ─▶ 음악 (그대로) ─▶ [ 자연공간 3초 ]</div>
- <div class="spec"><div class="srow"><span class="sk">EDM</span><span class="sv">열림 · <span class="v">Synth Hall</span> · Predelay <span class="v">40ms</span> · Size <span class="v">90%</span> · Decay <span class="v">3.75s</span> · Distance <span class="v">65%</span></span></div>
- <div class="srow"><span class="sk">앰비언트</span><span class="sv">닫힘 · <span class="v">Dark Room</span> · Predelay <span class="v">20ms</span> · Size <span class="v">55%</span> · Decay <span class="v">2.0s</span> · Distance <span class="v">35%</span></span></div></div>
- <button class="tapcard" data-d="frameroute"><span class="chev">›</span><span class="tc-h">프레임 만드는 법</span><span class="tc-p">FX 3개 + 오토메이션 대상·값</span><span class="tc-go">로직 설정법 ›</span></button>`},
-{phase:'숨웨이브 최종', kicker:'곡마다 ③ · 딱 한 번 · 살살', title:'숨웨이브 마스터링 — 순서대로',
+ <div class="box soft"><b>다음:</b> 마스터 → 바운스. (프레임=앞뒤 자연공간은 Sum Wave 탭 「프레임」에서 먼저 세팅.)</div>`},
+ {phase:'숨웨이브 최종', kicker:'곡마다 ③ · 딱 한 번 · 살살', title:'숨웨이브 마스터링 — 순서대로',
  html:MASTER_WELL}
 ]};
 
