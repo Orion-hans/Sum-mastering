@@ -685,13 +685,15 @@ frameroute:{title:'프레임 · 트랙 1개로 (전체 수치)', html:`
 <div class="srow"><span class="sk">Decay / Predelay</span><span class="sv">EDM <span class="v">3.75s / 40ms</span> · 앰비 <span class="v">2.0s / 20ms</span></span></div>
 <div class="srow"><span class="sk">Distance / Mix</span><span class="sv">EDM <span class="v">65 / 50%</span> · 앰비 <span class="v">35 / 40%</span></span></div></div>
 <div class="kicker">ChromaVerb — Damping EQ (Main 그래픽, decay 색)</div>
-<div class="spec wide"><div class="srow"><span class="sk">Low Shelf</span><span class="sv">Freq <span class="v">200Hz</span> · Ratio <span class="v">0.7</span> <span class="sub">저역 꼬리 짧게 → 안 뭉침</span></span></div>
-<div class="srow"><span class="sk">High Shelf</span><span class="sv">Freq <span class="v">8kHz</span> · Ratio <span class="v">EDM 1.2(시머) / 앰비 0.8(어두움)</span></span></div>
+<div class="spec wide"><div class="srow"><span class="sk">Low Shelf</span><span class="sv" style="font-size:14.5px">공통 · Freq <span class="v">200Hz</span> · Ratio <span class="v">0.7</span> <span class="sub">저역 꼬리 짧게 → 안 뭉침</span></span></div>
+<div class="srow"><span class="sk">High Shelf · EDM</span><span class="sv" style="font-size:14.5px">Freq <span class="v">8kHz</span> · Ratio <span class="v">1.2</span> <span class="sub">고역 꼬리 길게 = 시머</span></span></div>
+<div class="srow"><span class="sk">High Shelf · 앰비</span><span class="sv" style="font-size:14.5px">Freq <span class="v">8kHz</span> · Ratio <span class="v">0.8</span> <span class="sub">고역 꼬리 짧게 = 어두움</span></span></div>
 <div class="srow"><span class="sk">입력법</span><span class="sv" style="font-size:14.5px">그래픽 점 좌우=Freq · 상하=Ratio(decay 시간비) · Opt+Cmd 세로드래그=Q</span></div></div>
 <div class="kicker">ChromaVerb — Output EQ (Details 뷰, 6밴드)</div>
-<div class="spec wide"><div class="srow"><span class="sk">밴드1 HPF</span><span class="sv"><span class="v">80Hz</span> <span class="sub">리버브 저역 정리</span></span></div>
-<div class="srow"><span class="sk">밴드6 LPF</span><span class="sv"><span class="v">12kHz</span> <span class="sub">거친 고역 정리</span></span></div>
-<div class="srow"><span class="sk">Details 기타</span><span class="sv">Width <span class="v">100</span> · Dry <span class="v">0</span> / Wet <span class="v">100</span>(센드 아닌 인서트면 Mix로)</span></div></div>
+<div class="spec wide"><div class="srow"><span class="sk">밴드1 HPF</span><span class="sv" style="font-size:14.5px">EDM <span class="v">80Hz</span> · 앰비 <span class="v">120Hz</span> <span class="sub">리버브 저역 정리</span></span></div>
+<div class="srow"><span class="sk">밴드6 LPF</span><span class="sv" style="font-size:14.5px">EDM <span class="v">14kHz</span> · 앰비 <span class="v">10kHz</span> <span class="sub">앰비는 더 어둡게</span></span></div>
+<div class="srow"><span class="sk">Width</span><span class="sv" style="font-size:14.5px">EDM <span class="v">100</span> · 앰비 <span class="v">90</span> <span class="sub">앰비 살짝 좁게=집중</span></span></div>
+<div class="srow"><span class="sk">Dry / Wet</span><span class="sv" style="font-size:14.5px">공통 <span class="v">0 / 100</span> <span class="sub">인서트면 Mix로 대체</span></span></div></div>
 <div class="kicker">FX ② Direction Mixer · ③ Channel EQ</div>
 <div class="spec wide"><div class="srow"><span class="sk">Direction Mixer</span><span class="sv">Spread 시작 <span class="v">1.0</span> (오토메이션 대상)</span></div>
 <div class="srow"><span class="sk">Channel EQ</span><span class="sv">밴드8 하이컷 ON · 시작 <span class="v">20,000Hz</span> · <span class="v">24dB/Oct</span></span></div></div>
@@ -849,7 +851,7 @@ const APP_SUM = {name:'Sum Wave', c1:'#63D6CC', c2:'#8394FF', steps:[
 
 /* ===== Beat Maker ===== */
 const BEAT_GENRES = [
-{n:'1',name:'EDM',meta:'124–130 BPM · 마이너 · 빅룸·사이드체인 펌핑',lufs:'-9 LUFS (하한) · -1 dBTP',
+{n:'1',name:'EDM',meta:'124–130 BPM · 마이너 · 빅룸·사이드체인 펌핑',lufs:'-9 LUFS (하한) · -2 dBTP',
  note:'벌스를 비워야 드롭이 산다. 인트로부터 꽉 채우면 드롭이 올라갈 곳이 없다.',
  src:[['Drums','Drum Machine Designer ▸ EDM','버스 클립'],['Bass SUB','ES2 ▸ sine','모노·LPF 120'],['Bass MID','ES2 ▸ saw+새추','200–800·와이드'],['Chords','Alchemy ▸ supersaw','HPF 200·와이드'],['Lead','ES2/Retro','3–5k·딜레이'],['Pad','Alchemy ▸ bright','리버브 센드']],
  sc:'킥 → Bass SUB: Studio VCA 4:1/1ms/~120ms, GR 4–6dB. MID도 2–3dB.',
@@ -861,7 +863,7 @@ const BEAT_GENRES = [
  mix:'킥·SUB 센터 모노 · 리드 센터 · 코드/패드 와이드. 드롭에서 사이드체인·임팩트↑.',
  err:'SUB·MID 저역 겹침 → MID HPF 120 · 사이드체인 과함 → 킥 꼬리 · 리드 리버브 과함 → 프리딜레이',
  goal:'킥이 믹스를 뚫음 · 드롭 저역 모노/상단 와이드 · 저역은 SUB 하나만. 드롭 직전 라이저+화이트노이즈+필터 오픈.'},
-{n:'2',name:'Trap',meta:'130–150 BPM · 마이너·다크 · 808·하이햇 롤·하프타임',lufs:'-9 LUFS (하한) · -1 dBTP',
+{n:'2',name:'Trap',meta:'130–150 BPM · 마이너·다크 · 808·하이햇 롤·하프타임',lufs:'-9 LUFS (하한) · -2 dBTP',
  note:'808·킥은 한 몸 — 킥 어택, 808 저역·음정. 하햇 롤로 전환.',
  src:[['Drums','808 kit ▸ 하햇 밝게','하햇 10k+·롤'],['808','Quick Sampler ▸ 808','키 튜닝·글라이드'],['Chords','다크 신스','HPF·스로우'],['Lead','벨/플루트','딜레이 스로우'],['Pad','어두운 패드','넓게']],
  sc:'킥 → 808: Studio VCA 3:1/2ms/80ms, GR 2–3dB. 또는 킥·808 볼륨 클립.',
@@ -897,7 +899,7 @@ const BEAT_GENRES = [
  mix:'전체 부드럽게·하이 롤오프·다이내믹 여유. 바이닐 노이즈 베드.',
  err:'너무 깨끗 → 노이즈·새추 · 저역 과함 → 부드럽게 · 리듬 완벽 → 살짝 늦춰',
  goal:'전체 따뜻·부드러움 · 바이닐 텍스처 · 저역 과하지 않음.'},
-{n:'5',name:'Global (Afro/Amapiano)',meta:'110–122 BPM · 마이너·모달 · 로그드럼·퍼커션',lufs:'-9 LUFS (하한) · -1 dBTP',
+{n:'5',name:'Global (Afro/Amapiano)',meta:'110–122 BPM · 마이너·모달 · 로그드럼·퍼커션',lufs:'-9 LUFS (하한) · -2 dBTP',
  note:'로그드럼 어택·피치 벤드가 시그니처. 퍼커션 팬으로 넓게.',
  src:[['Drums','Afro/Perc kit','퍼커션 전면'],['로그드럼','둥근 신스','어택·피치벤드'],['Chords','따뜻한 EP','필터 무브'],['Lead','키/마림바','플레이트'],['Pad','웜 패드','넓게']],
  sc:'킥 → Bass/로그드럼: Studio VCA 3:1/3ms/90ms, GR 2–3dB. 부드럽게(그루브 호흡).',
@@ -909,7 +911,7 @@ const BEAT_GENRES = [
  mix:'퍼커션·로그드럼 그루브 중심 · 셰이커 넓게 · 베이스 둥글게.',
  err:'퍼커션 뭉침 → 팬·EQ 분리 · 로그드럼·베이스 겹침 → 역할 분리 · 경직 → 고스트·스윙',
  goal:'퍼커션 그루브가 몸을 움직임 · 로그드럼 어택 또렷 · 셰이커 와이드.'},
-{n:'6',name:'K-Pop',meta:'100–130 BPM · 장/단 혼합 · 타이트·밝은 상단',lufs:'-9 LUFS (하한) · -1 dBTP',
+{n:'6',name:'K-Pop',meta:'100–130 BPM · 장/단 혼합 · 타이트·밝은 상단',lufs:'-9 LUFS (하한) · -2 dBTP',
  note:'프리에서 요소 빼고 코러스 몰아넣기. 후크 반복+콜앤리스폰스.',
  src:[['Drums','타이트 kit','병렬컴프·밝게'],['Bass','신스 베이스','700–1k·사이드체인'],['Chords','브라스 스탭','밝게·리듬'],['Lead','스퀘어 후크','3–5k·딜레이'],['Pad','밝은 패드','와이드']],
  sc:'킥 → Bass: Studio VCA 4:1/1ms/100ms, GR 3–4dB.',
@@ -944,7 +946,7 @@ const BEAT_GENRES = [
  mix:'다이내믹 보존 최우선 · 과압축·과라우드 금지.',
  err:'과라우드 → -14 · 리버브 과함 → 은은 · 과압축 → 다이내믹 보존',
  goal:'자연 다이내믹 · 어쿠스틱 질감 · 은은한 공간.'},
-{n:'9',name:'Running',meta:'150–180 BPM · 마이너·에너제틱 · 고BPM·강한 펌핑',lufs:'-9 LUFS (하한) · -1 dBTP',
+{n:'9',name:'Running',meta:'150–180 BPM · 마이너·에너제틱 · 고BPM·강한 펌핑',lufs:'-9 LUFS (하한) · -2 dBTP',
  note:'미드(150–280) 강조로 이어폰서도 파워. BPM 높게.',
  src:[['Drums','클린 댄스','강 펌핑·타이트'],['Bass','미드 신스','150–280 강조'],['Chords','브라이트 플럭','와이드'],['Lead','아르프/플럭','밝게'],['Pad','에어리 패드','넓게']],
  sc:'킥 → Bass: Studio VCA 4:1/1ms/110ms, GR 4–6dB. 케이던스 맞춘 강한 펌핑.',
@@ -967,7 +969,7 @@ const BEAT_GENRES = [
  mix:'멜로디·가사 명료성 최우선·센터·반복 각인. calm 부드럽고 낮게.',
  err:'멜로디 묻힘 → 센터·명료 · calm 과밝음 → 부드럽게 · 반복 지루 → 미세 변형',
  goal:'멜로디·가사 또렷 · 반복 각인 · (calm)편안/(edu)명료.'},
-{n:'11',name:'Hook-Pop (APT식)',meta:'146–150 BPM · C 마이너 · 파워팝·레이어 누적',lufs:'-9 LUFS (하한) · -1 dBTP',
+{n:'11',name:'Hook-Pop (APT식)',meta:'146–150 BPM · C 마이너 · 파워팝·레이어 누적',lufs:'-9 LUFS (하한) · -2 dBTP',
  note:'149·C단조. 벌스/코러스 i–♭VII, 프리 ♭VI–♭VII–i–♭III, 브릿지 차용 장화음.',
  src:[['Drums','Pop/Rock (+claps)','4플로어+백비트'],['Bass','Pick/ES2','직진 8분·고스트'],['Chords','ES2 스탭','파워팝'],['Guitar','Amp Designer','크런치 파워코드 더블'],['Strings','Studio Strings','코러스·브릿지만'],['Lead','square+Quick Sampler','보컬 챈트·더블']],
  sc:'킥 → Bass: Studio VCA 4:1/1ms/100ms, GR 3–4dB.',
@@ -1234,7 +1236,7 @@ const BAND_SETS = [
  auto:'구간 끝(2·4마디): 혼 스탭 볼륨 라이드 / 브레이크다운: 베이스+드럼만 남기고 뮤트 / 마지막: 혼 스택 언뮤트',
  mixaim:'그루브가 앞으로 튀어나오게 — 베이스·킥 어택 살리고 리버브 최소 드라이. 저역 60–100Hz만 단단히. 병렬압축으로 펀치 더하되 원본 다이내믹 남긴다.',
  trap:'그루브가 뼈대라 멜로디 채우면 답답 — 여백 남겨 숨쉬게. 레이백 없이 정박에 딱 맞추면 뻣뻣 — 살짝 뒤로 미는 게 소울의 핵심. 컴프 어택 너무 빠르면 고스트 노트 죽음.'},
-{name:'K-Pop · 댄스 POP',styles:'kpop · billie · motown',lufs:'-9 LUFS (하한) · -1 dBTP',
+{name:'K-Pop · 댄스 POP',styles:'kpop · billie · motown',lufs:'-9 LUFS (하한) · -2 dBTP',
  ident:'30초 안에 훅, 코러스 뒤 포스트코러스(제2훅)가 코러스보다 더 높이. 신스·808이 밴드와 섞이는 하이브리드. 다크팝(billie)은 성긴 여백과 드론.',
  app:'스타일 kpop/billie/motown · 아치 kpop=숏폼 · 폼 postchorus/doublehook · 대선율=Synth/Vocal Chops',
  struct:'숏폼(frontload). Intro(훅 조각)→Verse→Pre→Chorus→PostChorus(정점)→…→Bridge(스트립)→Last Chorus. 2.5–3.5분',
@@ -1525,8 +1527,8 @@ const APP_MASTER = {name:'Sum Mastering', c1:'#FFB86B', c2:'#FF7683', steps:[
 {phase:'일반 포맷', kicker:'A 발매 · Stereo Out · 앱 탭 상세판', title:'일반 마스터링 — 순서대로',
  html:MASTER_STD},
 {phase:'일반 포맷', kicker:'Integrated 목표', title:'장르별 목표 음량표',
- html:`<p class="lead">공통: True Peak <span class="v">-1.0 dBTP</span> · 아래는 Loudness Meter <b>Integrated</b> 목표.</p>
- <div class="spec"><div class="srow"><span class="sk">EDM · 트랩 · 러닝 · K팝</span><span class="sv"><span class="v">-9</span> <span class="sub">하한 — 더 안 밈</span></span></div>
+ html:`<p class="lead">True Peak <span class="v">-1.0 dBTP</span> 기본 · <b>밀도 장르(-9 하한)는 -2.0</b> · 아래는 Loudness Meter <b>Integrated</b> 목표.</p>
+ <div class="spec"><div class="srow"><span class="sk">EDM · 트랩 · 러닝 · K팝</span><span class="sv"><span class="v">-9</span> · TP <span class="v">-2</span> <span class="sub">하한 — 더 안 밈</span></span></div>
  <div class="srow"><span class="sk">힙합 · 붐뱁</span><span class="sv"><span class="v">-12 ~ -10</span></span></div>
  <div class="srow"><span class="sk">시티팝 · 레트로</span><span class="sv"><span class="v">-11 ~ -9</span></span></div>
  <div class="srow"><span class="sk">팝 · 록 · 컨트리 · 훅송</span><span class="sv"><span class="v">-14</span> <span class="sub">스트리밍 기준값</span></span></div>
