@@ -395,9 +395,9 @@ Gain → Channel EQ → (Multipressor) → Compressor
 
 const MASTER_WELL = `
 <div class="box tip"><b>흐름.</b> ① 합쳐 듣고 <span class="term" data-d="well_sumpeak">합산 피크</span> -3 확보(넘치면 음악 트랙 <span class="term" data-d="gain_simple">게인</span>으로) ② <span class="term" data-d="well_hpf">EQ로 30Hz 아래 청소</span> ③ <span class="term" data-d="well_limiter">리미터 Gain으로 목표 음량까지</span>(GR 1~2 한도) ④ 바운스. 나머지는 선택.</p></div>
-<p class="lead sm"><b>어디서:</b> 믹서(<span class="k">X</span>) 맨 오른쪽 <b>Stereo Out</b> 채널의 Audio FX 슬롯 — 트랙이 아니라 여기에만.</p>
+<p class="lead sm"><b>어디서:</b> 믹서(<span class="k">X</span>) 맨 오른쪽 <b>Stereo Out</b> 채널의 Audio FX 슬롯 — 트랙이 아니라 여기에만. <span class="term" data-d="where_insert">트랙·버스·Stereo Out 구분</span>이 흔들리면 먼저 이걸 연다.</p>
 <div class="kicker">순서대로</div>
-<div class="lstep"><span class="ln">1</span><span class="lc"><b>음악이 주인공인지.</b> 음악 뮤트↔언뮤트 — 켜면 명확히 앞으로 나와야. 아니면 배경 버스 페이더로(마스터 아님).</span></div>
+<div class="lstep"><span class="ln">1</span><span class="lc"><b>음악이 주인공인지.</b> 음악 뮤트↔언뮤트 — 켜면 명확히 앞으로 나와야. 아니면 믹서(<span class="k">X</span>)에서 배경 묶음(버스) 채널의 페이더로(마스터 페이더 아님).</span></div>
 <div class="lstep"><span class="ln">2</span><span class="lc"><b><span class="term" data-d="well_sumpeak">합산 피크</span> 확인.</b> Stereo Out 미터 숫자 클릭(리셋) → 클라이맥스 재생 → <span class="v">-3</span> 아래면 통과. 넘으면 <b>음악 트랙 <span class="term" data-d="gain_simple">게인</span></b>을 내림 — 리미터로 누르지 않는다.</span></div>
 <div class="lstep"><span class="ln">3</span><span class="lc"><b>자(측정기) 달기.</b> <span class="term" data-d="well_loudness">Loudness Meter</span>를 맨 마지막 슬롯에.<span class="path">Stereo Out → Audio FX → Metering → Loudness Meter</span></span></div>
 <div class="lstep"><span class="ln">4</span><span class="lc"><b><span class="term" data-d="well_hpf">Channel EQ — HPF 30Hz만.</span></b> 초저역 청소. 나머지 밴드 전부 그대로. 바이노럴 캐리어보다 아래만.</span></div>
@@ -534,6 +534,35 @@ mix_gate:{title:'믹싱 · Noise Gate (잡음/꼬리 컷)', html:`<p class="lead
 mix_chromaglow:{title:'믹싱 · ChromaGlow (새추레이션)', html:`<p class="lead sm">배음을 더해 두께·따뜻함·광택. 컴프 뒤·공간 앞. 작은 스피커에서 존재감(808 특히).</p><div class="lstep"><span class="ln">1</span><span class="lc"><b>인서트</b> <span class="path">트랙 → Audio FX → Distortion → ChromaGlow</span></span></div><div class="lstep"><span class="ln">2</span><span class="lc"><b>모델</b> <span class="path">상단 드롭다운</span><div class="spec" style="margin-top:7px"><div class="srow"><span class="sk">Tape</span><span class="sv" style="font-size:14.5px">부드러운 고역·테이프 온기</span></div><div class="srow"><span class="sk">Tube</span><span class="sv" style="font-size:14.5px">진공관 두께</span></div><div class="srow"><span class="sk">더 센 것</span><span class="sv" style="font-size:14.5px">Transformer/FET 계열 <span class="sub">거칠게</span></span></div></div></span></div><div class="lstep"><span class="ln">3</span><span class="lc"><b>양</b> <span class="path">Drive</span><div class="spec" style="margin-top:7px"><div class="srow"><span class="sk">두께/따뜻함</span><span class="sv" style="font-size:14.5px">2~4 (낮게) <span class="sub">조금씩</span></span></div><div class="srow"><span class="sk">거칠게</span><span class="sv" style="font-size:14.5px">더 올림</span></div></div></span></div><div class="lstep"><span class="ln">4</span><span class="lc"><b>블렌드</b> <span class="path">Mix / Output</span><div class="spec" style="margin-top:7px"><div class="srow"><span class="sk">Mix</span><span class="sv" style="font-size:14.5px">30~60% <span class="sub">원음과 섞기</span></span></div><div class="srow"><span class="sk">Output</span><span class="sv" style="font-size:14.5px">레벨 보정 <span class="sub">새추로 커진 만큼 낮춤</span></span></div></div></span></div><div class="box tip"><b>들어보기</b> On/Off로 두께 비교 — 과하면 지저분. 마스터엔 아주 살짝(Drive 낮게).</div>`},
 mix_direction:{title:'믹싱 · Direction Mixer (스테레오 폭)', html:`<p class="lead sm">스테레오 소스의 좌우 폭을 넓히거나 좁힘. 모노 소스엔 효과 없음(스테레오 전용).</p><div class="lstep"><span class="ln">1</span><span class="lc"><b>인서트</b> <span class="path">트랙 → Audio FX → Imaging → Direction Mixer</span></span></div><div class="lstep"><span class="ln">2</span><span class="lc"><b>폭</b> <span class="path">Spread 노브</span><div class="spec" style="margin-top:7px"><div class="srow"><span class="sk">1.0</span><span class="sv" style="font-size:14.5px">원본(그대로)</span></div><div class="srow"><span class="sk">1.3~1.8</span><span class="sv" style="font-size:14.5px">넓게 <span class="sub">패드·코드·텍스처</span></span></div><div class="srow"><span class="sk">0</span><span class="sv" style="font-size:14.5px">모노 <span class="sub">저역·중요 소스</span></span></div></div></span></div><div class="lstep"><span class="ln">3</span><span class="lc"><b>중심</b> <span class="path">Direction</span><div class="spec" style="margin-top:7px"><div class="srow"><span class="sk">L/R 치우침 보정</span><span class="sv" style="font-size:14.5px">중앙 유지 <span class="sub">보통 0</span></span></div></div></span></div><div class="box tip"><b>들어보기</b> 넓힌 뒤 <b>반드시 모노 체크</b> — Spread 과하면 모노에서 소리가 빠진다. 킥·베이스·리드보컬은 1.0.</div>`},
 
+hpf_what:{title:'HPF / LPF — 뜻과 위치', html:`
+<p class="lead sm"><b>HPF(하이패스 필터)</b> = 지정한 주파수 <b>아래를 잘라내는</b> 필터. "HPF 100"은 100Hz 아래를 버린다는 뜻이다. <b>LPF(로우패스)</b>는 반대로 <b>위를</b> 자른다 — "LPF 8k"는 8kHz 위를 버림.</p>
+<div class="lstep"><span class="ln">1</span><span class="lc"><b>어디에 있나.</b> Channel EQ 창에서 <b>HPF = 맨 왼쪽 밴드1</b>(사선 아이콘) · <b>LPF = 맨 오른쪽 밴드8</b>.<span class="path">트랙 → Audio FX → EQ → Channel EQ</span></span></div>
+<div class="lstep"><span class="ln">2</span><span class="lc"><b>조작.</b> 밴드 아이콘 클릭해 점등 → 하단 <b>Frequency</b> 필드 더블클릭 → 숫자 입력(예 <span class="v">100</span>). Slope(기울기)는 기본 12dB/Oct 그대로.</span></div>
+<div class="lstep"><span class="ln">3</span><span class="lc"><b>왜 트랙마다 값이 다른가.</b> 악기마다 "필요한 저역"이 달라서다 — 킥은 30Hz까지 필요하니 30에서 자르고, 패드는 저역이 필요 없으니 200에서 잘라 킥·베이스 자리를 비워준다. 값 = "이 악기에게 여기 아래는 필요 없다"는 선.</span></div>
+<div class="box soft">트랙과 Stereo Out에 HPF가 겹쳐도 무해하다 — 컷의 중복은 쌓이지 않는다.</div>`},
+
+dyncc:{title:'Dynamics via CC — 오케 악기 셈여림 연결', html:`
+<p class="lead sm">Studio Strings·Studio Horns 같은 오케 악기에서, <b>셈여림(여리게↔세게)을 CC1 데이터로 조절하게 연결하는 설정</b>이다. 앱 MIDI엔 CC1 셈여림이 이미 들어있으므로, 이걸 켜야 그 데이터가 실제 소리 크기·음색 변화로 반영된다.</p>
+<div class="lstep"><span class="ln">1</span><span class="lc">오케 트랙의 악기(Studio Strings 등) 창을 연다 — 채널 스트립 악기 슬롯 클릭.</span></div>
+<div class="lstep"><span class="ln">2</span><span class="lc">창 안 <b>Dynamics via CC</b>(또는 Dynamics) 드롭다운 → <b>CC1 (Modulation)</b> 선택.</span></div>
+<div class="lstep"><span class="ln">3</span><span class="lc">재생 — 현·관이 프레이즈마다 커졌다 작아지면 연결된 것. 안 되면 피아노롤 하단 레인에서 CC1 데이터가 있는지 확인.</span></div>
+<div class="box soft">이 설정 없이 재생하면 셈여림 없이 평평하게 들린다 — 오케가 밋밋하면 십중팔구 여기다.</div>`},
+
+trackdelay:{title:'트랙 딜레이 — 섹션 깊이감', html:`
+<p class="lead sm">트랙 전체를 몇 ms 앞·뒤로 미는 설정. 오케에서 <b>뒤에 앉은 섹션(현·목관)을 몇십 ms 늦춰 무대 깊이</b>를 만든다 — 리버브 없이도 "뒤에 있다"는 느낌이 생긴다.</p>
+<div class="lstep"><span class="ln">1</span><span class="lc">트랙 선택 → 왼쪽 <b>인스펙터</b>(<span class="k">I</span>) 상단 트랙 헤더 펼침.</span></div>
+<div class="lstep"><span class="ln">2</span><span class="lc"><b>Delay</b> 필드 더블클릭 → ms 입력. 양수 = 늦춤(뒤로) · 음수 = 앞당김.</span></div>
+<div class="lstep"><span class="ln">3</span><span class="lc">권장: 현 뒤 <span class="v">-60ms</span> 표기는 "현을 60ms 늦춰 뒤로" 의미의 앱 관례 — 인스펙터엔 <span class="v">60</span>(양수 늦춤)으로 넣으면 된다. 목관 <span class="v">40</span>.</span></div>`},
+where_insert:{title:'어디에 거는가 — 트랙 · 버스 · Stereo Out', html:`
+<p class="lead sm">플러그인을 트랙에 걸지 Stereo Out에 걸지는 원리 하나로 정해진다: <b>트랙 = 재료 손질 · Stereo Out = 완성 요리 간 맞추기.</b></p>
+<div class="spec wide">
+<div class="srow"><span class="sk">각 트랙에</span><span class="sv" style="font-size:14.5px">Gain(시작 레벨) · 트랙별 HPF·EQ · 컴프 · 새추 <span class="sub">악기마다 값이 달라서 — 킥은 30, 패드는 200처럼 재료별 손질</span></span></div>
+<div class="srow"><span class="sk">버스에</span><span class="sv" style="font-size:14.5px">리버브·딜레이(센드) · 병렬컴프 · 글루 <span class="sub">여러 트랙이 공유하는 처리 — 같은 공간에 있게 만드는 것</span></span></div>
+<div class="srow"><span class="sk">Stereo Out에</span><span class="sv" style="font-size:14.5px">안전망 HPF 20~30 · 리미터 · Loudness Meter <span class="sub">다 합쳐진 최종 결과물에만 의미 있는 것 — 여기에 딱 한 세트</span></span></div></div>
+<div class="kicker">자주 헷갈리는 세 가지</div>
+<div class="lstep"><span class="ln">1</span><span class="lc"><b>HPF가 트랙에도 있고 Stereo Out에도 있으면 이중 아닌가?</b> 문제 없다. HPF는 "이 아래를 버려라"는 컷이라 이미 버린 대역을 또 잘라도 아무 일도 일어나지 않는다. 트랙 HPF는 악기별 정리, Stereo Out의 20~30은 새어 나온 찌꺼기를 거르는 최종 안전망 — 역할이 다르고 중복은 무해하다. (부스트의 중복은 쌓이지만, 컷의 중복은 안 쌓인다.)</span></div>
+<div class="lstep"><span class="ln">2</span><span class="lc"><b>리미터는 트랙마다? Stereo Out만?</b> <b>Stereo Out에 하나만.</b> 리미터는 합쳐진 최종 소리의 천장을 지키며 전체를 올리는 도구다. 트랙마다 걸면 각자 찌그러진 소리가 다시 합쳐져 지저분해지고, 최종 음량은 여전히 통제되지 않는다.</span></div>
+<div class="lstep"><span class="ln">3</span><span class="lc"><b>합산 피크가 넘치면 뭘 내리나?</b> 넘치게 만든 쪽을 내린다. 숨웨이브에선 배경은 완성된 밸런스이므로 <b>얹은 음악 트랙 하나의 Gain</b>을 — 수치는 정해진 값이 아니라 <b>넘친 만큼</b>(피크 -1인데 -3이 목표면 Gain -2). 일반 믹스에서 전체가 크면 전 트랙 선택(<span class="k">Cmd+A</span>) 후 페이더를 같이 -3.</span></div>`},
 gain_simple:{title:'게인 — 시작 레벨 맞추기', html:`
 <p class="lead sm">트랙 미터가 <b>노란색 구간</b>에 오게 Gain을 돌린다. Gain 창의 노브가 손잡이, 옆의 트랙 미터가 눈금이다.</p>
 <div class="lstep"><span class="ln">1</span><span class="lc">믹서(<span class="k">X</span>)를 열고 그 트랙을 재생.</span></div>
@@ -562,7 +591,7 @@ well_sumpeak:{title:'합산 피크 확인 (배경+곡 합쳐서)', html:`
 <p class="lead sm">곡 혼자는 -4였어도 <b>배경(바이노럴·자연음·프레임)이 더해지면</b> 피크가 올라간다. 그래서 합쳐진 최종 지점=Stereo Out에서 다시 잰다.</p>
 <div class="lstep"><span class="ln">1</span><span class="lc">믹서(<span class="k">X</span>) → 맨 오른쪽 <b>Stereo Out</b> 채널 미터 숫자 <b>클릭해서 리셋</b>.</span></div>
 <div class="lstep"><span class="ln">2</span><span class="lc">모든 트랙 켠 상태로 <b>곡의 제일 큰 구간</b>(클라이맥스) 재생 → 피크 홀드 숫자 읽기.</span></div>
-<div class="lstep"><span class="ln">3</span><span class="lc"><b>-3 아래면 통과.</b> 0에 붙거나 빨간불(클립)이면 → <b>음악 트랙의 Gain</b>을 내려 여유 확보. 배경 트랙이 아니라 <b>음악</b>을 내리는 이유: 배경은 이미 완성된 밸런스라 건드리면 전체가 틀어진다.</span></div>
+<div class="lstep"><span class="ln">3</span><span class="lc"><b>-3 아래면 통과.</b> 0에 붙거나 빨간불(클립)이면 → <b>음악 트랙 하나의 Gain</b>만 내린다(트랙별로 손댈 필요 없음 — 배경은 완성된 밸런스, 얹은 건 음악뿐). <b>수치 = 넘친 만큼</b>: 피크가 -1인데 목표가 -3이면 Gain <span class="v">-2</span>.</span></div>
 <div class="lstep"><span class="ln">4</span><span class="lc"><b>리미터로 누르지 않는 이유:</b> 리미터는 "천장에 부딪히는 걸 찌그러뜨려 막는" 도구다. 여기서 필요한 건 찌그러뜨림이 아니라 <b>여유 공간</b> — 그래서 게인으로 내린다. 리미터는 마지막(6번)에 살짝만.</span></div>
 <div class="box tip">피크 홀드 숫자는 리셋 후 다시 재생해야 새로 잰다 — 이전 값이 남아있으면 헷갈린다.</div>`},
 
@@ -583,13 +612,13 @@ well_hpf:{title:'Channel EQ — HPF 20–30Hz', html:`
 <div class="lstep"><span class="ln">1</span><span class="lc"><b>인서트.</b><span class="path">Stereo Out → Audio FX → EQ → Channel EQ</span></span></div>
 <div class="lstep"><span class="ln">2</span><span class="lc"><b>밴드1 켜기.</b> 창 왼쪽 위 첫 번째 아이콘(사선 모양=하이패스) 클릭해 점등.</span></div>
 <div class="lstep"><span class="ln">3</span><span class="lc"><b>값 입력.</b> 하단 <b>Frequency</b> 필드 더블클릭 → <span class="v">30</span> 입력(20~30 사이). Slope는 기본 <span class="v">12dB/Oct</span> 그대로.</span></div>
-<div class="lstep"><span class="ln">4</span><span class="lc"><b>나머지 밴드는 전부 그대로(flat).</b> 마스터 단계 EQ는 이 청소 하나만 — 톤을 바꾸는 자리가 아니다.</span></div>
+<div class="lstep"><span class="ln">4</span><span class="lc"><b>나머지 밴드는 전부 그대로(flat).</b> 마스터 단계 EQ는 이 청소 하나만 — 톤을 바꾸는 자리가 아니다. 트랙에서 이미 HPF를 걸었어도 괜찮다 — <b>컷의 중복은 무해하다</b>(이미 버린 대역을 또 잘라도 아무 일 없음). <span class="term" data-d="where_insert">트랙·Stereo Out 구분</span> 참조.</span></div>
 <div class="box hot"><b class="no">바이노럴 주의:</b> 바이노럴 캐리어가 저역(예 100Hz대)이면 <b>캐리어보다 아래만</b> 잘라야 한다. 30Hz 컷은 안전하지만, 욕심내서 80~100까지 올리면 바이노럴 효과 자체가 깎인다.</div>`},
 
 well_limiter:{title:'목표 음량 맞추기 — Adaptive Limiter', html:`
 <div class="box tip"><b>원칙.</b> ① 음량을 올리는 손잡이는 <b>Adaptive Limiter의 Gain 노브</b>, 확인하는 눈금은 <b>Loudness Meter의 I 숫자</b>다. ② Gain을 올리다 리미터 <b>GR이 1~2dB 넘게 움직이면 정지</b> — 더 올리면 구겨진다. ③ 거기까지 올렸는데 목표(-18)에 못 미치면? <b>그게 이 곡의 맞는 음량이다.</b> 억지로 채우지 않는다(특히 명상·수면은 조용한 게 의도).</div>
 <div class="kicker">따라하기</div>
-<div class="lstep"><span class="ln">1</span><span class="lc">Adaptive Limiter 창: <b>Out Ceiling</b> 더블클릭 <span class="v">-1.0</span> · <b>True Peak Detection ON</b> · Gain은 0에서 시작.<span class="path">Stereo Out → Audio FX → Dynamics → Adaptive Limiter</span></span></div>
+<div class="lstep"><span class="ln">1</span><span class="lc"><b>Stereo Out에 하나만</b>(트랙에는 걸지 않는다 — <span class="term" data-d="where_insert">이유</span>). Adaptive Limiter 창: <b>Out Ceiling</b> 더블클릭 <span class="v">-1.0</span> · <b>True Peak Detection ON</b> · Gain은 0에서 시작.<span class="path">Stereo Out → Audio FX → Dynamics → Adaptive Limiter</span></span></div>
 <div class="lstep"><span class="ln">2</span><span class="lc">Loudness Meter <b>Reset</b> → 곡 전체 재생 → <b>I</b> 읽기.</span></div>
 <div class="lstep"><span class="ln">3</span><span class="lc">I가 목표보다 낮으면 그 <b>차이만큼 Gain을 올림</b>(예: -20인데 목표 -18 → Gain +2) → Reset → 재측정.</span></div>
 <div class="lstep"><span class="ln">4</span><span class="lc">올리는 동안 리미터 <b>GR 미터</b> 감시 — <span class="no">1~2dB 넘게 계속 움직이면 그만.</span> 그 이상 필요하면 마스터가 아니라 <b>믹스(편곡 밀도)</b>로 돌아가는 게 정답.</span></div>
@@ -979,7 +1008,16 @@ const APP_SUM = {name:'Sum Wave', c1:'#63D6CC', c2:'#8394FF', steps:[
  <div class="srow tp" data-d="volumewhere"><span class="sk">페이더 vs Gain</span><span class="sv" style="font-size:15.5px">밸런스는 페이더 · 사전 레벨은 Gain 플러그인 — 탭</span></div>
  <div class="srow tp" data-d="compparams"><span class="sk">4:1·10ms·100ms</span><span class="sv" style="font-size:15.5px">Ratio·Attack·Release — 탭해서 읽는 법</span></div>
  <div class="srow tp" data-d="eqparams"><span class="sk">HP35 · 60+2</span><span class="sv" style="font-size:15.5px">EQ 표기(하이패스·벨·셸프·Q) — 탭해서 읽는 법</span></div></div>
- <div class="box soft">목차(≡)를 열면 맨 위에 <b>로직 설정법·숫자 읽는 법 전체 목록</b>이 있다 — 어느 앱에서든 접근 가능.</div>`},
+ <div class="kicker">기본 용어</div>
+<div class="spec wide"><div class="srow"><span class="sk">HPF / LPF</span><span class="sv" style="font-size:15px">아래를/위를 잘라내는 필터 — <span class="term" data-d="hpf_what">위치·조작</span></span></div>
+<div class="srow"><span class="sk">dBFS</span><span class="sv" style="font-size:15px">디지털 최대치(0)를 기준으로 한 레벨 — 0 넘으면 클립</span></div>
+<div class="srow"><span class="sk">헤드룸</span><span class="sv" style="font-size:15px">0(천장)까지 남은 여유 공간</span></div>
+<div class="srow"><span class="sk">벨로시티</span><span class="sv" style="font-size:15px">건반을 누른 세기(1~127) — 음량·음색을 결정</span></div>
+<div class="srow"><span class="sk">트랜지언트</span><span class="sv" style="font-size:15px">소리의 첫 "탁" 하는 순간(어택) — 펀치의 본체</span></div>
+<div class="srow"><span class="sk">2믹스</span><span class="sv" style="font-size:15px">전 트랙을 합쳐 좌우 2채널로 만든 완성 스테레오 파일</span></div>
+<div class="srow"><span class="sk">언마스터</span><span class="sv" style="font-size:15px">마스터(리미터) 처리를 하지 않은 2믹스 — 숨웨이브 B경로 규격</span></div>
+<div class="srow"><span class="sk">바운스</span><span class="sv" style="font-size:15px">프로젝트를 오디오 파일로 뽑아내기 — <span class="k">Cmd+B</span></span></div></div>
+<div class="box soft">목차(≡)를 열면 맨 위에 <b>로직 설정법·숫자 읽는 법 전체 목록</b>이 있다 — 어느 앱에서든 접근 가능.</div>`},
 {phase:'참고', kicker:'키보드', title:'단축키 모음',
  html:CHEAT_KEYS},
 {phase:'참고', kicker:'리전 전용', title:'리전 편집 단축키 (자르기·뮤트·크로스페이드)',
@@ -1844,7 +1882,8 @@ const TERM_MAP=[["게인 스테이징","gain_simple"],["합산 피크","well_sum
  ["감산 EQ","eqparams"],["가산 EQ","eqparams"],["사이드체인","sidechain"],["병렬컴프","parallel"],["병렬 컴프","parallel"],
  ["DeEsser","mix_deesser"],["ChromaGlow","mix_chromaglow"],["Direction Mixer","mix_direction"],
  ["Multipressor","mix_multipressor"],["Transient Designer","mix_transient"],["Noise Gate","mix_gate"],
- ["채널 스트립","channelstrip"],["ChromaVerb","verbparams"]];
+ ["채널 스트립","channelstrip"],["ChromaVerb","verbparams"],["HPF","hpf_what"],["LPF","hpf_what"],
+ ["Dynamics via CC","dyncc"],["트랙 딜레이","trackdelay"],["헤드룸","well_headroom"]];
 function termify(){
   TERM_MAP.forEach(pair=>{
     const t=pair[0],k=pair[1];
