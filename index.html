@@ -372,7 +372,9 @@ const CHEAT_MOUSE = `
 <div class="box soft"><b>마키 툴·클릭존·캡처 레코딩</b> 등 툴 활용법은 「참고 → 툴 활용법」에.</div>
 <div class="box hot"><b class="no">⚠</b> MIDI 리전에는 페이드가 없다 — MIDI는 Volume 오토메이션 또는 CC11로 페이드.</div>`;
 
-const MASTER_STD = `<div class="box tip"><b>기본 경로:</b> <span class="term" data-d="ma_only">Mastering Assistant</span> 하나 (Analyze → Character → I 미터 보며 Loudness → 바운스 전 Compensation OFF). 또는 3개만: <span class="term" data-d="well_hpf">EQ HPF 20~30</span> → <span class="term" data-d="well_limiter">Adaptive Limiter</span> → Loudness Meter. 아래 8단계는 정밀하게 갈 때의 수동 경로다 — Multipressor·글루·새추는 필요한 경우에만 건다.</div>
+const MASTER_STD = `<div class="spec wide" style="margin-bottom:12px">
+<div class="srow"><span class="sk">Stereo Out</span><span class="sv"><span class="v">Gain → EQ → (선택: Multipressor·컴프·새추) → Adaptive Limiter → Loudness Meter</span> <span class="sub">슬롯 위→아래</span></span></div></div>
+<div class="box tip"><b>기본 경로:</b> <span class="term" data-d="ma_only">Mastering Assistant</span> 하나 (Analyze → Character → I 미터 보며 Loudness → 바운스 전 Compensation OFF). 또는 3개만: <span class="term" data-d="well_hpf">EQ HPF 20~30</span> → <span class="term" data-d="well_limiter">Adaptive Limiter</span> → Loudness Meter. 아래 8단계는 정밀하게 갈 때의 수동 경로다 — Multipressor·글루·새추는 필요한 경우에만 건다.</div>
 
 <p class="lead sm"><b>마스터 = 다 끝난 믹스를 스트리밍 규격(음량·피크)에 맞추는 마지막 손질.</b> 각 앱 탭의 "⑤ 마스터 체인"은 이 순서를 <b>한 줄로 요약</b>한 것 — 여기선 각 칸이 뭘 하는지·왜 그 값인지까지 편다.</p>
 <div class="box tip"><b>어디서 하나:</b> 믹서(<span class="k">X</span>) 열기 → <b>맨 오른쪽 Stereo Out 채널</b>(모든 트랙 소리가 마지막에 모이는 곳) → 채널 상단 <b>Audio FX 슬롯</b>의 빈 칸 클릭 → 목록에서 선택. 트랙이 아니라 <b>Stereo Out에만</b> 건다.</div>
@@ -394,19 +396,16 @@ Gain → Channel EQ → (Multipressor) → Compressor
 <div class="box hot"><b class="no">⚠</b> <b>B(숨웨이브 투입 곡)는 이 체인 전부 바이패스</b> — 마스터는 숨웨이브 프로젝트에서 딱 한 번. "숨웨이브 최종" 탭으로.</div><div class="nextline">다음 → 검사 통과했으면 바운스 <span class="k">Cmd+B</span> — 여기서 끝. [B] 숨웨이브行이면 이 체인 대신 <b>-18 규격 바운스</b>(Sum Mastering 탭 · 곡 규격).</div>`;
 
 const MASTER_WELL = `
-<div class="box tip"><b>흐름.</b> ① 합쳐 듣고 <span class="term" data-d="well_sumpeak">합산 피크</span> -3 확보(넘치면 음악 트랙 <span class="term" data-d="gain_simple">게인</span>으로) ② <span class="term" data-d="well_hpf">EQ로 30Hz 아래 청소</span> ③ <span class="term" data-d="well_limiter">리미터 Gain으로 목표 음량까지</span>(GR 1~2 한도) ④ 바운스. 나머지는 선택.</p></div>
-<p class="lead sm"><b>어디서:</b> 믹서(<span class="k">X</span>) 맨 오른쪽 <b>Stereo Out</b> 채널의 Audio FX 슬롯 — 트랙이 아니라 여기에만. <span class="term" data-d="where_insert">트랙·버스·Stereo Out 구분</span>이 흔들리면 먼저 이걸 연다.</p>
+<div class="spec wide" style="margin-bottom:12px">
+<div class="srow"><span class="sk">Stereo Out</span><span class="sv"><span class="v">Gain → Channel EQ → Adaptive Limiter → Loudness Meter</span> <span class="sub">슬롯 위→아래 = 작업 순서</span></span></div></div>
+<p class="lead sm">트랙·버스 정리가 끝난 뒤, Stereo Out에 이 체인만 건다. <span class="term" data-d="where_insert">트랙·버스·Stereo Out 구분</span>이 흔들리면 먼저 연다.</p>
 <div class="kicker">순서대로</div>
-<div class="lstep"><span class="ln">1</span><span class="lc"><b>음악이 주인공인지.</b> 음악 뮤트↔언뮤트 — 켜면 명확히 앞으로 나와야. 아니면 믹서(<span class="k">X</span>)에서 배경 묶음(버스) 채널의 페이더로(마스터 페이더 아님).</span></div>
-<div class="lstep"><span class="ln">2</span><span class="lc"><b><span class="term" data-d="well_sumpeak">합산 피크</span> 확인.</b> Stereo Out 미터 숫자 클릭(리셋) → 클라이맥스 재생 → <span class="v">-3</span> 아래면 통과. 넘으면 <b>음악 트랙 <span class="term" data-d="gain_simple">게인</span></b>을 내림 — 리미터로 누르지 않는다.</span></div>
-<div class="lstep"><span class="ln">3</span><span class="lc"><b>자(측정기) 달기.</b> <span class="term" data-d="well_loudness">Loudness Meter</span>를 맨 마지막 슬롯에.<span class="path">Stereo Out → Audio FX → Metering → Loudness Meter</span></span></div>
-<div class="lstep"><span class="ln">4</span><span class="lc"><b><span class="term" data-d="well_hpf">Channel EQ — HPF 30Hz만.</span></b> 초저역 청소. 나머지 밴드 전부 그대로. 바이노럴 캐리어보다 아래만.</span></div>
-<div class="lstep"><span class="ln">5</span><span class="lc"><b><span class="term" data-d="well_limiter">Adaptive Limiter</span> — 음량 맞추기.</b> Ceiling <span class="v">-1.0</span> · True Peak ON · <b>Gain을 올려 I를 목표까지</b>(집중 <span class="v">-16</span> / 명상 <span class="v">-18</span> / 수면 <span class="v">-20</span>). <span class="no">GR 1~2dB 넘으면 정지.</span></span></div>
-<div class="lstep"><span class="ln">6</span><span class="lc"><b>모노 점검.</b> Gain의 Mono 잠깐 ON — 바이노럴이 사라지지 않는지 → <b>반드시 스테레오 복귀</b>.</span></div>
-<div class="lstep"><span class="ln">7</span><span class="lc"><b>바운스.</b> <span class="k">Cmd+B</span> → WAV · 24bit · 48kHz · Normalize <b>Off</b> · <span class="v">{곡}_숨웨이브_final.wav</span></span></div>
-<div class="kicker">선택 (기본은 생략)</div>
-<div class="spec wide"><div class="srow"><span class="sk"><span class="term" data-d="well_glue">글루 컴프</span></span><span class="sv" style="font-size:14.5px">소리가 따로 놀 때만 2:1·GR 1dB — <b>명상·수면은 걸지 않는 게 기본</b>(다이내믹이 생명)</span></div>
-<div class="srow"><span class="sk"><span class="term" data-d="ma_only">Mastering Assistant</span></span><span class="sv" style="font-size:14.5px">일반 발매곡(A)엔 이거 하나로 충분 — <b>숨웨이브 최종엔 비추천</b>(-14 지향 + Width가 바이노럴 위상 위험)</span></div></div>
+<div class="lstep"><span class="ln">1</span><span class="lc"><b>Gain — 첫 슬롯.</b> 평소 <span class="v">0</span>으로 두는 자리. 마지막에 I가 살짝 모자라면(예: 1dB) 여기에 <span class="v">+1</span> 넣어 한 번에 보정한다.<span class="path">Stereo Out → Audio FX → Utility → Gain</span></span></div>
+<div class="lstep"><span class="ln">2</span><span class="lc"><b><span class="term" data-d="well_hpf">Channel EQ — HPF 30Hz만.</span></b> 초저역 청소. 나머지 밴드 전부 그대로. 바이노럴 캐리어보다 아래만.</span></div>
+<div class="lstep"><span class="ln">3</span><span class="lc"><b><span class="term" data-d="well_limiter">Adaptive Limiter</span> — 음량 맞추기.</b> Ceiling <span class="v">-1.0</span> · True Peak ON · <b>Gain을 올려 I를 목표까지</b>(<b>유튜브 업로드 <span class="v">-14</span></b> / 앱·자체 배포: 집중 <span class="v">-16</span> · 명상 <span class="v">-18</span> · 수면 <span class="v">-20</span>). <span class="no">GR 1~2dB 넘으면 정지.</span></span></div>
+<div class="lstep"><span class="ln">4</span><span class="lc"><b>Loudness Meter — 맨 끝 슬롯.</b> Reset → 전곡 재생 → <b>I</b>가 목표인지 확인. 20분 같은 긴 파일은 재생 대신 <span class="term" data-d="longform_lufs">긴 파일 절차</span>(Offline 바운스→Youlean).<span class="path">Stereo Out → Audio FX → Metering → Loudness Meter</span></span></div>
+<div class="lstep"><span class="ln">5</span><span class="lc"><b>마무리 — 모노 점검 후 바운스.</b> Gain의 Mono 잠깐 ON(소리 얇아지기만 하면 정상, 악기가 사라지면 위상 문제) → 스테레오 복귀 → <span class="k">Cmd+B</span> → WAV · 24bit · 48kHz · Normalize <b>Off</b> · <span class="v">{곡}_숨웨이브_final.wav</span></span></div>
+
 <div class="box hot"><b class="no">⚠ 금지</b> ① 과한 리미팅 ② 스테레오 와이드너(바이노럴 위상 파괴) ③ 멀티밴드로 비트 대역 누르기 — 바이노럴 비트와 배경의 균형이 무너져 유도 효과 자체가 죽는다. Stereo Out 페이더는 <span class="v">0</span> 고정 — 음량은 리미터 Gain으로만 — 페이더로 내리면 리미터·미터가 보는 신호와 실제 출력이 어긋나 <b>측정이 거짓말을 한다</b>.</div>
 <div class="nextline">다음 → 없음. 방금 바운스한 <b>{곡}_숨웨이브_final.wav</b>가 최종본 — 파일만 확인하면 끝.</div>`;
 
@@ -454,7 +453,8 @@ comp:{title:'Compressor 세팅', html:`
 <div class="lstep"><span class="ln">1</span><span class="lc">트랙 → <b>Audio FX → Dynamics → Compressor</b>. 상단 <b>모델 드롭다운</b>: Studio VCA(범용) / Studio FET(펀치) / Vintage Opto(부드러움).</span></div>
 <div class="lstep"><span class="ln">2</span><span class="lc"><b>Ratio·Threshold:</b> Ratio 타이핑(2:1 약 / 4:1 표준) → Threshold를 내려 <b>GR 미터</b>가 목표 dB만큼 움직이게.</span></div>
 <div class="lstep"><span class="ln">3</span><span class="lc"><b>Attack/Release:</b> 필드 타이핑(ms). 어택 짧게=어택을 잡음, 길게=어택 통과. 릴리즈는 박자 호흡에.</span></div>
-<div class="box soft">GR(Gain Reduction)=실제 누른 양. 글루=버스에 1~2dB만.</div>`},
+<div class="box soft">GR(Gain Reduction)=실제 누른 양 — 창 오른쪽 <b>GR 미터</b>(아래로 내려오는 막대)에서 본다. 글루=버스에 1~2dB만.</div>
+<div class="box tip"><b>들어보기</b> On/Off 비교 — 소리가 단단해지되 어택("탁")이 살아있으면 성공. 어택까지 눌렸으면 Attack을 늘린다.</div>`},
 
 sidechain:{title:'사이드체인 (킥 → 베이스/패드)', html:`
 <p class="lead sm">킥이 칠 때 다른 트랙을 순간 눌러 킥 자리를 비우는 펌핑.</p>
@@ -534,6 +534,27 @@ mix_gate:{title:'믹싱 · Noise Gate (잡음/꼬리 컷)', html:`<p class="lead
 mix_chromaglow:{title:'믹싱 · ChromaGlow (새추레이션)', html:`<p class="lead sm">배음을 더해 두께·따뜻함·광택. 컴프 뒤·공간 앞. 작은 스피커에서 존재감(808 특히).</p><div class="lstep"><span class="ln">1</span><span class="lc"><b>인서트</b> <span class="path">트랙 → Audio FX → Distortion → ChromaGlow</span></span></div><div class="lstep"><span class="ln">2</span><span class="lc"><b>모델</b> <span class="path">상단 드롭다운</span><div class="spec" style="margin-top:7px"><div class="srow"><span class="sk">Tape</span><span class="sv" style="font-size:14.5px">부드러운 고역·테이프 온기</span></div><div class="srow"><span class="sk">Tube</span><span class="sv" style="font-size:14.5px">진공관 두께</span></div><div class="srow"><span class="sk">더 센 것</span><span class="sv" style="font-size:14.5px">Transformer/FET 계열 <span class="sub">거칠게</span></span></div></div></span></div><div class="lstep"><span class="ln">3</span><span class="lc"><b>양</b> <span class="path">Drive</span><div class="spec" style="margin-top:7px"><div class="srow"><span class="sk">두께/따뜻함</span><span class="sv" style="font-size:14.5px">2~4 (낮게) <span class="sub">조금씩</span></span></div><div class="srow"><span class="sk">거칠게</span><span class="sv" style="font-size:14.5px">더 올림</span></div></div></span></div><div class="lstep"><span class="ln">4</span><span class="lc"><b>블렌드</b> <span class="path">Mix / Output</span><div class="spec" style="margin-top:7px"><div class="srow"><span class="sk">Mix</span><span class="sv" style="font-size:14.5px">30~60% <span class="sub">원음과 섞기</span></span></div><div class="srow"><span class="sk">Output</span><span class="sv" style="font-size:14.5px">레벨 보정 <span class="sub">새추로 커진 만큼 낮춤</span></span></div></div></span></div><div class="box tip"><b>들어보기</b> On/Off로 두께 비교 — 과하면 지저분. 마스터엔 아주 살짝(Drive 낮게).</div>`},
 mix_direction:{title:'믹싱 · Direction Mixer (스테레오 폭)', html:`<p class="lead sm">스테레오 소스의 좌우 폭을 넓히거나 좁힘. 모노 소스엔 효과 없음(스테레오 전용).</p><div class="lstep"><span class="ln">1</span><span class="lc"><b>인서트</b> <span class="path">트랙 → Audio FX → Imaging → Direction Mixer</span></span></div><div class="lstep"><span class="ln">2</span><span class="lc"><b>폭</b> <span class="path">Spread 노브</span><div class="spec" style="margin-top:7px"><div class="srow"><span class="sk">1.0</span><span class="sv" style="font-size:14.5px">원본(그대로)</span></div><div class="srow"><span class="sk">1.3~1.8</span><span class="sv" style="font-size:14.5px">넓게 <span class="sub">패드·코드·텍스처</span></span></div><div class="srow"><span class="sk">0</span><span class="sv" style="font-size:14.5px">모노 <span class="sub">저역·중요 소스</span></span></div></div></span></div><div class="lstep"><span class="ln">3</span><span class="lc"><b>중심</b> <span class="path">Direction</span><div class="spec" style="margin-top:7px"><div class="srow"><span class="sk">L/R 치우침 보정</span><span class="sv" style="font-size:14.5px">중앙 유지 <span class="sub">보통 0</span></span></div></div></span></div><div class="box tip"><b>들어보기</b> 넓힌 뒤 <b>반드시 모노 체크</b> — Spread 과하면 모노에서 소리가 빠진다. 킥·베이스·리드보컬은 1.0.</div>`},
 
+longform_lufs:{title:'긴 파일(20분) -14 맞추기 — 자연음 + 간헐 음악', html:`
+<p class="lead sm">구조: 자연 배경음이 처음부터 끝까지 · 드론 패드가 낮게 깔림 · 중간중간 몇 분씩 음악. 이런 파일은 <b>전곡 평균(I)이 사실상 자연음 레벨로 정해진다</b> — 시간 대부분을 자연음이 차지하니까. 그래서 층마다 값을 정해두면 끝까지 안 들어도 -14가 나온다.</p>
+<div class="kicker">먼저 — 여기 나오는 말</div>
+<div class="spec wide"><div class="srow"><span class="sk">I</span><span class="sv" style="font-size:15px">Loudness Meter의 <b>곡 전체 평균</b> 음량 — 최종 검사 숫자(-14는 이것)</span></div>
+<div class="srow"><span class="sk">S</span><span class="sv" style="font-size:15px">Loudness Meter의 <b>최근 3초</b> 음량 — 구간 하나를 맞출 때 보는 숫자</span></div>
+<div class="srow"><span class="sk">바운스</span><span class="sv" style="font-size:15px">프로젝트 전체를 <b>오디오 파일 하나로 뽑기</b>(<span class="k">Cmd+B</span>) — 프로젝트 안에서 트랙을 합치는 게 아니라, 완성본을 밖으로 뽑는 것</span></div></div>
+<div class="kicker">준비 — 뭘 걸고 어디를 보나</div>
+<div class="lstep"><span class="ln">0</span><span class="lc"><b>Loudness Meter 하나를 Stereo Out에 건다.</b> 이게 "보는 창"이다 — 트랙마다 걸 필요 없이 <b>딱 하나</b>. 어느 트랙을 솔로하든 최종 출력은 다 여길 지나므로 여기서 다 보인다.<span class="path">믹서(X) → Stereo Out → Audio FX → Metering → Loudness Meter</span></span></div>
+<div class="lstep"><span class="ln">0.5</span><span class="lc"><b>창 읽는 법.</b> 열면 <b>M · S · I 세 칸</b>이 나란히 있고 각각 파란 막대+숫자다. <b>S 칸의 숫자</b>가 "최근 3초 음량" — 아래 1~3번에서 보는 게 전부 이 칸이다. <b>I 칸</b>은 하단 <b>Start</b>를 눌러야 쌓이기 시작한다(우린 I는 Youlean으로 대신하니 Start 안 눌러도 됨).</span></div>
+<div class="kicker">층마다 값 정하기 (전곡 안 들어도 됨)</div>
+<div class="lstep"><span class="ln">1</span><span class="lc"><b>자연 배경음.</b> 그 트랙 솔로(<span class="k">S</span>키 또는 헤드폰 아이콘) → 아무 데나 <b>30초</b> 재생 → 위 0번에서 건 Loudness Meter 창의 <b>S 칸 숫자</b>가 <span class="v">-15 ~ -16</span>에 오게 <b>그 트랙의 Gain 플러그인 노브</b>를 돌린다(재생하면서 돌리면 S 숫자가 따라 움직인다). 자연음은 내내 비슷해서 30초면 충분하다 — 이 값이 전곡 평균을 사실상 결정한다.</span></div>
+<div class="lstep"><span class="ln">2</span><span class="lc"><b>드론 패드.</b> 자연음 켠 채로 드론 Gain을 <b>있는 듯 없는 듯</b>까지 내림(자연음보다 훨씬 작게). 낮아서 평균엔 거의 영향 없다.</span></div>
+<div class="lstep"><span class="ln">3</span><span class="lc"><b>음악 구간.</b> 솔로 해제(전 트랙 소리 나게) → 음악 나오는 구간 <b>1분</b>만 재생 → 같은 창 <b>S 칸</b>이 <span class="v">-11 ~ -12</span>에 오게 <b>음악 트랙의 Gain</b>을 돌린다. 자연음 위로 또렷이 떠오르는 정도다.</span></div>
+<div class="lstep"><span class="ln">4</span><span class="lc"><b>인트로·아웃트로 패드(15초).</b> 페이드만 자연스러우면 됨 — 15초는 20분 평균에 티도 안 난다.</span></div>
+<div class="kicker">전곡 평균(I) 확인 — 20분을 안 듣는 법</div>
+<div class="lstep"><span class="ln">5</span><span class="lc"><b>파일로 뽑기.</b> <span class="k">Cmd+B</span> → Mode를 <b>Offline</b>으로 → 20분짜리도 몇 초 만에 파일이 생긴다. (실시간 재생 아님)</span></div>
+<div class="lstep"><span class="ln">6</span><span class="lc"><b>I 읽기.</b> Youlean Loudness Meter(무료·youlean.co에서 다운로드, 앱 단독 실행 버전) 창을 열고 → 5번에서 뽑은 WAV 파일을 <b>창에 드래그</b> → 몇 초 분석 후 <b>Integrated</b> 숫자와 전곡 음량 그래프가 나온다. 재생 안 해도 된다. 로직 Loudness Meter는 20분을 실시간 재생해야 해서 긴 파일엔 이쪽이 답.</span></div>
+<div class="lstep"><span class="ln">7</span><span class="lc"><b>한 번에 보정.</b> I가 <span class="v">-15</span>로 나왔다 → 목표 -14까지 <b>1dB 부족</b> → Stereo Out 첫 슬롯 Gain에 <span class="v">+1</span> → <span class="k">Cmd+B</span>로 <b>다시 뽑기</b> → 끝. 층간 비율은 이미 맞춰놨으니 전체를 한 번에 밀면 평균만 이동한다.</span></div>
+<div class="box soft"><b>지름길:</b> 바이노럴이 없고 목표가 -14면 <span class="term" data-d="ma_only">Mastering Assistant</span> 하나(Analyze → 노브 중앙 → 내장 I 미터 확인)로도 된다. 자연음 질감이 변하게 들리면 이 수동 절차로.</div>
+<div class="box tip"><b>이게 프리셋이 되는 이유:</b> 층별 값(자연음 S -15~-16 · 드론 = 있는 듯 없는 듯 · 음악 S -11~-12)만 기억하면, 다음 20분짜리도 같은 값으로 세팅 → 6~7번 한 번 → 끝.</div>
+<div class="box soft">수면·이완 목적이면 <span class="v">-16</span>도 좋다 — 유튜브는 조용한 걸 건드리지 않으니 패널티 없이 그저 조금 차분할 뿐. 그 경우 자연음 S만 <span class="v">-17.5</span>쯤으로.</div>`},
 hpf_what:{title:'HPF / LPF — 뜻과 위치', html:`
 <p class="lead sm"><b>HPF(하이패스 필터)</b> = 지정한 주파수 <b>아래를 잘라내는</b> 필터. "HPF 100"은 100Hz 아래를 버린다는 뜻이다. <b>LPF(로우패스)</b>는 반대로 <b>위를</b> 자른다 — "LPF 8k"는 8kHz 위를 버림.</p>
 <div class="lstep"><span class="ln">1</span><span class="lc"><b>어디에 있나.</b> Channel EQ 창에서 <b>HPF = 맨 왼쪽 밴드1</b>(사선 아이콘) · <b>LPF = 맨 오른쪽 밴드8</b>.<span class="path">트랙 → Audio FX → EQ → Channel EQ</span></span></div>
@@ -553,8 +574,39 @@ trackdelay:{title:'트랙 딜레이 — 섹션 깊이감', html:`
 <div class="lstep"><span class="ln">1</span><span class="lc">트랙 선택 → 왼쪽 <b>인스펙터</b>(<span class="k">I</span>) 상단 트랙 헤더 펼침.</span></div>
 <div class="lstep"><span class="ln">2</span><span class="lc"><b>Delay</b> 필드 더블클릭 → ms 입력. 양수 = 늦춤(뒤로) · 음수 = 앞당김.</span></div>
 <div class="lstep"><span class="ln">3</span><span class="lc">권장: 현 뒤 <span class="v">-60ms</span> 표기는 "현을 60ms 늦춰 뒤로" 의미의 앱 관례 — 인스펙터엔 <span class="v">60</span>(양수 늦춤)으로 넣으면 된다. 목관 <span class="v">40</span>.</span></div>`},
+layer_track:{title:'① 트랙별 설정 — 순서대로', html:`
+<p class="lead sm">모든 악기 트랙 각각에, 이 순서로. 1·2는 전 트랙, 3은 대부분, 4·5는 필요한 트랙만.</p>
+<div class="lstep"><span class="ln">1</span><span class="lc"><b>Gain — 시작 레벨.</b> 트랙 미터가 노란색에 오게 노브를 돌린다.<span class="path">트랙 → Audio FX 첫 칸 → Utility → Gain</span></span></div>
+<div class="lstep"><span class="ln">2</span><span class="lc"><b>감산 EQ — 깎는 EQ.</b> 필요 없는 대역을 잘라 자리를 정리하는 것. 밴드1 HPF: 킥 <span class="v">30</span> · 베이스 <span class="v">30</span> · 스네어 <span class="v">60</span> · 기타 <span class="v">90~120</span> · 리드 <span class="v">100~150</span> · 패드 <span class="v">200</span>. 두 악기가 같은 대역에서 싸우면 덜 중요한 쪽을 -2.<span class="path">트랙 → Audio FX → EQ → Channel EQ</span></span></div>
+<div class="lstep"><span class="ln">3</span><span class="lc"><b>컴프 — 크기 고르게.</b> 들쭉날쭉한 음량을 눌러 고르게. Threshold를 내려 GR 미터가 목표만큼(대개 2~4dB) 움직이게.<span class="path">트랙 → Audio FX → Dynamics → Compressor</span></span></div>
+<div class="lstep"><span class="ln">4</span><span class="lc"><b>새추 — 배음 추가.</b> 새추레이션: 배음을 더해 두께·광택을 내는 것. ChromaGlow Drive <span class="v">2~4</span> · Mix <span class="v">30~60%</span>. 필요한 트랙만.<span class="path">트랙 → Audio FX → Distortion → ChromaGlow</span></span></div>
+<div class="lstep"><span class="ln">5</span><span class="lc"><b>가산 EQ — 올리는 EQ.</b> 광내기: 존재감·에어가 필요한 트랙만 밴드7 HiShelf <span class="v">8~12k +1~2</span>.</span></div>
+<div class="lstep"><span class="ln">6</span><span class="lc"><b>볼륨·팬 확정.</b> 페이더로 트랙 간 크기 배치 — 각 앱 한 줄기의 볼륨·팬 표대로.</span></div>
+<div class="nextline">다음 → <b>② 버스 설정</b></div>`},
+
+layer_bus:{title:'② 버스 설정 — 공용 공간', html:`
+<p class="lead sm">리버브는 트랙마다 걸지 않고 버스에 하나 걸어 모두가 같은 방을 쓴다.</p>
+<div class="lstep"><span class="ln">1</span><span class="lc"><b>버스 만들기.</b> 아무 트랙의 <b>Sends</b> 칸 클릭 → <b>Bus 1</b> 선택 → Aux 채널이 자동 생성된다(이름을 REVERB로).</span></div>
+<div class="lstep"><span class="ln">2</span><span class="lc"><b>Aux에 ChromaVerb 하나.</b> 타입·Decay는 장르 카드 값대로 · <b>Mix는 Wet 100</b> 고정(양은 각 트랙 Send로).<span class="path">REVERB Aux → Audio FX → Reverb → ChromaVerb</span></span></div>
+<div class="lstep"><span class="ln">3</span><span class="lc"><b>리버브 앞에 HPF 200.</b> 저역 잔향은 음정 없는 웅웅으로 쌓여 믹스를 탁하게 만든다 — Aux의 ChromaVerb 앞 슬롯에 Channel EQ 밴드1 <span class="v">200</span>.</span></div>
+<div class="lstep"><span class="ln">4</span><span class="lc"><b>보낼 트랙 정하기.</b> 공간이 필요한 것만(멜로디·벨·패드·스네어) 각 트랙 <b>Send 노브 -18</b>부터 올림. <b>킥·서브·베이스는 보내지 않는다.</b></span></div>
+<div class="lstep"><span class="ln">5</span><span class="lc"><b>(선택) 병렬컴프 버스.</b> 드럼 두께가 필요하면 Bus 3 → 센 컴프 → 페이더로 원본 밑에 깔기.</span></div>
+<div class="nextline">다음 → <b>③ Stereo Out</b></div>`},
+
+layer_out:{title:'③ Stereo Out — 마스터링 순서대로', html:`
+<p class="lead sm">믹서(<span class="k">X</span>) 맨 오른쪽 Stereo Out 채널. 슬롯 <b>위→아래 순서가 곧 처리 순서</b>다.</p>
+<div class="lstep"><span class="ln">1</span><span class="lc"><b>Channel EQ — HPF 20~30만.</b> 초저역 청소 하나. 트랙 EQ와 겹쳐도 무해(컷의 중복은 안 쌓임)이고 역할이 다르다 — 트랙=악기별 정리, 여기=최종 청소. 톤은 여기서 바꾸지 않는다.<span class="path">Stereo Out → Audio FX → EQ → Channel EQ</span></span></div>
+<div class="lstep"><span class="ln">2</span><span class="lc"><b>Adaptive Limiter — 음량.</b> Ceiling <span class="v">-1.0</span> · True Peak ON → <b>Gain을 올려 Loudness Meter의 I가 목표까지</b>(유튜브 -14 등). GR 1~2dB 넘으면 정지.<span class="path">Stereo Out → Audio FX → Dynamics → Adaptive Limiter</span></span></div>
+<div class="lstep"><span class="ln">3</span><span class="lc"><b>Loudness Meter — 맨 끝.</b> I(전곡 평균) 확인용 자.<span class="path">Stereo Out → Audio FX → Metering → Loudness Meter</span></span></div>
+<div class="lstep"><span class="ln">4</span><span class="lc"><b>대안.</b> 일반 발매곡은 이 3개 대신 Mastering Assistant 하나로도 된다.</span></div>
+<div class="box hot"><b class="no">여기서 하지 않는 것:</b> 톤 EQ·과한 컴프 — 그건 트랙·버스에서 끝냈어야 할 일이다.</div>
+<div class="nextline">다음 → 바운스 <span class="k">Cmd+B</span></div>`},
 where_insert:{title:'어디에 거는가 — 트랙 · 버스 · Stereo Out', html:`
-<p class="lead sm">플러그인을 트랙에 걸지 Stereo Out에 걸지는 원리 하나로 정해진다: <b>트랙 = 재료 손질 · Stereo Out = 완성 요리 간 맞추기.</b></p>
+<div class="spec wide" style="margin-bottom:12px">
+<div class="srow"><span class="sk">트랙</span><span class="sv"><span class="v">Gain → EQ → 컴프</span></span></div>
+<div class="srow"><span class="sk">버스</span><span class="sv"><span class="v">리버브 하나</span> <span class="sub">트랙들이 Send로</span></span></div>
+<div class="srow"><span class="sk">Stereo Out</span><span class="sv"><span class="v">EQ → 리미터 → 미터</span> <span class="sub">= 마스터링</span></span></div></div>
+<p class="lead sm">이 세 줄이 전체 구조다. 트랙 = 재료 손질 · Stereo Out = 완성 간 맞추기.</p>
 <div class="spec wide">
 <div class="srow"><span class="sk">각 트랙에</span><span class="sv" style="font-size:14.5px">Gain(시작 레벨) · 트랙별 HPF·EQ · 컴프 · 새추 <span class="sub">악기마다 값이 달라서 — 킥은 30, 패드는 200처럼 재료별 손질</span></span></div>
 <div class="srow"><span class="sk">버스에</span><span class="sv" style="font-size:14.5px">리버브·딜레이(센드) · 병렬컴프 · 글루 <span class="sub">여러 트랙이 공유하는 처리 — 같은 공간에 있게 만드는 것</span></span></div>
@@ -571,7 +623,7 @@ gain_simple:{title:'게인 — 시작 레벨 맞추기', html:`
 <div class="box tip"><b>믹스(합산) 피크는 또 재야 하나?</b> 아니다 — 트랙들이 노랑이면 대개 자동으로 괜찮다. <b>Stereo Out에 빨간불(클립)만 안 뜨면 통과.</b> 뜨면: 전 트랙 선택(<span class="k">Cmd+A</span>) 후 아무 페이더나 <span class="v">-3</span> 내리면 다 같이 내려간다.</div>
 `},
 well_loudness:{title:'음량을 -18로 맞추는 법 (측정→조절 루프)', html:`
-<p class="lead sm">"음량 -18 LUFS"는 <b>Loudness Meter의 Integrated(I) 숫자</b>를 말한다. 감으로 하는 게 아니라 <b>재고 → 조절하고 → 다시 재는</b> 루프다.</p>
+<p class="lead sm">"음량 -18 LUFS"는 <b>Loudness Meter의 Integrated(I) 숫자</b>를 말한다. -18을 입력하는 칸은 어디에도 없다 — LUFS는 설정값이 아니라 <b>측정 결과</b>라서, <b>재고 → 조절하고 → 다시 재는</b> 루프로 맞춘다.</p>
 <div class="lstep"><span class="ln">1</span><span class="lc"><b>자(측정기) 설치.</b> Stereo Out 맨 마지막 슬롯에 Loudness Meter.<span class="path">Stereo Out → Audio FX → Metering → Loudness Meter</span></span></div>
 <div class="lstep"><span class="ln">2</span><span class="lc"><b>측정.</b> 창의 <b>Reset</b>(또는 Start) 누르고 → 곡을 <b>처음부터 끝까지</b> 재생 → <b>I(Integrated)</b> 숫자 읽기. 중간만 재생하면 값이 틀려진다.</span></div>
 <div class="lstep"><span class="ln">3</span><span class="lc"><b>산수.</b> 목표 -18인데 I가 -14로 나왔다? → <b>4dB 크다</b> → 4dB 내리면 됨. I가 -21이면 3dB 올리면 됨. 차이가 곧 조절량이다.</span></div>
@@ -616,13 +668,18 @@ well_hpf:{title:'Channel EQ — HPF 20–30Hz', html:`
 <div class="box hot"><b class="no">바이노럴 주의:</b> 바이노럴 캐리어가 저역(예 100Hz대)이면 <b>캐리어보다 아래만</b> 잘라야 한다. 30Hz 컷은 안전하지만, 욕심내서 80~100까지 올리면 바이노럴 효과 자체가 깎인다.</div>`},
 
 well_limiter:{title:'목표 음량 맞추기 — Adaptive Limiter', html:`
+<div class="spec wide"><div class="srow"><span class="sk">I</span><span class="sv" style="font-size:15px"><b>곡 전체 평균</b> — 목표(-14)는 이 숫자. <b>제일 큰 구간이 -14여야 하는 게 아니다</b> — 큰 구간은 더 크고(S -11쯤) 조용한 구간은 더 작아도, 평균이 -14면 된다</span></div>
+<div class="srow"><span class="sk">S</span><span class="sv" style="font-size:15px">최근 3초 음량 — 구간 하나를 맞출 때 보는 숫자</span></div>
+<div class="srow"><span class="sk">True Peak</span><span class="sv" style="font-size:15px">큰 구간에서 검사하는 건 이쪽 — 천장(-1) 안 넘는지</span></div></div>
+<div class="box soft">자연음이 내내 깔리고 음악이 간헐적으로 나오는 <b>긴 파일(20분)</b>은 절차가 다르다 → <span class="term" data-d="longform_lufs">긴 파일 -14 맞추기</span></div>
+<div class="box hot"><b class="no">-14를 입력하는 칸은 없다.</b> LUFS는 설정값이 아니라 <b>측정 결과</b>다 — 몸무게처럼. Loudness Meter가 저울(I = 현재 값), Adaptive Limiter의 <b>Gain 노브가 조절 손잡이</b>. 어느 플러그인에도 "-14"라고 치는 필드는 없고, <b>Gain을 돌리며 I가 -14가 될 때까지</b> 가는 것이다.</div>
 <div class="box tip"><b>원칙.</b> ① 음량을 올리는 손잡이는 <b>Adaptive Limiter의 Gain 노브</b>, 확인하는 눈금은 <b>Loudness Meter의 I 숫자</b>다. ② Gain을 올리다 리미터 <b>GR이 1~2dB 넘게 움직이면 정지</b> — 더 올리면 구겨진다. ③ 거기까지 올렸는데 목표(-18)에 못 미치면? <b>그게 이 곡의 맞는 음량이다.</b> 억지로 채우지 않는다(특히 명상·수면은 조용한 게 의도).</div>
 <div class="kicker">따라하기</div>
 <div class="lstep"><span class="ln">1</span><span class="lc"><b>Stereo Out에 하나만</b>(트랙에는 걸지 않는다 — <span class="term" data-d="where_insert">이유</span>). Adaptive Limiter 창: <b>Out Ceiling</b> 더블클릭 <span class="v">-1.0</span> · <b>True Peak Detection ON</b> · Gain은 0에서 시작.<span class="path">Stereo Out → Audio FX → Dynamics → Adaptive Limiter</span></span></div>
 <div class="lstep"><span class="ln">2</span><span class="lc">Loudness Meter <b>Reset</b> → 곡 전체 재생 → <b>I</b> 읽기.</span></div>
 <div class="lstep"><span class="ln">3</span><span class="lc">I가 목표보다 낮으면 그 <b>차이만큼 Gain을 올림</b>(예: -20인데 목표 -18 → Gain +2) → Reset → 재측정.</span></div>
 <div class="lstep"><span class="ln">4</span><span class="lc">올리는 동안 리미터 <b>GR 미터</b> 감시 — <span class="no">1~2dB 넘게 계속 움직이면 그만.</span> 그 이상 필요하면 마스터가 아니라 <b>믹스(편곡 밀도)</b>로 돌아가는 게 정답.</span></div>
-<div class="box soft">목표(목적별): 집중 <span class="v">-16</span> · 이완·명상 <span class="v">-18</span> · 수면 <span class="v">-20</span> LUFS.</div>`},
+<div class="box soft">목표: <b>유튜브 업로드 <span class="v">-14</span></b>(유튜브는 큰 소리만 줄이고 <b>조용한 소리는 올려주지 않는다</b> — -18로 올리면 남들보다 작게 들림) · 앱·자체 배포는 콘텐츠 성격대로: 집중 <span class="v">-16</span> · 이완·명상 <span class="v">-18</span> · 수면 <span class="v">-20</span> LUFS. 어느 쪽이든 GR 1~2dB 한도는 유지 — 한도 안에서 -14가 안 나오면 믹스 밀도로 돌아간다.</div>`},
 
 
 ma_only:{title:'Mastering Assistant 단독 사용', html:`
@@ -632,14 +689,16 @@ ma_only:{title:'Mastering Assistant 단독 사용', html:`
 <div class="lstep"><span class="ln">2</span><span class="lc"><b>Analyze.</b> 버튼 누르면 곡 전체(또는 사이클 구간) 분석 — 끝나면 EQ 곡선·다이내믹·폭이 자동 설정된다.</span></div>
 <div class="lstep"><span class="ln">3</span><span class="lc"><b>안에서 만질 것.</b><div class="spec" style="margin-top:7px">
 <div class="srow"><span class="sk">Character</span><span class="sv" style="font-size:14.5px"><span class="v">Transparent</span>(기본·무난) 또는 <span class="v">Clean</span>(EDM·팝)</span></div>
-<div class="srow"><span class="sk">Loudness 노브</span><span class="sv" style="font-size:14.5px">중앙 = 약 <span class="v">-14 LUFS</span>. 노브 숫자는 무시하고 <b>창 안 I 미터</b>를 보며 목표까지 — 숫자와 실제가 비례하지 않는다</span></div>
+<div class="srow"><span class="sk">Loudness 노브</span><span class="sv" style="font-size:14.5px">중앙 = 약 <span class="v">-14 LUFS</span>. 노브 숫자와 실제는 비례하지 않으니 <b>창 안 M·S·I 미터</b>를 본다 — I가 목표를 넘으면 미터가 <b>노랗게</b> 변한다. 측정은 하단 Start를 눌러야 시작</span></div>
 <div class="srow"><span class="sk">Excite</span><span class="sv" style="font-size:14.5px">고중역 광택 — 취향껏, 과하면 쏨</span></div>
 <div class="srow"><span class="sk">Width</span><span class="sv" style="font-size:14.5px">살짝만 — 과하면 위상 문제</span></div>
 <div class="srow"><span class="sk">Loudness Compensation</span><span class="sv" style="font-size:14.5px">비교 청취용 — <b>바운스 전 반드시 OFF</b></span></div></div></span></div>
 <div class="lstep"><span class="ln">4</span><span class="lc"><b>검증.</b> 뒤에 Loudness Meter 하나 더 두고 I·True Peak 확인하면 완벽. 편곡 바꿨으면 <b>Reanalyze</b>.</span></div>
 <div class="kicker">걸지 않는 경우 — 이유</div>
 <div class="spec wide"><div class="srow"><span class="sk">밀도 장르 -9 목표</span><span class="sv" style="font-size:14.5px">MA는 -14 부근이 중심 설계 — -9까지 밀려면 수동 체인이 정확</span></div>
-<div class="srow"><span class="sk">숨웨이브 최종</span><span class="sv" style="font-size:14.5px"><b class="no">비추천.</b> ① 목표가 -16~-20인데 MA는 -14 지향 ② 자동 Width/EQ가 <b>바이노럴 위상을 건드릴 수 있음</b> ③ 배경+곡 합산의 미묘함을 자동이 모름 → 수동 3개(EQ·리미터·미터)가 맞다</span></div></div>`},
+<div class="srow"><span class="sk">바이노럴 트랙이 있는 파일</span><span class="sv" style="font-size:14.5px"><b class="no">걸지 않는다.</b> 자동 Width/EQ가 바이노럴 위상을 건드려 유도 효과가 깨질 수 있다 → 수동 3개(EQ·리미터·미터)로</span></div>
+<div class="srow"><span class="sk">바이노럴 없는 자연음 파일</span><span class="sv" style="font-size:14.5px"><b>사용 가능.</b> 유튜브 -14 목표면 MA 노브 중앙이 그대로 답. 단 자동 EQ가 자연음 톤을 다듬으려 들 수 있으니, 들어보고 질감이 변하면 수동(긴 파일 절차)으로</span></div>
+<div class="srow"><span class="sk">-16~-20 목표(수면·이완)</span><span class="sv" style="font-size:14.5px">MA는 -14 지향이라 부적합 → 수동으로</span></div></div>`},
 masterchain:{title:'마스터링 — 일반 포맷 (순서대로)', html:MASTER_STD},
 
 masterwell:{title:'마스터링 — 웰니스·숨웨이브 최종 (순서대로)', html:MASTER_WELL},
@@ -790,29 +849,35 @@ compparams:{title:'컴프 숫자 읽는 법 (4:1 · 10ms · 100ms)', html:`
 <div class="box soft"><b>모델 감:</b> Studio VCA=범용·깔끔 / Studio FET=빠르고 펀치(드럼·록 보컬) / Vintage Opto=느리고 부드러움(발라드·베이스). <b>Makeup(Gain)</b>은 누른 만큼 되올리는 출력 볼륨.</div>`},
 
 eqparams:{title:'EQ 숫자 읽는 법 (HP35 · 60+2 · 200-2)', html:`
-<p class="lead sm">"HP35 · 60+2 · 200-2 · 4k+2" = <b>하이패스 35Hz, 60Hz를 +2dB, 200Hz를 -2dB, 4kHz를 +2dB</b>.</p>
+<p class="lead sm"><div class="lstep"><span class="ln">0</span><span class="lc"><b>어디에.</b> 값을 적용할 그 트랙에 Channel EQ를 건다. 창은 <b>위 그래프(노드 드래그)</b>와 <b>아래 숫자 필드(더블클릭 타이핑)</b> 두 방식 — 어느 쪽이든 같다.<span class="path">트랙 → Audio FX → EQ → Channel EQ</span></span></div>
+"HP35 · 60+2 · 200-2 · 4k+2" = <b>하이패스 35Hz, 60Hz를 +2dB, 200Hz를 -2dB, 4kHz를 +2dB</b>.</p>
 <div class="lstep"><span class="ln">1</span><span class="lc"><b>HP/HPF(하이패스=로우컷):</b> 그 주파수 <b>아래</b>를 잘라냄 — 럼블·저역 청소. Channel EQ 맨 왼쪽 밴드 1.</span></div>
 <div class="lstep"><span class="ln">2</span><span class="lc"><b>LP/LPF(로우패스=하이컷):</b> 그 주파수 <b>위</b>를 잘라냄 — 멀리·어둡게. 맨 오른쪽 밴드 8.</span></div>
 <div class="lstep"><span class="ln">3</span><span class="lc"><b>벨(60+2):</b> 60Hz 지점만 산(+)이나 골(-)로. 가운데 밴드를 켜고 노드 드래그(좌우=Freq · 상하=Gain) 또는 하단 필드 타이핑.</span></div>
 <div class="lstep"><span class="ln">4</span><span class="lc"><b>셸프(HiShelf 10k+1.5):</b> 그 지점부터 위(또는 아래) <b>전체</b>를 통째로 올리고 내림 — 에어·따뜻함.</span></div>
 <div class="lstep"><span class="ln">5</span><span class="lc"><b>Q(폭):</b> 클수록 좁게 찌름(문제 제거), 작을수록 넓고 자연스러움. 표기 없으면 기본값(≈0.7–1.0) 그대로. <span class="k">Opt</span> 드래그로 조절.</span></div>
-<div class="box soft"><b>원칙:</b> 깎는 EQ(자리 정리)는 컴프 <b>앞</b>, 올리는 EQ(광내기)는 컴프 <b>뒤</b>. 부스트보다 컷이 항상 안전하다.</div>`},
+<div class="box soft"><b>원칙:</b> 깎는 EQ(자리 정리)는 컴프 <b>앞</b>, 올리는 EQ(광내기)는 컴프 <b>뒤</b>. 부스트보다 컷이 항상 안전하다.</div>
+<div class="box tip"><b>들어보기</b> 창 왼쪽 위 전원(우회) 버튼으로 On/Off 비교 — 정리한 대역이 비워지고 답답함이 사라졌으면 맞게 건 것.</div>`},
 
 verbparams:{title:'리버브 숫자 읽는 법 (Predelay · Decay · Size)', html:`
+<div class="lstep"><span class="ln">0</span><span class="lc"><b>어디에.</b> 리버브는 보통 <b>버스(Aux)</b>에 하나 걸고 여러 트랙이 Send로 나눠 쓴다. 아래 값들은 ChromaVerb 창 <b>하단 파라미터 바</b>의 필드 — 더블클릭 타이핑.<span class="path">리버브 Aux → Audio FX → Reverb → ChromaVerb</span></span></div>
 <div class="lstep"><span class="ln">1</span><span class="lc"><b>Predelay(20ms):</b> 원음과 첫 울림 사이의 틈. 길수록 원음이 또렷하고 공간이 커 보임 — 보컬 명료도의 핵심.</span></div>
 <div class="lstep"><span class="ln">2</span><span class="lc"><b>Decay(1.6–2.0s):</b> 꼬리가 사라질 때까지의 시간. 룸 <span class="v">0.5–1s</span> · 플레이트 <span class="v">1.5–2.5s</span> · 홀 <span class="v">2.5s+</span>.</span></div>
 <div class="lstep"><span class="ln">3</span><span class="lc"><b>Size:</b> 방의 크기. Decay와 함께 공간 스케일을 결정.</span></div>
 <div class="lstep"><span class="ln">4</span><span class="lc"><b>Density:</b> 반사음의 촘촘함 — 낮으면 알갱이지고, 높으면 매끈.</span></div>
 <div class="lstep"><span class="ln">5</span><span class="lc"><b>Damp / Distance:</b> Damp=꼬리의 고역이 얼마나 빨리 죽나(높을수록 어두운 꼬리) · Distance=소리가 얼마나 멀리서 나는 느낌.</span></div>
 <div class="lstep"><span class="ln">6</span><span class="lc"><b>타입(상단 드롭다운):</b> Room=접착 · Chamber=따뜻 · Plate=보컬·화사 · Hall=오케·크게 · Synth Hall=신스·환상적.</span></div>
-<div class="box soft"><b>Send 방식이면:</b> 리버브 Aux의 Mix는 <span class="v">Wet 100 / Dry 0</span> 고정 — 양 조절은 각 트랙의 Send 노브로.</div>`},
+<div class="box soft"><b>Send 방식이면:</b> 리버브 Aux의 Mix는 <span class="v">Wet 100 / Dry 0</span> 고정 — 양 조절은 각 트랙의 Send 노브로.</div>
+<div class="box tip"><b>들어보기</b> 한 트랙의 Send 노브를 잠깐 끝까지 올렸다 내려보면 이 리버브의 공간 성격이 바로 들린다 — 원하는 성격이면 적정량으로.</div>`},
 
 delayparams:{title:'딜레이 숫자 읽는 법 (1/8 dotted · FB 20%)', html:`
+<div class="lstep"><span class="ln">0</span><span class="lc"><b>어디에.</b> 공유 공간이면 딜레이 Aux에, 그 트랙만의 톤(슬랩백)이면 트랙에 직접. <b>Sync 버튼은 창 상단</b> — 켜면 박자 단위, 끄면 ms 직접 입력.<span class="path">Aux 또는 트랙 → Audio FX → Delay → Stereo Delay / Tape Delay</span></span></div>
 <div class="lstep"><span class="ln">1</span><span class="lc"><b>Note(1/8 dotted):</b> 반복 간격을 박자 단위로 — 점8분이 팝·EDM 표준 그루브. Tape/Stereo Delay의 <b>Sync 켠 상태</b>에서 선택.</span></div>
 <div class="lstep"><span class="ln">2</span><span class="lc"><b>FB(Feedback 20–28%):</b> 반복 횟수. 낮으면 1–2번, 높으면 계속 맴돎 — 40% 넘기면 지저분해지기 쉽다.</span></div>
 <div class="lstep"><span class="ln">3</span><span class="lc"><b>LP 6k:</b> 반복음의 고역을 깎아 원음보다 <b>뒤</b>로 — 딜레이가 보컬·리드를 가리지 않게.</span></div>
 <div class="lstep"><span class="ln">4</span><span class="lc"><b>슬랩백(95ms):</b> Sync 끄고 시간(ms) 직접 입력 — 80–120ms 한 번 튕김. 시티팝·레트로 질감.</span></div>
-<div class="box soft"><b>인서트 vs 센드:</b> 여러 트랙이 같은 딜레이 공간을 공유하면 <b>센드</b>, 그 트랙만의 톤(슬랩백)이면 <b>인서트</b>.</div>`},
+<div class="box soft"><b>인서트 vs 센드:</b> 여러 트랙이 같은 딜레이 공간을 공유하면 <b>센드</b>, 그 트랙만의 톤(슬랩백)이면 <b>인서트</b>.</div>
+<div class="box tip"><b>들어보기</b> 반복음이 원음 <b>뒤</b>에서 그루브를 만들면 성공 — 원음을 가리면 FB를 내리거나 LP를 더 낮춘다.</div>`},
 
 lufsmeter:{title:'LUFS · dBTP · LRA 읽는 법', html:`
 <div class="lstep"><span class="ln">1</span><span class="lc"><b>LUFS(Integrated):</b> 곡 전체 평균 체감 음량. 스트리밍이 이 값 기준으로 볼륨을 자동으로 맞춤(정규화) — Spotify·YouTube <span class="v">-14</span> · Apple <span class="v">-16</span>.</span></div>
@@ -1187,6 +1252,34 @@ function beatGenreStep(g){
    <div class="box hot"><b>B(숨웨이브):</b> ⑦ 스킵 · <span class="v">-18 LUFS</span> 언마스터로 바운스.</div>`};
 }
 
+
+const MIXS1=`<div class="lstep"><span class="ln">1</span><span class="lc"><b>걸기.</b> 각 트랙 첫 슬롯.<span class="path">트랙 → Audio FX → Utility → Gain</span></span></div>
+<div class="lstep"><span class="ln">2</span><span class="lc"><b>보는 곳.</b> 믹서(<span class="k">X</span>) 그 트랙의 세로 미터 — 초록=작음 · <b>노랑=좋음</b> · 빨강=큼.</span></div>
+<div class="lstep"><span class="ln">3</span><span class="lc"><b>조작.</b> 재생하면서 Gain 노브를 돌려 미터가 <b>노랑</b>에 오게. 전 트랙 반복.</span></div>
+<div class="box tip"><b>확인</b> Stereo Out에 빨간불만 안 뜨면 통과 — 뜨면 <span class="k">Cmd+A</span> 후 아무 페이더 -3.</div>`;
+const MIXS2=`<div class="lstep"><span class="ln">1</span><span class="lc"><b>걸기.</b><span class="path">트랙 → Audio FX → EQ → Channel EQ</span></span></div>
+<div class="lstep"><span class="ln">2</span><span class="lc"><b>밴드1(HPF) 켜고 값 입력.</b> Freq 더블클릭: 킥 <span class="v">30</span> · 베이스 <span class="v">30</span> · 스네어 <span class="v">60</span> · 기타 <span class="v">90~120</span> · 리드 <span class="v">100~150</span> · 패드 <span class="v">200</span>.</span></div>
+<div class="lstep"><span class="ln">3</span><span class="lc"><b>겹침 정리.</b> 두 악기가 같은 대역에서 싸우면 덜 중요한 쪽 벨로 <span class="v">-2</span>.</span></div>
+<div class="box tip"><b>들어보기</b> 우회(전원) 버튼 On/Off — 답답함이 사라지고 각자 자리가 생기면 성공.</div>`;
+const MIXS3=`<div class="lstep"><span class="ln">1</span><span class="lc"><b>걸기.</b><span class="path">트랙 → Audio FX → Dynamics → Compressor</span></span></div>
+<div class="lstep"><span class="ln">2</span><span class="lc"><b>모델·Ratio.</b> 상단 드롭다운: Studio VCA(범용)/FET(펀치)/Opto(부드러움) · Ratio <span class="v">4:1</span>(약하게는 2:1).</span></div>
+<div class="lstep"><span class="ln">3</span><span class="lc"><b>Threshold.</b> 재생하며 내려 창 오른쪽 <b>GR 미터</b>가 <span class="v">2~4dB</span>(오케 1~3)만 움직이게.</span></div>
+<div class="box tip"><b>들어보기</b> On/Off — 단단해지되 어택("탁")이 살아있으면 성공. 눌렸으면 Attack ms를 늘림.</div>`;
+const MIXS4=`<div class="lstep"><span class="ln">1</span><span class="lc"><b>걸기(필요한 트랙만).</b><span class="path">트랙 → Audio FX → Distortion → ChromaGlow</span></span></div>
+<div class="lstep"><span class="ln">2</span><span class="lc"><b>모델·양.</b> Tape(온기)/Tube(두께) · Drive <span class="v">2~4</span> · Mix <span class="v">30~60%</span>.</span></div>
+<div class="box tip"><b>들어보기</b> On/Off — 두꺼워지되 지저분하지 않으면 성공. Output으로 커진 만큼 보정.</div>`;
+const MIXS5=`<div class="lstep"><span class="ln">1</span><span class="lc"><b>걸기(광낼 트랙만).</b> 이미 걸린 Channel EQ에서 계속.</span></div>
+<div class="lstep"><span class="ln">2</span><span class="lc"><b>밴드7(High Shelf).</b> <span class="v">8~12kHz +1~2dB</span> — 존재감·에어.</span></div>
+<div class="box tip"><b>주의</b> +4 넘기면 쏜다. 전 트랙에 걸면 전체가 시끄러워짐 — 주인공만.</div>`;
+const MIXS7=`<div class="lstep"><span class="ln">1</span><span class="lc"><b>버스 만들기.</b> 아무 트랙 <b>Sends</b> 클릭 → <b>Bus 1</b> → Aux 자동 생성(REVERB).</span></div>
+<div class="lstep"><span class="ln">2</span><span class="lc"><b>ChromaVerb 걸기.</b> Mix <b>Wet 100</b> 고정 · 타입·Decay는 장르 카드값.<span class="path">REVERB Aux → Audio FX → Reverb → ChromaVerb</span></span></div>
+<div class="lstep"><span class="ln">3</span><span class="lc"><b>앞에 HPF 200.</b> 저역 잔향(웅웅) 방지 — ChromaVerb 앞 슬롯 Channel EQ 밴드1 <span class="v">200</span>.</span></div>
+<div class="lstep"><span class="ln">4</span><span class="lc"><b>보내기.</b> 공간 필요한 트랙만 Send 노브 <span class="v">-18</span>부터. <b>킥·서브·베이스 제외.</b></span></div>
+<div class="lstep"><span class="ln">5</span><span class="lc"><b>(선택) 병렬컴프.</b> 드럼 → Bus 3 → 센 컴프(8:1 · GR 10~15 · 앞 HPF 80~100) → 페이더로 밑에 깔기.</span></div>`;
+const MIXS8=`<div class="spec wide"><div class="srow"><span class="sk">Stereo Out</span><span class="sv"><span class="v">HPF 20~30 → 리미터 → 미터</span></span></div></div>
+<p class="lead sm">여기부터는 마스터링 — 트랙·버스가 끝났으면 이동한다.</p>
+<div class="nextline">다음 → <b>마스터링 탭</b>. [B] 숨웨이브行은 마스터 없이 <b>-18 바운스</b>.</div>`;
+
 const APP_BEAT = {name:'Beat Maker', c1:'#4FD1A5', c2:'#3AA7C9', steps:[
 {phase:'시작 전', kicker:'전체 그림 · 처음 한 번', title:'시작하기 전에 — 최초 세팅 흐름',
  html:`<p class="lead">곡마다 반복하는 건 몇 가지뿐. 나머지는 <b>처음 한 번</b> 만들어 계속 재사용한다.</p>
@@ -1209,8 +1302,6 @@ const APP_BEAT = {name:'Beat Maker', c1:'#4FD1A5', c2:'#3AA7C9', steps:[
  <div class="abcard b"><div class="abh"><span class="badge">B</span><span>숨웨이브 투입</span></div><div class="abd">믹스까지만, <b>⑦ 마스터 건너뜀</b>. 언마스터 2믹스(<span class="v">-18 LUFS</span> · 피크 <span class="v">-3~-6</span> · WAV24/48k) → 음악 트랙.</div></div></div>
  <button class="tapcard" data-d="handoff"><span class="chev">›</span><span class="tc-h">B로 보낼 파일 규격</span><span class="tc-p">리미터 끄기 · LUFS 확인 · 바운스</span><span class="tc-go">로직 설정법 ›</span></button>
  <div class="box tip tp" data-d="lufsmeter"><div class="bt">2026 라우드니스 원칙</div><p>스트리밍은 전부 정규화(Spotify·YouTube·Tidal·Amazon -14, Apple -16). 브릭월 -6까지 밀어봤자 <span class="no">깎여서 더 나쁘게 들림</span>. 밀도는 편곡·808 관리로, 리미터로 만들지 않는다. LRA 6~14. <b>(탭 → LUFS·dBTP·LRA 읽는 법)</b></p></div>`},
-{phase:'곡마다', kicker:'곡 하나 처음→끝', title:'이 곡 진행 순서',
- html:`<p class="lead">이 곡 하나를 처음부터 끝까지. 번호대로 따라가고, 자세한 값은 각 줄의 <b>설정법</b>을 탭.</p><div class="tflow"><div class="tstep"><span class="tn">1</span><div class="tc"><div class="tt">앱에서 장르 생성 → MIDI 추출</div><div class="tv">.mid 하나(통짜 멀티트랙) 다운로드</div></div></div><div class="tstep"><span class="tn">2</span><div class="tc"><div class="tt">템플릿 열고 MIDI 임포트</div><div class="tv">템플릿(버스 포함) 열기 → 빈 공간 드래그 / File→Open · Import Tempo 체크</div><button class="tgo" data-d="importmidi">설정법 ›</button></div></div><div class="tstep"><span class="tn">3</span><div class="tc"><div class="tt">트랙마다 프리셋(.cst) 적용</div><div class="tv">각 트랙 Setting 막대 → 저장한 장르 프리셋 클릭</div><button class="tgo" data-d="channelstrip">설정법 ›</button></div></div><div class="tstep"><span class="tn">4</span><div class="tc"><div class="tt">음원·주법 확인</div><div class="tv">트랙 이름 ‖ALT·(주법) → 라이브러리에서 성격 맞는 음원. 코드 최상단 낮은 벨로시티=텐션(그대로)</div><button class="tgo" data-d="tension">설정법 ›</button></div></div><div class="tstep"><span class="tn">5</span><div class="tc"><div class="tt">게인 스테이징</div><div class="tv">미터가 <b>노란색</b>에 오게 Gain — 숫자 말고 색으로</div><button class="tgo" data-d="gain_simple">설정법 ›</button></div></div><div class="tstep"><span class="tn">6</span><div class="tc"><div class="tt">감산 EQ (자리 정리)</div><div class="tv">밴드1 HPF: 킥30·베이스30·스네어60·기타90~120·리드100~150·패드200 · 겹치면 덜 중요한 쪽 컷</div><button class="tgo" data-d="eqparams">설정법 ›</button></div></div><div class="tstep"><span class="tn">7</span><div class="tc"><div class="tt">컴프</div><div class="tv">드럼 FET 4:1 GR3~4 · 베이스 VCA GR3 · 리드 3:1 GR3~4 · 패드 2:1 GR1 (미터 보며 Threshold)</div><button class="tgo" data-d="compparams">설정법 ›</button></div></div><div class="tstep"><span class="tn">8</span><div class="tc"><div class="tt">사이드체인</div><div class="tv">베이스·패드 Compressor Side Chain=킥 · Ratio 4:1 · Release 박자</div><button class="tgo" data-d="sidechain">설정법 ›</button></div></div><div class="tstep"><span class="tn">9</span><div class="tc"><div class="tt">광내기 (가산 EQ·새추)</div><div class="tv">필요 트랙만 밴드7 HiShelf 8~12k +1~2 · ChromaGlow Drive 낮게</div><button class="tgo" data-d="mix_chromaglow">설정법 ›</button></div></div><div class="tstep"><span class="tn">10</span><div class="tc"><div class="tt">공간 (센드로만)</div><div class="tv">Sends → 리버브·딜레이 버스 -18 시작 · 킥·서브는 보내지 않는다 — 저역 잔향은 음정 없는 웅웅으로 쌓여 믹스 전체를 탁하게 만든다</div><button class="tgo" data-d="reverbsend">설정법 ›</button></div></div><div class="tstep"><span class="tn">11</span><div class="tc"><div class="tt">볼륨·팬 확정</div><div class="tv">킥0·베이스-1~-3·스네어-1~-3·리드-3~-6·코드-6~-9·패드-12~-15 (페이더)</div><button class="tgo" data-d="volumewhere">설정법 ›</button></div></div><div class="tstep"><span class="tn">12</span><div class="tc"><div class="tt">오토메이션 (구간 대비)</div><div class="tv">전조·빌드업·스트립·필터 스윕 등 — 오토메이션 탭 참조</div></div></div><div class="tstep"><span class="tn">13</span><div class="tc"><div class="tt">[A] 마스터링</div><div class="tv">Stereo Out 8단계 → -14 LUFS(밀도 -9) · -1 dBTP(밀도 -2)</div><button class="tgo" data-d="masterchain">설정법 ›</button></div></div><div class="tstep"><span class="tn">13</span><div class="tc"><div class="tt">[B] 숨웨이브行</div><div class="tv">마스터 스킵 → -18 언마스터 바운스 {곡}_forSUMWAVE_premaster.wav</div></div></div></div><div class="box tip"><b>인서트 순서(한 트랙):</b> Gain → 감산EQ → 컴프 → 새추 → 가산EQ → (모듈). 딜레이·리버브는 센드. 예외: 일렉기타 Amp 맨앞 · 808 ChromaGlow→EQ→Limiter.</div>`},
 {phase:'템플릿', kicker:'최초 1회 만들기 · 곡마다 붙여 씀', title:'프로젝트 템플릿',
  html:`<div class="spec wide"><div class="srow tp" data-d="projectdefaults"><span class="sk">① 기본 설정</span><span class="sv" style="font-size:15.5px">File ▸ Project Settings · <span class="v">48kHz · 24-bit</span> · 버퍼 녹음 <span class="v">128</span>/믹스 <span class="v">256–1024</span> · PDC All · Pan Law <span class="v">−3dB</span></span></div>
  <div class="srow tp" data-d="makebus"><span class="sk">② 서밍 스택</span><span class="sv" style="font-size:15.5px">트랙 <span class="k">⌘A</span> → 우클릭 Create Track Stack ▸ <b>Summing</b> → 드럼/음악/FX 스택 · [GUIDE]는 <span class="k">M</span> 뮤트</span></div>
@@ -1223,6 +1314,8 @@ const APP_BEAT = {name:'Beat Maker', c1:'#4FD1A5', c2:'#3AA7C9', steps:[
  <div class="box soft">번호 줄을 <b>탭하면</b> 그 항목의 숫자가 무슨 뜻인지·어디에 입력하는지가 열린다.</div>
  <button class="tapcard" data-d="parallel"><span class="chev">›</span><span class="tc-h">병렬 컴프 만드는 법</span><span class="tc-go">로직 설정법 ›</span></button>
  <button class="tapcard" data-d="masterchain"><span class="chev">›</span><span class="tc-h">마스터 체인 세팅하는 법</span><span class="tc-go">로직 설정법 ›</span></button>`},
+{phase:'곡마다', kicker:'곡 하나 처음→끝', title:'이 곡 진행 순서',
+ html:`<p class="lead">이 곡 하나를 처음부터 끝까지. 번호대로 따라가고, 자세한 값은 각 줄의 <b>설정법</b>을 탭.</p><div class="tflow"><div class="tstep"><span class="tn">1</span><div class="tc"><div class="tt">앱에서 장르 생성 → MIDI 추출</div><div class="tv">.mid 하나(통짜 멀티트랙) 다운로드</div></div></div><div class="tstep"><span class="tn">2</span><div class="tc"><div class="tt">템플릿 열고 MIDI 임포트</div><div class="tv">템플릿(버스 포함) 열기 → 빈 공간 드래그 / File→Open · Import Tempo 체크</div><button class="tgo" data-d="importmidi">설정법 ›</button></div></div><div class="tstep"><span class="tn">3</span><div class="tc"><div class="tt">트랙마다 프리셋(.cst) 적용</div><div class="tv">각 트랙 Setting 막대 → 저장한 장르 프리셋 클릭</div><button class="tgo" data-d="channelstrip">설정법 ›</button></div></div><div class="tstep"><span class="tn">4</span><div class="tc"><div class="tt">음원·주법 확인</div><div class="tv">트랙 이름 ‖ALT·(주법) → 라이브러리에서 성격 맞는 음원. 코드 최상단 낮은 벨로시티=텐션(그대로)</div><button class="tgo" data-d="tension">설정법 ›</button></div></div><div class="tstep"><span class="tn">5</span><div class="tc"><div class="tt">게인 스테이징</div><div class="tv">미터가 <b>노란색</b>에 오게 Gain — 숫자 말고 색으로</div><button class="tgo" data-d="gain_simple">설정법 ›</button></div></div><div class="tstep"><span class="tn">6</span><div class="tc"><div class="tt">감산 EQ (자리 정리)</div><div class="tv">밴드1 HPF: 킥30·베이스30·스네어60·기타90~120·리드100~150·패드200 · 겹치면 덜 중요한 쪽 컷</div><button class="tgo" data-d="eqparams">설정법 ›</button></div></div><div class="tstep"><span class="tn">7</span><div class="tc"><div class="tt">컴프</div><div class="tv">드럼 FET 4:1 GR3~4 · 베이스 VCA GR3 · 리드 3:1 GR3~4 · 패드 2:1 GR1 (미터 보며 Threshold)</div><button class="tgo" data-d="compparams">설정법 ›</button></div></div><div class="tstep"><span class="tn">8</span><div class="tc"><div class="tt">사이드체인</div><div class="tv">베이스·패드 Compressor Side Chain=킥 · Ratio 4:1 · Release 박자</div><button class="tgo" data-d="sidechain">설정법 ›</button></div></div><div class="tstep"><span class="tn">9</span><div class="tc"><div class="tt">광내기 (가산 EQ·새추)</div><div class="tv">필요 트랙만 밴드7 HiShelf 8~12k +1~2 · ChromaGlow Drive 낮게</div><button class="tgo" data-d="mix_chromaglow">설정법 ›</button></div></div><div class="tstep"><span class="tn">10</span><div class="tc"><div class="tt">공간 (센드로만)</div><div class="tv">Sends → 리버브·딜레이 버스 -18 시작 · 킥·서브는 보내지 않는다 — 저역 잔향은 음정 없는 웅웅으로 쌓여 믹스 전체를 탁하게 만든다</div><button class="tgo" data-d="reverbsend">설정법 ›</button></div></div><div class="tstep"><span class="tn">11</span><div class="tc"><div class="tt">볼륨·팬 확정</div><div class="tv">킥0·베이스-1~-3·스네어-1~-3·리드-3~-6·코드-6~-9·패드-12~-15 (페이더)</div><button class="tgo" data-d="volumewhere">설정법 ›</button></div></div><div class="tstep"><span class="tn">12</span><div class="tc"><div class="tt">오토메이션 (구간 대비)</div><div class="tv">전조·빌드업·스트립·필터 스윕 등 — 오토메이션 탭 참조</div></div></div><div class="tstep"><span class="tn">13</span><div class="tc"><div class="tt">[A] 마스터링</div><div class="tv">Stereo Out 8단계 → -14 LUFS(밀도 -9) · -1 dBTP(밀도 -2)</div><button class="tgo" data-d="masterchain">설정법 ›</button></div></div><div class="tstep"><span class="tn">13</span><div class="tc"><div class="tt">[B] 숨웨이브行</div><div class="tv">마스터 스킵 → -18 언마스터 바운스 {곡}_forSUMWAVE_premaster.wav</div></div></div></div><div class="box tip"><b>인서트 순서(한 트랙):</b> Gain → 감산EQ → 컴프 → 새추 → 가산EQ → (모듈). 딜레이·리버브는 센드. 예외: 일렉기타 Amp 맨앞 · 808 ChromaGlow→EQ→Limiter.</div>`},
 {phase:'곡마다', kicker:'② MIDI에 든 연주', title:'2026 엔진 — 구조·화성·주법',
  html:`<p class="lead sm">앱이 더 음악적인 MIDI를 뽑는다. 아래는 <b>이미 .mid에 들어있는</b> 것 — 로직에선 확인만 하거나 배지 구간을 재확인한다.</p>
  <div class="kicker">구조 (긴 곡 자동)</div>
@@ -1239,6 +1332,13 @@ const APP_BEAT = {name:'Beat Maker', c1:'#4FD1A5', c2:'#3AA7C9', steps:[
  <button class="tapcard" data-d="basssub"><span class="chev">›</span><span class="tc-h">베이스 주법 20종 특성표</span><span class="tc-p">808 글라이드 · 워킹 · 펌핑 …</span><span class="tc-go">참고 ›</span></button>
  <div class="box soft"><b>추출 후 체크:</b> ‖ALT/(주법) 확인 → 음원 선택 · 코드 최상단 벨로시티 = 텐션 · 패드는 근음+3화음(그대로) · ⤓스트립·▲전조 배지 재확인 · 신스 베이스 서스테인 정상.</div>`},
 ...BEAT_GENRES.map(beatGenreStep),
+{phase:'믹싱', kicker:'믹싱 1', title:'1 게인 설정법', html:MIXS1},
+{phase:'믹싱', kicker:'믹싱 2', title:'2 감산 EQ 설정법', html:MIXS2},
+{phase:'믹싱', kicker:'믹싱 3', title:'3 컴프 거는 법', html:MIXS3},
+{phase:'믹싱', kicker:'믹싱 4', title:'4 새추 방법', html:MIXS4},
+{phase:'믹싱', kicker:'믹싱 5', title:'5 가산 EQ 설정법', html:MIXS5},
+{phase:'믹싱', kicker:'믹싱 6', title:'6 볼륨·팬 조절법', html:`<p class="lead sm">숫자는 전부 <b>페이더</b> 값 — 믹서에서 더블클릭 입력. 팬은 페이더 위 노브.</p><div class="spec wide"><div class="srow"><span class="sk">킥</span><span class="sv"><span class="v">0</span> · C</span></div><div class="srow"><span class="sk">베이스</span><span class="sv"><span class="v">-1~-3</span> · C</span></div><div class="srow"><span class="sk">스네어/클랩</span><span class="sv"><span class="v">-1~-3</span> · C</span></div><div class="srow"><span class="sk">햇·퍼커션</span><span class="sv"><span class="v">-6~-10</span> · L/R 20~40</span></div><div class="srow"><span class="sk">리드</span><span class="sv"><span class="v">-3~-6</span> · C</span></div><div class="srow"><span class="sk">코드·신스</span><span class="sv"><span class="v">-6~-9</span> · L/R 30</span></div><div class="srow"><span class="sk">패드</span><span class="sv"><span class="v">-12~-15</span> · 넓게</span></div></div>`},
+{phase:'버스', kicker:'버스', title:'버스 — 리버브·병렬', html:MIXS7},
 {phase:'오토메이션', kicker:'장르 특징별', title:'오토메이션 — 장르가 살아나는 지점',
  html:`<p class="lead">비트 음악은 <b>구간 전환의 오토메이션</b>이 완성도의 절반. <span class="k">A</span> → 파라미터 선택 → 마커 사이를 그린다.</p>
  <div class="spec wide"><div class="srow"><span class="sk">EDM</span><span class="sv" style="font-size:15px">빌드: Auto Filter Cutoff↑ + 노이즈 볼륨↑ + 리버브 센드↑ / 드롭 직전 1박 <b>전체 뮤트 컷</b> / 드롭: 사이드체인 그대로, 임팩트 원샷 / 브레이크: LPF 닫고 공간↑</span></div>
@@ -1251,30 +1351,6 @@ const APP_BEAT = {name:'Beat Maker', c1:'#4FD1A5', c2:'#3AA7C9', steps:[
  <div class="srow"><span class="sk">러닝</span><span class="sv" style="font-size:15px">케이던스 고정 — 볼륨 아크 없이 / 재가속 구간 필터 오픈 스윕 + 라이저</span></div>
  <div class="srow"><span class="sk">훅송·훅팝</span><span class="sv" style="font-size:15px">레이어 계단식 언뮤트(벌스→프리→코러스) / 마지막 코러스 전체 +1dB</span></div></div>
  <button class="tapcard" data-d="automation"><span class="chev">›</span><span class="tc-h">오토메이션 그리는 법</span><span class="tc-p">모드 · 파라미터 찾기 · Track vs Region</span><span class="tc-go">로직 설정법 ›</span></button>`},
-{phase:'믹싱', kicker:'킥 기준 · 모노 먼저', title:'믹싱 — 순서 · EQ · 컴프 · 볼륨/팬',
- html:`<div class="lstep"><span class="ln">1</span><span class="lc"><b>게인부터.</b> 각 트랙 인서트 <b>첫 칸에 Gain</b>(Utility) — 재생하며 채널 미터 피크가 <span class="v">-12~-6</span>이 되게. 페이더는 전부 0 근처에서 시작해야 뒤가 편하다.</span></div>
-<div class="lstep"><span class="ln">2</span><span class="lc"><b>자리 정리 — 감산 EQ.</b> 각 트랙 Channel EQ 밴드1(HPF): 킥 <span class="v">30</span> · 베이스 <span class="v">30</span> · 스네어 <span class="v">60</span> · 기타·신스 <span class="v">90–120</span> · 리드 <span class="v">100–150</span> · 패드 <span class="v">200</span>. <b>겹치면 덜 중요한 쪽을 판다:</b> 킥이 안 뚫리면 베이스에 벨 <span class="v">60Hz -2~-3 · Q1.0</span> / 리드가 묻히면 코드·기타에 <span class="v">3kHz -2 · Q1.2</span>.</span></div>
-<div class="lstep"><span class="ln">3</span><span class="lc"><b>컴프 — 트랙별로 이렇게.</b> 드럼 스택: <span class="v">Studio FET · 4:1 · 10ms · 100ms</span> → Threshold 내려 <b>GR 3–4dB</b>(펀치 유지) / 베이스: <span class="v">Studio VCA · 4:1 · 10–30ms</span> → GR <span class="v">3dB</span>(고르게) / 리드: <span class="v">3:1</span> → GR <span class="v">3–4dB</span> / 패드: 안 걸거나 <span class="v">2:1 GR 1dB</span>. 항상 <b>GR 미터를 보며 Threshold로</b> 맞춘다 — 숫자 필드 더블클릭 입력.</span></div>
-<div class="lstep"><span class="ln">4</span><span class="lc"><b>광내기 — 컴프 뒤에.</b> 필요한 트랙만: HiShelf <span class="v">8–12k +1~2</span>(에어) · ChromaGlow Drive 낮게(두께). 부스트는 항상 컷보다 조심스럽게.</span></div>
-<div class="lstep"><span class="ln">5</span><span class="lc"><b>공간 — 센드로만.</b> Sends → Bus1(리버브)·Bus2(딜레이) · 노브 더블클릭 <span class="v">-18</span>에서 시작해 올림. 킥·서브는 <span class="no">안 보냄</span>(저역이 흐려짐).</span></div>
-<div class="lstep"><span class="ln">6</span><span class="lc"><b>볼륨·팬 확정.</b> 아래 표 — 킥 <span class="v">0</span>부터 위→아래 순서로 페이더 확정. 페이더를 <span class="v">3–6dB</span> 이상 밀어야 들리면 볼륨 문제가 아니라 ②의 대역 겹침 문제다.</span></div>
-<div class="box soft"><b>인서트 순서(한 트랙 안):</b> Gain → 감산EQ → 컴프 → 새추 → 가산EQ → (모듈레이션) — 딜레이·리버브는 인서트가 아니라 <b>센드</b>. 예외: 일렉기타는 Amp Designer 맨 앞 · 808은 ChromaGlow→EQ→Limiter.</div>
-<div class="spec"><div class="srow"><span class="sk">킥</span><span class="sv"><span class="v">0</span> · C(모노)</span></div>
- <div class="srow"><span class="sk">베이스</span><span class="sv"><span class="v">−1~−3</span> · C</span></div>
- <div class="srow"><span class="sk">스네어/클랩</span><span class="sv"><span class="v">−1~−3</span> · C(±소폭)</span></div>
- <div class="srow"><span class="sk">리드/보컬</span><span class="sv"><span class="v">−3~−6</span> · C·±10</span></div>
- <div class="srow"><span class="sk">코드/기타</span><span class="sv"><span class="v">−6~−9</span> · L/R 더블</span></div>
- <div class="srow"><span class="sk">패드/스트링</span><span class="sv"><span class="v">−12~−15</span> · 와이드</span></div></div>
- <button class="tapcard" data-d="volumewhere"><span class="chev">›</span><span class="tc-h">이 dB 숫자는 어디에 입력?</span><span class="tc-p">페이더 vs Gain 플러그인 vs 오토메이션 — 역할 구분</span><span class="tc-go">읽는 법 ›</span></button>
- <button class="tapcard" data-d="sidechain"><span class="chev">›</span><span class="tc-h">사이드체인 거는 법</span><span class="tc-p">킥 → 베이스/패드 · 드롭다운 선택</span><span class="tc-go">로직 설정법 ›</span></button>
- <div class="kicker">플러그인 창 여는 법 (탭)</div>
- <button class="tapcard" data-d="mix_deesser"><span class="chev">›</span><span class="tc-h">DeEsser 2 — 치찰음</span><span class="tc-p">대역·Threshold·Reduction</span><span class="tc-go">설정법 ›</span></button>
- <button class="tapcard" data-d="mix_chromaglow"><span class="chev">›</span><span class="tc-h">ChromaGlow — 새추/두께</span><span class="tc-p">모델·Drive·Mix</span><span class="tc-go">설정법 ›</span></button>
- <button class="tapcard" data-d="mix_direction"><span class="chev">›</span><span class="tc-h">Direction Mixer — 폭</span><span class="tc-p">Spread·모노 체크</span><span class="tc-go">설정법 ›</span></button>
- <button class="tapcard" data-d="mix_gate"><span class="chev">›</span><span class="tc-h">Noise Gate — 잡음/꼬리</span><span class="tc-go">설정법 ›</span></button>
- <button class="tapcard" data-d="mix_transient"><span class="chev">›</span><span class="tc-h">Transient Designer — 펀치</span><span class="tc-go">설정법 ›</span></button>
- <button class="tapcard" data-d="mix_multipressor"><span class="chev">›</span><span class="tc-h">Multipressor — 멀티밴드</span><span class="tc-go">설정법 ›</span></button>
-<div class="nextline">다음 → <b>마스터링 탭</b>. [B] 숨웨이브行이면 마스터 없이 <b>-18 바운스</b>(Sum Mastering · 곡 규격 참조).</div>`},
 {phase:'마스터링', kicker:'A 발매 · Stereo Out', title:'마스터링 — 순서대로 (일반 끝내기)',
  html:MASTER_STD+`
  <div class="box soft"><b>장르별 목표:</b> 각 장르 카드 상단의 라우드니스 값 그대로(EDM·트랩·K팝·러닝 <span class="v">-9</span> 하한 · 힙합 <span class="v">-12~-10</span> · 로파이 <span class="v">-14~-12</span> · 시티팝 <span class="v">-11~-9</span> · 컨트리·훅송 <span class="v">-14</span>). 전체 표는 Sum Mastering 탭.</div>`},
@@ -1303,16 +1379,6 @@ const APP_MED = {name:'Medi Builder', c1:'#6FB7FF', c2:'#9E8CFF', steps:[
  <div class="abcard b"><div class="abh"><span class="badge">B</span><span>숨웨이브 투입</span></div><div class="abd">믹스까지만, 마스터 건너뜀. <span class="v">-18 LUFS</span> 언마스터 2믹스 → 음악 트랙.</div></div></div>
  <button class="tapcard" data-d="handoff"><span class="chev">›</span><span class="tc-h">B로 보낼 파일 규격</span><span class="tc-go">로직 설정법 ›</span></button>
  <div class="box soft"><b>흐름:</b> 앱에서 곡 추출 → File▸Open → 템플릿 붙이기 → 트랙 프리셋 적용 → 볼륨·팬 표 → 흐름 오토메이션 → 믹스 → [A만] 마스터.</div>`},
-{phase:'곡마다', kicker:'곡 하나 처음→끝', title:'이 곡 진행 순서',
- html:`<p class="lead">명상 곡 하나 처음→끝. 번호대로, 값은 <b>설정법</b> 탭.</p><div class="tflow"><div class="tstep"><span class="tn">1</span><div class="tc"><div class="tt">앱에서 생성 → MIDI 추출</div><div class="tv">통짜 .mid 다운로드</div></div></div><div class="tstep"><span class="tn">2</span><div class="tc"><div class="tt">템플릿 열고 MIDI 임포트</div><div class="tv">리버브A/B·마스터 있는 템플릿 → 드래그/Open · Import Tempo</div><button class="tgo" data-d="importmidi">설정법 ›</button></div></div><div class="tstep"><span class="tn">3</span><div class="tc"><div class="tt">프리셋(.cst) 적용</div><div class="tv">명상 6종 트랙에 각 프리셋 클릭</div><button class="tgo" data-d="channelstrip">설정법 ›</button></div></div><div class="tstep"><span class="tn">4</span><div class="tc"><div class="tt">앱이 넣은 것 확인</div><div class="tv">호흡 스웰(CC11)·페이드·볼륨 자동 — 지우지 말 것</div></div></div><div class="tstep"><span class="tn">5</span><div class="tc"><div class="tt">Melody 앵커 게인</div><div class="tv">멜로디 미터가 노랑에 오게 Gain → 페이더 0 (기준점)</div><button class="tgo" data-d="gain_simple">설정법 ›</button></div></div><div class="tstep"><span class="tn">6</span><div class="tc"><div class="tt">표대로 상대 배치</div><div class="tv">나머지 페이더를 볼륨·팬 지도 값으로</div><button class="tgo" data-d="volumewhere">설정법 ›</button></div></div><div class="tstep"><span class="tn">7</span><div class="tc"><div class="tt">마스킹 정리</div><div class="tv">멜로디 묻히면 Pad 벨 300Hz -2~-3 Q1.0 · Drone LPF 2k</div><button class="tgo" data-d="eqparams">설정법 ›</button></div></div><div class="tstep"><span class="tn">8</span><div class="tc"><div class="tt">공간 밸런스</div><div class="tv">가까운 소리=리버브A · 먼 소리=리버브B · 동시에 크게 X</div><button class="tgo" data-d="reverbsend">설정법 ›</button></div></div><div class="tstep"><span class="tn">9</span><div class="tc"><div class="tt">모노 체크</div><div class="tv">Stereo Out Gain의 Mono 잠깐 ON — 벨·패드 사라지면 위상 문제</div><button class="tgo" data-d="mix_direction">설정법 ›</button></div></div><div class="tstep"><span class="tn">10</span><div class="tc"><div class="tt">오토메이션</div><div class="tv">FX Cue 아크·긴 스웰 — 오토메이션 탭</div></div></div><div class="tstep"><span class="tn">11</span><div class="tc"><div class="tt">[A] 마스터링</div><div class="tv">Mastering Assistant Transparent · -16~-14 · Loudness Comp 끄기</div><button class="tgo" data-d="masterwell">설정법 ›</button></div></div><div class="tstep"><span class="tn">11</span><div class="tc"><div class="tt">[B] 숨웨이브行</div><div class="tv">마스터 스킵 → -18 언마스터 바운스</div></div></div></div><div class="box tip"><b>금지:</b> 과압축 · 밝은 하이 과다 · 리버브 두 계열 동시 최대 · 급격한 컷.</div>`},
-{phase:'곡마다', kicker:'① MIDI 먼저 연다', title:'곡마다 하는 일',
- html:`<div class="spec wide"><div class="srow"><span class="sk">① 열기</span><span class="sv" style="font-size:15.5px">File → Open → {곡}.mid · Import Tempo 체크</span></div>
- <div class="srow"><span class="sk">② 템플릿 붙이기</span><span class="sv" style="font-size:15.5px">File → Import → Logic Projects → <b>Sends 체크</b> → 리버브A/B·마스터 통째로</span></div>
- <div class="srow"><span class="sk">③ 패치</span><span class="sv" style="font-size:15.5px">트랙별 프리셋 클릭(라이브러리 <span class="k">Y</span>)</span></div>
- <div class="srow"><span class="sk">④ FX Cue</span><span class="sv" style="font-size:15.5px">가이드 트랙 [FX Cue]는 <span class="k">M</span> 뮤트(오토메이션 눈금용)</span></div></div>
- <button class="tapcard" data-d="importmidi"><span class="chev">›</span><span class="tc-h">MIDI 열고 템플릿 붙이는 법</span><span class="tc-go">로직 설정법 ›</span></button>
- <div class="box soft"><b>MIDI에 이미 실린 것:</b> CC11 호흡 스웰 · CC7 페이드 · 구조 마커 · 가이드 트랙 4종([Chord]/[Bass]/[FX Cue]/[Breath]). CC 지우지 말 것.</div>
- <div class="box tip"><div class="bt">트렌드 표기</div><p>바이노럴·솔페지오 등은 "이완 보조" 관습으로 완화 표기 · 간질·발작 이력 주의 문구 유지.</p></div>`},
 {phase:'템플릿', kicker:'최초 1회', title:'프로젝트 · 리버브 2계열',
  html:`<div class="spec wide"><div class="srow"><span class="sk">프로젝트</span><span class="sv"><span class="v">60 BPM · 4/4 · 48kHz</span> · 튜닝 <span class="v">432Hz</span>(File▸Project Settings▸Tuning)</span></div>
  <div class="srow"><span class="sk">리버브A · 가까운 방</span><span class="sv">ChromaVerb <span class="v">Chamber · 3.5s · Damp 70% · Pre 20ms</span> · 리턴 EQ HPF400·HiCut 8k</span></div>
@@ -1340,6 +1406,24 @@ const APP_MED = {name:'Medi Builder', c1:'#6FB7FF', c2:'#9E8CFF', steps:[
  <div class="srow"><span class="sk">Field</span><span class="sv"><span class="v">-18</span> · 와이드</span></div></div>
  <button class="tapcard" data-d="volumewhere"><span class="chev">›</span><span class="tc-h">이 숫자는 전부 페이더 값</span><span class="tc-p">페이더 vs Gain 플러그인 vs 오토메이션 구분</span><span class="tc-go">읽는 법 ›</span></button>
  <div class="box soft"><b>센드 원칙:</b> 가까운 소리=리버브A · 먼 소리=리버브B. 두 리버브에 동시에 크게 보내지 않는다(공간 두 개가 싸움).</div>`},
+{phase:'곡마다', kicker:'곡 하나 처음→끝', title:'이 곡 진행 순서',
+ html:`<p class="lead">명상 곡 하나 처음→끝. 번호대로, 값은 <b>설정법</b> 탭.</p><div class="tflow"><div class="tstep"><span class="tn">1</span><div class="tc"><div class="tt">앱에서 생성 → MIDI 추출</div><div class="tv">통짜 .mid 다운로드</div></div></div><div class="tstep"><span class="tn">2</span><div class="tc"><div class="tt">템플릿 열고 MIDI 임포트</div><div class="tv">리버브A/B·마스터 있는 템플릿 → 드래그/Open · Import Tempo</div><button class="tgo" data-d="importmidi">설정법 ›</button></div></div><div class="tstep"><span class="tn">3</span><div class="tc"><div class="tt">프리셋(.cst) 적용</div><div class="tv">명상 6종 트랙에 각 프리셋 클릭</div><button class="tgo" data-d="channelstrip">설정법 ›</button></div></div><div class="tstep"><span class="tn">4</span><div class="tc"><div class="tt">앱이 넣은 것 확인</div><div class="tv">호흡 스웰(CC11)·페이드·볼륨 자동 — 지우지 말 것</div></div></div><div class="tstep"><span class="tn">5</span><div class="tc"><div class="tt">Melody 앵커 게인</div><div class="tv">멜로디 미터가 노랑에 오게 Gain → 페이더 0 (기준점)</div><button class="tgo" data-d="gain_simple">설정법 ›</button></div></div><div class="tstep"><span class="tn">6</span><div class="tc"><div class="tt">표대로 상대 배치</div><div class="tv">나머지 페이더를 볼륨·팬 지도 값으로</div><button class="tgo" data-d="volumewhere">설정법 ›</button></div></div><div class="tstep"><span class="tn">7</span><div class="tc"><div class="tt">마스킹 정리</div><div class="tv">멜로디 묻히면 Pad 벨 300Hz -2~-3 Q1.0 · Drone LPF 2k</div><button class="tgo" data-d="eqparams">설정법 ›</button></div></div><div class="tstep"><span class="tn">8</span><div class="tc"><div class="tt">공간 밸런스</div><div class="tv">가까운 소리=리버브A · 먼 소리=리버브B · 동시에 크게 X</div><button class="tgo" data-d="reverbsend">설정법 ›</button></div></div><div class="tstep"><span class="tn">9</span><div class="tc"><div class="tt">모노 체크</div><div class="tv">Stereo Out Gain의 Mono 잠깐 ON — 벨·패드 사라지면 위상 문제</div><button class="tgo" data-d="mix_direction">설정법 ›</button></div></div><div class="tstep"><span class="tn">10</span><div class="tc"><div class="tt">오토메이션</div><div class="tv">FX Cue 아크·긴 스웰 — 오토메이션 탭</div></div></div><div class="tstep"><span class="tn">11</span><div class="tc"><div class="tt">[A] 마스터링</div><div class="tv">Mastering Assistant Transparent · -16~-14 · Loudness Comp 끄기</div><button class="tgo" data-d="masterwell">설정법 ›</button></div></div><div class="tstep"><span class="tn">11</span><div class="tc"><div class="tt">[B] 숨웨이브行</div><div class="tv">마스터 스킵 → -18 언마스터 바운스</div></div></div></div><div class="box tip"><b>인서트 순서(한 트랙):</b> Gain → 감산EQ → 컴프 → 새추 → 가산EQ → (모듈). 딜레이·리버브는 센드로.</div>
+<div class="box tip"><b>금지:</b> 과압축 · 밝은 하이 과다 · 리버브 두 계열 동시 최대 · 급격한 컷.</div>`},
+{phase:'곡마다', kicker:'① MIDI 먼저 연다', title:'곡마다 하는 일',
+ html:`<div class="spec wide"><div class="srow"><span class="sk">① 열기</span><span class="sv" style="font-size:15.5px">File → Open → {곡}.mid · Import Tempo 체크</span></div>
+ <div class="srow"><span class="sk">② 템플릿 붙이기</span><span class="sv" style="font-size:15.5px">File → Import → Logic Projects → <b>Sends 체크</b> → 리버브A/B·마스터 통째로</span></div>
+ <div class="srow"><span class="sk">③ 패치</span><span class="sv" style="font-size:15.5px">트랙별 프리셋 클릭(라이브러리 <span class="k">Y</span>)</span></div>
+ <div class="srow"><span class="sk">④ FX Cue</span><span class="sv" style="font-size:15.5px">가이드 트랙 [FX Cue]는 <span class="k">M</span> 뮤트(오토메이션 눈금용)</span></div></div>
+ <button class="tapcard" data-d="importmidi"><span class="chev">›</span><span class="tc-h">MIDI 열고 템플릿 붙이는 법</span><span class="tc-go">로직 설정법 ›</span></button>
+ <div class="box soft"><b>MIDI에 이미 실린 것:</b> CC11 호흡 스웰 · CC7 페이드 · 구조 마커 · 가이드 트랙 4종([Chord]/[Bass]/[FX Cue]/[Breath]). CC 지우지 말 것.</div>
+ <div class="box tip"><div class="bt">트렌드 표기</div><p>바이노럴·솔페지오 등은 "이완 보조" 관습으로 완화 표기 · 간질·발작 이력 주의 문구 유지.</p></div>`},
+{phase:'믹싱', kicker:'믹싱 1', title:'1 게인 설정법', html:MIXS1},
+{phase:'믹싱', kicker:'믹싱 2', title:'2 감산 EQ 설정법', html:MIXS2},
+{phase:'믹싱', kicker:'믹싱 3', title:'3 컴프 거는 법', html:MIXS3},
+{phase:'믹싱', kicker:'믹싱 4', title:'4 새추 방법', html:MIXS4},
+{phase:'믹싱', kicker:'믹싱 5', title:'5 가산 EQ 설정법', html:MIXS5},
+{phase:'믹싱', kicker:'믹싱 6', title:'6 볼륨·팬 조절법', html:`<p class="lead sm">숫자는 전부 <b>페이더</b> 값 — 믹서에서 더블클릭 입력. 팬은 페이더 위 노브.</p><div class="spec wide"><div class="srow"><span class="sk">Melody</span><span class="sv"><span class="v">0</span> · C</span></div><div class="srow"><span class="sk">Pad</span><span class="sv"><span class="v">-6~-9</span> · 넓게</span></div><div class="srow"><span class="sk">Bell</span><span class="sv"><span class="v">-8~-12</span> · L/R 20</span></div><div class="srow"><span class="sk">Drone</span><span class="sv"><span class="v">-12~-15</span> · C</span></div></div>`},
+{phase:'버스', kicker:'버스', title:'버스 — 리버브·병렬', html:MIXS7},
 {phase:'오토메이션', kicker:'FX Cue 눈금 기준', title:'곡 전체 흐름 (조용히 → 절정 → 조용히)',
  html:`<p class="lead">곡 전체를 하나의 호흡으로 — <b>조용하고 어둡게</b> 시작해 <b>절정(밝고 크게)</b>까지 갔다가 다시 조용히 돌아온다.</p>
  <div class="spec wide"><div class="srow"><span class="sk">조용한 구간</span><span class="sv">Auto Filter Cutoff <span class="v">2–3kHz</span> · 리버브B 센드 낮게</span></div>
@@ -1353,22 +1437,6 @@ const APP_MED = {name:'Medi Builder', c1:'#6FB7FF', c2:'#9E8CFF', steps:[
 <li>⑥ <b>Point → Sends › (딜레이 버스)</b> — 벨 여운을 구간별로</li>
 <li>⑦ <b>Stereo Out → Volume</b> 엔딩 페이드 — MIDI에 CC7 페이드가 이미 있으면 <span class="no">생략</span>(이중 페이드)</li></ul></div>
  <button class="tapcard" data-d="automation"><span class="chev">›</span><span class="tc-h">오토메이션 그리는 법</span><span class="tc-go">로직 설정법 ›</span></button>`},
-{phase:'믹싱', kicker:'버스 믹싱 5단계', title:'믹싱 — 5단계 · 임팩트 요소',
- html:`<div class="lstep"><span class="ln">1</span><span class="lc"><b>Melody 앵커.</b> 멜로디 트랙 첫 칸 Gain으로 피크 <span class="v">-12 dBFS</span> 맞춤 → 페이더 <span class="v">0</span>. 이게 기준점.</span></div>
-<div class="lstep"><span class="ln">2</span><span class="lc"><b>표 C대로 상대 배치.</b> 나머지 페이더를 볼륨·팬 지도 값으로(더블클릭 입력).</span></div>
-<div class="lstep"><span class="ln">3</span><span class="lc"><b>마스킹 정리.</b> 멜로디가 묻히면: Pad에 Channel EQ 벨 <span class="v">300Hz -2~-3 · Q1.0</span>(멜로디 근음 자리 비움) · Drone은 LPF <span class="v">2kHz</span> 확인(프리셋에 포함) — 저역 코어만 남게.</span></div>
-<div class="lstep"><span class="ln">4</span><span class="lc"><b>공간 밸런스.</b> 가까운 소리(피아노·벨 어택)=리버브A · 먼 소리(롱톤·텍스처)=리버브B. 센드 노브로만 조절 — 두 리버브에 동시에 크게 보내면 공간 두 개가 싸운다.</span></div>
-<div class="lstep"><span class="ln">5</span><span class="lc"><b>모노 체크.</b> Stereo Out에 Gain 꽂고 <b>Mono 버튼</b> 잠깐 ON — 벨·패드가 사라지면 위상 문제(더블 레이어 한쪽 삭제나 팬 조정). 확인 후 끄기.</span></div>
- <div class="spec wide"><div class="srow"><span class="sk">임팩트 7</span><span class="sv" style="font-size:15px">첫 3초 공간감 · 벨 어택 · 호흡 스웰 · 저역 코어 · 공간 대비(A↔B) · 침묵 활용 · 마지막 롱테일</span></div>
- <div class="srow"><span class="sk">금지 4</span><span class="sv" style="font-size:15px"><span class="no">과압축 · 밝은 하이 과다 · 리버브 두 계열 동시 최대 · 급격한 컷</span></span></div></div>
- <div class="kicker">플러그인 창 여는 법 (탭)</div>
- <button class="tapcard" data-d="mix_deesser"><span class="chev">›</span><span class="tc-h">DeEsser 2 — 치찰음</span><span class="tc-p">대역·Threshold·Reduction</span><span class="tc-go">설정법 ›</span></button>
- <button class="tapcard" data-d="mix_chromaglow"><span class="chev">›</span><span class="tc-h">ChromaGlow — 새추/두께</span><span class="tc-p">모델·Drive·Mix</span><span class="tc-go">설정법 ›</span></button>
- <button class="tapcard" data-d="mix_direction"><span class="chev">›</span><span class="tc-h">Direction Mixer — 폭</span><span class="tc-p">Spread·모노 체크</span><span class="tc-go">설정법 ›</span></button>
- <button class="tapcard" data-d="mix_gate"><span class="chev">›</span><span class="tc-h">Noise Gate — 잡음/꼬리</span><span class="tc-go">설정법 ›</span></button>
- <button class="tapcard" data-d="mix_transient"><span class="chev">›</span><span class="tc-h">Transient Designer — 펀치</span><span class="tc-go">설정법 ›</span></button>
- <button class="tapcard" data-d="mix_multipressor"><span class="chev">›</span><span class="tc-h">Multipressor — 멀티밴드</span><span class="tc-go">설정법 ›</span></button>
-<div class="nextline">다음 → <b>마스터링 탭</b>. [B] 숨웨이브行이면 마스터 없이 <b>-18 바운스</b>(Sum Mastering · 곡 규격 참조).</div>`},
 {phase:'마스터링', kicker:'A만 · 다이내믹 보존', title:'마스터링',
  html:`<div class="spec"><div class="srow"><span class="sk">간단</span><span class="sv">Mastering Assistant <span class="v">Transparent</span> · 재생하면 자동 분석 · <b>Loudness Compensation 끄기</b></span></div>
  <div class="srow"><span class="sk">목표</span><span class="sv"><span class="v">-16~-14 LUFS</span> · <span class="v">-1 dBTP</span> · GR 최소</span></div></div>
@@ -1506,13 +1574,6 @@ const APP_BAND = {name:'Band Composer', c1:'#C792EA', c2:'#F78FB3', steps:[
  <div class="abcard b"><div class="abh"><span class="badge">B</span><span>숨웨이브 투입</span></div><div class="abd">믹스까지만. 마스터 체인 <b>바이패스 유지</b> → <span class="v">-18 LUFS</span> 언마스터 바운스.</div></div></div>
  <button class="tapcard" data-d="handoff"><span class="chev">›</span><span class="tc-h">B로 보낼 파일 규격</span><span class="tc-go">로직 설정법 ›</span></button>
  <div class="box soft"><b>워크플로:</b> ① 템플릿 열기(버스·볼륨·팬) → ② MIDI 임포트(File▸Open) → ③ 악기 로딩 → ④ 장르 프리셋 클릭 → ⑤ 마커 따라 오토메이션 = 기초작업 완료.</div>`},
-{phase:'곡마다', kicker:'곡 하나 처음→끝', title:'이 곡 진행 순서',
- html:`<p class="lead">밴드/오케 곡 하나 처음→끝. 값은 <b>설정법</b> 탭.</p><div class="tflow"><div class="tstep"><span class="tn">1</span><div class="tc"><div class="tt">앱에서 편성·장르 생성 → MIDI</div><div class="tv">통짜 .mid</div></div></div><div class="tstep"><span class="tn">2</span><div class="tc"><div class="tt">템플릿 열고 임포트</div><div class="tv">홀 버스·마스터 템플릿 → 드래그/Open · Import Tempo</div><button class="tgo" data-d="importmidi">설정법 ›</button></div></div><div class="tstep"><span class="tn">3</span><div class="tc"><div class="tt">프리셋(.cst) 적용</div><div class="tv">세트별 트랙에 프리셋 클릭 (오케=ORC_ 6종)</div><button class="tgo" data-d="channelstrip">설정법 ›</button></div></div><div class="tstep"><span class="tn">4</span><div class="tc"><div class="tt">파일에 실린 것</div><div class="tv">CC64 페달·CC11 스웰·훅 반복 — 지우지 말 것</div></div></div><div class="tstep"><span class="tn">5</span><div class="tc"><div class="tt">리듬 섹션</div><div class="tv">드럼+베이스 솔로 → 킥0·베이스-2 · 저역 안 겹치게</div></div></div><div class="tstep"><span class="tn">6</span><div class="tc"><div class="tt">벽 쌓기</div><div class="tv">기타·키 HPF(기타90~120·키100·현80) · 더블기타 L/R100 · 보컬자리 3k -2</div><button class="tgo" data-d="eqparams">설정법 ›</button></div></div><div class="tstep"><span class="tn">7</span><div class="tc"><div class="tt">보컬·리드</div><div class="tv">센터 -3~-4 · HPF100·3k+1.5~2 → DeEsser 6~8k → Comp 3:1 GR3~4</div><button class="tgo" data-d="mix_deesser">설정법 ›</button></div></div><div class="tstep"><span class="tn">8</span><div class="tc"><div class="tt">글루·병렬</div><div class="tv">병렬컴프 버스 아래서부터 · 전체 글루 2:1 GR1~2</div><button class="tgo" data-d="parallel">설정법 ›</button></div></div><div class="tstep"><span class="tn">9</span><div class="tc"><div class="tt">(오케) 공간 통일</div><div class="tv">홀 리버브 한 계열 · 대역 분리 · 딜레이 깊이 · CC1 다이내믹</div><button class="tgo" data-d="articulation">설정법 ›</button></div></div><div class="tstep"><span class="tn">10</span><div class="tc"><div class="tt">대비·모노 확인</div><div class="tv">벌스↔코러스 에너지차 · 모노 1회 · CC11 살아있나</div><button class="tgo" data-d="mix_direction">설정법 ›</button></div></div><div class="tstep"><span class="tn">11</span><div class="tc"><div class="tt">오토메이션</div><div class="tv">구간 움직임 — 오토메이션 탭</div></div></div><div class="tstep"><span class="tn">12</span><div class="tc"><div class="tt">[A] 마스터링</div><div class="tv">Stereo Out 8단계</div><button class="tgo" data-d="masterchain">설정법 ›</button></div></div><div class="tstep"><span class="tn">12</span><div class="tc"><div class="tt">[B] 숨웨이브行</div><div class="tv">마스터 스킵 → -18 바운스</div></div></div></div><div class="box tip">오케는 5~8이 다르다: 컴프 최소(GR1) · 셈여림은 CC1 · 전 성부 동시 포르테 금지.</div>`},
-{phase:'곡마다', kicker:'① MIDI 먼저 연다', title:'MIDI 열기 · 파일에 실린 것',
- html:`<button class="tapcard" data-d="importmidi"><span class="chev">›</span><span class="tc-h">멀티트랙 MIDI 여는 법</span><span class="tc-p">빈 공간 드래그 / File→Open · Import Tempo · 템플릿 Sends 가져오기</span><span class="tc-go">로직 설정법 ›</span></button>
- <div class="spec wide"><div class="srow"><span class="sk">이미 실린 것</span><span class="sv" style="font-size:15.5px">CC64 페달 · CC11 다이내믹 스웰 · 훅/모티프 반복(코러스마다 동일) · 마커 <span class="sub">지우지 말 것 — 표현의 본체</span></span></div>
- <div class="srow"><span class="sk">팬</span><span class="sv" style="font-size:15.5px">밴드 무대 배치: 드럼 C · 베이스 C · 기타 L/R · 키즈 L · 리드 C</span></div>
- <div class="srow"><span class="sk">얹기용 리드</span><span class="sv" style="font-size:15.5px">멜로디 얹을 거면 Lead 트랙 <span class="k">M</span> 뮤트 후 직접 연주/입력</span></div></div>`},
 {phase:'템플릿', kicker:'최초 1회 만들기 · 곡마다 붙여 씀', title:'공통 버스 5종 & FX 순서',
  html:`<div class="spec"><div class="srow"><span class="sk">룸 리버브</span><span class="sv">ChromaVerb Room · <span class="v">0.8s · Pre 0</span> <span class="sub">전체 접착</span></span></div>
  <div class="srow"><span class="sk">플레이트 리버브</span><span class="sv">EQ HP200/LP8k → Plate <span class="v">2.0s · 25ms</span> <span class="sub">보컬·피아노·현</span></span></div>
@@ -1525,7 +1586,22 @@ const APP_BAND = {name:'Band Composer', c1:'#C792EA', c2:'#F78FB3', steps:[
  <div class="box soft"><b>마스터 체인:</b> Stereo Out에 EQ→Comp→ChromaGlow→Limiter 꽂고 <b>전부 바이패스</b>(A 믹스 단계에서 켬 · B는 안 켬). 이름은 「장르 역할」로 통일.</div>
  <div class="box tip"><b>구조 확인 —</b> 템플릿은 공통 뼈대(버스·기본값·마스터 자리)로 <b>한 번 만들어 고정</b>, 곡마다 안 건드린다. 곡별 차이는 <b>장르 카드의 트랙 프리셋·레벨·사이드체인 값으로만</b> 조절한다.</div>
  <button class="tapcard" data-d="masterchain"><span class="chev">›</span><span class="tc-h">마스터 체인 (A) 세팅</span><span class="tc-go">로직 설정법 ›</span></button>`},
+{phase:'곡마다', kicker:'곡 하나 처음→끝', title:'이 곡 진행 순서',
+ html:`<p class="lead">밴드/오케 곡 하나 처음→끝. 값은 <b>설정법</b> 탭.</p><div class="tflow"><div class="tstep"><span class="tn">1</span><div class="tc"><div class="tt">앱에서 편성·장르 생성 → MIDI</div><div class="tv">통짜 .mid</div></div></div><div class="tstep"><span class="tn">2</span><div class="tc"><div class="tt">템플릿 열고 임포트</div><div class="tv">홀 버스·마스터 템플릿 → 드래그/Open · Import Tempo</div><button class="tgo" data-d="importmidi">설정법 ›</button></div></div><div class="tstep"><span class="tn">3</span><div class="tc"><div class="tt">프리셋(.cst) 적용</div><div class="tv">세트별 트랙에 프리셋 클릭 (오케=ORC_ 6종)</div><button class="tgo" data-d="channelstrip">설정법 ›</button></div></div><div class="tstep"><span class="tn">4</span><div class="tc"><div class="tt">파일에 실린 것</div><div class="tv">CC64 페달·CC11 스웰·훅 반복 — 지우지 말 것</div></div></div><div class="tstep"><span class="tn">5</span><div class="tc"><div class="tt">리듬 섹션</div><div class="tv">드럼+베이스 솔로 → 킥0·베이스-2 · 저역 안 겹치게</div></div></div><div class="tstep"><span class="tn">6</span><div class="tc"><div class="tt">벽 쌓기</div><div class="tv">기타·키 HPF(기타90~120·키100·현80) · 더블기타 L/R100 · 보컬자리 3k -2</div><button class="tgo" data-d="eqparams">설정법 ›</button></div></div><div class="tstep"><span class="tn">7</span><div class="tc"><div class="tt">보컬·리드</div><div class="tv">센터 -3~-4 · HPF100·3k+1.5~2 → DeEsser 6~8k → Comp 3:1 GR3~4</div><button class="tgo" data-d="mix_deesser">설정법 ›</button></div></div><div class="tstep"><span class="tn">8</span><div class="tc"><div class="tt">글루·병렬</div><div class="tv">병렬컴프 버스 아래서부터 · 전체 글루 2:1 GR1~2</div><button class="tgo" data-d="parallel">설정법 ›</button></div></div><div class="tstep"><span class="tn">9</span><div class="tc"><div class="tt">(오케) 공간 통일</div><div class="tv">홀 리버브 한 계열 · 대역 분리 · 딜레이 깊이 · CC1 다이내믹</div><button class="tgo" data-d="articulation">설정법 ›</button></div></div><div class="tstep"><span class="tn">10</span><div class="tc"><div class="tt">대비·모노 확인</div><div class="tv">벌스↔코러스 에너지차 · 모노 1회 · CC11 살아있나</div><button class="tgo" data-d="mix_direction">설정법 ›</button></div></div><div class="tstep"><span class="tn">11</span><div class="tc"><div class="tt">오토메이션</div><div class="tv">구간 움직임 — 오토메이션 탭</div></div></div><div class="tstep"><span class="tn">12</span><div class="tc"><div class="tt">[A] 마스터링</div><div class="tv">Stereo Out 8단계</div><button class="tgo" data-d="masterchain">설정법 ›</button></div></div><div class="tstep"><span class="tn">12</span><div class="tc"><div class="tt">[B] 숨웨이브行</div><div class="tv">마스터 스킵 → -18 바운스</div></div></div></div><div class="box tip"><b>인서트 순서(한 트랙):</b> Gain → 감산EQ → 컴프 → 새추 → 가산EQ → (모듈). 딜레이·리버브는 센드로.</div>
+<div class="box tip">오케는 5~8이 다르다: 컴프 최소(GR1) · 셈여림은 CC1 · 전 성부 동시 포르테 금지.</div>`},
+{phase:'곡마다', kicker:'① MIDI 먼저 연다', title:'MIDI 열기 · 파일에 실린 것',
+ html:`<button class="tapcard" data-d="importmidi"><span class="chev">›</span><span class="tc-h">멀티트랙 MIDI 여는 법</span><span class="tc-p">빈 공간 드래그 / File→Open · Import Tempo · 템플릿 Sends 가져오기</span><span class="tc-go">로직 설정법 ›</span></button>
+ <div class="spec wide"><div class="srow"><span class="sk">이미 실린 것</span><span class="sv" style="font-size:15.5px">CC64 페달 · CC11 다이내믹 스웰 · 훅/모티프 반복(코러스마다 동일) · 마커 <span class="sub">지우지 말 것 — 표현의 본체</span></span></div>
+ <div class="srow"><span class="sk">팬</span><span class="sv" style="font-size:15.5px">밴드 무대 배치: 드럼 C · 베이스 C · 기타 L/R · 키즈 L · 리드 C</span></div>
+ <div class="srow"><span class="sk">얹기용 리드</span><span class="sv" style="font-size:15.5px">멜로디 얹을 거면 Lead 트랙 <span class="k">M</span> 뮤트 후 직접 연주/입력</span></div></div>`},
 ...BAND_SETS.map(bandSetStep),
+{phase:'믹싱', kicker:'믹싱 1', title:'1 게인 설정법', html:MIXS1},
+{phase:'믹싱', kicker:'믹싱 2', title:'2 감산 EQ 설정법', html:MIXS2},
+{phase:'믹싱', kicker:'믹싱 3', title:'3 컴프 거는 법', html:MIXS3},
+{phase:'믹싱', kicker:'믹싱 4', title:'4 새추 방법', html:MIXS4},
+{phase:'믹싱', kicker:'믹싱 5', title:'5 가산 EQ 설정법', html:MIXS5},
+{phase:'믹싱', kicker:'믹싱 6', title:'6 볼륨·팬 조절법', html:`<p class="lead sm">숫자는 전부 <b>페이더</b> 값 — 믹서에서 더블클릭 입력. 팬은 페이더 위 노브.</p><div class="spec wide"><div class="srow"><span class="sk">킥</span><span class="sv"><span class="v">0</span> · C</span></div><div class="srow"><span class="sk">베이스</span><span class="sv"><span class="v">-2</span> · C</span></div><div class="srow"><span class="sk">스네어</span><span class="sv"><span class="v">-2</span> · C</span></div><div class="srow"><span class="sk">더블 기타</span><span class="sv"><span class="v">-4</span> · L/R 100</span></div><div class="srow"><span class="sk">키/신스</span><span class="sv"><span class="v">-5</span> · L/R 30</span></div><div class="srow"><span class="sk">리드보컬</span><span class="sv"><span class="v">-3~-4</span> · C</span></div><div class="srow"><span class="sk">코러스</span><span class="sv"><span class="v">-8</span> · L/R</span></div></div>`},
+{phase:'버스', kicker:'버스', title:'버스 — 리버브·병렬', html:MIXS7},
 {phase:'오토메이션', kicker:'마커 따라 · 장르별', title:'오토메이션 — 밴드가 살아나는 지점',
  html:`<p class="lead">밴드 음악은 <b>구간마다 무엇이 들어오고 빠지는지</b>가 감정선. 마커(구간 경계)를 찍고 그 사이를 그린다. 세부 값은 각 장르 카드의 「마커 오토메이션」 줄.</p>
  <div class="spec wide"><div class="srow"><span class="sk">록</span><span class="sv" style="font-size:15px">코러스: 더블 기타 언뮤트 + 병렬컴프 센드↑ / 브릿지: 기타 한 대만 + 보컬 리버브↑ / 라스트: 전체 +1dB</span></div>
@@ -1536,28 +1612,6 @@ const APP_BAND = {name:'Band Composer', c1:'#C792EA', c2:'#F78FB3', steps:[
  <div class="srow"><span class="sk">오케스트라</span><span class="sv" style="font-size:15px">셈여림은 <b>CC1</b>(악기 Dynamics via CC ON — 피아노롤 하단 레인에 그림, 트랙 오토메이션 아님) / 빌드 끝 팀파니 롤 볼륨 크레셴도 / 브릿지 탐탐 렛링 + 홀 센드↑ / 라스트 전 성부 +1dB</span></div></div>
  <button class="tapcard" data-d="automation"><span class="chev">›</span><span class="tc-h">오토메이션 그리는 법</span><span class="tc-go">로직 설정법 ›</span></button>
  <button class="tapcard" data-d="articulation"><span class="chev">›</span><span class="tc-h">오케 CC1 스웰 — 어디에 그리나</span><span class="tc-p">Dynamics via CC · CC1 vs CC11</span><span class="tc-go">로직 설정법 ›</span></button>`},
-{phase:'믹싱', kicker:'밴드 5단계 · 오케 별도', title:'믹싱 — 밴드 · 오케스트라',
- html:`<div class="kicker">밴드 공통 — 순서 5단계</div>
- <div class="spec wide"><div class="srow"><span class="sk">① 리듬 섹션</span><span class="sv" style="font-size:15.5px">드럼+베이스만 솔로 → 킥 <span class="v">0</span> 기준, 베이스 <span class="v">-2</span>. 킥·베이스 저역이 안 겹치게(하나는 어택·하나는 서브)</span></div>
- <div class="srow"><span class="sk">② 벽 쌓기</span><span class="sv" style="font-size:15.5px">기타·키 추가 — Channel EQ HPF: 기타 <span class="v">90–120</span> · 키 <span class="v">100</span> · 현 <span class="v">80</span>(저역은 베이스 몫) · 더블 기타 팬 <span class="v">L/R 100</span> · <b>보컬 자리 비우기:</b> 기타·신스에 벨 <span class="v">3kHz -2 · Q1.2</span></span></div>
- <div class="srow"><span class="sk">③ 보컬·리드</span><span class="sv" style="font-size:15.5px">센터 <span class="v">-3~-4</span> · EQ HPF <span class="v">100</span>·벨 <span class="v">3k +1.5~2</span> → DeEsser 2(치찰음 <span class="v">6–8k</span>) → Comp <span class="v">3:1 GR 3–4</span>(록=FET·발라드=Opto) · 리버브는 Predelay <span class="v">20–40ms</span>로 명료도 유지</span></div>
- <div class="srow"><span class="sk">④ 글루·병렬</span><span class="sv" style="font-size:15.5px">드럼 → 병렬컴프 버스 아래서부터 올려 두께 · 전체 버스 글루 <span class="v">2:1 GR 1–2</span></span></div>
- <div class="srow"><span class="sk">⑤ 대비 확인</span><span class="sv" style="font-size:15.5px">벌스↔코러스 에너지 차 · 모노로 한 번(위상·마스킹) · CC11 스웰 살아있나</span></div></div>
- <div class="kicker">오케스트라 — 다르게 간다</div>
- <div class="spec wide"><div class="srow"><span class="sk">공간 통일</span><span class="sv" style="font-size:15.5px">홀 리버브 <b>한 계열만</b> — 전 성부가 같은 홀에 서야 한 오케로 들림</span></div>
- <div class="srow"><span class="sk">대역 분리</span><span class="sv" style="font-size:15.5px">저현=저역 · 혼/브라스=중역 · 현=상역 · 목관=최상 — 전 성부 동시 포르테는 뭉갬</span></div>
- <div class="srow"><span class="sk">깊이</span><span class="sv" style="font-size:15.5px">섹션 트랙 딜레이: 현(뒤) <span class="v">-60ms</span> · 목관 <span class="v">-40ms</span> · 무대 배치 팬(탭카드)</span></div>
- <div class="srow"><span class="sk">다이내믹</span><span class="sv" style="font-size:15.5px">컴프 최소(GR 1dB) — 셈여림은 CC1이 담당, 컴프로 누르면 오케가 죽는다</span></div></div>
- <button class="tapcard" data-d="articulation"><span class="chev">›</span><span class="tc-h">무대 배치 팬 · 섹션 딜레이 값</span><span class="tc-go">로직 설정법 ›</span></button>
- <button class="tapcard" data-d="volumewhere"><span class="chev">›</span><span class="tc-h">숫자는 어디에 입력?</span><span class="tc-p">페이더 vs Gain vs 오토메이션</span><span class="tc-go">읽는 법 ›</span></button>
- <div class="kicker">플러그인 창 여는 법 (탭)</div>
- <button class="tapcard" data-d="mix_deesser"><span class="chev">›</span><span class="tc-h">DeEsser 2 — 치찰음</span><span class="tc-p">대역·Threshold·Reduction</span><span class="tc-go">설정법 ›</span></button>
- <button class="tapcard" data-d="mix_chromaglow"><span class="chev">›</span><span class="tc-h">ChromaGlow — 새추/두께</span><span class="tc-p">모델·Drive·Mix</span><span class="tc-go">설정법 ›</span></button>
- <button class="tapcard" data-d="mix_direction"><span class="chev">›</span><span class="tc-h">Direction Mixer — 폭</span><span class="tc-p">Spread·모노 체크</span><span class="tc-go">설정법 ›</span></button>
- <button class="tapcard" data-d="mix_gate"><span class="chev">›</span><span class="tc-h">Noise Gate — 잡음/꼬리</span><span class="tc-go">설정법 ›</span></button>
- <button class="tapcard" data-d="mix_transient"><span class="chev">›</span><span class="tc-h">Transient Designer — 펀치</span><span class="tc-go">설정법 ›</span></button>
- <button class="tapcard" data-d="mix_multipressor"><span class="chev">›</span><span class="tc-h">Multipressor — 멀티밴드</span><span class="tc-go">설정법 ›</span></button>
-<div class="nextline">다음 → <b>마스터링 탭</b>. [B] 숨웨이브行이면 마스터 없이 <b>-18 바운스</b>(Sum Mastering · 곡 규격 참조).</div>`},
 {phase:'마스터링', kicker:'A 발매 · Stereo Out', title:'마스터링 — 밴드 · 오케스트라',
  html:MASTER_STD+`
  <div class="box soft"><b>세트별 목표:</b> 록·J팝·펑크 <span class="v">-14</span> · K팝댄스 <span class="v">-9</span> 하한 · 발라드 <span class="v">-16~-14</span> · 오케 <span class="v">-16~-14</span>.</div>
@@ -1647,16 +1701,6 @@ const APP_PLAY = {name:'Play Composer', c1:'#5BD3A0', c2:'#F2C14E', steps:[
  <div class="abcard a"><div class="abh"><span class="badge">A</span><span>독립 발매</span></div><div class="abd">믹스→마스터 → 스트리밍. 장르별 타깃(A 앰비언트 <span class="v">-16~-18</span> ~ E EDM <span class="v">-9~-12</span>).</div></div>
  <div class="abcard b"><div class="abh"><span class="badge">B</span><span>숨웨이브 투입</span></div><div class="abd">믹스까지만. <span class="v">-18 LUFS</span> 언마스터 2믹스로 바운스.</div></div></div>
  <button class="tapcard" data-d="handoff"><span class="chev">›</span><span class="tc-h">B로 보낼 파일 규격</span><span class="tc-go">로직 설정법 ›</span></button>`},
-{phase:'곡마다', kicker:'곡 하나 처음→끝', title:'이 곡 진행 순서',
- html:`<p class="lead">오케/시네마틱 곡 하나 처음→끝. 값은 <b>설정법</b> 탭.</p><div class="tflow"><div class="tstep"><span class="tn">1</span><div class="tc"><div class="tt">앱에서 생성 → MIDI</div><div class="tv">통짜 .mid</div></div></div><div class="tstep"><span class="tn">2</span><div class="tc"><div class="tt">템플릿 열고 임포트</div><div class="tv">버스·마스터 템플릿 → 드래그/Open · Import Tempo</div><button class="tgo" data-d="importmidi">설정법 ›</button></div></div><div class="tstep"><span class="tn">3</span><div class="tc"><div class="tt">프리셋(.cst) 적용</div><div class="tv">패밀리별 트랙에 프리셋 클릭</div><button class="tgo" data-d="channelstrip">설정법 ›</button></div></div><div class="tstep"><span class="tn">4</span><div class="tc"><div class="tt">구워진 것 확인</div><div class="tv">현 CC11 스웰·패드 open5th·코드 마커 — 지우지 말 것</div><button class="tgo" data-d="baked">설정법 ›</button></div></div><div class="tstep"><span class="tn">5</span><div class="tc"><div class="tt">게인</div><div class="tv">미터가 노랑에 오게 Gain · 페이더 0 근처</div><button class="tgo" data-d="gain_simple">설정법 ›</button></div></div><div class="tstep"><span class="tn">6</span><div class="tc"><div class="tt">저역 정리 HPF</div><div class="tv">멜로디150·목관150·피아노60~80·현60·패드200·베이스30</div><button class="tgo" data-d="eqparams">설정법 ›</button></div></div><div class="tstep"><span class="tn">7</span><div class="tc"><div class="tt">멜로디 자리</div><div class="tv">묻히면 패드·현 벨 300~500Hz -2~-3 Q1.0 (+2~3k -2)</div><button class="tgo" data-d="eqparams">설정법 ›</button></div></div><div class="tstep"><span class="tn">8</span><div class="tc"><div class="tt">컴프</div><div class="tv">장르 카드 체인대로 · Opto/VCA/FET 구분 · GR1~3</div><button class="tgo" data-d="compparams">설정법 ›</button></div></div><div class="tstep"><span class="tn">9</span><div class="tc"><div class="tt">공간</div><div class="tv">장르 주력 리버브 1버스 · 센드 -18 · 동시에 크게 X</div><button class="tgo" data-d="reverbsend">설정법 ›</button></div></div><div class="tstep"><span class="tn">10</span><div class="tc"><div class="tt">볼륨·팬 확정</div><div class="tv">Melody0 기준 표대로 (Counter-5·Piano-4·Strings-6…)</div><button class="tgo" data-d="volumewhere">설정법 ›</button></div></div><div class="tstep"><span class="tn">11</span><div class="tc"><div class="tt">오토메이션</div><div class="tv">장르 A~G별 지점 — 오토메이션 탭</div></div></div><div class="tstep"><span class="tn">12</span><div class="tc"><div class="tt">[A] 마스터링</div><div class="tv">Meter→EQ HPF20~30→Comp2:1 GR1~2→Limiter -1dBTP</div><button class="tgo" data-d="masterchain">설정법 ›</button></div></div><div class="tstep"><span class="tn">12</span><div class="tc"><div class="tt">[B] 숨웨이브行</div><div class="tv">마스터 스킵 → -18 바운스</div></div></div></div><div class="box tip">장르별 LUFS: A -16~-18 · B/C/D -12~-16 · E -9~-12 · F/G -16~-14.</div>`},
-{phase:'곡마다', kicker:'① MIDI 먼저 연다', title:'임포트 · 채널 맵',
- html:`<div class="spec wide"><div class="srow"><span class="sk">① 열기</span><span class="sv" style="font-size:15.5px">빈 트랙영역에 <span class="v">{곡}.mid</span> 드래그(또는 File→Open) · Import Tempo 체크</span></div>
- <div class="srow"><span class="sk">② 템플릿 붙이기</span><span class="sv" style="font-size:15.5px">File → Import → Logic Projects → 플레이 템플릿 → <b>Sends 체크</b> → Add(버스 A~D·마스터 통째)</span></div></div>
- <div class="box soft"><b>대안:</b> 템플릿을 먼저 열어뒀다면 File → Import → <b>MIDI File</b>로 커서 위치(1마디)에 얹어도 된다 — 결과 동일.</div>
- <div class="spec"><div class="srow"><span class="sk">ch 0–7</span><span class="sv" style="font-size:15px">Piano · Strings · Winds · Bass · Pad · Melody · Counter · FX Riser</span></div>
- <div class="srow"><span class="sk">ch 8–15</span><span class="sv" style="font-size:15px">SubBass · Drums · F.Horns* · LowBrass* · Harp* · Choir* · Timpani* · Contrabass* <span class="sub">*시네마틱 계열만</span></span></div></div>
- <div class="box soft"><b>MIDI에 구워진 것:</b> CC1 모듈 · CC11 익스프레션 · CC64 페달 · 뼈대 토글 상태 · 셋업 시트(.txt 동봉). 지우지 말 것.</div>
- <button class="tapcard" data-d="importmidi"><span class="chev">›</span><span class="tc-h">임포트 · 템플릿 붙이는 법</span><span class="tc-go">로직 설정법 ›</span></button>`},
 {phase:'템플릿', kicker:'최초 1회 만들기 · 곡마다 붙여 씀', title:'기본값 · 리버브 버스 A~D',
  html:`<div class="spec wide"><div class="srow"><span class="sk">기본값</span><span class="sv"><span class="v">48kHz · 24bit</span> · 마스터 페이더 <span class="v">0dB 고정</span> · 버퍼 <span class="v">128–256</span></span></div>
  <div class="srow"><span class="sk">Bus A · Short</span><span class="sv">Plate <span class="v">1.2s · 15ms</span> · Density 높게 <span class="sub">드럼·기타·업템포</span></span></div>
@@ -1667,6 +1711,17 @@ const APP_PLAY = {name:'Play Composer', c1:'#5BD3A0', c2:'#F2C14E', steps:[
  <button class="tapcard" data-d="reverbsend"><span class="chev">›</span><span class="tc-h">리버브 버스 만드는 법</span><span class="tc-go">로직 설정법 ›</span></button>
  <div class="box soft"><b>이름 규칙:</b> 「장르 역할」(예: EDM 패드) — Setting ▾에서 저장.</div>
  <div class="box tip"><b>구조 확인 —</b> 템플릿은 공통 뼈대(버스·기본값·마스터 자리)로 <b>한 번 만들어 고정</b>, 곡마다 안 건드린다. 곡별 차이는 <b>장르 카드의 트랙 프리셋·레벨·사이드체인 값으로만</b> 조절한다.</div>`},
+{phase:'곡마다', kicker:'곡 하나 처음→끝', title:'이 곡 진행 순서',
+ html:`<p class="lead">오케/시네마틱 곡 하나 처음→끝. 값은 <b>설정법</b> 탭.</p><div class="tflow"><div class="tstep"><span class="tn">1</span><div class="tc"><div class="tt">앱에서 생성 → MIDI</div><div class="tv">통짜 .mid</div></div></div><div class="tstep"><span class="tn">2</span><div class="tc"><div class="tt">템플릿 열고 임포트</div><div class="tv">버스·마스터 템플릿 → 드래그/Open · Import Tempo</div><button class="tgo" data-d="importmidi">설정법 ›</button></div></div><div class="tstep"><span class="tn">3</span><div class="tc"><div class="tt">프리셋(.cst) 적용</div><div class="tv">패밀리별 트랙에 프리셋 클릭</div><button class="tgo" data-d="channelstrip">설정법 ›</button></div></div><div class="tstep"><span class="tn">4</span><div class="tc"><div class="tt">구워진 것 확인</div><div class="tv">현 CC11 스웰·패드 open5th·코드 마커 — 지우지 말 것</div><button class="tgo" data-d="baked">설정법 ›</button></div></div><div class="tstep"><span class="tn">5</span><div class="tc"><div class="tt">게인</div><div class="tv">미터가 노랑에 오게 Gain · 페이더 0 근처</div><button class="tgo" data-d="gain_simple">설정법 ›</button></div></div><div class="tstep"><span class="tn">6</span><div class="tc"><div class="tt">저역 정리 HPF</div><div class="tv">멜로디150·목관150·피아노60~80·현60·패드200·베이스30</div><button class="tgo" data-d="eqparams">설정법 ›</button></div></div><div class="tstep"><span class="tn">7</span><div class="tc"><div class="tt">멜로디 자리</div><div class="tv">묻히면 패드·현 벨 300~500Hz -2~-3 Q1.0 (+2~3k -2)</div><button class="tgo" data-d="eqparams">설정법 ›</button></div></div><div class="tstep"><span class="tn">8</span><div class="tc"><div class="tt">컴프</div><div class="tv">장르 카드 체인대로 · Opto/VCA/FET 구분 · GR1~3</div><button class="tgo" data-d="compparams">설정법 ›</button></div></div><div class="tstep"><span class="tn">9</span><div class="tc"><div class="tt">공간</div><div class="tv">장르 주력 리버브 1버스 · 센드 -18 · 동시에 크게 X</div><button class="tgo" data-d="reverbsend">설정법 ›</button></div></div><div class="tstep"><span class="tn">10</span><div class="tc"><div class="tt">볼륨·팬 확정</div><div class="tv">Melody0 기준 표대로 (Counter-5·Piano-4·Strings-6…)</div><button class="tgo" data-d="volumewhere">설정법 ›</button></div></div><div class="tstep"><span class="tn">11</span><div class="tc"><div class="tt">오토메이션</div><div class="tv">장르 A~G별 지점 — 오토메이션 탭</div></div></div><div class="tstep"><span class="tn">12</span><div class="tc"><div class="tt">[A] 마스터링</div><div class="tv">Meter→EQ HPF20~30→Comp2:1 GR1~2→Limiter -1dBTP</div><button class="tgo" data-d="masterchain">설정법 ›</button></div></div><div class="tstep"><span class="tn">12</span><div class="tc"><div class="tt">[B] 숨웨이브行</div><div class="tv">마스터 스킵 → -18 바운스</div></div></div></div><div class="box tip"><b>인서트 순서(한 트랙):</b> Gain → 감산EQ → 컴프 → 새추 → 가산EQ → (모듈). 딜레이·리버브는 센드로.</div>
+<div class="box tip">장르별 LUFS: A -16~-18 · B/C/D -12~-16 · E -9~-12 · F/G -16~-14.</div>`},
+{phase:'곡마다', kicker:'① MIDI 먼저 연다', title:'임포트 · 채널 맵',
+ html:`<div class="spec wide"><div class="srow"><span class="sk">① 열기</span><span class="sv" style="font-size:15.5px">빈 트랙영역에 <span class="v">{곡}.mid</span> 드래그(또는 File→Open) · Import Tempo 체크</span></div>
+ <div class="srow"><span class="sk">② 템플릿 붙이기</span><span class="sv" style="font-size:15.5px">File → Import → Logic Projects → 플레이 템플릿 → <b>Sends 체크</b> → Add(버스 A~D·마스터 통째)</span></div></div>
+ <div class="box soft"><b>대안:</b> 템플릿을 먼저 열어뒀다면 File → Import → <b>MIDI File</b>로 커서 위치(1마디)에 얹어도 된다 — 결과 동일.</div>
+ <div class="spec"><div class="srow"><span class="sk">ch 0–7</span><span class="sv" style="font-size:15px">Piano · Strings · Winds · Bass · Pad · Melody · Counter · FX Riser</span></div>
+ <div class="srow"><span class="sk">ch 8–15</span><span class="sv" style="font-size:15px">SubBass · Drums · F.Horns* · LowBrass* · Harp* · Choir* · Timpani* · Contrabass* <span class="sub">*시네마틱 계열만</span></span></div></div>
+ <div class="box soft"><b>MIDI에 구워진 것:</b> CC1 모듈 · CC11 익스프레션 · CC64 페달 · 뼈대 토글 상태 · 셋업 시트(.txt 동봉). 지우지 말 것.</div>
+ <button class="tapcard" data-d="importmidi"><span class="chev">›</span><span class="tc-h">임포트 · 템플릿 붙이는 법</span><span class="tc-go">로직 설정법 ›</span></button>`},
 {phase:'곡마다', kicker:'② MIDI에 든 연주', title:'MIDI에 이미 구워진 것',
  html:`<p class="lead sm">Play가 뽑은 .mid엔 연주가 이미 들어있다. 그대로 살리고, 몇 곳만 확인한다.</p>
  <div class="spec wide"><div class="srow"><span class="sk">현 라인·활 스웰</span><span class="sv" style="font-size:15px">보이스리딩 레가토 + 마디마다 CC11 자동(블록 화음 아님)</span></div>
@@ -1681,6 +1736,13 @@ const APP_PLAY = {name:'Play Composer', c1:'#5BD3A0', c2:'#F2C14E', steps:[
  <button class="tapcard" data-d="baked"><span class="chev">›</span><span class="tc-h">구워진 것 — 로직에서 확인·활용</span><span class="tc-p">이벤트 리스트 여는 법 포함</span><span class="tc-go">설정법 ›</span></button>
  <button class="tapcard" data-d="tension"><span class="chev">›</span><span class="tc-h">텐션·화성 다루기</span><span class="tc-go">설정법 ›</span></button>`},
 ...PLAY_FAMS.map(playFamStep),
+{phase:'믹싱', kicker:'믹싱 1', title:'1 게인 설정법', html:MIXS1},
+{phase:'믹싱', kicker:'믹싱 2', title:'2 감산 EQ 설정법', html:MIXS2},
+{phase:'믹싱', kicker:'믹싱 3', title:'3 컴프 거는 법', html:MIXS3},
+{phase:'믹싱', kicker:'믹싱 4', title:'4 새추 방법', html:MIXS4},
+{phase:'믹싱', kicker:'믹싱 5', title:'5 가산 EQ 설정법', html:MIXS5},
+{phase:'믹싱', kicker:'믹싱 6', title:'6 볼륨·팬 조절법', html:`<p class="lead sm">숫자는 전부 <b>페이더</b> 값 — 믹서에서 더블클릭 입력. 팬은 페이더 위 노브.</p><div class="spec wide"><div class="srow"><span class="sk">Melody</span><span class="sv"><span class="v">0</span> · C</span></div><div class="srow"><span class="sk">Counter</span><span class="sv"><span class="v">-5</span> · 반대편</span></div><div class="srow"><span class="sk">Piano</span><span class="sv"><span class="v">-4</span> · C</span></div><div class="srow"><span class="sk">1st Vln</span><span class="sv"><span class="v">-6</span> · L 30</span></div><div class="srow"><span class="sk">2nd Vln</span><span class="sv"><span class="v">-6</span> · L 10</span></div><div class="srow"><span class="sk">Viola</span><span class="sv"><span class="v">-7</span> · R 10</span></div><div class="srow"><span class="sk">Cello</span><span class="sv"><span class="v">-6</span> · R 30</span></div><div class="srow"><span class="sk">목관</span><span class="sv"><span class="v">-7</span> · C~10</span></div><div class="srow"><span class="sk">금관</span><span class="sv"><span class="v">-5</span> · R 20</span></div><div class="srow"><span class="sk">Pad</span><span class="sv"><span class="v">-10</span> · 넓게</span></div></div>`},
+{phase:'버스', kicker:'버스', title:'버스 — 리버브·병렬', html:MIXS7},
 {phase:'오토메이션', kicker:'장르 A~G 특징별', title:'오토메이션 — 장르가 살아나는 지점',
  html:`<p class="lead">MIDI에 CC1·CC11이 이미 실려 온다(지우지 말 것) — 아래는 로직에서 <b>추가로</b> 그리는 것들.</p>
  <div class="spec wide"><div class="srow"><span class="sk">A 앰비언트</span><span class="sv" style="font-size:15px">시머(Bus C) 센드를 절정 구간에만↑ / 페달·루바토 존중 — 볼륨 곡선은 아주 완만하게</span></div>
@@ -1692,34 +1754,6 @@ const APP_PLAY = {name:'Play Composer', c1:'#5BD3A0', c2:'#F2C14E', steps:[
  <div class="srow"><span class="sk">G 클래식·월드</span><span class="sv" style="font-size:15px">F의 축소판 — CC1 위주, 독주 Volume 라이드만 추가</span></div></div>
  <button class="tapcard" data-d="automation"><span class="chev">›</span><span class="tc-h">오토메이션 그리는 법</span><span class="tc-go">로직 설정법 ›</span></button>
  <button class="tapcard" data-d="articulation"><span class="chev">›</span><span class="tc-h">CC1 스웰 — 어디에 그리나</span><span class="tc-go">로직 설정법 ›</span></button>`},
-{phase:'믹싱', kicker:'전 장르 공통', title:'믹싱 — FX 순서 · EQ · 컴프 · 볼륨/팬',
- html:`<div class="lstep"><span class="ln">1</span><span class="lc"><b>게인.</b> 각 트랙 첫 칸 Gain — 피크 <span class="v">-12~-6</span> · 페이더 0 근처 시작.</span></div>
-<div class="lstep"><span class="ln">2</span><span class="lc"><b>저역 정리 — HPF.</b> Channel EQ 밴드1: 멜로디·카운터 <span class="v">150</span> · 목관 <span class="v">150</span> · 피아노 <span class="v">60–80</span> · 현 <span class="v">60</span> · 패드 <span class="v">200</span> · 베이스 <span class="v">30</span>. 저역은 베이스 하나만.</span></div>
-<div class="lstep"><span class="ln">3</span><span class="lc"><b>멜로디 자리 — 마스킹 딥.</b> 멜로디가 묻히면 <b>패드·현에</b> 벨 <span class="v">300–500Hz -2~-3 · Q1.0</span>(근음역 비켜주기) + 필요하면 <span class="v">2–3kHz -2</span>(존재감 자리).</span></div>
-<div class="lstep"><span class="ln">4</span><span class="lc"><b>컴프 — 각 장르 카드의 체인 값 그대로.</b> 감 잡기: <b>Opto</b>=느리고 부드러움(피아노·발라드·업라이트) / <b>VCA</b>=깔끔·범용(드럼·현·베이스) / <b>FET</b>=빠르고 펀치(록 드럼). GR은 <span class="v">1–3dB</span>만 — Threshold 내리며 미터 확인.</span></div>
-<div class="lstep"><span class="ln">5</span><span class="lc"><b>공간.</b> 장르당 주력 리버브 <b>1버스</b>(카드에 표기) · 센드 <span class="v">-18</span> 시작. 두 리버브에 동시에 크게 보내지 않는다.</span></div>
-<div class="lstep"><span class="ln">6</span><span class="lc"><b>볼륨·팬 확정 — 아래 표.</b> Melody <span class="v">0</span> 기준(피크 <span class="v">-12</span> 앵커) 위→아래로.</span></div>
-<div class="spec"><div class="srow"><span class="sk">Melody</span><span class="sv"><span class="v">0</span> · C</span></div>
- <div class="srow"><span class="sk">Counter</span><span class="sv"><span class="v">-5</span> · ±15</span></div>
- <div class="srow"><span class="sk">Piano/Keys</span><span class="sv"><span class="v">-4</span> · L10</span></div>
- <div class="srow"><span class="sk">Strings</span><span class="sv"><span class="v">-6</span> · 와이드</span></div>
- <div class="srow"><span class="sk">Winds</span><span class="sv"><span class="v">-7</span> · R15</span></div>
- <div class="srow"><span class="sk">Bass/Sub</span><span class="sv"><span class="v">-3</span> · C 모노</span></div>
- <div class="srow"><span class="sk">Pad</span><span class="sv"><span class="v">-9</span> · 와이드</span></div>
- <div class="srow"><span class="sk">Drums</span><span class="sv"><span class="v">-2</span> · C</span></div>
- <div class="srow"><span class="sk">FX Riser</span><span class="sv"><span class="v">-10</span> · 와이드</span></div>
- <div class="srow"><span class="sk">Choir</span><span class="sv"><span class="v">-8</span> · 와이드</span></div>
- <div class="srow"><span class="sk">Timpani/Perc</span><span class="sv"><span class="v">-3</span> · C</span></div></div>
- <button class="tapcard" data-d="volumewhere"><span class="chev">›</span><span class="tc-h">이 숫자는 전부 페이더 값</span><span class="tc-p">페이더 vs Gain 플러그인 vs 오토메이션 구분</span><span class="tc-go">읽는 법 ›</span></button>
- <div class="box soft"><b>다음 단계:</b> 구간별 움직임은 「오토메이션」 탭 — 장르 A~G별 지점 정리.</div>
- <div class="kicker">플러그인 창 여는 법 (탭)</div>
- <button class="tapcard" data-d="mix_deesser"><span class="chev">›</span><span class="tc-h">DeEsser 2 — 치찰음</span><span class="tc-p">대역·Threshold·Reduction</span><span class="tc-go">설정법 ›</span></button>
- <button class="tapcard" data-d="mix_chromaglow"><span class="chev">›</span><span class="tc-h">ChromaGlow — 새추/두께</span><span class="tc-p">모델·Drive·Mix</span><span class="tc-go">설정법 ›</span></button>
- <button class="tapcard" data-d="mix_direction"><span class="chev">›</span><span class="tc-h">Direction Mixer — 폭</span><span class="tc-p">Spread·모노 체크</span><span class="tc-go">설정법 ›</span></button>
- <button class="tapcard" data-d="mix_gate"><span class="chev">›</span><span class="tc-h">Noise Gate — 잡음/꼬리</span><span class="tc-go">설정법 ›</span></button>
- <button class="tapcard" data-d="mix_transient"><span class="chev">›</span><span class="tc-h">Transient Designer — 펀치</span><span class="tc-go">설정법 ›</span></button>
- <button class="tapcard" data-d="mix_multipressor"><span class="chev">›</span><span class="tc-h">Multipressor — 멀티밴드</span><span class="tc-go">설정법 ›</span></button>
-<div class="nextline">다음 → <b>마스터링 탭</b>. [B] 숨웨이브行이면 마스터 없이 <b>-18 바운스</b>(Sum Mastering · 곡 규격 참조).</div>`},
 {phase:'마스터링', kicker:'A 발매 · 수치 · 체크리스트', title:'마스터링 · 최종 체크',
  html:`<div class="spec"><div class="srow"><span class="sk">피크 관리</span><span class="sv">믹스 피크 <span class="v">-6 dBFS</span> 헤드룸</span></div>
  <div class="srow"><span class="sk">체인</span><span class="sv">Meter → EQ HPF 20–30 → Comp 2:1 GR1–2 → Limiter <span class="v">-1dBTP</span></span></div>
@@ -1759,27 +1793,30 @@ const APP_MASTER = {name:'Sum Mastering', c1:'#FFB86B', c2:'#FF7683', steps:[
  <div class="srow"><span class="sk">팟캐스트</span><span class="sv"><span class="v">-16</span> (모노 <span class="v">-19</span>) · TP <span class="v">-1.5</span></span></div></div>
  <div class="box soft"><b>"-9 하한"의 뜻:</b> 스트리밍이 -14로 도로 줄이니 그보다 세게 밀 이유가 없고, 밀도 장르 관습상 <span class="v">-9</span>가 마지노선이라는 것. 단 <b>-9까지 미는 곡은 Ceiling <span class="v">-2 dBTP</span></b> — 음압이 클수록 mp3/AAC 변환 피크가 더 튀어 여유를 더 둔다.</div>
  <button class="tapcard" data-d="lufsmeter"><span class="chev">›</span><span class="tc-h">LUFS · dBTP · LRA 읽는 법</span><span class="tc-go">읽는 법 ›</span></button>`},
-{phase:'숨웨이브 최종', kicker:'준비물 · B 언마스터', title:'가져오기 전 — 곡 규격 확인',
+{phase:'숨웨이브 최종', kicker:'곡마다 ①', title:'트랙 정리 — 파일 · 얹기 · 게인',
  html:`<p class="lead">숨웨이브에 얹을 곡은 <b>마스터 안 한(언마스터) 여유 있는 2믹스</b>여야 한다. 앱에서 B 경로로 뽑았을 값:</p>
  <div class="spec"><div class="srow"><span class="sk"><span class="term" data-d="well_loudness">음량</span></span><span class="sv"><span class="v">-18 LUFS</span> <span class="sub">Integrated — 맞추는 법은 탭</span></span></div>
  <div class="srow"><span class="sk"><span class="term" data-d="well_headroom">피크</span></span><span class="sv"><span class="v">-3 ~ -6 dBFS</span> <span class="sub">헤드룸 — 확보법은 탭</span></span></div>
  <div class="srow"><span class="sk">리미터</span><span class="sv"><span class="no">끔(Bypass)</span> <span class="sub">배경과 합쳐 여기서 마스터</span></span></div>
  <div class="srow"><span class="sk">파일</span><span class="sv">WAV · 24bit · 48kHz · <span class="v">{곡}_forSUMWAVE_premaster.wav</span></span></div></div>
  <button class="tapcard" data-d="handoff"><span class="chev">›</span><span class="tc-h">B용 언마스터 뽑는 법(앱에서)</span><span class="tc-p">리미터 끄고 · -18 맞추고 · 바운스</span><span class="tc-go">로직 설정법 ›</span></button>
- <button class="tapcard" data-d="well_loudness"><span class="chev">›</span><span class="tc-h">음량을 -18로 맞추는 법</span><span class="tc-p">Loudness Meter 재기 → Gain으로 조절 → 재측정 루프</span><span class="tc-go">설정법 ›</span></button>
- <button class="tapcard" data-d="well_headroom"><span class="chev">›</span><span class="tc-h">피크 헤드룸 -3~-6 확보하는 법</span><span class="tc-p">피크 어디서 보고 · 뭘 내리나</span><span class="tc-go">설정법 ›</span></button>
- <button class="tapcard" data-d="ma_only"><span class="chev">›</span><span class="tc-h">Mastering Assistant 단독 사용</span><span class="tc-p">일반 발매엔 충분 · 숨웨이브 최종엔 사용하지 않는 이유</span><span class="tc-go">설정법 ›</span></button>
-<div class="nextline">다음 → <b>곡 얹기 · 배경 켜기(5단계)</b> — 이 규격의 파일을 템플릿에 얹는다.</div>
+ 
+ 
+ 
+<div class="kicker">얹기 · 게인</div>
+<div class="lstep"><span class="ln">1</span><span class="lc"><b>음악 교체.</b> 음악 트랙의 기존 리전 삭제 → <span class="v">premaster.wav</span> 드래그. 시작점 정렬 — 프레임 3초 뒤에 음악이 오게.</span></div>
+<div class="lstep"><span class="ln">2</span><span class="lc"><b>게인.</b> 음악 페이더 <span class="v">-6</span> 기준에서 시작.</span></div>
+<div class="lstep"><span class="ln">3</span><span class="lc"><b>합산 피크.</b> Stereo Out 미터 숫자 클릭(리셋) → 클라이맥스 재생 → <span class="v">-3</span> 아래면 통과. 넘치면 <b>음악 트랙 Gain을 넘친 만큼</b> 내림.<button class="tgo" data-d="well_sumpeak" style="margin-top:7px">설정법 ›</button></span></div>
+<div class="nextline">다음 → <b>버스 정리</b></div>
  <div class="box soft">규격이 안 맞아도 됨 — 아래 ①에서 음악 트랙 게인으로 맞추면 되지만, 애초에 -18로 뽑아오면 편하다.</div>`},
-{phase:'숨웨이브 최종', kicker:'곡마다 ①', title:'곡 얹기 · 배경 켜기 — 5단계',
- html:`<p class="lead">배경 템플릿은 고정 — 곡마다 이 5단계만.</p>
- <div class="spec wide"><div class="srow"><span class="sk">① 음악 교체</span><span class="sv" style="font-size:15.5px">음악 트랙 기존 리전 삭제 → <span class="v">premaster.wav</span> 드래그. 시작점 정렬 · 프레임 3초 뒤에 음악이 오게</span></div>
- <div class="srow"><span class="sk">② 게인 맞춤</span><span class="sv" style="font-size:15.5px">음악 페이더 <span class="v">-6</span> 기준. 배경과 합쳐 Stereo Out 피크가 <span class="v">-3</span> 아래가 되게</span></div>
- <div class="srow"><span class="sk">③ 비트 1종</span><span class="sv" style="font-size:15.5px">목적 바이노럴만 언뮤트(수면=델타 · 명상=세타 · 이완=알파 · 집중=베타)</span></div>
- <div class="srow"><span class="sk">④ 자연음</span><span class="sv" style="font-size:15.5px">2~3종만(비+계곡 / 파도+바람 / 폭포 단독)</span></div>
- <div class="srow"><span class="sk">⑤ 밸런스 체크</span><span class="sv" style="font-size:15.5px">음악 뮤트=배경 편안 / 켜면 앞. 맥놀이 거슬리면 비트 서밍 <span class="v">-2~3dB</span></span></div></div>
- <div class="box soft"><b>다음:</b> 마스터 → 바운스. (프레임=앞뒤 자연공간은 Sum Wave 탭 「프레임」에서 먼저 세팅.)</div>`},
- {phase:'숨웨이브 최종', kicker:'곡마다 ③ · 딱 한 번 · 살살', title:'숨웨이브 마스터링 — 순서대로',
+{phase:'숨웨이브 최종', kicker:'곡마다 ②', title:'버스 정리 — 배경 켜기 · 밸런스',
+ html:`<p class="lead sm">배경 템플릿은 고정 — 곡마다 배경을 켜고 균형만 잡는다.</p>
+<div class="lstep"><span class="ln">1</span><span class="lc"><b>비트 1종 언뮤트.</b> 목적에 맞는 바이노럴만: 수면=델타 · 명상=세타 · 이완=알파 · 집중=베타.</span></div>
+<div class="lstep"><span class="ln">2</span><span class="lc"><b>자연음 2~3종.</b> 비+계곡 / 파도+바람 / 폭포 단독 중 하나의 조합만.</span></div>
+<div class="lstep"><span class="ln">3</span><span class="lc"><b>밸런스.</b> 음악 뮤트=배경만으로 편안 · 켜면 음악이 앞으로. 안 맞으면 <b>배경 버스 페이더</b>로(마스터 아님). 맥놀이가 거슬리면 비트 서밍 <span class="v">-2~-3dB</span>.</span></div>
+<div class="box soft">프레임(앞뒤 자연공간)은 Sum Wave 탭 「프레임」에서 먼저 세팅.</div>
+<div class="nextline">다음 → <b>스테레오 아웃 정리</b></div>`},
+ {phase:'숨웨이브 최종', kicker:'곡마다 ③ · Stereo Out 체인', title:'스테레오 아웃 정리 — 체인 순서대로',
  html:MASTER_WELL}
 ]};
 
