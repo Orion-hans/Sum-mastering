@@ -555,6 +555,20 @@ longform_lufs:{title:'긴 파일(20분) -14 맞추기 — 자연음 + 간헐 음
 <div class="box soft"><b>지름길:</b> 바이노럴이 없고 목표가 -14면 <span class="term" data-d="ma_only">Mastering Assistant</span> 하나(Analyze → 노브 중앙 → 내장 I 미터 확인)로도 된다. 자연음 질감이 변하게 들리면 이 수동 절차로.</div>
 <div class="box tip"><b>이게 프리셋이 되는 이유:</b> 층별 값(자연음 S -15~-16 · 드론 = 있는 듯 없는 듯 · 음악 S -11~-12)만 기억하면, 다음 20분짜리도 같은 값으로 세팅 → 6~7번 한 번 → 끝.</div>
 <div class="box soft">수면·이완 목적이면 <span class="v">-16</span>도 좋다 — 유튜브는 조용한 걸 건드리지 않으니 패널티 없이 그저 조금 차분할 뿐. 그 경우 자연음 S만 <span class="v">-17.5</span>쯤으로.</div>`},
+tip_autocopy:{title:'자동화 선 복사 — 다른 트랙으로', html:`<div class="lstep"><span class="ln">1</span><span class="lc"><b>포인트 선택이 먼저.</b> <span class="k">A</span>로 자동화 보기 → 복사할 구간의 점들을 <b>드래그(러버밴드)로 선택</b> — 점이 하이라이트돼야 <span class="k">Cmd+C</span>가 자동화를 잡는다(리전만 선택된 상태면 리전이 복사됨).</span></div>
+<div class="lstep"><span class="ln">2</span><span class="lc"><b>붙여넣기.</b> 대상 트랙 헤더 클릭 + <b>같은 파라미터 레인</b>(Volume이면 Volume) 표시 → <b>재생헤드를 원본 시작 위치에</b> → <span class="k">Cmd+V</span>. 붙는 위치는 재생헤드 기준.</span></div>
+<div class="lstep"><span class="ln">3</span><span class="lc"><b>여러 파라미터 통째로.</b> Mix 메뉴 → <b>Convert Track Automation to Region Automation</b> → 자동화가 리전에 실림 → 리전을 <span class="k">Opt</span>+드래그로 다른 트랙 복사 → 필요시 역변환(Region → Track).</span></div>
+<div class="box tip">리전 자동화로 작업하면 리전 복사 = 자동화가 항상 같이 다닌다 — 앱 MIDI 리전 중심 작업엔 이쪽이 편하다.</div>`},
+tip_arp:{title:'아르페지에이터 · MIDI FX', html:`<p class="lead sm">MIDI FX는 리전의 노트를 실시간으로 변형하는 슬롯 — 악기 <b>위 칸</b>에 건다. 리전 데이터는 그대로, 재생만 바뀐다.</p>
+<div class="lstep"><span class="ln">1</span><span class="lc"><b>걸기.</b> 채널 스트립에서 악기 슬롯 <b>바로 위 MIDI FX 칸</b> 클릭 → <b>Arpeggiator</b>.<span class="path">트랙 채널 스트립 → MIDI FX → Arpeggiator</span></span></div>
+<div class="lstep"><span class="ln">2</span><span class="lc"><b>핵심 4개.</b><div class="spec" style="margin-top:7px">
+<div class="srow"><span class="sk">Rate</span><span class="sv" style="font-size:14.5px"><span class="v">1/16</span> <span class="sub">박자 동기 — 1/8=느긋 · 1/32=촘촘</span></span></div>
+<div class="srow"><span class="sk">Note Order</span><span class="sv" style="font-size:14.5px">Up · Down · Up&Down · Random</span></div>
+<div class="srow"><span class="sk">Oct Range</span><span class="sv" style="font-size:14.5px"><span class="v">1~4</span> <span class="sub">몇 옥타브 펼칠지</span></span></div>
+<div class="srow"><span class="sk">Latch</span><span class="sv" style="font-size:14.5px">건반 떼도 유지 — 라이브 연주용</span></div></div></span></div>
+<div class="lstep"><span class="ln">3</span><span class="lc"><b>들어보기.</b> 코드(화음) 리전이 있는 트랙에 걸고 재생 — 화음이 즉시 아르페지오로 펼쳐진다. On/Off로 비교.</span></div>
+<div class="lstep"><span class="ln">4</span><span class="lc"><b>다른 MIDI FX.</b> Chord Trigger(한 음=코드) · Note Repeat(트랩 햇 롤) · Randomizer(타이밍·벨로시티 휴먼라이즈) · Transposer(조옮김).</span></div>
+<div class="box tip">MIDI FX 세팅은 채널 스트립 설정(.cst)·패치에 함께 저장된다 — 아르페지오 신스를 프리셋으로 만들어두면 어느 프로젝트든 재사용.</div>`},
 hpf_what:{title:'HPF / LPF — 뜻과 위치', html:`
 <p class="lead sm"><b>HPF(하이패스 필터)</b> = 지정한 주파수 <b>아래를 잘라내는</b> 필터. "HPF 100"은 100Hz 아래를 버린다는 뜻이다. <b>LPF(로우패스)</b>는 반대로 <b>위를</b> 자른다 — "LPF 8k"는 8kHz 위를 버림.</p>
 <div class="lstep"><span class="ln">1</span><span class="lc"><b>어디에 있나.</b> Channel EQ 창에서 <b>HPF = 맨 왼쪽 밴드1</b>(사선 아이콘) · <b>LPF = 맨 오른쪽 밴드8</b>.<span class="path">트랙 → Audio FX → EQ → Channel EQ</span></span></div>
@@ -1092,7 +1106,11 @@ const APP_SUM = {name:'Sum Wave', c1:'#63D6CC', c2:'#8394FF', steps:[
 {phase:'참고', kicker:'느낌별 레시피', title:'FX로 느낌 만들기',
  html:DETAILS.fxrecipes.html},
 {phase:'참고', kicker:'최초 1회 → 영구 재사용', title:'한 번 저장하면 계속 쓰는 것',
- html:DETAILS.reuse.html}
+ html:DETAILS.reuse.html},
+{phase:'참고', kicker:'팁 모음', title:'팁',
+ html:`<p class="lead sm">작업 중 유용한 것들 — 박스를 누르면 세부 방법.</p>
+ <button class="tapcard" data-d="tip_autocopy"><span class="chev">›</span><span class="tc-h">자동화 선 복사</span><span class="tc-p">다른 트랙으로 — 포인트 선택·Cmd+V·리전 변환</span><span class="tc-go">설정법 ›</span></button>
+ <button class="tapcard" data-d="tip_arp"><span class="chev">›</span><span class="tc-h">아르페지에이터 · MIDI FX</span><span class="tc-p">Rate·Order·Latch — 코드가 즉시 아르페지오</span><span class="tc-go">설정법 ›</span></button>`},
 ]};
 
 /* ===== Beat Maker ===== */
@@ -1344,11 +1362,6 @@ const APP_BEAT = {name:'Beat Maker', c1:'#4FD1A5', c2:'#3AA7C9', steps:[
  <div class="srow"><span class="sk">러닝</span><span class="sv" style="font-size:15px">케이던스 고정 — 볼륨 아크 없이 / 재가속 구간 필터 오픈 스윕 + 라이저</span></div>
  <div class="srow"><span class="sk">훅송·훅팝</span><span class="sv" style="font-size:15px">레이어 계단식 언뮤트(벌스→프리→코러스) / 마지막 코러스 전체 +1dB</span></div></div>
  <button class="tapcard" data-d="automation"><span class="chev">›</span><span class="tc-h">오토메이션 그리는 법</span><span class="tc-p">모드 · 파라미터 찾기 · Track vs Region</span><span class="tc-go">로직 설정법 ›</span></button>`},
-{phase:'오토메이션', kicker:'팁', title:'팁 — 자동화 선 복사 (다른 트랙으로)',
- html:`<div class="lstep"><span class="ln">1</span><span class="lc"><b>포인트 선택이 먼저.</b> <span class="k">A</span>로 자동화 보기 → 복사할 구간의 점들을 <b>드래그(러버밴드)로 선택</b> — 점이 하이라이트돼야 <span class="k">Cmd+C</span>가 자동화를 잡는다(리전만 선택된 상태면 리전이 복사됨).</span></div>
-<div class="lstep"><span class="ln">2</span><span class="lc"><b>붙여넣기.</b> 대상 트랙 헤더 클릭 + <b>같은 파라미터 레인</b>(Volume이면 Volume) 표시 → <b>재생헤드를 원본 시작 위치에</b> → <span class="k">Cmd+V</span>. 붙는 위치는 재생헤드 기준.</span></div>
-<div class="lstep"><span class="ln">3</span><span class="lc"><b>여러 파라미터 통째로.</b> Mix 메뉴 → <b>Convert Track Automation to Region Automation</b> → 자동화가 리전에 실림 → 리전을 <span class="k">Opt</span>+드래그로 다른 트랙 복사 → 필요시 역변환(Region → Track).</span></div>
-<div class="box tip">리전 자동화로 작업하면 리전 복사 = 자동화가 항상 같이 다닌다 — 앱 MIDI 리전 중심 작업엔 이쪽이 편하다.</div>`},
 {phase:'마스터링', kicker:'A 발매 · Stereo Out', title:'마스터링 — 순서대로 (일반 끝내기)',
  html:MASTER_STD+`
  <div class="box soft"><b>장르별 목표:</b> 각 장르 카드 상단의 라우드니스 값 그대로(EDM·트랩·K팝·러닝 <span class="v">-9</span> 하한 · 힙합 <span class="v">-12~-10</span> · 로파이 <span class="v">-14~-12</span> · 시티팝 <span class="v">-11~-9</span> · 컨트리·훅송 <span class="v">-14</span>). 전체 표는 Sum Mastering 탭.</div>`},
@@ -1428,11 +1441,6 @@ const APP_MED = {name:'Medi Builder', c1:'#6FB7FF', c2:'#9E8CFF', steps:[
 <li>⑥ <b>Point → Sends › (딜레이 버스)</b> — 벨 여운을 구간별로</li>
 <li>⑦ <b>Stereo Out → Volume</b> 엔딩 페이드 — MIDI에 CC7 페이드가 이미 있으면 <span class="no">생략</span>(이중 페이드)</li></ul></div>
  <button class="tapcard" data-d="automation"><span class="chev">›</span><span class="tc-h">오토메이션 그리는 법</span><span class="tc-go">로직 설정법 ›</span></button>`},
-{phase:'오토메이션', kicker:'팁', title:'팁 — 자동화 선 복사 (다른 트랙으로)',
- html:`<div class="lstep"><span class="ln">1</span><span class="lc"><b>포인트 선택이 먼저.</b> <span class="k">A</span>로 자동화 보기 → 복사할 구간의 점들을 <b>드래그(러버밴드)로 선택</b> — 점이 하이라이트돼야 <span class="k">Cmd+C</span>가 자동화를 잡는다(리전만 선택된 상태면 리전이 복사됨).</span></div>
-<div class="lstep"><span class="ln">2</span><span class="lc"><b>붙여넣기.</b> 대상 트랙 헤더 클릭 + <b>같은 파라미터 레인</b>(Volume이면 Volume) 표시 → <b>재생헤드를 원본 시작 위치에</b> → <span class="k">Cmd+V</span>. 붙는 위치는 재생헤드 기준.</span></div>
-<div class="lstep"><span class="ln">3</span><span class="lc"><b>여러 파라미터 통째로.</b> Mix 메뉴 → <b>Convert Track Automation to Region Automation</b> → 자동화가 리전에 실림 → 리전을 <span class="k">Opt</span>+드래그로 다른 트랙 복사 → 필요시 역변환(Region → Track).</span></div>
-<div class="box tip">리전 자동화로 작업하면 리전 복사 = 자동화가 항상 같이 다닌다 — 앱 MIDI 리전 중심 작업엔 이쪽이 편하다.</div>`},
 {phase:'마스터링', kicker:'A만 · 다이내믹 보존', title:'마스터링',
  html:`<div class="spec"><div class="srow"><span class="sk">간단</span><span class="sv">Mastering Assistant <span class="v">Transparent</span> · 재생하면 자동 분석 · <b>Loudness Compensation 끄기</b></span></div>
  <div class="srow"><span class="sk">목표</span><span class="sv"><span class="v">-16~-14 LUFS</span> · <span class="v">-1 dBTP</span> · GR 최소</span></div></div>
@@ -1601,11 +1609,6 @@ const APP_BAND = {name:'Band Composer', c1:'#C792EA', c2:'#F78FB3', steps:[
  <div class="srow"><span class="sk">오케스트라</span><span class="sv" style="font-size:15px">셈여림은 <b>CC1</b>(악기 Dynamics via CC ON — 피아노롤 하단 레인에 그림, 트랙 오토메이션 아님) / 빌드 끝 팀파니 롤 볼륨 크레셴도 / 브릿지 탐탐 렛링 + 홀 센드↑ / 라스트 전 성부 +1dB</span></div></div>
  <button class="tapcard" data-d="automation"><span class="chev">›</span><span class="tc-h">오토메이션 그리는 법</span><span class="tc-go">로직 설정법 ›</span></button>
  <button class="tapcard" data-d="articulation"><span class="chev">›</span><span class="tc-h">오케 CC1 스웰 — 어디에 그리나</span><span class="tc-p">Dynamics via CC · CC1 vs CC11</span><span class="tc-go">로직 설정법 ›</span></button>`},
-{phase:'오토메이션', kicker:'팁', title:'팁 — 자동화 선 복사 (다른 트랙으로)',
- html:`<div class="lstep"><span class="ln">1</span><span class="lc"><b>포인트 선택이 먼저.</b> <span class="k">A</span>로 자동화 보기 → 복사할 구간의 점들을 <b>드래그(러버밴드)로 선택</b> — 점이 하이라이트돼야 <span class="k">Cmd+C</span>가 자동화를 잡는다(리전만 선택된 상태면 리전이 복사됨).</span></div>
-<div class="lstep"><span class="ln">2</span><span class="lc"><b>붙여넣기.</b> 대상 트랙 헤더 클릭 + <b>같은 파라미터 레인</b>(Volume이면 Volume) 표시 → <b>재생헤드를 원본 시작 위치에</b> → <span class="k">Cmd+V</span>. 붙는 위치는 재생헤드 기준.</span></div>
-<div class="lstep"><span class="ln">3</span><span class="lc"><b>여러 파라미터 통째로.</b> Mix 메뉴 → <b>Convert Track Automation to Region Automation</b> → 자동화가 리전에 실림 → 리전을 <span class="k">Opt</span>+드래그로 다른 트랙 복사 → 필요시 역변환(Region → Track).</span></div>
-<div class="box tip">리전 자동화로 작업하면 리전 복사 = 자동화가 항상 같이 다닌다 — 앱 MIDI 리전 중심 작업엔 이쪽이 편하다.</div>`},
 {phase:'마스터링', kicker:'A 발매 · Stereo Out', title:'마스터링 — 밴드 · 오케스트라',
  html:MASTER_STD+`
  <div class="box soft"><b>세트별 목표:</b> 록·J팝·펑크 <span class="v">-14</span> · K팝댄스 <span class="v">-9</span> 하한 · 발라드 <span class="v">-16~-14</span> · 오케 <span class="v">-16~-14</span>.</div>
@@ -1741,11 +1744,6 @@ const APP_PLAY = {name:'Play Composer', c1:'#5BD3A0', c2:'#F2C14E', steps:[
  <div class="srow"><span class="sk">G 클래식·월드</span><span class="sv" style="font-size:15px">F의 축소판 — CC1 위주, 독주 Volume 라이드만 추가</span></div></div>
  <button class="tapcard" data-d="automation"><span class="chev">›</span><span class="tc-h">오토메이션 그리는 법</span><span class="tc-go">로직 설정법 ›</span></button>
  <button class="tapcard" data-d="articulation"><span class="chev">›</span><span class="tc-h">CC1 스웰 — 어디에 그리나</span><span class="tc-go">로직 설정법 ›</span></button>`},
-{phase:'오토메이션', kicker:'팁', title:'팁 — 자동화 선 복사 (다른 트랙으로)',
- html:`<div class="lstep"><span class="ln">1</span><span class="lc"><b>포인트 선택이 먼저.</b> <span class="k">A</span>로 자동화 보기 → 복사할 구간의 점들을 <b>드래그(러버밴드)로 선택</b> — 점이 하이라이트돼야 <span class="k">Cmd+C</span>가 자동화를 잡는다(리전만 선택된 상태면 리전이 복사됨).</span></div>
-<div class="lstep"><span class="ln">2</span><span class="lc"><b>붙여넣기.</b> 대상 트랙 헤더 클릭 + <b>같은 파라미터 레인</b>(Volume이면 Volume) 표시 → <b>재생헤드를 원본 시작 위치에</b> → <span class="k">Cmd+V</span>. 붙는 위치는 재생헤드 기준.</span></div>
-<div class="lstep"><span class="ln">3</span><span class="lc"><b>여러 파라미터 통째로.</b> Mix 메뉴 → <b>Convert Track Automation to Region Automation</b> → 자동화가 리전에 실림 → 리전을 <span class="k">Opt</span>+드래그로 다른 트랙 복사 → 필요시 역변환(Region → Track).</span></div>
-<div class="box tip">리전 자동화로 작업하면 리전 복사 = 자동화가 항상 같이 다닌다 — 앱 MIDI 리전 중심 작업엔 이쪽이 편하다.</div>`},
 {phase:'마스터링', kicker:'A 발매 · 수치 · 체크리스트', title:'마스터링 · 최종 체크',
  html:`<div class="spec"><div class="srow"><span class="sk">피크 관리</span><span class="sv">믹스 피크 <span class="v">-6 dBFS</span> 헤드룸</span></div>
  <div class="srow"><span class="sk">체인</span><span class="sv">Meter → EQ HPF 20–30 → Comp 2:1 GR1–2 → Limiter <span class="v">-1dBTP</span></span></div>
@@ -1830,7 +1828,7 @@ const KEY='oasis_hub_v1';
 let mem={};
 const store={read(){try{return JSON.parse(localStorage.getItem(KEY))||{}}catch(e){return mem}},
   write(o){try{localStorage.setItem(KEY,JSON.stringify(o))}catch(e){mem=o}}};
-const APP_ORDER=['sum','beat','med','band','play','master'];
+const APP_ORDER=['sum','master','beat','med','band','play'];
 let state=Object.assign({app:'sum',idx:{},done:{},presets:{},wake:false,big:false},store.read());
  if(!state.presets)state.presets={};
 APP_ORDER.forEach(a=>{if(!(a in state.idx))state.idx[a]=0;if(!(a in state.done))state.done[a]={};});
