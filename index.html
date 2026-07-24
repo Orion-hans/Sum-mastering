@@ -376,7 +376,7 @@ const MASTER_STD = `<div class="spec wide" style="margin-bottom:12px">
 <div class="srow"><span class="sk">Stereo Out</span><span class="sv"><span class="v">Gain → EQ → (선택: Multipressor·컴프·새추) → Adaptive Limiter → Loudness Meter</span> <span class="sub">슬롯 위→아래</span></span></div></div>
 <div class="box tip"><b>기본 경로:</b> <span class="term" data-d="ma_only">Mastering Assistant</span> 하나 (Analyze → Character → I 미터 보며 Loudness → 바운스 전 Compensation OFF). 또는 3개만: <span class="term" data-d="well_hpf">EQ HPF 20~30</span> → <span class="term" data-d="well_limiter">Adaptive Limiter</span> → Loudness Meter. 아래 8단계는 정밀하게 갈 때의 수동 경로다 — Multipressor·글루·새추는 필요한 경우에만 건다.</div>
 
-<p class="lead sm"><b>마스터 = 다 끝난 믹스를 스트리밍 규격(음량·피크)에 맞추는 마지막 손질.</b> 각 앱 탭의 "⑤ 마스터 체인"은 이 순서를 <b>한 줄로 요약</b>한 것 — 여기선 각 칸이 뭘 하는지·왜 그 값인지까지 편다.</p>
+<p class="lead sm"><b>마스터 = 다 끝난 믹스를 스트리밍 규격(음량·피크)에 맞추는 마지막 손질.</b> 메이커에는 마스터가 없다 — <b>모든 A 곡이 이 「일반 포맷」에서 마무리</b>된다. 여기선 각 칸이 뭘 하는지·왜 그 값인지까지 편다.</p>
 <div class="box tip"><b>어디서 하나:</b> 믹서(<span class="k">X</span>) 열기 → <b>맨 오른쪽 Stereo Out 채널</b>(모든 트랙 소리가 마지막에 모이는 곳) → 채널 상단 <b>Audio FX 슬롯</b>의 빈 칸 클릭 → 목록에서 선택. 트랙이 아니라 <b>Stereo Out에만</b> 건다.</div>
 <div class="flow"><span class="h">Stereo Out 인서트 — 위에서 아래로 이 순서로 꽂는다</span>
 Gain → Channel EQ → (Multipressor) → Compressor
@@ -391,7 +391,7 @@ Gain → Channel EQ → (Multipressor) → Compressor
 <div class="lstep"><span class="ln">7</span><span class="lc"><b>Adaptive Limiter — 음량 올리기(핵심).</b> 창 조작: 가운데 큰 노브 = <b>Gain</b> · 우측 <b>Out Ceiling</b> 더블클릭 <span class="v">-1.0</span> · 하단 <b>True Peak Detection</b> ON → 곡을 <b>재생하면서 Gain을 천천히</b> 올림 → Loudness Meter <b>Integrated(I)</b>가 장르 목표(다음 스텝 표)에 닿으면 멈춤.<span class="path">Stereo Out → Audio FX → Dynamics → Adaptive Limiter</span></span></div>
 <div class="lstep"><span class="ln">8</span><span class="lc"><b>검사.</b> 곡 처음~끝 재생 → I가 목표 ±0.5 안, True Peak가 -1 안 넘으면 합격. 리미터 GR이 <span class="no">3dB 넘게 계속</span> 튀면 과함 → Gain 내리거나 믹스로 복귀. <b>위상도:</b> MultiMeter의 Correlation이 0~+1 사이에서 움직이면 안전 — 지속적으로 0 아래면 와이드너·스테레오 딜레이를 의심하고 믹스로.<span class="path">Stereo Out → Audio FX → Metering → MultiMeter → Correlation</span></span></div>
 <div class="box tip"><b>대안:</b> Stereo Out → <b>Mastering Assistant</b> 하나만 꽂고 재생 → 자동 분석·세팅. Character <span class="v">Clean/Transparent</span> · <b>Loudness Compensation 끄기</b>. 위 8단계 대신 이거 하나로도 충분할 때가 많다. 검사는 똑같이 Loudness Meter로.</div>
-<div class="box soft"><b>각 앱 탭과의 관계:</b> 비트/밴드/플레이 탭의 "⑤ 마스터 체인" 한 줄(Gain→EQ→Multipressor→Comp→Limiter)이 바로 위 1~7이다. 값·순서 동일 — 이 탭은 그 <b>상세판</b>. A든 B든 후반(믹싱·마스터링)은 Sum Mastering 탭에서 — A는 일반 포맷, B는 숨웨이브 최종.</div>
+<div class="box soft"><b>각 앱 탭과의 관계:</b> 메이커에는 마스터 단이 없다 — <b>A 곡은 전부 이 1~7로 여기서 마무리</b>한다. A든 B든 후반(믹싱·마스터링)은 Sum Mastering 탭에서 — A는 일반 포맷, B는 숨웨이브 최종.</div>
 <div class="box soft"><b>왜 더 크게 안 미나?</b> 스트리밍이 어차피 <span class="v">-14</span>(Apple <span class="v">-16</span>)로 자동 정규화 — 세게 밀어봤자 도로 줄고 다이내믹만 죽는다. 밀도 장르만 관습상 <span class="v">-9</span>까지.</div>
 <div class="box hot"><b class="no">⚠</b> <b>B(숨웨이브 투입 곡)는 이 체인 전부 바이패스</b> — 마스터는 숨웨이브 프로젝트에서 딱 한 번. "숨웨이브 최종" 탭으로.</div><div class="nextline">다음 → 검사 통과했으면 바운스 <span class="k">Cmd+B</span> — 여기서 끝. [B] 숨웨이브行이면 이 체인 대신 <b>-18 규격 바운스</b>(Sum Mastering 탭 · 곡 규격).</div>`;
 
@@ -485,7 +485,7 @@ reuse:{title:'한 번 저장하면 계속 쓰기 — 5단계 저장 체계', htm
 <div class="lstep"><span class="ln">4</span><span class="lc"><b>플러그인 프리셋(.pst) — 플러그인 하나.</b> 예: 자주 쓰는 ChromaVerb 값.<span class="path">플러그인 창 상단 프리셋 메뉴 → Save As…</span></span></div>
 <div class="lstep"><span class="ln">5</span><span class="lc"><b>키 커맨드·스크린셋.</b> 단축키 세트는 <span class="path">Option+K → 좌상단 메뉴 → Export/Import</span> · 화면 배치는 숫자키(스크린셋).</span></div>
 <div class="box hot"><b class="no">공통 주의:</b> 이 저장물들은 전부 <span class="v">~/Music/Audio Music Apps/</span> 폴더에 산다 — <b>이 폴더를 백업</b>해야 맥 교체·재설치 때 그대로 옮겨진다.</div>
-<div class="box tip">실전 조합: 템플릿(버스·마스터 틀) + .cst(트랙별 악기) — 새 곡에서 템플릿 열고 프리셋 클릭이면 세팅 끝.</div>`},channelstrip:{title:'채널 스트립 저장·적용 (한 번 만들어 재사용)', html:`
+<div class="box tip">실전 조합: 템플릿(버스·마스터 틀) + .cst(트랙별 악기) — 새 곡은 MIDI를 File→Open으로 열고 → .cst 클릭 → 버스는 템플릿에서 File→Import — 세팅 끝.</div>`},channelstrip:{title:'채널 스트립 저장·적용 (한 번 만들어 재사용)', html:`
 <p class="lead sm"><b>채널 스트립</b> = 믹서에서 트랙 한 줄(악기 + 인서트 FX + 센드 + 페이더 묶음). 한 번 저장(.cst)하면 <b>모든 프로젝트에서 클릭 한 번</b>으로 재사용된다 — 앱이 파일을 대신 만들 순 없고, 로직에서 <b>최초 1회</b> 저장하면 영구히 쓴다.</p>
 <div class="kicker">0 · Setting 막대가 안 보이면 (먼저)</div>
 <div class="lstep"><span class="ln">0</span><span class="lc">믹서 채널 맨 위 <b>Setting 막대</b>가 안 보이면 켜야 한다: 믹서(<span class="k">X</span>) 상단 메뉴 <b>View → Channel Strip Components → Setting 체크</b>(Inserts·Sends·EQ도 켜져 있는지 확인). 그러면 각 채널 최상단에 가는 가로 막대가 생긴다.<span class="path">믹서 View → Channel Strip Components → Setting ✓</span></span></div>
@@ -989,8 +989,8 @@ const APP_SUM = {name:'Sum Wave', c1:'#63D6CC', c2:'#8394FF', steps:[
  html:`<p class="lead">곡마다 반복하는 건 몇 가지뿐. 나머지는 <b>처음 한 번</b> 만들어 계속 재사용한다.</p>
  <div class="spec wide"><div class="srow"><span class="sk">① 템플릿</span><span class="sv" style="font-size:15px">버스(리버브·병렬·홀)·마스터·기본값을 만들어 <b>Save as Template</b> — 곡마다 안 건드림</span></div>
  <div class="srow"><span class="sk">② 프리셋</span><span class="sv" style="font-size:15px">그 템플릿 <b>안에서</b> 장르별 트랙 세팅을 <b>.cst로 저장</b>(센드 살리려면 버스가 있는 상태여야). 「저장 체크리스트」 탭 참고</span></div>
- <div class="srow"><span class="sk">③ 곡마다</span><span class="sv" style="font-size:15px">템플릿 열기 → MIDI 임포트(트랙 생성) → 각 트랙에 .cst 클릭 → <b>볼륨·팬만</b> 표대로(프리셋에 안 담김)</span></div>
- <div class="srow"><span class="sk">④ 오토·믹싱·마스터링</span><span class="sv" style="font-size:15px">구간 오토메이션 → 믹싱 → A는 여기서 마스터링 / B는 숨웨이브로</span></div></div>
+ <div class="srow"><span class="sk">③ 곡마다</span><span class="sv" style="font-size:15px">MIDI를 <b>File→Open</b>으로 열기(Import Tempo ✓) → 각 트랙에 .cst 클릭 → <b>볼륨·팬만</b> 표대로 · 버스는 File→Import(Sends ✓)</span></div>
+ <div class="srow"><span class="sk">④ 오토메이션 → 후반</span><span class="sv" style="font-size:15px">구간 오토메이션 → 후반은 <b>Sum Mastering</b>: 트랙 → 버스 → 스테레오 아웃 (A 발매는 일반 포맷)</span></div></div>
  <div class="box tip"><b>핵심:</b> .cst엔 볼륨·팬이 안 담기고, 센드는 버스가 있는 템플릿에서 저장해야 산다. 그래서 <b>템플릿 먼저 → 그 안에서 프리셋 저장</b> 순서가 중요.</div>
  <button class="tapcard" data-d="reuse"><span class="chev">›</span><span class="tc-h">한 번 저장하면 계속 쓰는 것 전체</span><span class="tc-p">템플릿·.cst·.pst·패치·단축키 지도</span><span class="tc-go">지도 ›</span></button>
  <button class="tapcard" data-d="channelstrip"><span class="chev">›</span><span class="tc-h">.cst 저장법 (Setting 막대 켜는 법)</span><span class="tc-go">로직 설정법 ›</span></button>`},
@@ -1007,8 +1007,8 @@ const APP_SUM = {name:'Sum Wave', c1:'#63D6CC', c2:'#8394FF', steps:[
  <div class="srow"><span class="sk">교체</span><span class="sv">음악 파일만 <span class="sub">곡마다 갈아끼움</span></span></div></div>`},
 {phase:'시작 전', kicker:'시작 전에 정한다', title:'A · B 경로',
  html:`<div class="ab">
- <div class="abcard a"><div class="abh"><span class="badge">A</span><span>독립 발매</span></div><div class="abd">앱에서 믹스→마스터까지, 스트리밍 바로. 숨웨이브 안 거침. <span class="v">-14 LUFS</span> / <span class="v">-1 dBTP</span>(밀도 장르 <span class="v">-9</span> 하한).</div></div>
- <div class="abcard b"><div class="abh"><span class="badge">B</span><span>숨웨이브 투입</span></div><div class="abd">앱에서 <b>믹스까지만</b>, 마스터 건너뜀. 언마스터 2믹스를 음악 트랙에 얹고 여기서 마스터.</div></div></div>
+ <div class="abcard a"><div class="abh"><span class="badge">A</span><span>독립 발매</span></div><div class="abd">작곡 → <b>Sum Mastering 「일반 포맷」</b>에서 마스터(<span class="v">-14 LUFS</span> · <span class="v">-1 dBTP</span>) → 스트리밍.</div></div>
+ <div class="abcard b"><div class="abh"><span class="badge">B</span><span>숨웨이브 투입</span></div><div class="abd">작곡만 — 마스터 없음. 언마스터 2믹스를 음악 트랙에 얹고 여기서 마스터.</div></div></div>
  <button class="tapcard" data-d="handoff"><span class="chev">›</span><span class="tc-h">B로 보낼 파일 규격</span><span class="tc-p">리미터 끄고 · <span class="v">-18 LUFS</span> · 피크 <span class="v">-3~-6 dBFS</span></span><span class="tc-go">LUFS·피크·바운스 하는 법 ›</span></button>`},
 {phase:'시작 전', kicker:'먼저 읽기', title:'설계 원칙',
  html:`<div class="plist">
@@ -1257,11 +1257,11 @@ function beatGenreStep(g){
    <div class="kicker">⑤ 트랙별 처리 (신호체인 · 클릭 순서)</div>
    <div class="plist">${proc}</div>
    <div class="spec wide"><div class="srow"><span class="sk">⑥ 공간 센드</span><span class="sv" style="font-size:15.5px">Sends ▸ Bus1(리버브)·Bus2(딜레이) — 공간은 센드로만(여러 트랙 공유)</span></div>
-   <div class="srow"><span class="sk">⑦ 마스터링 (A만)</span><span class="sv" style="font-size:15.5px">Loudness Meter → EQ HPF 20–30 → Multipressor 가볍게 → Comp 2:1 글루 → <b>Adaptive Limiter -1dBTP · ${g.lufs.split('·')[0].trim()}</b></span></div></div>
+   <div class="srow"><span class="sk">⑦ 후반</span><span class="sv" style="font-size:15.5px"><b>Sum Mastering</b> — 트랙 → 버스 → 스테레오 아웃 (A 발매는 일반 포맷)</span></div></div>
    <div class="box tip"><div class="bt">믹스 포인트</div><p>${g.mix}</p></div>
    <div class="box warn"><div class="bt">흔한 실수</div><p>${g.err}</p></div>
    <div class="box soft"><b>목표:</b> ${g.goal}</div>${tap}
-   <div class="box hot"><b>B(숨웨이브):</b> ⑦ 스킵 · <span class="v">-18 LUFS</span> 언마스터로 바운스.</div>`};
+   <div class="box hot"><b>B(숨웨이브):</b> <span class="v">-18 LUFS</span> 언마스터로 바운스 → Sum Mastering 「숨웨이브 최종」.</div>`};
 }
 
 
@@ -1297,8 +1297,8 @@ const APP_BEAT = {name:'Beat Maker', c1:'#4FD1A5', c2:'#3AA7C9', steps:[
  html:`<p class="lead">곡마다 반복하는 건 몇 가지뿐. 나머지는 <b>처음 한 번</b> 만들어 계속 재사용한다.</p>
  <div class="spec wide"><div class="srow"><span class="sk">① 템플릿</span><span class="sv" style="font-size:15px">버스(리버브·병렬·홀)·마스터·기본값을 만들어 <b>Save as Template</b> — 곡마다 안 건드림</span></div>
  <div class="srow"><span class="sk">② 프리셋</span><span class="sv" style="font-size:15px">그 템플릿 <b>안에서</b> 장르별 트랙 세팅을 <b>.cst로 저장</b>(센드 살리려면 버스가 있는 상태여야). 「저장 체크리스트」 탭 참고</span></div>
- <div class="srow"><span class="sk">③ 곡마다</span><span class="sv" style="font-size:15px">템플릿 열기 → MIDI 임포트(트랙 생성) → 각 트랙에 .cst 클릭 → <b>볼륨·팬만</b> 표대로(프리셋에 안 담김)</span></div>
- <div class="srow"><span class="sk">④ 오토·믹싱·마스터링</span><span class="sv" style="font-size:15px">구간 오토메이션 → 믹싱 → A는 여기서 마스터링 / B는 숨웨이브로</span></div></div>
+ <div class="srow"><span class="sk">③ 곡마다</span><span class="sv" style="font-size:15px">MIDI를 <b>File→Open</b>으로 열기(Import Tempo ✓) → 각 트랙에 .cst 클릭 → <b>볼륨·팬만</b> 표대로 · 버스는 File→Import(Sends ✓)</span></div>
+ <div class="srow"><span class="sk">④ 오토메이션 → 후반</span><span class="sv" style="font-size:15px">구간 오토메이션 → 후반은 <b>Sum Mastering</b>: 트랙 → 버스 → 스테레오 아웃 (A 발매는 일반 포맷)</span></div></div>
  <div class="box tip"><b>핵심:</b> .cst엔 볼륨·팬이 안 담기고, 센드는 버스가 있는 템플릿에서 저장해야 산다. 그래서 <b>템플릿 먼저 → 그 안에서 프리셋 저장</b> 순서가 중요.</div>
  <button class="tapcard" data-d="reuse"><span class="chev">›</span><span class="tc-h">한 번 저장하면 계속 쓰는 것 전체</span><span class="tc-p">템플릿·.cst·.pst·패치·단축키 지도</span><span class="tc-go">지도 ›</span></button>
  <button class="tapcard" data-d="channelstrip"><span class="chev">›</span><span class="tc-h">.cst 저장법 (Setting 막대 켜는 법)</span><span class="tc-go">로직 설정법 ›</span></button>`},
@@ -1310,8 +1310,8 @@ const APP_BEAT = {name:'Beat Maker', c1:'#4FD1A5', c2:'#3AA7C9', steps:[
 
 {phase:'시작 전', kicker:'시작 전에 정한다', title:'A · B 경로',
  html:`<div class="ab">
- <div class="abcard a"><div class="abh"><span class="badge">A</span><span>독립 발매</span></div><div class="abd">믹싱 → 마스터링까지 → 스트리밍. <span class="v">-14 LUFS / -1 dBTP</span> 기본, 밀도 장르(EDM·러닝 등)만 <span class="v">-9</span> 하한.</div></div>
- <div class="abcard b"><div class="abh"><span class="badge">B</span><span>숨웨이브 투입</span></div><div class="abd">믹스까지만, <b>⑦ 마스터 건너뜀</b>. 언마스터 2믹스(<span class="v">-18 LUFS</span> · 피크 <span class="v">-3~-6</span> · WAV24/48k) → 음악 트랙.</div></div></div>
+ <div class="abcard a"><div class="abh"><span class="badge">A</span><span>독립 발매</span></div><div class="abd">작곡 → <b>Sum Mastering 「일반 포맷」</b>에서 마스터(<span class="v">-14 LUFS</span> · <span class="v">-1 dBTP</span>) → 스트리밍.</div></div>
+ <div class="abcard b"><div class="abh"><span class="badge">B</span><span>숨웨이브 투입</span></div><div class="abd">작곡만 — 마스터 없음. 언마스터 2믹스(<span class="v">-18 LUFS</span> · 피크 <span class="v">-3~-6</span> · WAV24/48k) → 음악 트랙.</div></div></div>
  <button class="tapcard" data-d="handoff"><span class="chev">›</span><span class="tc-h">B로 보낼 파일 규격</span><span class="tc-p">리미터 끄기 · LUFS 확인 · 바운스</span><span class="tc-go">로직 설정법 ›</span></button>
  <div class="box tip tp" data-d="lufsmeter"><div class="bt">2026 라우드니스 원칙</div><p>스트리밍은 전부 정규화(Spotify·YouTube·Tidal·Amazon -14, Apple -16). 브릭월 -6까지 밀어봤자 <span class="no">깎여서 더 나쁘게 들림</span>. 밀도는 편곡·808 관리로, 리미터로 만들지 않는다. LRA 6~14. <b>(탭 → LUFS·dBTP·LRA 읽는 법)</b></p></div>`},
 {phase:'템플릿', kicker:'최초 1회 만들기 · 곡마다 붙여 씀', title:'프로젝트 템플릿',
@@ -1321,7 +1321,7 @@ const APP_BEAT = {name:'Beat Maker', c1:'#4FD1A5', c2:'#3AA7C9', steps:[
  <div class="srow tp" data-d="delayparams"><span class="sk">③ Bus 2 딜레이</span><span class="sv" style="font-size:15.5px">Stereo Delay · Note <span class="v">1/8 dotted</span> · FB <span class="v">20–28%</span></span></div>
  <div class="srow tp" data-d="compparams"><span class="sk">③ Bus 3 병렬컴프</span><span class="sv" style="font-size:15.5px">Compressor(FET) <span class="v">8:1 · 어택 빠르게 · 100ms · GR 10–15dB</span> + HPF <span class="v">80–100</span></span></div>
  <div class="srow tp" data-d="compparams"><span class="sk">④ 드럼 버스</span><span class="sv" style="font-size:15.5px">Comp <span class="v">2:1 GR1–2</span> → ChromaGlow Drive 낮게 → Clip Distortion 피크만</span></div>
- <div class="srow tp" data-d="masterchain"><span class="sk">⑤ 마스터 체인</span><span class="sv" style="font-size:15.5px">Gain(레벨 맞춤용) → EQ HPF 20–30 → Multipressor → Comp 2:1 → Adaptive Limiter <span class="v">-1dBTP</span> <span class="sub">B면 전부 바이패스 · -18로 바운스</span></span></div></div>
+ <div class="srow tp" data-d="masterchain"><span class="sk">마스터 체인 — Sum 「일반 포맷」</span><span class="sv" style="font-size:15.5px">Gain(레벨 맞춤용) → EQ HPF 20–30 → Multipressor → Comp 2:1 → Adaptive Limiter <span class="v">-1dBTP</span> <span class="sub">B면 전부 바이패스 · -18로 바운스</span></span></div></div>
  <div class="box tip"><b>구조 확인 —</b> 템플릿은 공통 뼈대(버스·기본값·마스터 자리)로 <b>한 번 만들어 고정</b>, 곡마다 안 건드린다. 곡별 차이는 <b>장르 카드의 트랙 프리셋·레벨·사이드체인 값으로만</b> 조절한다.</div>
  <div class="box soft">번호 줄을 <b>탭하면</b> 그 항목의 숫자가 무슨 뜻인지·어디에 입력하는지가 열린다.</div>
  <button class="tapcard" data-d="parallel"><span class="chev">›</span><span class="tc-h">병렬 컴프 만드는 법</span><span class="tc-go">로직 설정법 ›</span></button>
@@ -1362,8 +1362,8 @@ const APP_MED = {name:'Medi Builder', c1:'#6FB7FF', c2:'#9E8CFF', steps:[
  html:`<p class="lead">곡마다 반복하는 건 몇 가지뿐. 나머지는 <b>처음 한 번</b> 만들어 계속 재사용한다.</p>
  <div class="spec wide"><div class="srow"><span class="sk">① 템플릿</span><span class="sv" style="font-size:15px">버스(리버브·병렬·홀)·마스터·기본값을 만들어 <b>Save as Template</b> — 곡마다 안 건드림</span></div>
  <div class="srow"><span class="sk">② 프리셋</span><span class="sv" style="font-size:15px">그 템플릿 <b>안에서</b> 장르별 트랙 세팅을 <b>.cst로 저장</b>(센드 살리려면 버스가 있는 상태여야). 「저장 체크리스트」 탭 참고</span></div>
- <div class="srow"><span class="sk">③ 곡마다</span><span class="sv" style="font-size:15px">템플릿 열기 → MIDI 임포트(트랙 생성) → 각 트랙에 .cst 클릭 → <b>볼륨·팬만</b> 표대로(프리셋에 안 담김)</span></div>
- <div class="srow"><span class="sk">④ 오토·믹싱·마스터링</span><span class="sv" style="font-size:15px">구간 오토메이션 → 믹싱 → A는 여기서 마스터링 / B는 숨웨이브로</span></div></div>
+ <div class="srow"><span class="sk">③ 곡마다</span><span class="sv" style="font-size:15px">MIDI를 <b>File→Open</b>으로 열기(Import Tempo ✓) → 각 트랙에 .cst 클릭 → <b>볼륨·팬만</b> 표대로 · 버스는 File→Import(Sends ✓)</span></div>
+ <div class="srow"><span class="sk">④ 오토메이션 → 후반</span><span class="sv" style="font-size:15px">구간 오토메이션 → 후반은 <b>Sum Mastering</b>: 트랙 → 버스 → 스테레오 아웃 (A 발매는 일반 포맷)</span></div></div>
  <div class="box tip"><b>핵심:</b> .cst엔 볼륨·팬이 안 담기고, 센드는 버스가 있는 템플릿에서 저장해야 산다. 그래서 <b>템플릿 먼저 → 그 안에서 프리셋 저장</b> 순서가 중요.</div>
  <button class="tapcard" data-d="reuse"><span class="chev">›</span><span class="tc-h">한 번 저장하면 계속 쓰는 것 전체</span><span class="tc-p">템플릿·.cst·.pst·패치·단축키 지도</span><span class="tc-go">지도 ›</span></button>
  <button class="tapcard" data-d="channelstrip"><span class="chev">›</span><span class="tc-h">.cst 저장법 (Setting 막대 켜는 법)</span><span class="tc-go">로직 설정법 ›</span></button>`},
@@ -1375,8 +1375,8 @@ const APP_MED = {name:'Medi Builder', c1:'#6FB7FF', c2:'#9E8CFF', steps:[
 
 {phase:'시작 전', kicker:'시작 전에 정한다', title:'A · B 경로',
  html:`<div class="ab">
- <div class="abcard a"><div class="abh"><span class="badge">A</span><span>독립 발매</span></div><div class="abd">믹스→마스터 → 스트리밍. 웰니스 타깃 <span class="v">-16~-14 LUFS</span> / <span class="v">-1 dBTP</span> · 다이내믹 우선.</div></div>
- <div class="abcard b"><div class="abh"><span class="badge">B</span><span>숨웨이브 투입</span></div><div class="abd">믹스까지만, 마스터 건너뜀. <span class="v">-18 LUFS</span> 언마스터 2믹스 → 음악 트랙.</div></div></div>
+ <div class="abcard a"><div class="abh"><span class="badge">A</span><span>독립 발매</span></div><div class="abd">작곡 → <b>Sum Mastering 「일반 포맷」</b>에서 마스터(<span class="v">-14 LUFS</span> · <span class="v">-1 dBTP</span>) → 스트리밍.</div></div>
+ <div class="abcard b"><div class="abh"><span class="badge">B</span><span>숨웨이브 투입</span></div><div class="abd">작곡만 — 마스터 없음. <span class="v">-18 LUFS</span> 언마스터 2믹스 → 음악 트랙.</div></div></div>
  <button class="tapcard" data-d="handoff"><span class="chev">›</span><span class="tc-h">B로 보낼 파일 규격</span><span class="tc-go">로직 설정법 ›</span></button>
  <div class="box soft"><b>흐름:</b> 앱에서 곡 추출 → File▸Open → 템플릿 붙이기 → 트랙 프리셋 적용 → 볼륨·팬 표 → 흐름 오토메이션 → 믹스 → [A만] 마스터.</div>`},
 {phase:'템플릿', kicker:'최초 1회', title:'프로젝트 · 리버브 2계열',
@@ -1542,8 +1542,8 @@ const APP_BAND = {name:'Band Composer', c1:'#C792EA', c2:'#F78FB3', steps:[
  html:`<p class="lead">곡마다 반복하는 건 몇 가지뿐. 나머지는 <b>처음 한 번</b> 만들어 계속 재사용한다.</p>
  <div class="spec wide"><div class="srow"><span class="sk">① 템플릿</span><span class="sv" style="font-size:15px">버스(리버브·병렬·홀)·마스터·기본값을 만들어 <b>Save as Template</b> — 곡마다 안 건드림</span></div>
  <div class="srow"><span class="sk">② 프리셋</span><span class="sv" style="font-size:15px">그 템플릿 <b>안에서</b> 장르별 트랙 세팅을 <b>.cst로 저장</b>(센드 살리려면 버스가 있는 상태여야). 「저장 체크리스트」 탭 참고</span></div>
- <div class="srow"><span class="sk">③ 곡마다</span><span class="sv" style="font-size:15px">템플릿 열기 → MIDI 임포트(트랙 생성) → 각 트랙에 .cst 클릭 → <b>볼륨·팬만</b> 표대로(프리셋에 안 담김)</span></div>
- <div class="srow"><span class="sk">④ 오토·믹싱·마스터링</span><span class="sv" style="font-size:15px">구간 오토메이션 → 믹싱 → A는 여기서 마스터링 / B는 숨웨이브로</span></div></div>
+ <div class="srow"><span class="sk">③ 곡마다</span><span class="sv" style="font-size:15px">MIDI를 <b>File→Open</b>으로 열기(Import Tempo ✓) → 각 트랙에 .cst 클릭 → <b>볼륨·팬만</b> 표대로 · 버스는 File→Import(Sends ✓)</span></div>
+ <div class="srow"><span class="sk">④ 오토메이션 → 후반</span><span class="sv" style="font-size:15px">구간 오토메이션 → 후반은 <b>Sum Mastering</b>: 트랙 → 버스 → 스테레오 아웃 (A 발매는 일반 포맷)</span></div></div>
  <div class="box tip"><b>핵심:</b> .cst엔 볼륨·팬이 안 담기고, 센드는 버스가 있는 템플릿에서 저장해야 산다. 그래서 <b>템플릿 먼저 → 그 안에서 프리셋 저장</b> 순서가 중요.</div>
  <button class="tapcard" data-d="reuse"><span class="chev">›</span><span class="tc-h">한 번 저장하면 계속 쓰는 것 전체</span><span class="tc-p">템플릿·.cst·.pst·패치·단축키 지도</span><span class="tc-go">지도 ›</span></button>
  <button class="tapcard" data-d="channelstrip"><span class="chev">›</span><span class="tc-h">.cst 저장법 (Setting 막대 켜는 법)</span><span class="tc-go">로직 설정법 ›</span></button>`},
@@ -1555,10 +1555,10 @@ const APP_BAND = {name:'Band Composer', c1:'#C792EA', c2:'#F78FB3', steps:[
 
 {phase:'시작 전', kicker:'시작 전에 정한다', title:'A · B 경로',
  html:`<div class="ab">
- <div class="abcard a"><div class="abh"><span class="badge">A</span><span>독립 발매</span></div><div class="abd">믹스→마스터 → 스트리밍. 세트별 타깃(기본 <span class="v">-14</span> · K팝댄스만 <span class="v">-9</span> 하한 · 발라드/오케 <span class="v">-16~-14</span>).</div></div>
- <div class="abcard b"><div class="abh"><span class="badge">B</span><span>숨웨이브 투입</span></div><div class="abd">믹스까지만. 마스터 체인 <b>바이패스 유지</b> → <span class="v">-18 LUFS</span> 언마스터 바운스.</div></div></div>
+ <div class="abcard a"><div class="abh"><span class="badge">A</span><span>독립 발매</span></div><div class="abd">작곡 → <b>Sum Mastering 「일반 포맷」</b>에서 마스터(<span class="v">-14 LUFS</span> · <span class="v">-1 dBTP</span>) → 스트리밍.</div></div>
+ <div class="abcard b"><div class="abh"><span class="badge">B</span><span>숨웨이브 투입</span></div><div class="abd">작곡만 — 마스터 없음. <span class="v">-18 LUFS</span> 언마스터 바운스.</div></div></div>
  <button class="tapcard" data-d="handoff"><span class="chev">›</span><span class="tc-h">B로 보낼 파일 규격</span><span class="tc-go">로직 설정법 ›</span></button>
- <div class="box soft"><b>워크플로:</b> ① 템플릿 열기(버스·볼륨·팬) → ② MIDI 임포트(File▸Open) → ③ 악기 로딩 → ④ 장르 프리셋 클릭 → ⑤ 마커 따라 오토메이션 = 기초작업 완료.</div>`},
+ <div class="box soft"><b>워크플로:</b> ① MIDI를 <b>File→Open</b>으로 열기(Import Tempo ✓) → ② 트랙마다 .cst 프리셋 클릭 → ③ 버스·마스터 File→Import(Sends ✓) → ④ 마커 따라 오토메이션 → ⑤ 후반은 <b>Sum Mastering</b>.</div>`},
 {phase:'템플릿', kicker:'최초 1회 만들기 · 곡마다 붙여 씀', title:'공통 버스 5종 & FX 순서',
  html:`<div class="spec"><div class="srow"><span class="sk">룸 리버브</span><span class="sv">ChromaVerb Room · <span class="v">0.8s · Pre 0</span> <span class="sub">전체 접착</span></span></div>
  <div class="srow"><span class="sk">플레이트 리버브</span><span class="sv">EQ HP200/LP8k → Plate <span class="v">2.0s · 25ms</span> <span class="sub">보컬·피아노·현</span></span></div>
@@ -1658,8 +1658,8 @@ const APP_PLAY = {name:'Play Composer', c1:'#5BD3A0', c2:'#F2C14E', steps:[
  html:`<p class="lead">곡마다 반복하는 건 몇 가지뿐. 나머지는 <b>처음 한 번</b> 만들어 계속 재사용한다.</p>
  <div class="spec wide"><div class="srow"><span class="sk">① 템플릿</span><span class="sv" style="font-size:15px">버스(리버브·병렬·홀)·마스터·기본값을 만들어 <b>Save as Template</b> — 곡마다 안 건드림</span></div>
  <div class="srow"><span class="sk">② 프리셋</span><span class="sv" style="font-size:15px">그 템플릿 <b>안에서</b> 장르별 트랙 세팅을 <b>.cst로 저장</b>(센드 살리려면 버스가 있는 상태여야). 「저장 체크리스트」 탭 참고</span></div>
- <div class="srow"><span class="sk">③ 곡마다</span><span class="sv" style="font-size:15px">템플릿 열기 → MIDI 임포트(트랙 생성) → 각 트랙에 .cst 클릭 → <b>볼륨·팬만</b> 표대로(프리셋에 안 담김)</span></div>
- <div class="srow"><span class="sk">④ 오토·믹싱·마스터링</span><span class="sv" style="font-size:15px">구간 오토메이션 → 믹싱 → A는 여기서 마스터링 / B는 숨웨이브로</span></div></div>
+ <div class="srow"><span class="sk">③ 곡마다</span><span class="sv" style="font-size:15px">MIDI를 <b>File→Open</b>으로 열기(Import Tempo ✓) → 각 트랙에 .cst 클릭 → <b>볼륨·팬만</b> 표대로 · 버스는 File→Import(Sends ✓)</span></div>
+ <div class="srow"><span class="sk">④ 오토메이션 → 후반</span><span class="sv" style="font-size:15px">구간 오토메이션 → 후반은 <b>Sum Mastering</b>: 트랙 → 버스 → 스테레오 아웃 (A 발매는 일반 포맷)</span></div></div>
  <div class="box tip"><b>핵심:</b> .cst엔 볼륨·팬이 안 담기고, 센드는 버스가 있는 템플릿에서 저장해야 산다. 그래서 <b>템플릿 먼저 → 그 안에서 프리셋 저장</b> 순서가 중요.</div>
  <button class="tapcard" data-d="reuse"><span class="chev">›</span><span class="tc-h">한 번 저장하면 계속 쓰는 것 전체</span><span class="tc-p">템플릿·.cst·.pst·패치·단축키 지도</span><span class="tc-go">지도 ›</span></button>
  <button class="tapcard" data-d="channelstrip"><span class="chev">›</span><span class="tc-h">.cst 저장법 (Setting 막대 켜는 법)</span><span class="tc-go">로직 설정법 ›</span></button>`},
@@ -1671,8 +1671,8 @@ const APP_PLAY = {name:'Play Composer', c1:'#5BD3A0', c2:'#F2C14E', steps:[
 
 {phase:'시작 전', kicker:'시작 전에 정한다', title:'A · B 경로',
  html:`<div class="ab">
- <div class="abcard a"><div class="abh"><span class="badge">A</span><span>독립 발매</span></div><div class="abd">믹스→마스터 → 스트리밍. 장르별 타깃(A 앰비언트 <span class="v">-16~-18</span> ~ E EDM <span class="v">-9~-12</span>).</div></div>
- <div class="abcard b"><div class="abh"><span class="badge">B</span><span>숨웨이브 투입</span></div><div class="abd">믹스까지만. <span class="v">-18 LUFS</span> 언마스터 2믹스로 바운스.</div></div></div>
+ <div class="abcard a"><div class="abh"><span class="badge">A</span><span>독립 발매</span></div><div class="abd">작곡 → <b>Sum Mastering 「일반 포맷」</b>에서 마스터(<span class="v">-14 LUFS</span> · <span class="v">-1 dBTP</span>) → 스트리밍.</div></div>
+ <div class="abcard b"><div class="abh"><span class="badge">B</span><span>숨웨이브 투입</span></div><div class="abd">작곡만 — 마스터 없음. <span class="v">-18 LUFS</span> 언마스터 2믹스로 바운스.</div></div></div>
  <button class="tapcard" data-d="handoff"><span class="chev">›</span><span class="tc-h">B로 보낼 파일 규격</span><span class="tc-go">로직 설정법 ›</span></button>`},
 {phase:'템플릿', kicker:'최초 1회 만들기 · 곡마다 붙여 씀', title:'기본값 · 리버브 버스 A~D',
  html:`<div class="spec wide"><div class="srow"><span class="sk">기본값</span><span class="sv"><span class="v">48kHz · 24bit</span> · 마스터 페이더 <span class="v">0dB 고정</span> · 버퍼 <span class="v">128–256</span></span></div>
@@ -1727,9 +1727,9 @@ const APP_MASTER = {name:'Sum Mastering', c1:'#FFB86B', c2:'#FF7683', steps:[
 {phase:'시작 전', kicker:'어느 마스터?', title:'두 갈래 — 일반 vs 숨웨이브',
  html:`<p class="lead">마스터는 곡의 <b>마지막 손질</b> — 어디로 내보내느냐로 두 갈래.</p>
  <div class="ab">
- <div class="abcard a"><div class="abh"><span class="badge">일</span><span>일반 포맷</span></div><div class="abd">Beat·Band·Play·Medi에서 <b>A(독립 발매)</b>로 끝내는 곡. 그 곡 프로젝트 Stereo Out에서 마스터 → 바로 스트리밍. 각 앱 탭의 "⑤ 마스터 체인"이 요약본, <b>여기 「일반 포맷」이 상세판</b>.</div></div>
+ <div class="abcard a"><div class="abh"><span class="badge">일</span><span>일반 포맷</span></div><div class="abd">Beat·Band·Play·Medi의 <b>A(독립 발매)</b> 곡 — 메이커에는 마스터가 없으니 전부 여기 <b>「일반 포맷」</b>에서 마스터 → 스트리밍.</div></div>
  <div class="abcard b"><div class="abh"><span class="badge">숨</span><span>숨웨이브 최종</span></div><div class="abd"><b>B</b>로 만든 언마스터 곡을 숨웨이브 배경 프로젝트에 얹어 합친 뒤 — <b>여기서 딱 한 번</b> 마스터. 「숨웨이브 최종」 탭.</div></div></div>
- <div class="box soft"><b>흐름:</b> 앱에서 곡 → 로직 믹스 → <b>[일반]</b> 그 자리서 마스터·발매 / <b>[숨]</b> -18 언마스터 바운스 → 숨웨이브 프로젝트 → 이 탭 절차로 마무리.</div>
+ <div class="box soft"><b>흐름:</b> 앱에서 곡 → 로직 믹스 → <b>[일반]</b> 이 탭 「일반 포맷」에서 마스터·발매 / <b>[숨]</b> -18 언마스터 바운스 → 숨웨이브 프로젝트 → 이 탭 절차로 마무리.</div>
  <button class="tapcard" data-d="lufsmeter"><span class="chev">›</span><span class="tc-h">LUFS · dBTP가 뭔지부터</span><span class="tc-p">Loudness Meter로 재는 법 포함</span><span class="tc-go">읽는 법 ›</span></button>`},
 {phase:'일반 포맷', kicker:'A 발매 · Stereo Out · 앱 탭 상세판', title:'일반 마스터링 — 순서대로',
  html:MASTER_STD},
