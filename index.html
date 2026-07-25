@@ -887,6 +887,58 @@ ensemble_glue:{title:'조화를 완성하는 실용 테크닉', html:`
 <div class="kicker">6. 마지막 점검</div>
 <div class="lstep"><span class="ln">7</span><span class="lc"><b>모노로 들어보기.</b> 모노에서 무너지면 위상 문제 — 과한 스테레오 확장·더블링 점검. <b>작은 스피커/폰</b>으로도 — 거기서 균형 맞으면 어디서든 맞다. 볼륨 낮춰 들으면 밸런스가 보인다.</span></div>
 <div class="box tip">우선순위: ① HPF로 저역 정리 ② 겹치는 대역 하나 깎기 ③ 여백(다 안 넣기) ④ 깊이 층 ⑤ 버스 글루. 팬·볼륨·리버브 다음은 이 순서.</div>`},
+velo_common:{title:'벨로시티 · 노트 길이 — 기본 원리', html:`
+<p class="lead sm">두 값이 표현의 뼈대다. <b>벨로시티</b>=치는 세기(음색·음량), <b>노트 길이</b>=이음/끊음(그루브·레가토). 어디서 보고 바꾸나부터.</p>
+<div class="lstep"><span class="ln">1</span><span class="lc"><b>어디서:</b> 피아노롤에서 노트를 보면 벨로시티는 <b>색/하단 막대</b>로 표시. 하단 벨로시티 레인에서 위아래로 드래그. 길이는 노트 <b>오른쪽 끝을 드래그</b>.<span class="path">피아노롤 → 노트 선택 → 하단 벨로시티 레인 / 노트 끝 드래그</span></span></div>
+<div class="lstep"><span class="ln">2</span><span class="lc"><b>벨로시티 척도(0~127):</b> ppp <span class="v">1~20</span> · pp <span class="v">20~40</span> · p <span class="v">40~55</span> · mp <span class="v">55~70</span> · mf <span class="v">70~85</span> · f <span class="v">85~100</span> · ff <span class="v">100~115</span> · fff <span class="v">115~127</span>. 라이브러리가 이 값으로 음색 layer를 고른다.</span></div>
+<div class="lstep"><span class="ln">3</span><span class="lc"><b>길이(레가토/스타카토):</b> 다음 음과 겹치면 레가토, <span class="v">50%</span>면 보통, <span class="v">25%↓</span>면 스타카토. 음가 대비 비율로 생각.</span></div>
+<div class="box tip">핵심: 같은 값의 연속을 피하라. 강박 강·약박 약, 프레이즈 안에서 물결. 아래는 악기·스타일별 실전 수치.</div>`},
+
+velo_orch:{title:'오케스트라 — 악기별 벨로시티·길이', html:`
+<p class="lead sm">오케스트라는 <b>벨로시티=어택 세기</b>, 지속의 셈여림은 CC1이 맡는다(벨로시티만으론 부족). 길이는 주법을 결정.</p>
+<div class="spec wide">
+<div class="srow"><span class="sk">현 레가토</span><span class="sv">벨 <span class="v">50~75</span> · 길이 노트끼리 <span class="v">10~30ms 겹침</span> · 셈여림은 CC1</span></div>
+<div class="srow"><span class="sk">현 스타카토</span><span class="sv">벨 <span class="v">70~100</span>(강약 물결) · 길이 <span class="v">음가의 25~40%</span></span></div>
+<div class="srow"><span class="sk">현 스피카토</span><span class="sv">벨 <span class="v">80~110</span> · 길이 <span class="v">아주 짧게 15~25%</span></span></div>
+<div class="srow"><span class="sk">금관 팡파레</span><span class="sv">벨 <span class="v">100~120</span> · 짧고 강하게 · 즉시 CC1 최대</span></div>
+<div class="srow"><span class="sk">금관 지속</span><span class="sv">벨 <span class="v">60~80</span>(어택만) · 길이 길게 · CC1로 부풀림</span></div>
+<div class="srow"><span class="sk">목관 솔로</span><span class="sv">벨 <span class="v">55~80</span> · 프레이즈 끝 짧은 공백(브레스) · CC11 딥</span></div>
+<div class="srow"><span class="sk">하프·피치카토</span><span class="sv">벨 <span class="v">50~100</span>(표정) · 길이 짧게(여운은 리버브)</span></div>
+<div class="srow"><span class="sk">팀파니 롤</span><span class="sv">벨 연타 <span class="v">40→120</span> 크레셴도 · 촘촘히</span></div>
+<div class="srow"><span class="sk">팀파니 단타</span><span class="sv">벨 <span class="v">70~110</span> · R/L 교대라 값 미세하게 다르게</span></div>
+</div>
+<div class="box tip">긴 음은 벨로시티로 셈여림 못 만든다 — 어택만 벨로시티, 지속은 CC1. 이게 오케스트라 핵심.</div>`},
+
+velo_band:{title:'밴드 — 악기·스타일별 벨로시티·길이', html:`
+<p class="lead sm">밴드는 벨로시티가 <b>그루브의 절반</b>. 강약 패턴과 길이가 장르 느낌을 만든다.</p>
+<div class="kicker">드럼</div>
+<div class="spec wide">
+<div class="srow"><span class="sk">킥·스네어 메인</span><span class="sv">벨 <span class="v">100~120</span></span></div>
+<div class="srow"><span class="sk">고스트 노트</span><span class="sv">벨 <span class="v">20~40</span> <span class="sub">아주 약하게</span></span></div>
+<div class="srow"><span class="sk">하이햇</span><span class="sv">벨 <span class="v">60~95</span> 물결(강·약·중·약)</span></div>
+<div class="srow"><span class="sk">크래시</span><span class="sv">벨 <span class="v">110~127</span></span></div>
+</div>
+<div class="kicker">베이스 (스타일별 길이)</div>
+<div class="spec wide">
+<div class="srow"><span class="sk">록/펑크</span><span class="sv">벨 <span class="v">90~110</span> · 길이 <span class="v">짧게 40~60%</span>(탄력)</span></div>
+<div class="srow"><span class="sk">소울/발라드</span><span class="sv">벨 <span class="v">70~95</span> · 길이 <span class="v">길게 80~100%</span>(레가토)</span></div>
+<div class="srow"><span class="sk">슬랩(펑크)</span><span class="sv">벨 팝 <span class="v">110~127</span>/썸 <span class="v">80~100</span> 극단 대비</span></div>
+<div class="srow"><span class="sk">워킹(재즈)</span><span class="sv">벨 <span class="v">70~90</span> 균등하되 미세 강약 · 길이 <span class="v">80%</span></span></div>
+</div>
+<div class="kicker">기타</div>
+<div class="spec wide">
+<div class="srow"><span class="sk">스트럼</span><span class="sv">벨 <span class="v">75~105</span> 물결 · 다운/업 방향 교대 <span class="v">15~40ms</span> 밀기</span></div>
+<div class="srow"><span class="sk">팜뮤트 리프</span><span class="sv">벨 <span class="v">80~100</span> · 길이 <span class="v">짧게 25~40%</span></span></div>
+<div class="srow"><span class="sk">리드·솔로</span><span class="sv">벨 <span class="v">85~110</span> · 길이 길게 · 벤딩·비브라토</span></div>
+</div>
+<div class="kicker">건반</div>
+<div class="spec wide">
+<div class="srow"><span class="sk">피아노 멜로디</span><span class="sv">벨 <span class="v">75~105</span>(도드라지게) · 안쪽 화성음 <span class="v">55~70</span></span></div>
+<div class="srow"><span class="sk">발라드 화음</span><span class="sv">벨 <span class="v">50~75</span> · 아래→위 <span class="v">5~15ms</span> 롤 · CC64 페달</span></div>
+<div class="srow"><span class="sk">오르간</span><span class="sv">벨로시티 <b class="no">무의미</b>(음량 균일) · 길이로 레가토 이음</span></div>
+<div class="srow"><span class="sk">로즈(펑크)</span><span class="sv">벨 <span class="v">80~110</span>(세면 벨톤 열림) · 짧게 끊어 리듬</span></div>
+</div>
+<div class="box tip">장르 길이 요약: 펑키·리듬=짧게 끊기 / 발라드·소울=길게 잇기 / 재즈=중간+스윙. 벨로시티는 어디서든 물결.</div>`},
 orch_common:{title:'공통 원칙 — 왜 가짜로 들리나', html:`
 <p class="lead sm">MIDI 오케스트라가 가짜로 들리는 이유는 대개 <b>일정함</b>이다: 같은 세기, 같은 타이밍, 같은 비브라토. 그 흔들림을 되살리는 게 핵심.</p>
 <div class="kicker">CC를 어디서 그리나</div>
@@ -2177,6 +2229,12 @@ const APP_REF = {name:'참고', c1:'#9BA7FF', c2:'#6BD3C9', steps:[
  <button class="tapcard" data-d="ensemble_depth"><span class="chev">›</span><span class="tc-h">깊이·공간 (공통)</span><span class="tc-p">앞뒤 원근 — 볼륨·리버브·고역</span><span class="tc-go">›</span></button>
  <button class="tapcard" data-d="ensemble_glue"><span class="chev">›</span><span class="tc-h">조화 완성 테크닉 ★</span><span class="tc-p">주파수 충돌·사이드체인·여백·글루</span><span class="tc-go">›</span></button>
  <div class="box tip">Logic Pro 11 기본 음원으로도 이 배치는 충분히 구현된다 — 팬·트랙딜레이·Send는 모든 트랙에 있다.</div>`},
+{phase:'참고', kicker:'벨로시티·길이', title:'벨로시티 · 노트 길이',
+ html:`<p class="lead sm">MIDI 노트마다 있는 두 값 — 세기(벨로시티)와 길이. 악기·스타일별 실전 수치. 박스를 탭.</p>
+ <button class="tapcard" data-d="velo_common"><span class="chev">›</span><span class="tc-h">기본 원리</span><span class="tc-p">어디서 보나·척도(ppp~fff)·길이 비율</span><span class="tc-go">›</span></button>
+ <button class="tapcard" data-d="velo_orch"><span class="chev">›</span><span class="tc-h">오케스트라 악기별</span><span class="tc-p">현·금관·목관·타악 수치</span><span class="tc-go">›</span></button>
+ <button class="tapcard" data-d="velo_band"><span class="chev">›</span><span class="tc-h">밴드 악기·스타일별</span><span class="tc-p">드럼·베이스·기타·건반</span><span class="tc-go">›</span></button>`},
+
  {phase:'참고', kicker:'느낌별 레시피', title:'FX로 느낌 만들기',
  html:DETAILS.fxrecipes.html},
  {phase:'참고', kicker:'마우스 툴 · 치트키', title:'툴 활용법 (마키 · 클릭존)',
