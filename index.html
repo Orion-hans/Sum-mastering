@@ -887,6 +887,20 @@ ensemble_glue:{title:'조화를 완성하는 실용 테크닉', html:`
 <div class="kicker">6. 마지막 점검</div>
 <div class="lstep"><span class="ln">7</span><span class="lc"><b>모노로 들어보기.</b> 모노에서 무너지면 위상 문제 — 과한 스테레오 확장·더블링 점검. <b>작은 스피커/폰</b>으로도 — 거기서 균형 맞으면 어디서든 맞다. 볼륨 낮춰 들으면 밸런스가 보인다.</span></div>
 <div class="box tip">우선순위: ① HPF로 저역 정리 ② 겹치는 대역 하나 깎기 ③ 여백(다 안 넣기) ④ 깊이 층 ⑤ 버스 글루. 팬·볼륨·리버브 다음은 이 순서.</div>`},
+velo_vs_volume:{title:'벨로시티 vs 트랙 볼륨 — 뭘 어디에', html:`
+<p class="lead sm">둘 다 "크기"를 다루지만 역할이 다르다. 헷갈리면 믹스가 꼬인다 — <b>표현은 벨로시티, 밸런스는 볼륨.</b></p>
+<div class="grid2">
+<div class="box"><h4>벨로시티 (음마다)</h4><ul class="tight"><li>개별 음의 <b>연주 세기</b></li><li>음색까지 바뀜(강주법 layer)</li><li>곡 내내 <b>변한다</b>(강박·약박·프레이즈)</li><li>= 연주자가 얼마나 세게 치나</li></ul></div>
+<div class="box gold"><h4>트랙 볼륨 (악기 전체)</h4><ul class="tight"><li>그 악기가 믹스에서 차지하는 <b>크기</b></li><li>음색 안 바뀜(그냥 레벨)</li><li>대체로 <b>한 번 정한다</b>(밸런스)</li><li>= 무대에서 마이크에 얼마나 가까이</li></ul></div>
+</div>
+<div class="kicker">실전 순서</div>
+<div class="lstep"><span class="ln">1</span><span class="lc"><b>먼저 벨로시티로 연주를 만든다</b> — 음악적 표현(강약·물결·고스트).</span></div>
+<div class="lstep"><span class="ln">2</span><span class="lc"><b>그다음 트랙 볼륨(페이더)으로 밸런스</b> — "이 악기가 너무 크네/작네"를 곡 전체 기준으로. 앙상블 배치 탭의 볼륨 값이 출발점.</span></div>
+<div class="lstep"><span class="ln">3</span><span class="lc"><b>구간별로 밸런스가 바뀌면 볼륨 오토메이션</b> — 코러스에서 리드 <span class="v">+1dB</span> 계단 등. 이건 밸런스 변화지 표현이 아니다.</span></div>
+<div class="kicker">함정 — 이렇게 하지 마라</div>
+<div class="lstep"><span class="ln">✕</span><span class="lc"><b>벨로시티로 밸런스 맞추기.</b> 베이스가 작다고 벨로시티를 다 올리면 <b>음색까지 세진다</b>(강주법으로 바뀜). 밸런스는 볼륨으로.</span></div>
+<div class="lstep"><span class="ln">✕</span><span class="lc"><b>볼륨으로 셈여림 표현하기.</b> 트랙 볼륨을 내려 여리게 만들려 하면 <b>표정이 안 생긴다</b>(음색은 그대로 센 채 작아짐). 셈여림은 벨로시티·CC1.</span></div>
+<div class="box tip">한 줄 정리: <b>벨로시티·CC = 어떻게 연주하나(표현)</b> · <b>트랙 볼륨 = 얼마나 크게 들리나(밸런스)</b>. 표현 먼저, 밸런스 나중.</div>`},
 velo_common:{title:'벨로시티 · 노트 길이 — 기본 원리', html:`
 <p class="lead sm">두 값이 표현의 뼈대다. <b>벨로시티</b>=치는 세기(음색·음량), <b>노트 길이</b>=이음/끊음(그루브·레가토). 어디서 보고 바꾸나부터.</p>
 <div class="lstep"><span class="ln">1</span><span class="lc"><b>어디서:</b> 피아노롤에서 노트를 보면 벨로시티는 <b>색/하단 막대</b>로 표시. 하단 벨로시티 레인에서 위아래로 드래그. 길이는 노트 <b>오른쪽 끝을 드래그</b>.<span class="path">피아노롤 → 노트 선택 → 하단 벨로시티 레인 / 노트 끝 드래그</span></span></div>
@@ -2232,6 +2246,7 @@ const APP_REF = {name:'참고', c1:'#9BA7FF', c2:'#6BD3C9', steps:[
 {phase:'참고', kicker:'벨로시티·길이', title:'벨로시티 · 노트 길이',
  html:`<p class="lead sm">MIDI 노트마다 있는 두 값 — 세기(벨로시티)와 길이. 악기·스타일별 실전 수치. 박스를 탭.</p>
  <button class="tapcard" data-d="velo_common"><span class="chev">›</span><span class="tc-h">기본 원리</span><span class="tc-p">어디서 보나·척도(ppp~fff)·길이 비율</span><span class="tc-go">›</span></button>
+ <button class="tapcard" data-d="velo_vs_volume"><span class="chev">›</span><span class="tc-h">벨로시티 vs 트랙 볼륨 ★</span><span class="tc-p">표현은 벨로시티·밸런스는 볼륨</span><span class="tc-go">›</span></button>
  <button class="tapcard" data-d="velo_orch"><span class="chev">›</span><span class="tc-h">오케스트라 악기별</span><span class="tc-p">현·금관·목관·타악 수치</span><span class="tc-go">›</span></button>
  <button class="tapcard" data-d="velo_band"><span class="chev">›</span><span class="tc-h">밴드 악기·스타일별</span><span class="tc-p">드럼·베이스·기타·건반</span><span class="tc-go">›</span></button>`},
 
