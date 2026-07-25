@@ -681,8 +681,219 @@ tip_arp:{title:'아르페지에이터 · MIDI FX', html:`<p class="lead sm">MIDI
 <div class="lstep"><span class="ln">3</span><span class="lc"><b>들어보기.</b> 코드(화음) 리전이 있는 트랙에 걸고 재생 — 화음이 즉시 아르페지오로 펼쳐진다. On/Off로 비교.</span></div>
 <div class="lstep"><span class="ln">4</span><span class="lc"><b>다른 MIDI FX.</b> Chord Trigger(한 음=코드) · Note Repeat(트랩 햇 롤) · Randomizer(타이밍·벨로시티 휴먼라이즈) · Transposer(조옮김).</span></div>
 <div class="box tip">MIDI FX 세팅은 채널 스트립 설정(.cst)·패치에 함께 저장된다 — 아르페지오 신스를 프리셋으로 만들어두면 어느 프로젝트든 재사용.</div>`},
+orch_perc_tuned:{title:'음정 타악기 (팀파니·마림바·비브라폰·글로켄슈필)', html:`
+<p class="lead sm">음정이 있는 타악기 — <b>때리는 세기(벨로시티)</b>와 <b>롤·여운</b>이 표정. CC1 셈여림보다 벨로시티·리버브·주법이 핵심.</p>
+<div class="kicker">연주 방식</div>
+<div class="lstep"><span class="ln">1</span><span class="lc"><b>팀파니 롤 = 벨로시티가 다른 32분·64분 연타.</b> 라이브러리에 롤 주법이 있으면 키스위치로, 없으면 잘게 연타하며 벨로시티를 물결치게. 크레셴도 롤은 연타 벨로시티를 <span class="v">40 → 120</span>으로 키운다(긴장 고조의 클리셰).</span></div>
+<div class="lstep"><span class="ln">2</span><span class="lc"><b>같은 음 반복은 벨로시티·타이밍을 흩뿌린다.</b> 한 음 두 번 칠 때 똑같으면 기계 — 벨로시티 ±<span class="v">10</span>, 타이밍 ±<span class="v">8ms</span>(Randomizer). 팀파니는 R/L 손 교대라 살짝 다른 게 자연스럽다.</span></div>
+<div class="lstep"><span class="ln">3</span><span class="lc"><b>말렛 종류·음역 캐릭터.</b> 마림바=따뜻한 나무·중저역 / 비브라폰=금속 여운+모터 비브라토(느린 흔들림) / 글로켄=밝고 반짝(고역) / 실로폰=딱딱하고 건조. 딱딱한 말렛일수록 어택·고역 강조.</span></div>
+<div class="lstep"><span class="ln">4</span><span class="lc"><b>여운(감쇠) 관리.</b> 음정 타악기는 노트 길이로 링잉을 조절 — 팀파니는 손으로 뮤트하는 순간을 노트 오프로. 마림바 빠른 패시지는 짧게, 코랄은 길게 울리게.</span></div>
+<div class="kicker">걸고 빼기</div>
+<div class="lstep"><span class="ln">5</span><span class="lc"><b>걸기:</b> 팀파니는 홀 리버브 Send 넉넉히(무게·공간) + 트랙 딜레이 <span class="v">40~60ms</span>로 뒤에. 비브라폰 모터는 라이브러리 On/Off로.</span></div>
+<div class="lstep"><span class="ln">6</span><span class="lc"><b>빼기:</b> 팀파니 과한 컴프는 임팩트 죽인다(GR 1~2). 마림바·글로켄 저역은 EQ HPF <span class="v">100~150</span>. 리버브 과하면 빠른 음형이 뭉갠다.</span></div>
+<div class="box tip">비브라폰의 모터 비브라토는 "일정한 흔들림"이지만 이건 악기 특성이라 OK — 대신 속도(Slow/Fast)를 곡 분위기에 맞춰 고른다.</div>`},
+
+orch_perc_untuned:{title:'무선율 타악기 (스네어·심벌·탐·베이스드럼·퍼커션)', html:`
+<p class="lead sm">음정 없는 타악기 — <b>벨로시티 다이내믹</b>과 <b>주법(롤·히트·크레셴도)</b>이 전부. 리듬의 인간미가 생명.</p>
+<div class="kicker">연주 방식</div>
+<div class="lstep"><span class="ln">1</span><span class="lc"><b>스네어 롤·림샷.</b> 오케스트라 스네어 롤은 벨로시티 층이 있는 버즈롤 주법으로 — 없으면 32분 연타 + 크레셴도. 강세는 림샷(강 벨로시티)으로 구분. 행진곡은 정확한 그리드, 시네마틱은 살짝 흔들기.</span></div>
+<div class="lstep"><span class="ln">2</span><span class="lc"><b>심벌(크래시·서스펜디드).</b> 크래시=한 방 강하게 + 긴 여운(노트 길게). <b>서스펜디드 심벌 크레셴도</b>는 말렛 롤을 <span class="v">30 → 120</span>으로 부풀림 — 클라이맥스 직전 필수 클리셰. 초킹(손으로 잡기)은 짧은 노트 오프로.</span></div>
+<div class="lstep"><span class="ln">3</span><span class="lc"><b>탐·베이스드럼.</b> 콘서트 베이스드럼=낮고 긴 임팩트(영화적 "쿵"). 탐 필은 벨로시티를 물결치게 + R/L 교대 타이밍 흔들림. 겹겹이 쌓으면 시네마틱 히트.</span></div>
+<div class="lstep"><span class="ln">4</span><span class="lc"><b>보조 퍼커션.</b> 탬버린·셰이커·트라이앵글·우드블록은 <b>기계 반복이 제일 티난다</b> — 벨로시티·타이밍 흩뿌림이 필수. 탬버린 셰이크는 16분 연타 벨로시티 교대(강·약·약·약).</span></div>
+<div class="kicker">걸고 빼기</div>
+<div class="lstep"><span class="ln">5</span><span class="lc"><b>걸기:</b> 트랜지언트 강조가 필요하면 Transient Designer로 어택 up. 심벌·스네어는 홀 리버브 Send로 공간. 시네마틱 히트는 병렬 컴프로 두께.</span></div>
+<div class="lstep"><span class="ln">6</span><span class="lc"><b>빼기:</b> 심벌 과한 고역은 De-Esser/EQ로 <span class="v">8~10k</span> 살짝. 베이스드럼 초저역은 다른 저역과 겹치면 HHPF·사이드체인 정리. 리듬 타악기에 과한 리버브는 그루브를 뭉갠다.</span></div>
+<div class="box tip">핵심은 벨로시티 계단: 모든 히트가 같은 세기면 드럼머신 — 강박 강, 약박 약, 필은 물결. 크레셴도(롤 부풀림)는 오케 타악기의 최대 무기다.</div>`},
+band_common:{title:'밴드 공통 — 그루브가 생명', html:`
+<p class="lead sm">밴드는 오케스트라와 반대로 <b>타이트한 그루브</b>가 핵심. 하지만 완벽한 그리드는 기계다 — 좋은 연주자는 그리드 <b>주변</b>에서 미세하게 흔들며 밀고 당긴다.</p>
+<div class="lstep"><span class="ln">1</span><span class="lc"><b>그리드에 딱 붙이지 말 것.</b> 전부 퀀타이즈 100%면 드럼머신. 타이밍을 <span class="v">±5~15ms</span> 흩뿌리거나, 퀀타이즈 <b>강도 70~90%</b>로(완전 보정 아님). 리듬 장르는 타이트, 소울·재즈는 느슨.</span></div>
+<div class="lstep"><span class="ln">2</span><span class="lc"><b>벨로시티 = 그루브의 절반.</b> 모든 음이 같은 세기면 죽는다. 강박 강·약박 약, 고스트 노트는 아주 약하게. 이 강약 패턴이 장르를 만든다.</span></div>
+<div class="lstep"><span class="ln">3</span><span class="lc"><b>스윙·푸시.</b> 셔플·힙합은 뒷박을 살짝 늦춰 스윙(그루브 템플릿 적용). 펑크·록은 특정 악기를 살짝 <b>앞으로</b> 밀어 추진력(드럼 타이트, 베이스 살짝 앞).</span></div>
+<div class="box tip">순서: 정확히 입력 → 벨로시티 강약 → 타이밍 흔들기/스윙 → 장르별 주법(아래) → 믹스.</div>`},
+
+band_drums:{title:'드럼 — 스윙·고스트·필', html:`
+<p class="lead sm">드럼 MIDI가 가짜인 이유 1위는 <b>벨로시티가 다 똑같아서</b>. 실제 드러머는 매 타격이 다르다.</p>
+<div class="kicker">연주 방식</div>
+<div class="lstep"><span class="ln">1</span><span class="lc"><b>하이햇 벨로시티 물결.</b> 8비트 햇을 다 같은 세기로 찍으면 기계 — 강·약·중·약 패턴으로. 16분 햇은 강박마다 악센트. 이것만 해도 절반은 산다.</span></div>
+<div class="lstep"><span class="ln">2</span><span class="lc"><b>고스트 노트.</b> 스네어 사이사이 <b>아주 약한</b>(벨로시티 <span class="v">20~40</span>) 스네어를 넣으면 펑크·소울 그루브가 살아난다. 메인 스네어는 <span class="v">100~120</span>.</span></div>
+<div class="lstep"><span class="ln">3</span><span class="lc"><b>킥·스네어는 그리드 근처, 햇은 흔들기.</b> 킥·스네어는 타이트하게(뼈대), 햇·퍼커션은 타이밍 살짝 흩뿌려 인간미. 스네어를 <span class="v">2~5ms</span> 뒤로 미면 레이드백(소울) 느낌.</span></div>
+<div class="lstep"><span class="ln">4</span><span class="lc"><b>필·크래시.</b> 필은 탐 벨로시티를 물결치게 + 살짝 가속/감속. 크래시는 다음 마디 <b>첫 박</b>에 킥과 함께. 오픈햇은 다음 킥에서 클로즈(실제 발동작).</span></div>
+<div class="lstep"><span class="ln">5</span><span class="lc"><b>같은 음 반복 회피.</b> 연타는 벨로시티·타이밍을 미세하게 다르게(라운드로빈 샘플이 있으면 자동). 플램(살짝 어긋난 2타)으로 인간미.</span></div>
+<div class="kicker">걸고 빼기</div>
+<div class="lstep"><span class="ln">6</span><span class="lc"><b>걸기:</b> 킥·스네어 Transient Designer로 어택 · 병렬컴프로 두께 · 룸 리버브 Send로 공간. <b>빼기:</b> 과한 퀀타이즈(그루브 죽음)·전체 같은 벨로시티.</span></div>
+<div class="box tip">장르 벨로시티: 록=강하고 일정 · 재즈=스윙+다이내믹 큼 · 힙합=킥/스네어 강조, 햇 촘촘 · 소울=고스트 노트 풍부.</div>`},
+
+band_bass:{title:'베이스 — 그루브의 척추', html:`
+<p class="lead sm">베이스는 <b>드럼(특히 킥)과의 관계</b>가 전부. 음정보다 <b>타이밍·길이·어택</b>이 그루브를 만든다.</p>
+<div class="kicker">연주 방식</div>
+<div class="lstep"><span class="ln">1</span><span class="lc"><b>킥과의 정렬.</b> 베이스를 킥에 맞추면 타이트, 살짝 뒤면 레이드백. 장르 결정 — 록/펑크는 킥과 딱, 소울/네오소울은 살짝 뒤.</span></div>
+<div class="lstep"><span class="ln">2</span><span class="lc"><b>노트 길이 = 그루브.</b> 짧게 끊으면(스타카토) 펑키·탄력, 길게 이으면(레가토) 부드러운 흐름. 음 사이 <b>쉼</b>이 그루브를 만든다 — 다 채우지 말 것.</span></div>
+<div class="lstep"><span class="ln">3</span><span class="lc"><b>주법.</b> 핑거=둥근 어택·따뜻 / 피크=밝고 공격적 / <b>슬랩</b>=펑크(팝·풀 벨로시티 극단 대비) / 뮤트(팜뮤트)=짧고 통통. 라이브러리 키스위치로 전환.</span></div>
+<div class="lstep"><span class="ln">4</span><span class="lc"><b>고스트 노트·슬라이드.</b> 음 사이 아주 약한 데드노트(퍼커시브)로 그루브 채움. 음정 이동은 슬라이드(피치벤드)로 이으면 손가락이 미끄러지는 리얼함.</span></div>
+<div class="lstep"><span class="ln">5</span><span class="lc"><b>벨로시티 강약.</b> 강박 강, 경과음 약. 신스베이스도 마찬가지 — 다 같은 세기면 시퀀서 티난다.</span></div>
+<div class="kicker">걸고 빼기</div>
+<div class="lstep"><span class="ln">6</span><span class="lc"><b>걸기:</b> 컴프로 레벨 고르게(베이스는 컴프 필수, GR <span class="v">3~5</span>) · 새추로 배음(작은 스피커에서 들리게) · 킥과 사이드체인. <b>빼기:</b> 과한 리버브(저역이 흐려짐)·초저역은 킥과 정리(HPF 30·EQ 분리).</span></div>
+<div class="box tip">베이스+킥이 한 몸처럼 들려야 한다 — 둘의 타이밍·주파수(한쪽 60Hz, 한쪽 80Hz) 분리가 핵심.</div>`},
+
+band_guitar:{title:'기타 — 스트럼·리프·솔로', html:`
+<p class="lead sm">기타 MIDI의 최대 함정: <b>화음을 동시에 친다</b>는 것. 실제 기타는 피크가 6줄을 <b>훑고 지나간다</b>.</p>
+<div class="kicker">연주 방식</div>
+<div class="lstep"><span class="ln">1</span><span class="lc"><b>스트럼 = 아르페지오 밀기.</b> 화음을 <span class="v">15~40ms</span>씩 밀어 편다. <b>다운스트로크=낮은 줄부터</b>(위→아래), 업스트로크=높은 줄부터 — 방향을 교대해야 리듬 기타가 산다.</span></div>
+<div class="lstep"><span class="ln">2</span><span class="lc"><b>보이싱은 기타답게.</b> 피아노처럼 촘촘히 쌓지 말 것 — 기타는 6줄 특유의 벌어진 보이싱·개방현. 파워코드(루트+5도)는 록의 기본. 너무 낮은 음역 피하기.</span></div>
+<div class="lstep"><span class="ln">3</span><span class="lc"><b>주법.</b> 팜뮤트=짧고 답답한 척(펑크·메탈 리프) / 슬라이드·해머온·풀오프=음 이음(피치벤드나 레가토) / 벤딩=블루스·솔로의 표정(피치벤드 반음~온음) / 하모닉스=포인트.</span></div>
+<div class="lstep"><span class="ln">4</span><span class="lc"><b>솔로·리드는 벤딩·비브라토.</b> 긴 음 끝에 손가락 비브라토(피치벤드 미세 흔들림 — 일정하지 않게). 벤드로 음에 도달(아래서 밀어올림). 이게 없으면 기타가 아니라 신스.</span></div>
+<div class="lstep"><span class="ln">5</span><span class="lc"><b>노이즈·인간미.</b> 프렛 슬라이드 노이즈, 피크 어택, 개방현 울림 layer가 있으면 살짝. 같은 코드 반복은 스트럼 타이밍·벨로시티 흩뿌림.</span></div>
+<div class="kicker">걸고 빼기</div>
+<div class="lstep"><span class="ln">6</span><span class="lc"><b>걸기:</b> 앰프 시뮬(Amp Designer)이 기타를 진짜로 만든다 — 클린/크런치/드라이브. 더블링(L/R 각각 녹음한 척 2트랙 팬)로 두께. 딜레이·리버브로 공간. <b>빼기:</b> 저역 HPF <span class="v">90~120</span>(베이스 자리) · 과한 코러스.</span></div>
+<div class="box tip">어쿠스틱은 스트럼 밀기+바디 울림, 일렉 리듬은 팜뮤트+앰프, 리드는 벤딩+비브라토+드라이브 — 역할마다 완전히 다르게 찍는다.</div>`},
+
+band_keys:{title:'건반 — 피아노·일렉피아노·오르간·신스', html:`
+<p class="lead sm">건반은 <b>페달·벨로시티·보이싱</b>이 리얼함을 만든다. 특히 서스테인 페달(CC64) 없이는 피아노가 아니다.</p>
+<div class="kicker">연주 방식</div>
+<div class="lstep"><span class="ln">1</span><span class="lc"><b>서스테인 페달 = CC64.</b> 화성이 바뀔 때마다 페달 밟고(127)·떼기(0) — 안 하면 뚝뚝 끊기고, 계속 밟으면 진흙탕. 코드 체인지에 맞춰 CC64를 그린다. <span class="path">피아노롤 하단 레인 → Sustain (CC64)</span></span></div>
+<div class="lstep"><span class="ln">2</span><span class="lc"><b>양손 타이밍·롤.</b> 사람은 양손이 완벽히 동시가 아니다 — 화음을 <span class="v">5~15ms</span> 미세하게 벌리거나(특히 큰 화음 롤), 멜로디를 반주보다 살짝 앞/뒤로. 발라드 화음은 아래→위 롤.</span></div>
+<div class="lstep"><span class="ln">3</span><span class="lc"><b>벨로시티 = 터치.</b> 멜로디 음은 세게(도드라지게), 안쪽 화성음은 약하게 — 손가락 무게 배분. 다 같으면 기계.</span></div>
+<div class="lstep"><span class="ln">4</span><span class="lc"><b>악기별 캐릭터.</b> 어쿠스틱 피아노=페달+다이내믹 / <b>일렉피아노(로즈)</b>=벨로시티로 벨 톤 변화+CC로 트레몰로 / <b>오르간</b>=벨로시티 없음(음량 균일)·대신 드로바·퍼커션·레슬리 스피드, 손을 굴리는 글리산도 / 신스=필터·CC 모듈레이션.</span></div>
+<div class="lstep"><span class="ln">5</span><span class="lc"><b>오르간은 레가토로 잇는다.</b> 오르간은 어택이 없어 음을 겹쳐 이어야 자연 — 스타카토로 찍으면 안 된다. 레슬리 로터리 속도 전환(느림↔빠름)이 표정.</span></div>
+<div class="kicker">걸고 빼기</div>
+<div class="lstep"><span class="ln">6</span><span class="lc"><b>걸기:</b> 로즈엔 코러스·트레몰로·앰프 · 오르간엔 로터리(레슬리) · 피아노엔 적당한 룸/홀. <b>빼기:</b> 과한 리버브(발라드 외엔 명료도 저하) · 오르간에 벨로시티 다이내믹(악기 특성상 무의미).</span></div>
+<div class="box tip">CC64(서스테인)는 피아노 리얼함의 1번 — 오케스트라 시트의 "CC 어디서 그리나"와 같은 피아노롤 하단 레인에서 그린다. 복사도 같은 방식.</div>`},
+genre_rock:{title:'록 — 밴드의 에너지', html:`
+<p class="lead sm">핵심: <b>타이트한 드럼 + 파워코드 기타 + 킥에 붙는 베이스</b>. 인간적 밀당보다 추진력.</p>
+<div class="lstep"><span class="ln">1</span><span class="lc"><b>드럼:</b> 강하고 일정한 8비트, 스네어 백비트(2·4박) 강하게. 킥 패턴이 곡의 무게. 필 후 크래시.</span></div>
+<div class="lstep"><span class="ln">2</span><span class="lc"><b>기타:</b> <b>파워코드</b>(루트+5도), 팜뮤트 리프로 그루브, 코러스에서 개방 스트럼. 앰프 크런치/드라이브 필수 · 리듬 더블링(L/R).</span></div>
+<div class="lstep"><span class="ln">3</span><span class="lc"><b>베이스:</b> 킥과 딱 맞춰 타이트, 8분음 드라이브(펑크록) 또는 루트 지속(발라드). 피크로 밝게.</span></div>
+<div class="box tip">믹스: 기타 벽(더블링)·드럼 펀치·베이스 중심. 과한 리버브 금지 — 록은 드라이·인유어페이스.</div>`},
+
+genre_pop:{title:'팝 — 훅과 명료함', html:`
+<p class="lead sm">핵심: <b>보컬 중심 + 깔끔한 훅 + 명료한 편곡</b>. 요소는 적게, 각자 자리 뚜렷.</p>
+<div class="lstep"><span class="ln">1</span><span class="lc"><b>드럼:</b> 프로그래밍된 타이트한 비트(전자+어쿠스틱 혼합). 클랩·스냅 레이어. 빌드업→드롭 구조.</span></div>
+<div class="lstep"><span class="ln">2</span><span class="lc"><b>화성:</b> 4코드 반복이 흔함. 신스 패드+피아노+기타 중 <b>2~3개만</b>. 훅에 포인트 악기(신스 리프·벨).</span></div>
+<div class="lstep"><span class="ln">3</span><span class="lc"><b>베이스:</b> 신스베이스 또는 일렉, 킥과 정렬. 심플하게 곡을 받친다.</span></div>
+<div class="box tip">2025 트렌드: 미니멀 벌스(보컬+소수 요소)→풀 코러스 대비. 프리코러스 빌드. 사이드체인 펌핑.</div>`},
+
+genre_soul:{title:'소울·R&B·펑크 — 그루브와 여백', html:`
+<p class="lead sm">핵심: <b>고스트 노트 드럼 + 레이드백 + 리치한 화성(7th·9th)</b>. 여백이 그루브.</p>
+<div class="lstep"><span class="ln">1</span><span class="lc"><b>드럼:</b> 고스트 노트 풍부, 스네어 살짝 뒤로(레이드백), 햇 16분 벨로시티 물결. 퀀타이즈 느슨하게.</span></div>
+<div class="lstep"><span class="ln">2</span><span class="lc"><b>베이스:</b> 그루브의 주인공 — 슬랩/핑거, 데드노트로 채우고 쉼으로 그루브. 킥보다 살짝 뒤.</span></div>
+<div class="lstep"><span class="ln">3</span><span class="lc"><b>건반:</b> 로즈 일렉피아노(코러스·트레몰로), 7th·9th·11th 확장 화성, 오르간 백킹. 클라비넷(펑크).</span></div>
+<div class="box tip">네오소울: 재즈 화성+힙합 드럼+느슨한 타이밍. 완벽히 안 맞는 게 매력 — 퀀타이즈 70%.</div>`},
+
+genre_jazz:{title:'재즈 — 스윙과 인터랙션', html:`
+<p class="lead sm">핵심: <b>스윙 리듬 + 확장 화성 + 다이내믹</b>. 가장 인간적 — 그리드에서 가장 멀다.</p>
+<div class="lstep"><span class="ln">1</span><span class="lc"><b>드럼:</b> 라이드 심벌 스윙 패턴(뒷박 늦춤), 브러시, 하이햇 2·4박, 다이내믹 크게. 컴핑(반응형 액센트).</span></div>
+<div class="lstep"><span class="ln">2</span><span class="lc"><b>베이스:</b> <b>워킹 베이스</b>(4분음 걸어다니기), 각 음 균등하지만 미세한 강약. 어쿠스틱 업라이트 톤.</span></div>
+<div class="lstep"><span class="ln">3</span><span class="lc"><b>피아노:</b> 확장·텐션 화성(9·11·13·altered), 컴핑(불규칙 리듬 반주), 왼손 보이싱 절제. 스윙 필.</span></div>
+<div class="box tip">스윙은 뒷박을 2:1~3:2로 늦춤(그루브 템플릿). 벨로시티·타이밍 다이내믹이 생명 — 절대 퀀타이즈 100% 금지.</div>`},
+
+genre_hiphop:{title:'힙합 — 비트와 공간', html:`
+<p class="lead sm">핵심: <b>강한 킥·스네어 + 촘촘한 햇 + 샘플/루프</b>. 미니멀하고 공간 큼.</p>
+<div class="lstep"><span class="ln">1</span><span class="lc"><b>드럼:</b> 808 킥(길고 튜닝된 서브), 스네어/클랩 강한 백비트, <b>햇 롤</b>(16분·32분·트리플렛, 트랩). 스윙으로 바운스.</span></div>
+<div class="lstep"><span class="ln">2</span><span class="lc"><b>베이스:</b> 808이 킥이자 베이스 — 음정 슬라이드(글라이드), 킥과 겹치지 않게 타이밍. 서브 중심.</span></div>
+<div class="lstep"><span class="ln">3</span><span class="lc"><b>멜로디:</b> 샘플 루프·재즈코드·다크 피아노·벨. 미니멀 — 요소 적게, 반복. 로파이는 비닐 노이즈·디튠.</span></div>
+<div class="box tip">트랩: 햇 롤 속도 변화(리테이크)·808 슬라이드·크게 벌어진 공간. 붐뱁: 스윙+먼지낀 샘플+어쿠스틱 드럼 느낌.</div>`},
+
+genre_house:{title:'하우스 — 4/4 펌핑', html:`
+<p class="lead sm">핵심: <b>4-on-the-floor 킥 + 오프비트 햇 + 사이드체인 펌핑</b>. 반복과 그루브.</p>
+<div class="lstep"><span class="ln">1</span><span class="lc"><b>드럼:</b> 킥 매 박(4/4), 클랩/스네어 2·4박, <b>오픈햇 오프비트</b>(엇박 "치-치"), 셰이커 16분. 120~126 BPM.</span></div>
+<div class="lstep"><span class="ln">2</span><span class="lc"><b>베이스:</b> 오프비트 베이스(킥 사이), 킥에 <b>사이드체인</b>(펌핑이 하우스의 심장). 딥하우스는 둥근 서브.</span></div>
+<div class="lstep"><span class="ln">3</span><span class="lc"><b>신스·화성:</b> 스태브 코드(짧게 끊는 7th·9th), 필터 스윕으로 빌드, 펼침 코드. 딥하우스=재즈코드+로즈.</span></div>
+<div class="box tip">사이드체인 펌핑이 필수 — 킥마다 다른 요소가 눌렸다 살아난다. 필터 오토메이션으로 빌드업/브레이크.</div>`},
+
+genre_techno:{title:'테크노 — 최면적 반복', html:`
+<p class="lead sm">핵심: <b>드라이빙 킥 + 미니멀 + 질감과 긴장</b>. 멜로디보다 그루브·사운드디자인.</p>
+<div class="lstep"><span class="ln">1</span><span class="lc"><b>드럼:</b> 강하고 어두운 킥 4/4, 미니멀 햇, 러프한 퍼커션. 130~140 BPM. 리듬이 곡 자체.</span></div>
+<div class="lstep"><span class="ln">2</span><span class="lc"><b>베이스·신스:</b> 반복 신스 리프(롤랜드풍), 서브 베이스, 애시드(303 필터 스윕). 미니멀 변화.</span></div>
+<div class="lstep"><span class="ln">3</span><span class="lc"><b>전개:</b> 멜로디 대신 <b>필터·리버브·질감</b>의 점진 변화로 긴장. 레이어를 넣고 빼며 몰입. 롱 빌드.</span></div>
+<div class="box tip">테크노는 사운드디자인이 작곡 — 같은 루프도 필터·왜곡·공간 변화로 여정을 만든다. 미니멀할수록 각 요소가 중요.</div>`},
+
+genre_ambient:{title:'앰비언트 — 질감과 공간', html:`
+<p class="lead sm">핵심: <b>리듬 최소 + 긴 패드 + 진화하는 질감</b>. 박자보다 분위기·시간감.</p>
+<div class="lstep"><span class="ln">1</span><span class="lc"><b>패드·드론:</b> 긴 지속음 겹치기(CC11로 천천히 스웰), 느린 화성 변화, 층층이 쌓기. 어택 느리게.</span></div>
+<div class="lstep"><span class="ln">2</span><span class="lc"><b>움직임:</b> 느린 LFO·필터 변화, 그래뉼러 질감, 리버스·딜레이 꼬리. <b>고정 반복 피하기</b> — 계속 미묘하게 진화.</span></div>
+<div class="lstep"><span class="ln">3</span><span class="lc"><b>포인트:</b> 드문 벨·피아노·자연음이 공간에 떠다님(넓은 팬·긴 리버브). 침묵도 요소.</span></div>
+<div class="box tip">과한 리버브·긴 딜레이가 오히려 정답. 그리드에 얽매이지 말고 자유 리듬(루바토). 명상 앱의 프리 앰비언트와 연결.</div>`},
+genre_cine:{title:'시네마틱·영화음악 — 감정과 긴장', html:`
+<p class="lead sm">핵심: <b>오케스트라 + 다이내믹 아치 + 긴장/해소</b>. 화면 감정을 소리로. 앱의 Band Composer와 연결.</p>
+<div class="lstep"><span class="ln">1</span><span class="lc"><b>구조=감정 곡선.</b> 조용한 시작(솔로 악기·felt 피아노)→층층이 쌓기(현→목관→금관)→클라이맥스(총주+타악기)→여운. CC1으로 전체 아치.</span></div>
+<div class="lstep"><span class="ln">2</span><span class="lc"><b>긴장 도구:</b> 현 트레몰로+크레셴도, 팀파니/베이스드럼 롤, 서스펜디드 심벌 크레셴도, 오스티나토(반복 리프), 페달톤(지속 저음). 불협→해소.</span></div>
+<div class="lstep"><span class="ln">3</span><span class="lc"><b>타격·임팩트:</b> 시네마틱 히트(여러 타악기+금관+저역 겹침), 브람(brahm) 저음 임팩트, 리버스 스웰(붐 전 빨아들임). 트레일러 클리셰.</span></div>
+<div class="lstep"><span class="ln">4</span><span class="lc"><b>주법:</b> 오케스트라 리얼리즘 시트 전부 적용 — 특히 현 레가토·CC1 아치·비브라토 변화. felt 피아노(부드러운 어택)가 시네마틱 시그니처.</span></div>
+<div class="box tip">하이브리드: 오케스트라+신스+타악 레이어. 저역 임팩트(서브)와 고역 텍스처(신스)로 현대적. 앱 Band Composer의 사극/시네마틱 스타일과 직결.</div>`},
+
+genre_meditation:{title:'명상·뉴에이지 — 이완과 공간', html:`
+<p class="lead sm">핵심: <b>느린 전개 + 부드러운 음색 + 넓은 공간</b>. 긴장 없이 흐름. 앱 Meditation Builder·Sum Wave와 직결.</p>
+<div class="lstep"><span class="ln">1</span><span class="lc"><b>패드·드론:</b> 긴 지속 패드, 느린 화성 변화(한 코드 오래), CC11로 호흡처럼 스웰(4~8마디 아치). 어택 느리게.</span></div>
+<div class="lstep"><span class="ln">2</span><span class="lc"><b>멜로디·포인트:</b> 드문 피아노·벨·플루트·하프가 공간에 떠다님(넓은 팬·긴 리버브). 여백 많이 — 음 사이 침묵이 이완.</span></div>
+<div class="lstep"><span class="ln">3</span><span class="lc"><b>리듬:</b> 없거나 아주 느림. 자유 리듬(루바토)·부드러운 맥동. 심박보다 느리게(60 BPM 이하)면 진정 효과.</span></div>
+<div class="lstep"><span class="ln">4</span><span class="lc"><b>음색:</b> 부드러운 신스·felt 피아노·싱잉볼·자연음. 날카로운 고역·강한 어택 피하기. 따뜻한 저역 드론.</span></div>
+<div class="box tip">긴장→해소 구조 자체를 피한다 — 명상은 "도착점 없는 흐름". 앱: Meditation Builder(CC11 스웰), Sum Wave(배경 드론·자연음), 프리 앰비언트 독주(루바토).</div>`},
+ensemble_orch:{title:'오케스트라 배치 — 무대에 앉히기', html:`
+<p class="lead sm">오케스트라는 실제 <b>무대 좌석 배치</b>가 정해져 있다. 그대로 팬·볼륨·깊이를 주면 저절로 조화롭다.</p>
+<div class="kicker">팬 (지휘자 시점 좌→우)</div>
+<div class="spec wide">
+<div class="srow"><span class="sk">1st 바이올린</span><span class="sv"><span class="v">L 30~45</span></span></div>
+<div class="srow"><span class="sk">2nd 바이올린</span><span class="sv"><span class="v">L 10~20</span></span></div>
+<div class="srow"><span class="sk">비올라</span><span class="sv"><span class="v">R 10~20</span></span></div>
+<div class="srow"><span class="sk">첼로</span><span class="sv"><span class="v">R 30~45</span></span></div>
+<div class="srow"><span class="sk">콘트라베이스</span><span class="sv"><span class="v">R 40~50</span> <span class="sub">첼로 뒤</span></span></div>
+<div class="srow"><span class="sk">목관</span><span class="sv"><span class="v">C~L/R 15</span> <span class="sub">중앙 뒤</span></span></div>
+<div class="srow"><span class="sk">금관</span><span class="sv"><span class="v">R 20~40</span> <span class="sub">뒤</span></span></div>
+<div class="srow"><span class="sk">팀파니·타악</span><span class="sv"><span class="v">C~R</span> <span class="sub">맨 뒤</span></span></div>
+<div class="srow"><span class="sk">하프</span><span class="sv"><span class="v">L 30</span></span></div></div>
+<div class="kicker">깊이 (트랙 딜레이로 뒤에 앉히기)</div>
+<div class="lstep"><span class="ln">1</span><span class="lc">앞줄(현) <span class="v">0ms</span> → 목관 <span class="v">15~25</span> → 금관 <span class="v">30~40</span> → 타악 <span class="v">40~60</span>. 뒤일수록 리버브 Send도 많이(멀어짐).</span></div>
+<div class="kicker">볼륨 (섹션 균형)</div>
+<div class="lstep"><span class="ln">2</span><span class="lc">주선율 <span class="v">0</span> 기준 · 현 앙상블 <span class="v">-3~-5</span> · 목관 <span class="v">-5~-8</span> · 금관 <span class="v">-3~-6</span>(강주법 시 튐 주의) · 타악 곡마다 · 하프/솔로 <span class="v">-6~-10</span>. <b>총주에서 금관·타악이 다 덮지 않게</b> CC1로 억제.</span></div>
+<div class="box tip">한 홀 리버브 버스에 다 보내되(같은 공간) Send 양으로 거리 표현 — 앞줄 적게, 뒷줄 많이. 이게 "한 무대에 함께" 들리는 비결.</div>`},
+
+ensemble_band:{title:'밴드 배치 — 스테레오 필드', html:`
+<p class="lead sm">밴드는 무대 배치보다 <b>스테레오 필드에서 각자 자리</b>가 핵심. 겹치지 않게 좌우·주파수·깊이를 나눈다.</p>
+<div class="kicker">팬</div>
+<div class="spec wide">
+<div class="srow"><span class="sk">킥·베이스·리드보컬·스네어</span><span class="sv"><span class="v">C</span> <span class="sub">중앙 고정 — 무게 중심</span></span></div>
+<div class="srow"><span class="sk">하이햇·오버헤드</span><span class="sv"><span class="v">살짝 L/R</span></span></div>
+<div class="srow"><span class="sk">리듬 기타(더블링)</span><span class="sv"><span class="v">L 100 / R 100</span> <span class="sub">양쪽 벽</span></span></div>
+<div class="srow"><span class="sk">건반·패드</span><span class="sv"><span class="v">L/R 30~50</span></span></div>
+<div class="srow"><span class="sk">리드 기타/솔로</span><span class="sv"><span class="v">C~살짝 옆</span></span></div>
+<div class="srow"><span class="sk">백보컬·코러스</span><span class="sv"><span class="v">L/R 넓게</span></span></div>
+<div class="srow"><span class="sk">셰이커·탬버린</span><span class="sv"><span class="v">한쪽 L/R 40</span></span></div></div>
+<div class="kicker">볼륨 (밸런스)</div>
+<div class="lstep"><span class="ln">1</span><span class="lc">리드보컬 <span class="v">0</span>(가장 앞) · 킥·스네어 <span class="v">-2~-4</span> · 베이스 <span class="v">-3~-5</span> · 기타 <span class="v">-4~-6</span> · 건반 <span class="v">-5~-8</span> · 백보컬 <span class="v">-8~-12</span>.</span></div>
+<div class="kicker">겹침 방지</div>
+<div class="lstep"><span class="ln">2</span><span class="lc"><b>주파수로도 자리를 나눈다:</b> 킥(60Hz)↔베이스(80~100Hz) 분리 · 기타 저역 HPF <span class="v">90~120</span>(베이스 자리 비움) · 보컬 3k는 다른 트랙 살짝 -2 · 패드는 넓게 깔되 중역 양보.</span></div>
+<div class="box tip">중앙엔 저역·핵심(킥·베이스·보컬·스네어), 옆으로 갈수록 장식(기타·건반·퍼커션). 모노 체크로 중앙 뭉침 확인.</div>`},
+
+ensemble_depth:{title:'깊이·공간 — 앞뒤 원근', html:`
+<p class="lead sm">좌우(팬)만으론 평면 — <b>앞뒤 깊이</b>가 있어야 입체적. 세 가지로 거리를 만든다.</p>
+<div class="lstep"><span class="ln">1</span><span class="lc"><b>볼륨:</b> 크면 가깝고, 작으면 멀다. 주인공은 크게 앞으로.</span></div>
+<div class="lstep"><span class="ln">2</span><span class="lc"><b>리버브 양(Send):</b> 드라이=가까움, 웻(리버브 많음)=멀리. 같은 버스에 보내되 <b>Send 양으로 거리</b> — 보컬 적게, 패드 많이.</span></div>
+<div class="lstep"><span class="ln">3</span><span class="lc"><b>고역:</b> 가까운 소리는 고역이 살아있고, 먼 소리는 고역이 줄어든다(공기 흡수). 뒤 악기는 LPF <span class="v">8~10k</span> 살짝.</span></div>
+<div class="lstep"><span class="ln">4</span><span class="lc"><b>트랙 딜레이:</b> 뒤 악기를 <span class="v">10~40ms</span> 늦추면 뇌가 "뒤"로 인식(오케스트라 배치와 동일).</span></div>
+<div class="box tip">3층 원근: 앞(보컬·리드 — 드라이·크게·밝게) / 중간(리듬·화성) / 뒤(패드·앰비언스 — 웻·작게·어둡게). 이 층이 조화의 핵심.</div>`},
+ensemble_glue:{title:'조화를 완성하는 실용 테크닉', html:`
+<p class="lead sm">팬·볼륨·리버브는 자리와 거리다. 진짜 조화를 깨는 건 대부분 <b>주파수 충돌</b> — 아래가 실전에서 바로 쓰는 것들.</p>
+<div class="kicker">1. 주파수로 자리 비우기 (제일 중요)</div>
+<div class="lstep"><span class="ln">1</span><span class="lc"><b>겹치는 두 악기 중 하나를 판다.</b> 보컬과 신스가 같은 3kHz에서 싸우면 → 신스 3kHz를 <span class="v">-3dB</span>(EQ), 그 자리를 보컬에 양보. "두 악기가 안 어울린다"의 90%는 이거다.</span></div>
+<div class="lstep"><span class="ln">2</span><span class="lc"><b>HPF로 저역 정리.</b> 저역이 꼭 필요한 킥·베이스 외에는 다 HPF — 기타 <span class="v">100</span>·신스 <span class="v">120</span>·보컬 <span class="v">100</span>. 안 들리는 저역이 헤드룸만 먹고 흐리게 만든다. 이것만 해도 확 맑아진다.</span></div>
+<div class="kicker">2. 사이드체인 — 순간 비켜주기</div>
+<div class="lstep"><span class="ln">3</span><span class="lc"><b>킥이 칠 때 베이스를 살짝 눌러</b> 저역이 겹치는 순간만 피한다. 하우스·EDM은 강하게(펌핑), 밴드는 약하게(-1~2dB). 베이스·패드에 컴프 사이드체인=킥.</span></div>
+<div class="kicker">3. 다 넣지 말기 — 편곡이 믹스다</div>
+<div class="lstep"><span class="ln">4</span><span class="lc"><b>주파수·시간대를 나눠 등장.</b> 모든 악기가 항상 울리면 진흙탕 — 벌스는 비우고 코러스에 꽉 채운다. 같은 음역 악기는 <b>동시에 주인공 안 시키기</b>. 여백이 조화다.</span></div>
+<div class="kicker">4. 대비로 주인공 세우기</div>
+<div class="lstep"><span class="ln">5</span><span class="lc"><b>주인공은 드라이·중앙·크게·밝게, 배경은 웻·넓게·작게·어둡게.</b> 앞뒤(깊이) 층을 뚜렷이. 다 똑같이 선명하면 아무도 안 들린다.</span></div>
+<div class="kicker">5. 버스로 묶기 (글루)</div>
+<div class="lstep"><span class="ln">6</span><span class="lc"><b>같은 그룹은 버스로 묶어 함께 처리.</b> 드럼 전체를 Drum Bus로 → 가벼운 컴프(GR <span class="v">1~2</span>)로 한 덩어리. 현 섹션도 버스 하나. "따로 논다"가 "함께"로 바뀐다.</span></div>
+<div class="kicker">6. 마지막 점검</div>
+<div class="lstep"><span class="ln">7</span><span class="lc"><b>모노로 들어보기.</b> 모노에서 무너지면 위상 문제 — 과한 스테레오 확장·더블링 점검. <b>작은 스피커/폰</b>으로도 — 거기서 균형 맞으면 어디서든 맞다. 볼륨 낮춰 들으면 밸런스가 보인다.</span></div>
+<div class="box tip">우선순위: ① HPF로 저역 정리 ② 겹치는 대역 하나 깎기 ③ 여백(다 안 넣기) ④ 깊이 층 ⑤ 버스 글루. 팬·볼륨·리버브 다음은 이 순서.</div>`},
 orch_common:{title:'공통 원칙 — 왜 가짜로 들리나', html:`
-<p class="lead sm">MIDI 오케스트라가 가짜로 들리는 이유는 대개 <b>일정함</b>이다: 같은 세기, 같은 타이밍, 같은 비브라토. 실제 연주자는 매 순간 흔들린다. 그 흔들림을 되살리는 게 핵심.</p>
+<p class="lead sm">MIDI 오케스트라가 가짜로 들리는 이유는 대개 <b>일정함</b>이다: 같은 세기, 같은 타이밍, 같은 비브라토. 그 흔들림을 되살리는 게 핵심.</p>
+<div class="kicker">CC를 어디서 그리나</div>
+<div class="lstep"><span class="ln">0</span><span class="lc"><b>피아노롤 하단 레인이다</b>(트랙 오토메이션 아님). 리전 더블클릭 → 피아노롤 → 왼쪽 아래 <b>오토메이션/MIDI Draw</b> 버튼 → 레인 드롭다운에서 <b>Modulation (CC1)</b> · <b>Expression (CC11)</b> 선택.<span class="path">리전 더블클릭 → 피아노롤 좌하단 오토메이션 버튼 → CC 선택</span></span></div>
+<div class="lstep"><span class="ln">0.5</span><span class="lc"><b>그리기.</b> 연필로 레인에 선을 그린다 — 점 클릭·드래그로 곡선. 앱이 넣어둔 CC 데이터가 이미 있으면 그 위에서 수정(지우지 말 것). 값 범위 <span class="v">0~127</span>.</span></div>
+<div class="box tip"><b>복사도 된다:</b> 레인에서 복사할 구간을 러버밴드(드래그)로 선택 → <span class="k">Cmd+C</span> → 대상 리전 열고 같은 CC 레인에서 재생헤드 위치 → <span class="k">Cmd+V</span>. 여러 트랙에 같은 셈여림을 입힐 때 유용 — 단 <b>같은 CC 레인</b>이어야 붙는다. 자세히는 참고 › 팁 › 자동화 선 복사.</div>
+<p class="lead sm">아래는 그 CC로 무엇을 하느냐다.</p>
 <div class="lstep"><span class="ln">1</span><span class="lc"><b>셈여림은 벨로시티가 아니라 CC1(모듈레이션).</b> 현·관 라이브러리는 CC1로 여리게↔세게가 <b>음색까지</b> 바뀐다(약주법 layer↔강주법 layer 크로스페이드). 벨로시티는 어택 세기만. 긴 음은 CC1으로 그려야 산다.</span></div>
 <div class="lstep"><span class="ln">2</span><span class="lc"><b>음량 미세조정은 CC11(익스프레션).</b> CC1로 음색을 정하고, CC11로 프레이즈 안 볼륨을 다듬는다(끝을 살짝 줄여 숨 쉬게). 둘은 곱해진다.</span></div>
 <div class="lstep"><span class="ln">3</span><span class="lc"><b>레가토는 노트를 겹쳐라.</b> 붙는 음끼리 끝을 <span class="v">10~30ms</span> 겹치면 라이브러리의 레가토 전환(포르타멘토·부드러운 이음)이 발동한다. 딱 붙이거나 띄우면 뚝뚝 끊긴다.</span></div>
@@ -1923,7 +2134,58 @@ Output EQ: 밴드1 HPF <span class="v">200</span> · 밴드6 LPF <span class="v"
 ]};
 
 const APP_REF = {name:'참고', c1:'#9BA7FF', c2:'#6BD3C9', steps:[
-{phase:'참고', kicker:'빠른 참조', title:'용어 · 플러그인 입력법',
+ {phase:'참고', kicker:'장르', title:'장르별 주법·제작',
+ html:`<p class="lead sm">장르마다 같은 악기도 다르게 친다. 대표 장르의 특징과 만드는 법 — 박스를 탭.</p>
+ <div class="kicker">밴드·대중음악</div>
+ <button class="tapcard" data-d="genre_rock"><span class="chev">›</span><span class="tc-h">록</span><span class="tc-p">파워코드·타이트 드럼·추진력</span><span class="tc-go">›</span></button>
+ <button class="tapcard" data-d="genre_pop"><span class="chev">›</span><span class="tc-h">팝</span><span class="tc-p">훅·명료함·미니멀 편곡</span><span class="tc-go">›</span></button>
+ <button class="tapcard" data-d="genre_soul"><span class="chev">›</span><span class="tc-h">소울·R&B·펑크</span><span class="tc-p">고스트노트·레이드백·확장화성</span><span class="tc-go">›</span></button>
+ <button class="tapcard" data-d="genre_jazz"><span class="chev">›</span><span class="tc-h">재즈</span><span class="tc-p">스윙·워킹베이스·텐션</span><span class="tc-go">›</span></button>
+ <button class="tapcard" data-d="genre_hiphop"><span class="chev">›</span><span class="tc-h">힙합·트랩</span><span class="tc-p">808·햇롤·미니멀</span><span class="tc-go">›</span></button>
+ <div class="kicker">일렉트로닉</div>
+ <button class="tapcard" data-d="genre_house"><span class="chev">›</span><span class="tc-h">하우스</span><span class="tc-p">4/4·오프비트·사이드체인</span><span class="tc-go">›</span></button>
+ <button class="tapcard" data-d="genre_techno"><span class="chev">›</span><span class="tc-h">테크노</span><span class="tc-p">드라이빙 킥·질감·최면</span><span class="tc-go">›</span></button>
+ <button class="tapcard" data-d="genre_ambient"><span class="chev">›</span><span class="tc-h">앰비언트</span><span class="tc-p">패드·질감·자유리듬</span><span class="tc-go">›</span></button>
+ <div class="kicker">영상·명상</div>
+ <button class="tapcard" data-d="genre_cine"><span class="chev">›</span><span class="tc-h">시네마틱·영화음악</span><span class="tc-p">오케스트라·긴장/해소·임팩트</span><span class="tc-go">›</span></button>
+ <button class="tapcard" data-d="genre_meditation"><span class="chev">›</span><span class="tc-h">명상·뉴에이지</span><span class="tc-p">느린 전개·공간·루바토</span><span class="tc-go">›</span></button>`},
+ {phase:'참고', kicker:'오케스트라', title:'오케스트라 리얼리즘 — 악기별',
+ html:`<p class="lead sm">MIDI로 찍은 오케스트라를 실제 연주처럼. 먼저 공통 원칙, 그다음 악기군 박스를 탭.</p>
+ <button class="tapcard" data-d="orch_common"><span class="chev">›</span><span class="tc-h">공통 원칙</span><span class="tc-p">CC1·CC11·레가토 겹침·휴먼라이즈·비브라토</span><span class="tc-go">필독 ›</span></button>
+ <div class="kicker">관악기</div>
+ <button class="tapcard" data-d="orch_brass"><span class="chev">›</span><span class="tc-h">금관 — 호른·트럼펫·트롬본</span><span class="tc-p">어택 부풀림·강주법·fall</span><span class="tc-go">방법 ›</span></button>
+ <button class="tapcard" data-d="orch_wood"><span class="chev">›</span><span class="tc-h">목관 — 플루트·오보에·클라리넷·바순</span><span class="tc-p">브레스·트릴·민첩함</span><span class="tc-go">방법 ›</span></button>
+ <div class="kicker">현악기</div>
+ <button class="tapcard" data-d="orch_pluck"><span class="chev">›</span><span class="tc-h">플럭계 — 하프·피치카토·기타</span><span class="tc-p">벨로시티·롤·여운</span><span class="tc-go">방법 ›</span></button>
+ <button class="tapcard" data-d="orch_string"><span class="chev">›</span><span class="tc-h">보잉계 — 바이올린·비올라·첼로·베이스</span><span class="tc-p">주법 전환·레가토·비브라토</span><span class="tc-go">방법 ›</span></button>
+ <div class="kicker">타악기</div>
+ <button class="tapcard" data-d="orch_perc_tuned"><span class="chev">›</span><span class="tc-h">음정 타악기 — 팀파니·마림바·비브라폰</span><span class="tc-p">롤·벨로시티·여운·말렛</span><span class="tc-go">방법 ›</span></button>
+ <button class="tapcard" data-d="orch_perc_untuned"><span class="chev">›</span><span class="tc-h">무선율 타악기 — 스네어·심벌·탐·퍼커션</span><span class="tc-p">크레셴도 롤·벨로시티 계단</span><span class="tc-go">방법 ›</span></button>`},
+ {phase:'참고', kicker:'밴드', title:'밴드 리얼리즘 — 악기별',
+ html:`<p class="lead sm">드럼·베이스·기타·건반을 실제 연주처럼. 밴드는 <b>그루브</b>가 핵심 — 공통 먼저, 악기 박스 탭.</p>
+ <button class="tapcard" data-d="band_common"><span class="chev">›</span><span class="tc-h">공통 — 그루브가 생명</span><span class="tc-p">퀀타이즈·벨로시티·스윙/푸시</span><span class="tc-go">필독 ›</span></button>
+ <div class="kicker">리듬 섹션</div>
+ <button class="tapcard" data-d="band_drums"><span class="chev">›</span><span class="tc-h">드럼</span><span class="tc-p">햇 벨로시티·고스트노트·필</span><span class="tc-go">방법 ›</span></button>
+ <button class="tapcard" data-d="band_bass"><span class="chev">›</span><span class="tc-h">베이스</span><span class="tc-p">킥과 정렬·주법·노트 길이</span><span class="tc-go">방법 ›</span></button>
+ <div class="kicker">화성·리드</div>
+ <button class="tapcard" data-d="band_guitar"><span class="chev">›</span><span class="tc-h">기타</span><span class="tc-p">스트럼 밀기·주법·벤딩·앰프</span><span class="tc-go">방법 ›</span></button>
+ <button class="tapcard" data-d="band_keys"><span class="chev">›</span><span class="tc-h">건반 — 피아노·로즈·오르간</span><span class="tc-p">CC64 페달·터치·악기별</span><span class="tc-go">방법 ›</span></button>`},
+ {phase:'참고', kicker:'배치', title:'앙상블 배치 — 팬·볼륨·깊이',
+ html:`<p class="lead sm">악기들이 모여 조화롭게 들리려면 각자 <b>자리</b>가 필요하다 — 좌우(팬)·앞뒤(깊이)·크기(볼륨). 박스를 탭.</p>
+ <button class="tapcard" data-d="ensemble_orch"><span class="chev">›</span><span class="tc-h">오케스트라 배치</span><span class="tc-p">무대 좌석대로 팬·깊이·볼륨</span><span class="tc-go">›</span></button>
+ <button class="tapcard" data-d="ensemble_band"><span class="chev">›</span><span class="tc-h">밴드 배치</span><span class="tc-p">스테레오 필드·겹침 방지</span><span class="tc-go">›</span></button>
+ <button class="tapcard" data-d="ensemble_depth"><span class="chev">›</span><span class="tc-h">깊이·공간 (공통)</span><span class="tc-p">앞뒤 원근 — 볼륨·리버브·고역</span><span class="tc-go">›</span></button>
+ <button class="tapcard" data-d="ensemble_glue"><span class="chev">›</span><span class="tc-h">조화 완성 테크닉 ★</span><span class="tc-p">주파수 충돌·사이드체인·여백·글루</span><span class="tc-go">›</span></button>
+ <div class="box tip">Logic Pro 11 기본 음원으로도 이 배치는 충분히 구현된다 — 팬·트랙딜레이·Send는 모든 트랙에 있다.</div>`},
+ {phase:'참고', kicker:'느낌별 레시피', title:'FX로 느낌 만들기',
+ html:DETAILS.fxrecipes.html},
+ {phase:'참고', kicker:'마우스 툴 · 치트키', title:'툴 활용법 (마키 · 클릭존)',
+ html:DETAILS.tools.html},
+ {phase:'참고', kicker:'리전 전용', title:'리전 편집 단축키 (자르기·뮤트·크로스페이드)',
+ html:CHEAT_MOUSE},
+ {phase:'참고', kicker:'키보드', title:'단축키 모음',
+ html:CHEAT_KEYS},
+ {phase:'참고', kicker:'빠른 참조', title:'용어 · 플러그인 입력법',
  html:`<div class="spec wide"><div class="srow"><span class="sk">LUFS / dBTP</span><span class="sv" style="font-size:15.5px">체감 음량(전체 평균) / 실제 최대(−1로 왜곡 방지)</span></div>
  <div class="srow"><span class="sk">사이드체인 / GR</span><span class="sv" style="font-size:15.5px">킥으로 컴프 눌러 자리 양보 / 누른 dB</span></div>
  <div class="srow"><span class="sk">새추 / 서밍 스택</span><span class="sv" style="font-size:15.5px">배음 추가로 두께 / 트랙을 한 버스로 묶는 폴더</span></div>
@@ -1946,30 +2208,13 @@ const APP_REF = {name:'참고', c1:'#9BA7FF', c2:'#6BD3C9', steps:[
 <div class="srow"><span class="sk">언마스터</span><span class="sv" style="font-size:15px">마스터(리미터) 처리를 하지 않은 2믹스 — 숨웨이브 B경로 규격</span></div>
 <div class="srow"><span class="sk">바운스</span><span class="sv" style="font-size:15px">프로젝트를 오디오 파일로 뽑아내기 — <span class="k">Cmd+B</span></span></div></div>
 <div class="box soft">목차(≡)를 열면 맨 위에 <b>로직 설정법·숫자 읽는 법 전체 목록</b>이 있다 — 어느 앱에서든 접근 가능.</div>`},
-{phase:'참고', kicker:'키보드', title:'단축키 모음',
- html:CHEAT_KEYS},
-{phase:'참고', kicker:'리전 전용', title:'리전 편집 단축키 (자르기·뮤트·크로스페이드)',
- html:CHEAT_MOUSE},
-{phase:'참고', kicker:'마우스 툴 · 치트키', title:'툴 활용법 (마키 · 클릭존)',
- html:DETAILS.tools.html},
-{phase:'참고', kicker:'느낌별 레시피', title:'FX로 느낌 만들기',
- html:DETAILS.fxrecipes.html},
-{phase:'참고', kicker:'오케스트라', title:'오케스트라 리얼리즘 — 악기별',
- html:`<p class="lead sm">MIDI로 찍은 오케스트라를 실제 연주처럼. 먼저 공통 원칙, 그다음 악기군 박스를 탭.</p>
- <button class="tapcard" data-d="orch_common"><span class="chev">›</span><span class="tc-h">공통 원칙</span><span class="tc-p">CC1·CC11·레가토 겹침·휴먼라이즈·비브라토</span><span class="tc-go">필독 ›</span></button>
- <div class="kicker">관악기</div>
- <button class="tapcard" data-d="orch_brass"><span class="chev">›</span><span class="tc-h">금관 — 호른·트럼펫·트롬본</span><span class="tc-p">어택 부풀림·강주법·fall</span><span class="tc-go">방법 ›</span></button>
- <button class="tapcard" data-d="orch_wood"><span class="chev">›</span><span class="tc-h">목관 — 플루트·오보에·클라리넷·바순</span><span class="tc-p">브레스·트릴·민첩함</span><span class="tc-go">방법 ›</span></button>
- <div class="kicker">현악기</div>
- <button class="tapcard" data-d="orch_pluck"><span class="chev">›</span><span class="tc-h">플럭계 — 하프·피치카토·기타</span><span class="tc-p">벨로시티·롤·여운</span><span class="tc-go">방법 ›</span></button>
- <button class="tapcard" data-d="orch_string"><span class="chev">›</span><span class="tc-h">보잉계 — 바이올린·비올라·첼로·베이스</span><span class="tc-p">주법 전환·레가토·비브라토</span><span class="tc-go">방법 ›</span></button>`},
-{phase:'참고', kicker:'팁 모음', title:'팁',
+ {phase:'참고', kicker:'팁 모음', title:'팁',
  html:`<p class="lead sm">작업 중 유용한 것들 — 박스를 누르면 세부 방법.</p>
  <button class="tapcard" data-d="maczsync"><span class="chev">›</span><span class="tc-h">맥 여러 대 프리셋 동기화</span><span class="tc-p">Audio Music Apps 폴더 하나로 끝</span><span class="tc-go">설정법 ›</span></button>
  <button class="tapcard" data-d="reuse"><span class="chev">›</span><span class="tc-h">한 번 저장하면 계속 쓰기</span><span class="tc-p">템플릿·.cst·패치·.pst — 목적·경로·한계</span><span class="tc-go">설정법 ›</span></button>
  <button class="tapcard" data-d="tip_autocopy"><span class="chev">›</span><span class="tc-h">자동화 선 복사</span><span class="tc-p">다른 트랙으로 — 포인트 선택·Cmd+V·리전 변환</span><span class="tc-go">설정법 ›</span></button>
  <button class="tapcard" data-d="tip_arp"><span class="chev">›</span><span class="tc-h">아르페지에이터 · MIDI FX</span><span class="tc-p">Rate·Order·Latch — 코드가 즉시 아르페지오</span><span class="tc-go">설정법 ›</span></button>`},
-]};
+ ]};
 
 const APP_LUFS = {name:'LUFS 미터', c1:'#8B9DFF', c2:'#6BD3C9', special:'lufs', steps:[{phase:'측정', kicker:'', title:'LUFS 미터', html:''}]};
 const APPS = {sum:APP_SUM, lufs:APP_LUFS, ref:APP_REF, beat:APP_BEAT, med:APP_MED, band:APP_BAND, play:APP_PLAY, master:APP_MASTER};
