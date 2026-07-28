@@ -3087,8 +3087,11 @@ $('EQ_genres').innerHTML=Object.keys(GENRE).map(k=>`<div class="chip gen" data-g
 $('EQ_insts').innerHTML=Object.keys(INST).map(k=>`<div class="chip" data-i="${k}">${INST[k].n}</div>`).join('');
 
 $('EQ_genres').onclick=e=>{const c=e.target.closest('.chip');if(!c)return;
-  document.querySelectorAll('#genres .chip').forEach(x=>x.classList.remove('sel'));
-  c.classList.add('sel'); selGenre=c.dataset.g; updateGo();};
+  const wasSel=c.classList.contains('sel');
+  document.querySelectorAll('#EQ_genres .chip').forEach(x=>x.classList.remove('sel'));
+  if(wasSel){ selGenre=null; }
+  else { c.classList.add('sel'); selGenre=c.dataset.g; }
+  updateGo();};
 $('EQ_insts').onclick=e=>{const c=e.target.closest('.chip');if(!c)return;
   const k=c.dataset.i; if(selInst.has(k)){selInst.delete(k);c.classList.remove('sel');}else{selInst.add(k);c.classList.add('sel');} updateGo();};
 function updateGo(){$('EQ_go').disabled=!(selGenre&&selInst.size>0);}
