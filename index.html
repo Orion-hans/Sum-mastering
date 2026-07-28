@@ -3047,7 +3047,23 @@ const INST={
   wood:{n:'목관',hpf:'플루트 200 · 오보에 150',cut:'500 콧소리',boost:'3~8k 공기·숨'},
   organ:{n:'오르간',hpf:'80',cut:'300~500 탁함',boost:'중고역 존재',bands:{mid:[500,3000]}},
   perc:{n:'퍼커션',hpf:'150~300',cut:'중저역 정리',boost:'고역 트랜지언트'},
-  eightoh8:{n:'808',hpf:'—',cut:'중역 정리',boost:'서브 40~60 · 클릭 2~4k',bands:{sub:[40,80]}}
+  eightoh8:{n:'808',hpf:'—',cut:'중역 정리',boost:'서브 40~60 · 클릭 2~4k',bands:{sub:[40,80]}},
+  violin:{n:'바이올린',hpf:'80~120',cut:'200~400 흐림 · 4~7k 활 스크래치',boost:'2k 생동감 · 8~10k 공기',bands:{mid:[2000,4000]}},
+  viola:{n:'비올라',hpf:'80~120',cut:'150~240 뭉침',boost:'2.4~4k 활 질감 · 500~1k 어택',bands:{mid:[1000,4000]}},
+  cello_c:{n:'첼로',hpf:'40~60',cut:'200~300 탁함',boost:'250 따뜻함 · 2~4k 광채',bands:{low:[80,200]}},
+  contrabass:{n:'콘트라베이스',hpf:'30~40',cut:'200~300 웅웅',boost:'40~200 무게(핵심)',bands:{low:[40,120]}},
+  woodperc:{n:'특수타악(목탁계열)',hpf:'200~400',cut:'중저역 박스',boost:'2~5k 딱 소리 · 어택'},
+  cymperc:{n:'특수타악(심벌계열)',hpf:'300~500',cut:'1~2k 거슬림',boost:'8~12k 광택·여운'},
+  gayageum:{n:'가야금',hpf:'80~100',cut:'250~400 뭉침',boost:'1~3k 뜯는 소리 · 5~8k 손톱 어택',bands:{mid:[1000,3000]}},
+  geomungo:{n:'거문고',hpf:'50~70',cut:'200~350 탁함',boost:'80~150 무게 · 1~2k 술대 타격',bands:{low:[80,200],mid:[1000,2000]}},
+  ajaeng:{n:'아쟁',hpf:'50~70',cut:'250~400 답답',boost:'150~300 몸통 · 2~4k 활 마찰',bands:{low:[80,250]}},
+  haegeum:{n:'해금',hpf:'150~200',cut:'800~1.5k 콧소리(개성이자 과하면 거슬림)',boost:'2~4k 존재 · 5k 활 질감',bands:{mid:[800,3000]}},
+  daegeum:{n:'대금',hpf:'120~150',cut:'500~800 텁텁',boost:'3~6k 청울림·바람 · 8k 공기',bands:{mid:[1000,3000]}},
+  piri:{n:'피리',hpf:'150~200',cut:'800~1.2k 콧소리',boost:'2~4k 존재감(강한 악기라 절제)',bands:{mid:[800,4000]}},
+  taepyeongso:{n:'태평소',hpf:'200~250',cut:'1~2k 쏘임(매우 강함)',boost:'절제 — 컷 위주 · 4k+ 살짝',bands:{mid:[1000,4000]}},
+  janggu:{n:'장구',hpf:'40~60',cut:'300~500 박스',boost:'80~120 궁편 · 2~4k 채편 어택',bands:{low:[60,150]}},
+  kkwaeng:{n:'꽹과리',hpf:'400~600',cut:'2~3k 극도로 쏘임',boost:'컷 위주 · 금속 여운만',bands:{mid:[2000,5000]}},
+  buk:{n:'북',hpf:'40~60',cut:'300~500 울림',boost:'60~100 저역 · 1~2k 가죽 타격',bands:{low:[60,150]}}
 };
 const GENRE={
   rock:{n:'록',note:'기타 중역(1~3k)이 힘 — 다만 보컬과 겹치니 기타 3k를 살짝 양보. 스네어 어택·킥 펀치. 드라이한 믹스.'},
@@ -3057,7 +3073,10 @@ const GENRE={
   jazz:{n:'재즈·어쿠스틱',note:'과한 EQ 금물 — 악기 본연의 배음을 살린다. HPF와 가벼운 정리만. 자연스러움이 미학.'},
   soul:{n:'소울·R&B',note:'따뜻한 중저역 · 로즈/건반 리치하게 · 보컬 부드럽게. 고스트노트 드럼 공간. 부드러운 고역.'},
   cine:{n:'시네마틱',note:'저역 임팩트(서브)와 고역 텍스처. 총주에서 대역 겹침 관리 — 주선율 악기 살리고 나머지 양보. 넓은 다이내믹.'},
-  ambient:{n:'명상·앰비언트',note:'따뜻한 저역 드론 · 부드러운 고역. 날카로운 2~5k와 치찰 억제. 편안한 곡선(하이 살짝 롤오프).'}
+  ambient:{n:'명상·앰비언트',note:'따뜻한 저역 드론 · 부드러운 고역. 날카로운 2~5k와 치찰 억제. 편안한 곡선(하이 살짝 롤오프).'},
+  gugak:{n:'국악(정악·창작)',note:'국악기는 표준 EQ 프리셋이 없다 — 음역·음색으로 판단. 배음이 풍부하고 시김새(농현·꺾기)가 많아 과한 EQ가 표현을 죽인다. HPF로 저역만 정리하고, 악기 고유의 개성(해금 콧소리·대금 청·꽹과리 금속성)은 살짝만 다듬는다. 컷 위주.'},
+  gugakband:{n:'국악 퓨전(밴드+국악)',note:'국악기와 밴드가 섞이면 중역 충돌이 핵심. 국악 선율악기(대금·해금·피리)가 보컬·기타와 2~4k에서 겹친다 — 주인공을 정하고 나머지 양보. 국악기 저역은 대부분 정리(장구·거문고·아쟁만 저역 유지).'},
+  chamber:{n:'실내악(현악사중주)',note:'첼로만 저역 유지(HPF 40~60), 나머지 HPF 80~120. 바이올린·비올라는 4~7k 활 스크래치를 컷으로 다스리고 고역 공기는 그 뒤에 추가. 250Hz 따뜻함이 현악의 몸통. 최소 EQ가 미학.'}
 };
 
 var selGenre=null; const selInst=new Set();
@@ -3078,7 +3097,7 @@ $('EQ_go').onclick=()=>{
   // 장르 노트
   $('EQ_gnote').innerHTML='<b>'+GENRE[selGenre].n+'</b> — '+GENRE[selGenre].note;
   // 악기 표
-  const order=['vocal','kick','bass','eightoh8','snare','hats','perc','eguitar','aguitar','piano','organ','pad','lead','strings','brass','wood'];
+  const order=['vocal','kick','bass','eightoh8','snare','hats','perc','eguitar','aguitar','piano','organ','pad','lead','strings','brass','wood','violin','viola','cello_c','contrabass','woodperc','cymperc','gayageum','geomungo','ajaeng','haegeum','daegeum','piri','taepyeongso','janggu','kkwaeng','buk'];
   const chosen=order.filter(k=>selInst.has(k));
   $('EQ_eqbody').innerHTML=chosen.map(k=>{const o=INST[k];
     return `<tr><td class="k">${o.n}${o.star?'<span class="role star">주인공</span>':''}</td>
@@ -3120,6 +3139,26 @@ $('EQ_go').onclick=()=>{
     conf.push({warn:true,t:'EDM: 킥 펀치 확보',
       body:'클럽에서 킥이 뚫고 나와야 한다.',
       fix:'베이스에 <span class="freq">사이드체인 강하게</span>(펌핑) — 킥마다 베이스가 확 눌렸다 살아난다. 이게 EDM 저역의 심장.'});
+  }
+  // 국악 선율악기 겹침
+  var gugakMel=['daegeum','piri','haegeum','taepyeongso'].filter(function(k){return has(k);});
+  if(gugakMel.length>=2){
+    conf.push({warn:false,t:'국악 선율악기 겹침 — '+gugakMel.map(function(k){return INST[k].n;}).join('·'),
+      body:'대금·해금·피리·태평소는 모두 <span class="freq">1~4k</span> 중고역에서 존재감을 낸다. 함께 쓰면 서로 마스킹된다.',
+      fix:'주선율을 맡은 악기만 2~4k를 살리고, 받쳐주는 악기는 그 대역을 <span class="freq">-2~-3dB</span> 양보. 팬으로 좌우 분리도 병행. 시김새(농현) 구간이 겹치지 않게 편곡에서 배치.'});
+  }
+  // 강한 국악 타악·관악 경고
+  if(has('kkwaeng')||has('taepyeongso')){
+    var loud=[]; if(has('kkwaeng'))loud.push('꽹과리'); if(has('taepyeongso'))loud.push('태평소');
+    conf.push({warn:true,t:loud.join('·')+' — 극도로 강한 고역',
+      body:loud.join('·')+'는 2~3k에서 매우 공격적이라 믹스를 찢는다.',
+      fix:'부스트 금지 — <span class="freq">2~3k를 컷</span>으로 다스리고 금속/갈대 여운만 남긴다. 볼륨도 다른 악기보다 낮게. 솔로 포인트에서만 열어준다.'});
+  }
+  // 국악 저역 타악 ↔ 베이스/서양저역
+  if((has('janggu')||has('buk'))&&(has('bass')||has('cello_c')||has('contrabass'))){
+    conf.push({warn:false,t:'국악 타악 저역 ↔ 저역 악기',
+      body:'장구 궁편·북의 저역(60~120)이 베이스·첼로와 겹칠 수 있다.',
+      fix:'국악 타악은 <span class="freq">60~100 무게</span>만 남기고 그 위는 정리. 베이스와 주파수를 살짝 어긋나게(한쪽 60, 한쪽 100).'});
   }
   $('EQ_conf').innerHTML='<div class="sec-h">충돌 해결</div>'+(conf.length?conf.map(c=>
     `<div class="conf-card ${c.warn?'warn':''}"><h4>${c.t}</h4><p>${c.body}</p><p class="fix">→ ${c.fix}</p></div>`
