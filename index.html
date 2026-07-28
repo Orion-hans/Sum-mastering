@@ -395,16 +395,17 @@ footer{position:fixed;left:0;right:0;bottom:0;z-index:20;
       <button class="seg" data-t="-20" data-tp="-1">수면 <small>-20</small></button>
     </div>
     <div class="solution" id="L_solution"></div>
-  </div></div>
-
   </div>
-
   <button class="reset" id="L_reset">다른 파일 측정</button>
 
   <footer>
     브라우저 안에서만 계산 — 파일은 어디에도 올라가지 않습니다.<br>
     Integrated·LRA 게이팅(–70 절대 / –10 상대), True Peak 4× 오버샘플링.
   </footer>
+</div>
+
+
+  </div>
 
 </div></main>
   <footer>
@@ -1013,6 +1014,20 @@ eq_genre:{title:'장르별 EQ 포인트', html:`
 <tr><td class="k">명상·앰비언트</td><td>따뜻한 저역 드론 · 부드러운 고역</td><td>날카로운 2~5k·치찰 억제 · 편안한 곡선(하이 살짝 롤오프)</td></tr>
 </table>
 <div class="box tip">공통: 어느 장르든 ① HPF 정리 ② 충돌 대역 양보가 먼저. 장르 색은 그 위에 부스트로 얹는다.</div>`},
+eq_drum:{title:'드럼 EQ — 한 트랙 vs 분리', html:`
+<p class="lead sm">드럼을 개별로 다 EQ할 필요는 없다. <b>한 트랙이냐 분리했냐</b>에 따라 방식이 갈린다.</p>
+<div class="kicker">① 한 트랙 (스테레오 킷)</div>
+<div class="lstep"><span class="ln">1</span><span class="lc">킥·스네어·햇이 <b>한 트랙에 섞여</b> 나온다(Drummer·Drum Kit Designer 기본). 개별 EQ 불가 — <b>전체에 하나</b>만 건다. 저역 살짝 정리 + <span class="v">3~5k</span> 어택 살짝. 데모·빠른 작업은 이걸로 충분.</span></div>
+<div class="kicker">② 개별 트랙 (멀티아웃 분리)</div>
+<div class="lstep"><span class="ln">2</span><span class="lc">각 드럼을 <b>따로 트랙으로 뽑았을 때만</b> 개별 EQ. 이때 앱 EQ 표의 킥·스네어·햇 값을 각각 적용:</span></div>
+<div class="spec wide">
+<div class="srow"><span class="sk">킥</span><span class="sv">HPF 20~30 · <span class="v">60~80</span> 펀치 · 300~500 컷 · 2~4k 클릭</span></div>
+<div class="srow"><span class="sk">스네어</span><span class="sv">HPF 80~100 · <span class="v">150~200</span> 몸통 · 400~600 컷 · 3~5k 어택</span></div>
+<div class="srow"><span class="sk">하이햇·심벌</span><span class="sv">HPF <span class="v">300~500</span> · 1k 컷 · 8~10k 광택</span></div>
+</div>
+<div class="kicker">③ 절충 (자주 씀)</div>
+<div class="lstep"><span class="ln">3</span><span class="lc"><b>킥만 따로, 나머지는 묶어서.</b> 킥은 저역이라 베이스와 충돌하니 분리해 정리하고, 스네어·햇·탐은 한 버스로 묶어 가볍게. 실속 있는 중간 방식.</span></div>
+<div class="box tip">판단: 드럼이 <b>한 트랙</b>이면 전체 하나로(킥 저역만 살짝) · <b>분리</b>했으면 각각 · 어중간하면 <b>킥만 분리</b>. 개별 EQ는 트랙을 나눴을 때만 의미 있다.</div>`},
 eq_map:{title:'주파수 지도 — 대역이 하는 일', html:`
 <p class="lead sm">EQ 정리의 출발점: 각 대역이 무슨 소리를 담는지 안다. 문제를 들으면 대역이 떠올라야 한다.</p>
 <table class="eqt"><tr><th>대역</th><th>담는 것</th><th>과하면 / 부족하면</th></tr>
@@ -2354,6 +2369,7 @@ const APP_REF = {name:'참고', c1:'#9BA7FF', c2:'#6BD3C9', steps:[
  <button class="tapcard" data-d="eq_map"><span class="chev">›</span><span class="tc-h">주파수 지도</span><span class="tc-p">대역이 하는 일 · 문제→대역 연결</span><span class="tc-go">›</span></button>
  <button class="tapcard" data-d="eq_principle"><span class="chev">›</span><span class="tc-h">EQ 5원칙 ★</span><span class="tc-p">깎기 먼저·HPF·충돌 양보</span><span class="tc-go">›</span></button>
  <button class="tapcard" data-d="eq_inst"><span class="chev">›</span><span class="tc-h">악기별 기본 EQ</span><span class="tc-p">HPF·컷·부스트 수치표</span><span class="tc-go">›</span></button>
+ <button class="tapcard" data-d="eq_drum"><span class="chev">›</span><span class="tc-h">드럼 EQ — 한 트랙 vs 분리</span><span class="tc-p">다 따로? 상황에 따라 다름</span><span class="tc-go">›</span></button>
  <button class="tapcard" data-d="eq_conflict"><span class="chev">›</span><span class="tc-h">충돌 해결 ★</span><span class="tc-p">킥/베이스·보컬 살리기·자리 나누기</span><span class="tc-go">›</span></button>
  <button class="tapcard" data-d="eq_genre"><span class="chev">›</span><span class="tc-h">장르별 EQ 포인트</span><span class="tc-p">장르마다 살리는 대역</span><span class="tc-go">›</span></button>
  <div class="kicker" style="margin-top:14px">스튜디오 생성기 장르별 실전 프리셋 — 실제 편성·EQ</div>
