@@ -290,6 +290,17 @@ footer{position:fixed;left:0;right:0;bottom:0;z-index:20;
     padding:10px 4px;font-size:13px;cursor:pointer;transition:.12s;font-weight:600;text-align:center}#lufsRoot .seg small{display:block;color:var(--sub);font-family:var(--mono);font-size:11px;font-weight:400;margin-top:2px}#lufsRoot .seg.sel{border-color:var(--accent);background:rgba(107,211,201,.12);color:var(--accent)}#lufsRoot .solution{padding:0 14px 8px}#lufsRoot .sol-card{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:14px;margin-top:4px}#lufsRoot .sol-head{font-size:14px;font-weight:700;margin-bottom:8px}#lufsRoot .sol-move{font-family:var(--mono);font-size:22px;font-weight:600;letter-spacing:-.5px;margin:2px 0 4px}#lufsRoot .sol-move.up{color:var(--good)}#lufsRoot .sol-move.dn{color:var(--warn)}#lufsRoot .sol-move.ok{color:var(--accent)}#lufsRoot .sol-step{font-size:13px;color:var(--sub);margin-top:7px;padding-left:14px;position:relative}#lufsRoot .sol-step:before{content:"›";position:absolute;left:0;color:var(--accent)}#lufsRoot .sol-step b{color:var(--tx)}#lufsRoot .sol-warn{margin-top:9px;font-size:12.5px;background:rgba(255,118,131,.1);border:1px solid rgba(255,118,131,.3);
     border-radius:8px;padding:8px 10px;color:var(--bad)}#lufsRoot .bands{margin-top:16px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px;display:none}#lufsRoot .bands.on{display:block}#lufsRoot .bands-h{font-size:13px;font-weight:600;color:var(--sub);margin-bottom:10px}#lufsRoot .bsub{font-weight:400;font-size:11.5px}#lufsRoot .brow{display:flex;align-items:center;gap:10px;margin:7px 0}#lufsRoot .blabel{width:88px;font-size:12px;flex-shrink:0}#lufsRoot .blabel small{display:block;color:var(--sub);font-size:10.5px;font-family:var(--mono)}#lufsRoot .btrack{flex:1;height:16px;background:var(--panel2);border-radius:6px;position:relative;overflow:hidden}#lufsRoot .bfill{position:absolute;top:0;bottom:0;left:50%;background:var(--accent);opacity:.85;border-radius:3px}#lufsRoot .bfill.hi{background:var(--warn)}#lufsRoot .bfill.lo{background:var(--bad)}#lufsRoot .bmid{position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--line)}#lufsRoot .bval{width:52px;text-align:right;font-family:var(--mono);font-size:12px;flex-shrink:0}#lufsRoot .bandsol{margin-top:12px}#lufsRoot .bandsol .bs{font-size:13px;margin-top:7px;padding-left:16px;position:relative;color:var(--sub)}#lufsRoot .bandsol .bs:before{content:"→";position:absolute;left:0;color:var(--accent)}#lufsRoot .bandsol .bs b{color:var(--tx)}#lufsRoot .bandsol .okmsg{font-size:13px;color:var(--good)}
 
+.eqt{width:100%;border-collapse:collapse;margin:8px 0;font-size:12.5px}.eqt th{background:#26303a;color:#fff;text-align:left;padding:5px 7px;font-size:11.5px;font-weight:700}.eqt td{padding:5px 7px;border-bottom:1px solid var(--line);vertical-align:top}.eqt td.k{font-weight:700;white-space:nowrap}.eqt .sub{color:var(--sub);font-size:10.5px;font-weight:400}
+/* EQ PLANNER scoped */
+#eqRoot{display:none}
+#eqRoot.on{display:block;padding:4px 0 30px}
+
+  :root{--bg:#0E1116;--panel:#171C24;--panel2:#1E252F;--line:#2A333F;--tx:#E8EDF3;--sub:#93A0AF;--accent:#6BD3C9;--warn:#FFB86B;--bad:#FF7683;--good:#7CE38B;--mono:ui-monospace,Menlo,monospace}#eqRoot *{box-sizing:border-box;margin:0;padding:0}#eqRoot h1{font-size:19px;font-weight:800;margin-bottom:3px}#eqRoot .lead{color:var(--sub);font-size:13px;margin-bottom:16px}#eqRoot .sec-h{font-size:12px;font-weight:700;color:var(--sub);letter-spacing:.5px;margin:16px 0 8px;text-transform:uppercase}#eqRoot .chips{display:flex;flex-wrap:wrap;gap:7px}#eqRoot .chip{background:var(--panel2);border:1px solid var(--line);color:var(--tx);border-radius:20px;padding:7px 13px;font-size:13px;cursor:pointer;transition:.12s;user-select:none}#eqRoot .chip.sel{border-color:var(--accent);background:rgba(107,211,201,.14);color:var(--accent);font-weight:600}#eqRoot .chip.gen.sel{background:rgba(255,184,107,.16);border-color:var(--warn);color:var(--warn)}#eqRoot .go{margin-top:18px;width:100%;background:linear-gradient(90deg,#4FD1A5,#6BD3C9);color:#0E1116;border:0;border-radius:12px;padding:13px;font-size:15px;font-weight:800;cursor:pointer}#eqRoot .go:disabled{opacity:.4;cursor:default}#eqRoot .out{margin-top:20px;display:none}#eqRoot .out.on{display:block}#eqRoot .genre-note{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--warn);border-radius:8px;padding:10px 13px;font-size:12.5px;color:var(--sub);margin-bottom:14px}#eqRoot .genre-note b{color:var(--tx)}#eqRoot table{width:100%;border-collapse:collapse;margin:6px 0 4px;font-size:12.5px}#eqRoot th{background:#26303a;color:#fff;text-align:left;padding:6px 8px;font-size:11.5px}#eqRoot td{padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:top}#eqRoot td.k{font-weight:700;white-space:nowrap;color:var(--tx)}#eqRoot .hpf{color:var(--accent);font-family:var(--mono);font-size:11.5px}#eqRoot .cut{color:var(--bad);font-family:var(--mono);font-size:11.5px}#eqRoot .boost{color:var(--good);font-family:var(--mono);font-size:11.5px}#eqRoot .role{display:inline-block;font-size:10px;padding:1px 7px;border-radius:10px;background:var(--panel2);color:var(--sub);margin-left:4px}#eqRoot .role.star{background:rgba(255,184,107,.16);color:var(--warn)}#eqRoot .conf{margin-top:16px}#eqRoot .conf-card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:8px 0;border-left:3px solid var(--accent)}#eqRoot .conf-card.warn{border-left-color:var(--warn)}#eqRoot .conf-card h4{font-size:13.5px;font-weight:700;margin-bottom:5px}#eqRoot .conf-card p{font-size:12.5px;color:var(--sub);margin:3px 0}#eqRoot .conf-card .fix{color:var(--tx)}#eqRoot .conf-card .freq{font-family:var(--mono);color:var(--accent)}#eqRoot .reset2{margin-top:16px;background:var(--panel2);border:1px solid var(--line);color:var(--tx);border-radius:9px;padding:9px 16px;font-size:13px;cursor:pointer}#eqRoot .hint{font-size:11px;color:var(--sub);margin-top:4px}#eqRoot footer{margin-top:20px;font-size:11px;color:var(--sub);text-align:center;line-height:1.6}
+
+
+.genre-eq-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(88px,1fr));gap:6px;margin-top:8px}
+.gchip2{background:var(--panel2);border:1px solid var(--line);color:var(--tx);border-radius:8px;padding:9px 6px;font-size:12px;cursor:pointer;font-weight:600;transition:.12s}
+.gchip2:hover,.gchip2:active{border-color:var(--accent);color:var(--accent)}
 </style>
 </head>
 <body>
@@ -307,7 +318,31 @@ footer{position:fixed;left:0;right:0;bottom:0;z-index:20;
       <button class="menu-btn" id="menuBtn" aria-label="목차"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     </div>
   </header>
-  <main id="main"><div class="card" id="card"></div><div id="lufsRoot">
+  <main id="main"><div class="card" id="card"></div><div id="eqRoot">
+<h1>EQ 플래너</h1>
+<p class="lead">장르와 악기를 고르면, 그 조합에 맞는 EQ 정리와 충돌 해결을 만들어준다.</p>
+
+<div class="sec-h">1. 장르</div>
+<div class="chips" id="EQ_genres"></div>
+
+<div class="sec-h">2. 편성 악기 (여러 개)</div>
+<div class="chips" id="EQ_insts"></div>
+<div class="hint">보컬·킥·베이스 등 있는 악기를 다 고르면 충돌까지 잡아준다.</div>
+
+<button class="go" id="EQ_go" disabled>EQ 정리 만들기</button>
+
+<div class="out" id="EQ_out">
+  <div class="genre-note" id="EQ_gnote"></div>
+  <div class="sec-h">악기별 EQ</div>
+  <table id="EQ_eqtable"><thead><tr><th>악기</th><th>HPF</th><th>컷</th><th>부스트</th></tr></thead><tbody id="EQ_eqbody"></tbody></table>
+  <div class="hint">HPF=저역 자르기 · <span style="color:var(--bad)">컷</span>=문제 덜기 · <span style="color:var(--good)">부스트</span>=특징 살리기. 곡마다 미세 조정.</div>
+  <div class="conf" id="EQ_conf"></div>
+  <button class="reset2" id="EQ_reset2">다시 고르기</button>
+</div>
+
+<footer>대역 자리를 나누는 것이 맑은 믹스의 핵심 — 모두를 다 살릴 순 없다.</footer>
+
+</div><div id="lufsRoot">
   <h1>LUFS 미터</h1>
   <p class="lead">파일을 넣으면 라우드니스(LUFS)·트루 피크·LRA를 재생 없이 측정. ITU-R BS.1770-4 · 유튜브·로직과 같은 표준.</p>
 
@@ -953,6 +988,68 @@ velo_band:{title:'밴드 — 악기·스타일별 벨로시티·길이', html:`
 <div class="srow"><span class="sk">로즈(펑크)</span><span class="sv">벨 <span class="v">80~110</span>(세면 벨톤 열림) · 짧게 끊어 리듬</span></div>
 </div>
 <div class="box tip">장르 길이 요약: 펑키·리듬=짧게 끊기 / 발라드·소울=길게 잇기 / 재즈=중간+스윙. 벨로시티는 어디서든 물결.</div>`},
+eq_conflict:{title:'충돌 해결 — 자리 나누기', html:`
+<p class="lead sm">두 악기가 같은 대역에서 싸우면 흐려진다. 하나를 주인공으로 두고 다른 쪽이 그 대역을 <b>양보(컷)</b>한다. 이게 프로 믹스의 핵심.</p>
+<div class="kicker">킥 ↔ 베이스 (제일 중요)</div>
+<div class="lstep"><span class="ln">1</span><span class="lc"><b>저역을 나눈다.</b> 한쪽이 <span class="v">60Hz</span> 주인공이면 다른 쪽은 거기를 컷하고 <span class="v">80~100Hz</span>를 가진다. 예: 킥 60 부스트→베이스 60 살짝 컷 / 베이스 100 부스트→킥 100 컷. <b>사이드체인</b>(킥 칠 때 베이스 순간 눌림)까지 하면 완벽.</span></div>
+<div class="kicker">보컬 ↔ 나머지 (보컬 살리기)</div>
+<div class="lstep"><span class="ln">2</span><span class="lc"><b>보컬 핵심 대역을 다른 악기에서 비운다.</b> 보컬 존재감 <span class="v">2~5k</span>·바디 <span class="v">200~500</span>. 기타·신스·패드에서 그 대역을 <span class="v">-2~-4dB</span> 살짝 컷 → 보컬이 저절로 앞으로. 억지로 보컬을 키우지 않는다.</span></div>
+<div class="lstep"><span class="ln">3</span><span class="lc"><b>다이내믹 EQ·사이드체인 EQ.</b> 보컬이 있을 때만 기타 3k를 눌러주는 다이내믹 EQ면 더 자연스럽다(보컬 쉴 땐 기타 원래대로).</span></div>
+<div class="kicker">기타 ↔ 기타 / 신스 (같은 음역 겹침)</div>
+<div class="lstep"><span class="ln">4</span><span class="lc"><b>주파수·팬으로 분리.</b> 두 기타는 한쪽 저역 강조·다른쪽 고역 강조 + L/R 팬. 리듬기타 저역은 베이스 자리 비우게 HPF <span class="v">120</span>.</span></div>
+<div class="kicker">방법</div>
+<div class="lstep"><span class="ln">5</span><span class="lc"><b>충돌 찾기:</b> 두 트랙만 솔로 → 뭉치는 대역이 들린다 → 덜 중요한 쪽을 거기서 컷. 또는 한쪽 부스트한 대역을 다른쪽에서 같은 만큼 컷(거울 EQ).</span></div>
+<div class="box tip">원칙: <b>모두를 다 살릴 순 없다.</b> 대역마다 주인공을 정하고 나머지는 양보. 보컬=중고역 주인공, 킥·베이스=저역 주인공, 심벌=초고역 주인공.</div>`},
+
+eq_genre:{title:'장르별 EQ 포인트', html:`
+<p class="lead sm">장르마다 살리는 대역과 미학이 다르다. 기본 정리 위에 장르 색을 얹는다.</p>
+<table class="eqt"><tr><th>장르</th><th>살리는 것</th><th>주의·특징</th></tr>
+<tr><td class="k">록</td><td>기타 중역(1~3k) 힘 · 스네어 어택 · 킥 펀치</td><td>기타 벽이 중역 차지 → 보컬과 경쟁, 기타 3k 살짝 양보</td></tr>
+<tr><td class="k">팝</td><td>보컬 최우선(2~5k·공기 10k+) · 밝고 선명</td><td>다른 요소는 보컬 대역 양보 · 전체 하이엔드 화사</td></tr>
+<tr><td class="k">힙합·트랩</td><td>808 저역(무게) · 하이햇 고역 · 보컬 존재</td><td>808과 킥 저역 분리 필수 · 중역 비워 공간감</td></tr>
+<tr><td class="k">EDM·하우스</td><td>킥 펀치 · 베이스 · 신스 와이드 고역</td><td>사이드체인 펌핑 · 킥 자리 위해 베이스 저역 절제</td></tr>
+<tr><td class="k">재즈·어쿠스틱</td><td>자연스러운 배음 · 최소 EQ</td><td>과한 EQ 금물 — 악기 본연 살리기, HPF·가벼운 정리만</td></tr>
+<tr><td class="k">시네마틱</td><td>저역 임팩트 · 현 광채 · 넓은 다이내믹</td><td>총주에서 대역 겹침 관리 · 서브(임팩트)와 고역(텍스처)</td></tr>
+<tr><td class="k">명상·앰비언트</td><td>따뜻한 저역 드론 · 부드러운 고역</td><td>날카로운 2~5k·치찰 억제 · 편안한 곡선(하이 살짝 롤오프)</td></tr>
+</table>
+<div class="box tip">공통: 어느 장르든 ① HPF 정리 ② 충돌 대역 양보가 먼저. 장르 색은 그 위에 부스트로 얹는다.</div>`},
+eq_map:{title:'주파수 지도 — 대역이 하는 일', html:`
+<p class="lead sm">EQ 정리의 출발점: 각 대역이 무슨 소리를 담는지 안다. 문제를 들으면 대역이 떠올라야 한다.</p>
+<table class="eqt"><tr><th>대역</th><th>담는 것</th><th>과하면 / 부족하면</th></tr>
+<tr><td class="k">20~60<br><span class="sub">초저역</span></td><td>서브 베이스, 킥 바닥, 룸 럼블</td><td>과: 웅웅·흐림 / 대개 <b>HPF로 정리</b></td></tr>
+<tr><td class="k">60~120<br><span class="sub">저역</span></td><td>킥·베이스 펀치, 무게, 따뜻함</td><td>과: 붐·탁함 / 부족: 얇음</td></tr>
+<tr><td class="k">120~400<br><span class="sub">로우미드</span></td><td>바디·따뜻함, 스네어 몸통</td><td>과: 답답·박스 소리(가장 흔한 컷) / 부족: 공허</td></tr>
+<tr><td class="k">400~1k<br><span class="sub">미드</span></td><td>보컬·악기 기본음, 존재감</td><td>과: 콧소리·박스 / 부족: 속 빈 소리</td></tr>
+<tr><td class="k">1k~4k<br><span class="sub">하이미드</span></td><td>명료도·어택, 자음, 존재감</td><td>과: 쏘임·피곤 / 부족: 흐릿·멂</td></tr>
+<tr><td class="k">4k~8k<br><span class="sub">고역</span></td><td>선명함, 치찰음, 공기 시작</td><td>과: 거슬림·치찰 / 부족: 답답</td></tr>
+<tr><td class="k">8k~20k<br><span class="sub">초고역</span></td><td>공기감, 광택, 반짝임</td><td>과: 쉬익·디지털 / 부족: 어두움</td></tr></table>
+<div class="box tip">문제→대역 연결: "답답하다"=로우미드 200~400 / "쏜다"=2~4k / "탁하다"=저역~로우미드 / "공기 없다"=10k+ / "웅웅"=초저역.</div>`},
+
+eq_principle:{title:'EQ 5원칙 — 청소의 기본', html:`
+<p class="lead sm">악기별 수치 전에, 모든 트랙에 적용되는 원칙. 이게 EQ 정리의 뼈대다.</p>
+<div class="lstep"><span class="ln">1</span><span class="lc"><b>깎기가 먼저(감산 EQ).</b> 부스트보다 <b>컷</b>이 우선 — 문제(탁함·쏘임)를 덜어내면 저절로 맑아진다. 부스트는 헤드룸을 먹고 위상을 흔든다. "살리려면 경쟁 대역을 깎아라".</span></div>
+<div class="lstep"><span class="ln">2</span><span class="lc"><b>HPF로 저역 청소.</b> 저역이 꼭 필요한 <b>킥·베이스 외에는 전부 HPF</b>. 안 들리는 저역이 헤드룸만 먹고 흐리게 만든다. 이것만으로 믹스가 확 맑아진다 — <b>1순위 작업</b>.</span></div>
+<div class="lstep"><span class="ln">3</span><span class="lc"><b>넓게 깎고, 좁게 부스트.</b> 컷은 넓은 Q(자연스럽게 덜기), 부스트는 필요한 곳만. 문제 대역 찾기: Q 좁혀 크게 부스트 → 주파수 훑어 <b>제일 거슬리는 곳</b> 찾고 → 거기를 <b>반대로 컷</b>.</span></div>
+<div class="lstep"><span class="ln">4</span><span class="lc"><b>솔로 말고 전체로 듣는다.</b> 트랙 하나만 완벽하게 만드는 게 아니라 <b>믹스 안에서</b> 자기 역할. 솔로로 EQ하면 다 좋아 보이지만 합치면 충돌. 전체 재생하며 조정.</span></div>
+<div class="lstep"><span class="ln">5</span><span class="lc"><b>같은 대역에 둘을 두지 마라.</b> 두 악기가 같은 주파수에서 주인공이면 하나가 진다. 역할을 정해 <b>하나는 살리고 하나는 그 대역을 양보</b>(컷). = 상보 EQ.</span></div>
+<div class="box tip">순서: ① HPF로 저역 정리 → ② 문제 대역 컷(탁함·쏘임) → ③ 충돌 대역 양보 → ④ 필요시 살짝 부스트. 부스트는 마지막·최소.</div>`},
+
+eq_inst:{title:'악기별 기본 EQ — HPF·컷·부스트', html:`
+<p class="lead sm">시작점 수치(곡마다 조정). HPF=저역 자르기, 컷=문제 덜기, 부스트=특징 살리기.</p>
+<table class="eqt"><tr><th>악기</th><th>HPF</th><th>컷(문제)</th><th>부스트(특징)</th></tr>
+<tr><td class="k">킥</td><td>—(20~30만)</td><td>300~500 박스</td><td>60~80 펀치 · 2~4k 비터 클릭</td></tr>
+<tr><td class="k">베이스</td><td>30</td><td>300~500 탁함</td><td>80~100 무게 · 700~1k 손가락·명료</td></tr>
+<tr><td class="k">스네어</td><td>80~100</td><td>400~600 박스</td><td>150~200 몸통 · 3~5k 어택</td></tr>
+<tr><td class="k">하이햇·심벌</td><td>300~500</td><td>1k 쨍(거슬림)</td><td>8~10k 광택 · 12k+ 공기</td></tr>
+<tr><td class="k">일렉기타</td><td>90~120</td><td>300~500 탁함</td><td>1~3k 존재 · 4~5k 어택</td></tr>
+<tr><td class="k">어쿠스틱기타</td><td>100</td><td>200~400 박스</td><td>5~8k 반짝 · 10k 공기</td></tr>
+<tr><td class="k">피아노</td><td>40~60</td><td>200~400 흐림</td><td>2~5k 명료 · 10k 광택</td></tr>
+<tr><td class="k">신스 패드</td><td>120~200</td><td>중역 양보(보컬 자리)</td><td>넓게 · 고역 공기</td></tr>
+<tr><td class="k">리드 보컬</td><td>80~100</td><td>200~300 탁함 · 2~5k 치찰(디에서)</td><td>3~5k 존재 · 10k+ 공기</td></tr>
+<tr><td class="k">현(앙상블)</td><td>바이올린 200·첼로 60</td><td>300~500 답답</td><td>2~4k 광채 · 10k 공기</td></tr>
+<tr><td class="k">금관</td><td>호른 80·트럼펫 150</td><td>500~800 콧소리</td><td>1~3k 힘 · 5k 광택</td></tr>
+<tr><td class="k">목관</td><td>플루트 200·오보에 150</td><td>500 콧소리</td><td>3~8k 공기·숨</td></tr></table>
+<div class="box tip">HPF는 거의 항상 — 킥·베이스만 예외(초저역 20~30만 살짝). 부스트는 특징 하나만, 나머지는 컷으로.</div>`},
 orch_common:{title:'공통 원칙 — 왜 가짜로 들리나', html:`
 <p class="lead sm">MIDI 오케스트라가 가짜로 들리는 이유는 대개 <b>일정함</b>이다: 같은 세기, 같은 타이밍, 같은 비브라토. 그 흔들림을 되살리는 게 핵심.</p>
 <div class="kicker">CC를 어디서 그리나</div>
@@ -1395,6 +1492,7 @@ frameroute:{title:'프레임 · 트랙 1개로 (전체 수치)', html:`
 <div class="box soft"><b>Damping EQ vs Output EQ:</b> Damping은 <b>decay(꼬리)의 주파수별 길이</b>를 바꿈(저역 컷=덜 부밍·고역 업=시머) · Output EQ는 리버브 <b>최종 출력 톤</b>을 깎음. 둘은 다른 것 — Damping은 Main, Output은 Details.</div>`},
 };
 
+window.SO_GENRE_EQ={"ballad":{"label":"발라드","order":"드럼 → 베이스 → 피아노 → 어쿠스틱기타 → 대선율(첼로) → 리드(플루트) → 보컬멜로디 → 스트링패드","tracks":[{"t":"피아노/건반","inst":"Steinway Grand (Studio Piano) / Spitfire LABS ","eq":"Channel EQ — HPF 80Hz(24dB/oct) · Band4 300Hz -1.5dB(Q0.8, 탁함 제거) · Band7 High Shelf 4kHz +1.5dB"},{"t":"베이스","inst":"Electric Bass (Studio Bass) / Upright Bass","eq":"Channel EQ — HPF 40Hz · Band3 800Hz +1dB(Q1.0, 손가락 존재감) · LPF 6kHz"},{"t":"기타","inst":"Steel Acoustic (Studio Guitar) / Nylon","eq":"Channel EQ — HPF 90Hz · Band6 3kHz +1dB(브라이트니스)"},{"t":"드럼","inst":"Drum Kit Designer (Brushes / SoCal 소프트)","eq":"킥 HPF 30Hz·60Hz +2dB / 스네어 Band5 3kHz +2dB(어택)"},{"t":"멜로디","inst":"Solo Violin (Studio Strings) / 보컬 가이드","eq":"Channel EQ — HPF 120Hz · Band7 High Shelf 8kHz +2dB(에어)"},{"t":"대선율","inst":"Solo Cello (Studio Strings)","eq":"HPF 100Hz · Band4 400Hz +1dB(따뜻함)"},{"t":"리드","inst":"Flute / Pan Flute (Studio Woodwinds)","eq":"HPF 200Hz · Band6 5kHz +1dB"},{"t":"드론/패드","inst":"Alchemy 스트링 패드 + 사인 서브 레이어","eq":"LPF 8kHz(모듈레이션) · HPF 40Hz"}]},"kpop":{"label":"K-팝","order":"드럼(808킥/트랩햇) → 베이스(808) → 신스아르프(전용) → 피아노/신스 → 커팅기타 → 대선율 → 리드 → 보컬멜로디","tracks":[{"t":"피아노/건반","inst":"Studio Piano(밝게) / Vintage Electric Piano","eq":"Channel EQ — HPF 120Hz · Band7 High Shelf 8kHz +2dB"},{"t":"베이스","inst":"ES2 사인 서브 + Retro Synth (808)","eq":"Channel EQ — HPF 30Hz · Band5 700Hz -2dB(진흙 제거)"},{"t":"기타","inst":"Clean Electric (Amp Designer, Neon)","eq":"HPF 150Hz · Band6 4kHz +1.5dB(커팅 어택)"},{"t":"드럼","inst":"Drum Machine Designer (트랩/EDM 킷)","eq":"킥 60Hz +3dB·5kHz +2dB(클릭) / 스네어 200Hz +2dB"},{"t":"멜로디","inst":"보컬 라인 (가이드는 Synth Lead)","eq":"HPF 100Hz · Band3 400Hz -1dB · Band7 High Shelf 10kHz +2dB"},{"t":"대선율","inst":"Pluck Synth / Vocal Chop","eq":"HPF 300Hz"},{"t":"리드","inst":"Saw Lead (ES2/Alchemy)","eq":"HPF 200Hz · Band6 3kHz +1dB"},{"t":"장르특성","inst":"Synth Arp (Alchemy/ES2 Pluck)","eq":"HPF 250Hz · Band7 High Shelf 10kHz +3dB(반짝임)"}]},"epic":{"label":"에픽/시네마틱","order":"오케타악(팀파니/타이코) → 저현(첼로+베이스) → 현베드(바이올린) → 브라스 → 목관/리드 → 대선율(프렌치혼) → 하프(전용) → 주선율(솔로바이올린)","tracks":[{"t":"피아노/건반","inst":"Studio Strings 현 베드(Sustain/Marcato)","eq":"Channel EQ — HPF 없음 · Band7 High Shelf 12kHz +1dB(공기)"},{"t":"베이스","inst":"Celli + Basses (Studio Strings 저역)","eq":"HPF 40Hz만 · Band2 100Hz +2dB(무게)"},{"t":"기타","inst":"Brass Section (Studio Brass, Hits/Marcato)","eq":"HPF 80Hz · Band5 2kHz +2dB(광택)"},{"t":"드럼","inst":"Orch Perc (팀파니/그란카사/탐탐)","eq":"팀파니 60Hz +3dB · 심벌 High Shelf 10kHz +1dB"},{"t":"멜로디","inst":"Soaring Strings (Studio Strings Ensemble)","eq":"HPF 120Hz · Band7 High Shelf 12kHz +2dB"},{"t":"대선율","inst":"French Horns (Studio Brass)","eq":"HPF 90Hz · Band4 400Hz +1dB(따뜻함)"},{"t":"리드","inst":"Flute/Oboe (Studio Woodwinds)","eq":"HPF 200Hz · Band6 5kHz +1dB"},{"t":"드론/패드","inst":"Low Pedal (Basses Sustain) + 사인 서브","eq":"LPF 8kHz · HPF 30Hz"},{"t":"장르특성","inst":"Harp (Studio Harp, Runs/Arpeggio)","eq":"HPF 150Hz · Band7 High Shelf 10kHz +1dB"}]},"funk":{"label":"펑크","order":"드럼(타이트킷) → 베이스(핑거) → 로즈/클라비 → 커팅기타 → 혼섹션(대선율) → 리드 → 보컬","tracks":[{"t":"피아노/건반","inst":"Vintage Electric Piano(Rhodes) / Clavinet","eq":"HPF 100Hz · Band5 1.5kHz +1dB"},{"t":"베이스","inst":"Studio Bass(Finger) / Vintage","eq":"HPF 40Hz · Band3 700Hz +2dB(손가락)"},{"t":"기타","inst":"Clean Electric(Amp Designer, Funk)","eq":"HPF 150Hz · Band6 3kHz +1dB"},{"t":"드럼","inst":"Drum Kit Designer(타이트/Vintage)","eq":"킥 60Hz +2dB · 스네어 3kHz +2dB"},{"t":"멜로디","inst":"Horn Section (Studio Brass, Sax/Trumpet)","eq":"HPF 120Hz · Band5 2kHz +1dB"},{"t":"대선율","inst":"Horn Section / Clavinet","eq":"HPF 150Hz"},{"t":"리드","inst":"Sax Solo / Synth Lead","eq":"HPF 150Hz · Band6 4kHz +1dB"}]},"gospel":{"label":"가스펠","order":"드럼(라이브) → 베이스 → 그랜드피아노 → 오르간 → 클린기타 → 합창(전용) → 대선율 → 리드보컬","tracks":[{"t":"피아노/건반","inst":"Grand Piano (Studio Piano, 밝게)","eq":"HPF 80Hz · Band7 High Shelf 6kHz +2dB"},{"t":"베이스","inst":"Electric Bass(Finger)","eq":"HPF 40Hz · Band3 600Hz +1dB"},{"t":"기타","inst":"Clean Electric(Amp Designer)","eq":"HPF 120Hz"},{"t":"드럼","inst":"Drum Kit Designer(라이브 룸)","eq":"킥 60Hz +2dB · 스네어 3kHz +2dB"},{"t":"멜로디","inst":"리드 보컬 (가이드는 Organ)","eq":"HPF 100Hz · Band7 High Shelf 10kHz +2dB"},{"t":"대선율","inst":"Hammond Organ (Vintage Organ)","eq":"HPF 80Hz"},{"t":"리드","inst":"Organ Solo / Sax","eq":"HPF 150Hz"},{"t":"장르특성","inst":"Choir (Studio Chorus, Ah 母音)","eq":"HPF 120Hz · Band7 High Shelf 8kHz +1dB"}]},"neosoul":{"label":"네오소울","order":"드럼(느슨한룸) → 베이스(핑거) → 로즈 → 재지기타 → 대선율 → 리드 → 보컬","tracks":[{"t":"피아노/건반","inst":"Vintage Electric Piano(Rhodes)","eq":"HPF 100Hz · Band4 400Hz -1dB"},{"t":"베이스","inst":"Studio Bass(Finger, 라운드)","eq":"HPF 40Hz · LPF 4kHz(라운드)"},{"t":"기타","inst":"Clean/Jazz(Amp Designer)","eq":"HPF 120Hz"},{"t":"드럼","inst":"Drum Kit Designer(느슨한/언퀀타이즈)","eq":"킥 60Hz · 스네어 짧게"},{"t":"멜로디","inst":"Solo Sax / Rhodes","eq":"HPF 120Hz · LPF 8kHz(따뜻)"},{"t":"대선율","inst":"Rhodes / Guitar","eq":"HPF 150Hz"},{"t":"리드","inst":"Sax/Rhodes Lead","eq":"HPF 150Hz"}]},"rumba":{"label":"룸바","order":"드럼(팔마스·구둣발) → 베이스(root/5) → 나일론 기타(라스게아도) → 세군다/골페 → 멜로디 → 대선율","tracks":[{"t":"피아노/건반","inst":"(옵션) Nylon/Grand — 룸바는 기타가 화성 주역, 피아노는 보조","eq":"HPF 120Hz"},{"t":"베이스","inst":"Acoustic Bass Guitar (root·5도)","eq":"HPF 50Hz · 800Hz +1dB(핑거 노이즈)"},{"t":"기타","inst":"Nylon/Flamenco Guitar (Rasgueado)","eq":"HPF 100Hz · 3~5kHz +2dB(손톱 어택)"},{"t":"드럼","inst":"Percussion — ⚠ 드럼맵 개별 리맵 필수","eq":"박수 2~4kHz 밝게 · 발 60~120Hz 묵직"},{"t":"멜로디","inst":"Trumpet/Nylon Lead (or Vocal)","eq":"HPF 150Hz · 프레즌스 4kHz"},{"t":"대선율","inst":"Second Nylon / Violin","eq":"HPF 150Hz"},{"t":"리드","inst":"Nylon Lead (Falseta)","eq":"HPF 150Hz"}]},"gypsy":{"label":"집시재즈","order":"라 펌프 기타(펌프 리듬) → 업라이트 베이스 → 솔로 기타/바이올린 → 대선율 → (옵션)미니멀 드럼","tracks":[{"t":"피아노/건반","inst":"(옵션) 최소 — 집시 재즈는 기타가 화성","eq":"HPF 120Hz"},{"t":"베이스","inst":"Upright Bass (2-feel 또는 Walking)","eq":"HPF 40Hz · 200Hz +1dB"},{"t":"기타","inst":"Gypsy Jazz Guitar (Selmer/Maccaferri) — La Pom","eq":"HPF 120Hz · 2~4kHz +3dB(피크 어택)"},{"t":"드럼","inst":"(옵션) 미니멀 — 집시 재즈는 보통 드럼 없음","eq":""},{"t":"멜로디","inst":"Violin / Clarinet (또는 Solo Guitar)","eq":"HPF 150Hz · 프레즌스 3kHz"},{"t":"대선율","inst":"Second Guitar / Violin","eq":"HPF 150Hz"}]},"tango":{"label":"탱고","order":"반도네온/피아노(마르카토) → 업라이트 베이스(마르카토) → 바이올린 → 대선율 → (드럼 없음)","tracks":[{"t":"피아노/건반","inst":"Bandoneon / Accordion (또는 Piano Marcato)","eq":"HPF 100Hz · 2~4kHz +2dB(리드 갈대)"},{"t":"베이스","inst":"Upright Bass (Marcato)","eq":"HPF 40Hz · 200Hz +1dB"},{"t":"기타","inst":"(미사용 — 탱고는 반도네온/현)","eq":""},{"t":"드럼","inst":"(미사용 — 탱고는 드럼 없음)","eq":""},{"t":"멜로디","inst":"Bandoneon / Violin","eq":"HPF 150Hz · 프레즌스 3kHz"},{"t":"대선율","inst":"Violin / Second Bandoneon","eq":"HPF 150Hz"}]},"balkan":{"label":"발칸","order":"다불/타판(타악) → 튜바(우파 베이스) → 금관 섹션(오프비트 스탭) → 트럼펫(멜로디) → 트롬본/혼(대선율)","tracks":[{"t":"피아노/건반","inst":"Brass Section / French Horns (오프비트 스탭 \"빠\")","eq":"HPF 150Hz · 1~3kHz +3dB(금관 브라이트니스) · 5kHz +2dB(그릿)"},{"t":"베이스","inst":"Tuba (Oom-pah)","eq":"HPF 30Hz · 200~400Hz +2dB(튜바 바디) · LPF 4kHz"},{"t":"기타","inst":"(미사용 — 브라스 밴드)","eq":""},{"t":"드럼","inst":"Davul/Tapan (Folk Bass Drum + Snare) — ⚠ 리맵","eq":"킥→다불 40~80Hz 묵직 · 스네어 밝게 2kHz"},{"t":"멜로디","inst":"Trumpet (Lead) / Flugelhorn","eq":"HPF 200Hz · 2~4kHz +3dB(브릴리언스)"},{"t":"대선율","inst":"Trombone / French Horn (Counter)","eq":"HPF 120Hz · 1kHz +2dB"}]},"jazz":{"label":"재즈","order":"드럼(브러시·라이드) → 업라이트 베이스(워킹) → 피아노(루트리스 컴핑) → 색소폰 → 대선율","tracks":[{"t":"피아노/건반","inst":"Acoustic Grand (Jazz)","eq":"HPF 90Hz · Air 12kHz 살짝"},{"t":"베이스","inst":"Upright/Double Bass (Walking)","eq":"HPF 40Hz · LPF 3kHz · 200Hz +1dB"},{"t":"기타","inst":"(미사용 — 피아노 트리오)","eq":""},{"t":"드럼","inst":"Jazz Kit — 브러시/라이드","eq":"라이드 밝게 · 킥 얇게(페더링)"},{"t":"멜로디","inst":"Tenor Sax","eq":"HPF 120Hz · 프레즌스 3kHz"},{"t":"대선율","inst":"Trumpet / Piano","eq":"HPF 150Hz"},{"t":"리드","inst":"Sax/Trumpet Solo","eq":"HPF 150Hz"}]},"animeost":{"label":"애니OST","order":"현(스트링 베드) → 저현/베이스 → 브라스 → 팀파니·퍼커션 → 목관 → 대선율(혼) → 주선율(바이올린 소어링)","tracks":[{"t":"피아노/건반","inst":"Grand Piano (Cinematic) + 현 베드","eq":"HPF 80Hz · Air 10kHz +1dB"},{"t":"베이스","inst":"Electric Bass(Band) + Low Strings 더블","eq":"HPF 40Hz · 220Hz +1dB"},{"t":"기타","inst":"Overdriven Guitar (Band)","eq":"HPF 100Hz · 3kHz +2dB"},{"t":"드럼","inst":"Orchestral Perc — 팀파니/그란카사/심벌 + (옵션)밴드 킷","eq":"팀파니 80Hz · 심벌 8kHz"},{"t":"멜로디","inst":"Violins (Soaring Section)","eq":"HPF 200Hz · 프레즌스 4kHz"},{"t":"대선율","inst":"French Horn (Counter)","eq":"HPF 120Hz"},{"t":"리드","inst":"Woodwind (Flute/Oboe)","eq":"HPF 200Hz"}]},"disney":{"label":"디즈니","order":"피아노(시작) → 현 → 저현/베이스 → 브라스 → 합창 → 목관 → 주선율(바이올린)","tracks":[{"t":"피아노/건반","inst":"Grand Piano (Musical)","eq":"HPF 60Hz · Air 12kHz"},{"t":"베이스","inst":"Low Strings (Celli+Basses)","eq":"HPF 40Hz"},{"t":"기타","inst":"Brass + Strings (Orchestral Swell)","eq":"HPF 100Hz · 2kHz +2dB"},{"t":"드럼","inst":"Orchestral Perc — 팀파니/심벌/그란카사","eq":"팀파니 80Hz · 심벌 8kHz"},{"t":"멜로디","inst":"Violins (Soaring)","eq":"HPF 200Hz · 프레즌스 4kHz"},{"t":"대선율","inst":"Choir (Ah 母音) / French Horn","eq":"HPF 120Hz"},{"t":"리드","inst":"Woodwind (Flute/Clarinet)","eq":"HPF 200Hz"}]},"saguk":{"label":"사극","order":"드론(다크 스트링 패드) → 펠트 피아노 → 저현(첼로) → 나일론 기타 → 프레임드럼/저역 톰 → 대선율 → 주선율(첼로/알토 플루트)","tracks":[{"t":"피아노/건반","inst":"Felt Piano (Sparse, Modal)","eq":"HPF 90Hz · 고역 부드럽게 LPF 8kHz"},{"t":"베이스","inst":"Cello / Low Strings (Legato, dark)","eq":"HPF 40Hz · LPF 3kHz(어둡게)"},{"t":"기타","inst":"Nylon Guitar (Fingerstyle, sparse)","eq":"HPF 100Hz"},{"t":"드럼","inst":"Low Toms & Frame Drum (Cinematic Perc)","eq":"저역 60~120Hz 묵직 · 고역 롤오프"},{"t":"멜로디","inst":"Cello (Expressive, dark) / Alto Flute","eq":"HPF 150Hz · 프레즌스 완만"},{"t":"대선율","inst":"Viola / Alto Flute (Counter)","eq":"HPF 150Hz"},{"t":"리드","inst":"Alto Flute (Airy)","eq":"HPF 200Hz"}]},"jballad":{"label":"J-발라드","order":"드럼(브러시/부드럽게) → 베이스(핑거) → 피아노(재즈 보이싱) → 기타(클린) → 대선율 → 주선율/보컬","tracks":[{"t":"피아노/건반","inst":"Grand Piano (Jazz voicing)","eq":"HPF 80Hz · Air 12kHz"},{"t":"베이스","inst":"Electric Bass (Finger, round)","eq":"HPF 40Hz · LPF 4kHz"},{"t":"기타","inst":"Clean Electric (Amp Designer)","eq":"HPF 120Hz"},{"t":"드럼","inst":"Drum Kit (브러시/여리게)","eq":"킥 60Hz · 스네어 짧게"},{"t":"멜로디","inst":"Vocal / Sax","eq":"HPF 120Hz"},{"t":"대선율","inst":"Strings / Guitar","eq":"HPF 150Hz"}]},"royalroad":{"label":"로얄로드","order":"드럼 → 베이스 → 피아노 → 기타(클린) → 스트링 → 대선율 → 주선율/보컬","tracks":[{"t":"피아노/건반","inst":"Grand Piano (Bright)","eq":"HPF 80Hz · Air 10kHz"},{"t":"베이스","inst":"Electric Bass (Finger)","eq":"HPF 40Hz"},{"t":"기타","inst":"Clean/Jangle Electric","eq":"HPF 120Hz · 3kHz +1dB"},{"t":"드럼","inst":"Drum Kit (팝 록)","eq":"킥 60Hz · 스네어 2kHz"},{"t":"멜로디","inst":"Vocal / Lead Synth","eq":"HPF 150Hz · 프레즌스 4kHz"},{"t":"대선율","inst":"Strings (Section)","eq":"HPF 200Hz"}]},"marusa":{"label":"시티팝","order":"드럼(타이트) → 베이스(신코페) → 로즈 → 기타(펑크 커팅 16분) → 대선율(색스) → 주선율","tracks":[{"t":"피아노/건반","inst":"Electric Piano (Rhodes)","eq":"HPF 100Hz"},{"t":"베이스","inst":"Electric Bass (Finger, synco)","eq":"HPF 40Hz · 800Hz +1dB"},{"t":"기타","inst":"Clean Guitar (16th funk cutting)","eq":"HPF 150Hz · 2~4kHz +2dB"},{"t":"드럼","inst":"Drum Kit (타이트/게이트)","eq":"킥 80Hz · 스네어 게이트"},{"t":"멜로디","inst":"Sax / Vocal","eq":"HPF 150Hz"},{"t":"대선율","inst":"Guitar Counter","eq":"HPF 150Hz"}]},"komuro":{"label":"코무로","order":"신스드럼 → 신스베이스 → 폴리신스 → 스탭 → 리드신스 → 주선율/보컬","tracks":[{"t":"피아노/건반","inst":"Poly Synth (90s Dance)","eq":"HPF 120Hz · 5kHz +2dB"},{"t":"베이스","inst":"Synth Bass","eq":"HPF 40Hz · 1kHz +1dB"},{"t":"기타","inst":"(옵션) Synth Stab / Guitar","eq":"HPF 150Hz"},{"t":"드럼","inst":"Dance Kit (게이트 스네어)","eq":"킥 80Hz · 스네어 게이트 크게"},{"t":"멜로디","inst":"Lead Synth / Vocal","eq":"HPF 150Hz · 프레즌스 5kHz"}]},"animerock":{"label":"애니록","order":"드럼(밴드) → 베이스 → 기타(디스토션) → 신스/스트링 → 대선율 → 주선율(보컬/신스 리드)","tracks":[{"t":"피아노/건반","inst":"(옵션) Synth/Piano 레이어","eq":"HPF 120Hz"},{"t":"베이스","inst":"Electric Bass (Pick, drive)","eq":"HPF 40Hz · 700Hz +2dB(그로울)"},{"t":"기타","inst":"Distortion Guitar (Band, 더블트랙)","eq":"HPF 100Hz · 3kHz +3dB"},{"t":"드럼","inst":"Rock Kit (밴드, 라이드/크래시)","eq":"킥 60Hz 펀치 · 스네어 크랙"},{"t":"멜로디","inst":"Vocal / Lead Synth","eq":"HPF 150Hz · 프레즌스 4kHz"},{"t":"대선율","inst":"Guitar Harmony / Strings","eq":"HPF 150Hz"}]},"ukpop":{"label":"UK팝","order":"드럼 → 베이스 → 기타(쟁글) → 피아노/오르간 → 대선율 → 주선율/보컬","tracks":[{"t":"피아노/건반","inst":"Upright Piano / Organ","eq":"HPF 100Hz"},{"t":"베이스","inst":"Electric Bass (Pick)","eq":"HPF 40Hz · 800Hz +1dB"},{"t":"기타","inst":"Jangle Electric (Chorus/12현)","eq":"HPF 120Hz · 3~5kHz +2dB"},{"t":"드럼","inst":"Drum Kit (라이브 룸)","eq":"킥 60Hz · 스네어 2kHz"},{"t":"멜로디","inst":"Vocal","eq":"HPF 150Hz · 프레즌스 4kHz"},{"t":"대선율","inst":"Guitar Lead / Strings","eq":"HPF 150Hz"}]},"worship":{"label":"워십","order":"패드/드론 → 피아노 → 베이스 → 기타(앰비언트) → 드럼 → 대선율 → 주선율(리드보컬)","tracks":[{"t":"피아노/건반","inst":"Grand Piano (+ Pad layer)","eq":"HPF 80Hz · Air 12kHz"},{"t":"베이스","inst":"Electric Bass (Sustain)","eq":"HPF 40Hz"},{"t":"기타","inst":"Ambient Electric (Delay/Swell)","eq":"HPF 150Hz"},{"t":"드럼","inst":"Drum Kit (빌드업)","eq":"킥 60Hz · 스네어 넓게"},{"t":"멜로디","inst":"Lead Vocal","eq":"HPF 150Hz · 프레즌스 3kHz"},{"t":"대선율","inst":"Gang Vocals / Strings","eq":"HPF 150Hz"}]},"poppunk":{"label":"팝펑크","order":"드럼(빠른 펑크) → 베이스 → 기타(파워코드 더블) → 대선율 → 주선율/보컬","tracks":[{"t":"피아노/건반","inst":"(옵션) 없음 — 기타 밴드","eq":""},{"t":"베이스","inst":"Electric Bass (Pick, drive)","eq":"HPF 40Hz · 900Hz +2dB"},{"t":"기타","inst":"Distortion Guitar (파워코드 더블트랙)","eq":"HPF 100Hz · 3kHz +3dB · 프레즌스 5kHz"},{"t":"드럼","inst":"Rock Kit (빠른 스케이트펑크)","eq":"킥 60Hz 클릭 · 스네어 크랙"},{"t":"멜로디","inst":"Vocal (더블트랙)","eq":"HPF 150Hz · 프레즌스 4kHz"}]},"countrypop":{"label":"컨트리팝","order":"드럼 → 베이스 → 어쿠스틱 기타 → 일렉/밴조 → 피아노 → 대선율 → 주선율/보컬","tracks":[{"t":"피아노/건반","inst":"Bright Piano / Rhodes","eq":"HPF 80Hz"},{"t":"베이스","inst":"Electric Bass (Finger)","eq":"HPF 40Hz"},{"t":"기타","inst":"Acoustic Guitar + 일렉/밴조 레이어","eq":"HPF 120Hz · 4kHz +2dB"},{"t":"드럼","inst":"Drum Kit (팝, 탬버린)","eq":"킥 60Hz · 스네어 밝게"},{"t":"멜로디","inst":"Vocal / Fiddle","eq":"HPF 150Hz · 프레즌스 4kHz"},{"t":"대선율","inst":"Fiddle / Steel Guitar","eq":"HPF 150Hz"}]},"motown":{"label":"모타운","order":"드럼(탬버린) → 베이스(멜로딕) → 피아노 → 기타 → 혼 섹션 → 대선율 → 주선율/보컬","tracks":[{"t":"피아노/건반","inst":"Grand Piano / Wurlitzer","eq":"HPF 80Hz"},{"t":"베이스","inst":"Electric Bass (멜로딕, James Jamerson식)","eq":"HPF 40Hz · 800Hz +1dB"},{"t":"기타","inst":"Clean Electric (Skank)","eq":"HPF 150Hz · 3kHz +2dB"},{"t":"드럼","inst":"Drum Kit + 탬버린(핵심)","eq":"킥 60Hz · 스네어 2kHz · 탬버린 8kHz"},{"t":"멜로디","inst":"Vocal / Horns","eq":"HPF 150Hz · 프레즌스 3kHz"},{"t":"대선율","inst":"Horn Section (Sax/Trumpet)","eq":"HPF 150Hz"}]},"billie":{"label":"빌리풍","order":"808서브 → 미니멀드럼 → 다크피아노 → 보컬 → (기타 최소)","tracks":[{"t":"피아노/건반","inst":"Studio Piano(다크) / Felt","eq":"HPF 80Hz · LPF 8kHz(다크)"},{"t":"베이스","inst":"ES2 808 서브(깊게)","eq":"Band1 50Hz +3dB · HPF 25Hz"},{"t":"기타","inst":"Clean(미니멀) / 생략","eq":"HPF 150Hz"},{"t":"드럼","inst":"Drum Machine(미니멀 트랩) + 핑거스냅","eq":"킥 50Hz · 핑거스냅 클로즈"},{"t":"멜로디","inst":"보컬(클로즈, ASMR)","eq":"HPF 100Hz · Band7 High Shelf 12kHz +1dB(브레스)"},{"t":"대선율","inst":"Vocal Chop / Synth","eq":"HPF 300Hz"},{"t":"리드","inst":"Dark Synth","eq":"LPF 6kHz"}]},"celtic":{"label":"켈틱","order":"보드란(드럼) → 베이스 → 피아노 → 어쿠스틱기타 → 하프(전용) → 휘슬/피들(대선율) → 리드","tracks":[{"t":"피아노/건반","inst":"Studio Piano / Celtic Harp","eq":"HPF 80Hz"},{"t":"베이스","inst":"Acoustic/Upright Bass","eq":"HPF 50Hz"},{"t":"기타","inst":"Steel Acoustic(Studio Guitar)","eq":"HPF 90Hz · Band6 4kHz +1dB"},{"t":"드럼","inst":"Bodhran (Percussion) / Frame Drum","eq":"로우미드 강조"},{"t":"멜로디","inst":"Tin Whistle / Fiddle","eq":"HPF 200Hz"},{"t":"대선율","inst":"Fiddle / Flute","eq":"HPF 180Hz"},{"t":"리드","inst":"Uilleann Pipes / Whistle","eq":"HPF 150Hz"},{"t":"드론/패드","inst":"Bagpipe Drone / Pad","eq":"LPF 6kHz"},{"t":"장르특성","inst":"Celtic Harp (Studio Harp)","eq":"HPF 120Hz"}]},"country":{"label":"컨트리","order":"드럼(라이브) → 베이스 → 어쿠스틱피아노 → 어쿠스틱기타 → 밴조(전용) → 피들(대선율) → 보컬","tracks":[{"t":"피아노/건반","inst":"Studio Piano(밝은 어쿠스틱)","eq":"HPF 80Hz · Band7 High Shelf 6kHz +1.5dB"},{"t":"베이스","inst":"Electric Bass(Pick/Finger)","eq":"HPF 45Hz"},{"t":"기타","inst":"Steel Acoustic(Studio Guitar, 스트럼)","eq":"HPF 90Hz · Band6 6kHz +2dB(밝게)"},{"t":"드럼","inst":"Drum Kit Designer(라이브)","eq":"스네어 3kHz +2dB"},{"t":"멜로디","inst":"리드 보컬 / Fiddle","eq":"HPF 100Hz · Band7 High Shelf 8kHz +2dB"},{"t":"대선율","inst":"Fiddle / Pedal Steel","eq":"HPF 180Hz"},{"t":"리드","inst":"Pedal Steel / Telecaster","eq":"HPF 150Hz"},{"t":"장르특성","inst":"Banjo (Studio Guitar/샘플)","eq":"HPF 200Hz · Band6 5kHz +2dB"}]}};
 const APP_SUM = {name:'Sum Wave', c1:'#63D6CC', c2:'#8394FF', steps:[
 {phase:'시작 전', kicker:'전체 그림 · 처음 한 번', title:'시작하기 전에 — 최초 세팅 흐름',
  html:`<p class="lead">곡마다 반복하는 건 몇 가지뿐. 나머지는 <b>처음 한 번</b> 만들어 계속 재사용한다.</p>
@@ -2249,6 +2347,18 @@ const APP_REF = {name:'참고', c1:'#9BA7FF', c2:'#6BD3C9', steps:[
  <button class="tapcard" data-d="velo_vs_volume"><span class="chev">›</span><span class="tc-h">벨로시티 vs 트랙 볼륨 ★</span><span class="tc-p">표현은 벨로시티·밸런스는 볼륨</span><span class="tc-go">›</span></button>
  <button class="tapcard" data-d="velo_orch"><span class="chev">›</span><span class="tc-h">오케스트라 악기별</span><span class="tc-p">현·금관·목관·타악 수치</span><span class="tc-go">›</span></button>
  <button class="tapcard" data-d="velo_band"><span class="chev">›</span><span class="tc-h">밴드 악기·스타일별</span><span class="tc-p">드럼·베이스·기타·건반</span><span class="tc-go">›</span></button>`},
+{phase:'참고', kicker:'EQ 정리', title:'EQ 정리 — 주파수 청소·충돌',
+ html:`<p class="lead sm">각 악기가 자기 주파수 자리를 갖게 하는 것 — 이게 맑은 믹스의 핵심.</p>
+ <button class="tapcard" onclick="openEQPlanner()" style="border-color:var(--accent)"><span class="chev">⚡</span><span class="tc-h">EQ 플래너 — 장르·악기 골라 자동 정리 ★</span><span class="tc-p">고르면 그 조합의 EQ·충돌 해결을 만들어줌</span><span class="tc-go">열기 ›</span></button>
+ <p class="lead sm" style="margin-top:12px">또는 개념별로 박스를 탭.</p>
+ <button class="tapcard" data-d="eq_map"><span class="chev">›</span><span class="tc-h">주파수 지도</span><span class="tc-p">대역이 하는 일 · 문제→대역 연결</span><span class="tc-go">›</span></button>
+ <button class="tapcard" data-d="eq_principle"><span class="chev">›</span><span class="tc-h">EQ 5원칙 ★</span><span class="tc-p">깎기 먼저·HPF·충돌 양보</span><span class="tc-go">›</span></button>
+ <button class="tapcard" data-d="eq_inst"><span class="chev">›</span><span class="tc-h">악기별 기본 EQ</span><span class="tc-p">HPF·컷·부스트 수치표</span><span class="tc-go">›</span></button>
+ <button class="tapcard" data-d="eq_conflict"><span class="chev">›</span><span class="tc-h">충돌 해결 ★</span><span class="tc-p">킥/베이스·보컬 살리기·자리 나누기</span><span class="tc-go">›</span></button>
+ <button class="tapcard" data-d="eq_genre"><span class="chev">›</span><span class="tc-h">장르별 EQ 포인트</span><span class="tc-p">장르마다 살리는 대역</span><span class="tc-go">›</span></button>
+ <div class="kicker" style="margin-top:14px">스튜디오 생성기 장르별 실전 프리셋 — 실제 편성·EQ</div>
+ <div id="genreEQgrid" class="genre-eq-grid"></div>`},
+
 
  {phase:'참고', kicker:'느낌별 레시피', title:'FX로 느낌 만들기',
  html:DETAILS.fxrecipes.html},
@@ -2332,6 +2442,7 @@ function buildPhases(){
 function render(){
   const ap=A();
   const root=document.getElementById('lufsRoot'), cardEl=document.getElementById('card');
+  var _eqR=document.getElementById('eqRoot'); if(_eqR&&ap.special!=='__eqkeep'){_eqR.classList.remove('on');}
   if(ap.special==='lufs'){
     cardEl.style.display='none'; root.classList.add('on');
     $('phases').style.display='none'; $('subtabs').style.display='none';
@@ -2354,6 +2465,7 @@ function render(){
   termify();
   card.querySelectorAll('[data-d]').forEach(el=>el.onclick=()=>openSheet(el.dataset.d));
   if(card.innerHTML.indexOf('{{CHECKLIST}}')>=0)card.innerHTML=card.innerHTML.replace('{{CHECKLIST}}', presetChecklist(state.app));
+  var _geg=document.getElementById('genreEQgrid'); if(_geg){_geg.innerHTML=renderGenreEQGrid();}
   bindChecklist();
   buildSubtabs();
   save();
@@ -2891,6 +3003,138 @@ document.getElementById('L_segwrap').addEventListener('click',e=>{
 
 function fmtTime(s){const m=Math.floor(s/60),ss=Math.round(s%60);return m+':'+String(ss).padStart(2,'0');}
 
+}
+
+/* ===== EQ PLANNER boot ===== */
+
+function openEQPlanner(){
+  var root=document.getElementById('eqRoot'), card=document.getElementById('card');
+  card.style.display='none'; root.classList.add('on');
+  if(!window.__eqBooted){ window.__eqBooted=true; EQ_BOOT(); }
+  root.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function EQ_BOOT(){
+
+const INST={
+  vocal:{n:'리드 보컬',hpf:'80~100',cut:'200~300 탁함 · 2~5k 치찰(디에서)',boost:'3~5k 존재 · 10k+ 공기',star:true,bands:{presence:[2000,5000],body:[200,500]}},
+  kick:{n:'킥',hpf:'20~30만',cut:'300~500 박스',boost:'60~80 펀치 · 2~4k 클릭',bands:{sub:[50,90]}},
+  bass:{n:'베이스',hpf:'30',cut:'300~500 탁함',boost:'80~100 무게 · 700~1k 명료',bands:{low:[70,110]}},
+  snare:{n:'스네어',hpf:'80~100',cut:'400~600 박스',boost:'150~200 몸통 · 3~5k 어택'},
+  hats:{n:'하이햇·심벌',hpf:'300~500',cut:'1k 거슬림',boost:'8~10k 광택 · 12k+ 공기'},
+  eguitar:{n:'일렉기타',hpf:'90~120',cut:'300~500 탁함',boost:'1~3k 존재 · 4~5k 어택',bands:{mid:[1000,3000]}},
+  aguitar:{n:'어쿠스틱기타',hpf:'100',cut:'200~400 박스',boost:'5~8k 반짝 · 10k 공기',bands:{mid:[1000,3000]}},
+  piano:{n:'피아노',hpf:'40~60',cut:'200~400 흐림',boost:'2~5k 명료 · 10k 광택',bands:{mid:[2000,5000]}},
+  pad:{n:'신스 패드',hpf:'120~200',cut:'중역 양보(보컬 자리)',boost:'넓게 · 고역 공기',bands:{mid:[500,3000]}},
+  lead:{n:'신스 리드',hpf:'120',cut:'날카로운 2~4k 다듬기',boost:'존재 대역 · 고역',bands:{mid:[1000,4000]}},
+  strings:{n:'현(앙상블)',hpf:'바이올린 200 · 첼로 60',cut:'300~500 답답',boost:'2~4k 광채 · 10k 공기',bands:{mid:[2000,4000]}},
+  brass:{n:'금관',hpf:'호른 80 · 트럼펫 150',cut:'500~800 콧소리',boost:'1~3k 힘 · 5k 광택',bands:{mid:[1000,3000]}},
+  wood:{n:'목관',hpf:'플루트 200 · 오보에 150',cut:'500 콧소리',boost:'3~8k 공기·숨'},
+  organ:{n:'오르간',hpf:'80',cut:'300~500 탁함',boost:'중고역 존재',bands:{mid:[500,3000]}},
+  perc:{n:'퍼커션',hpf:'150~300',cut:'중저역 정리',boost:'고역 트랜지언트'},
+  eightoh8:{n:'808',hpf:'—',cut:'중역 정리',boost:'서브 40~60 · 클릭 2~4k',bands:{sub:[40,80]}}
+};
+const GENRE={
+  rock:{n:'록',note:'기타 중역(1~3k)이 힘 — 다만 보컬과 겹치니 기타 3k를 살짝 양보. 스네어 어택·킥 펀치. 드라이한 믹스.'},
+  pop:{n:'팝',note:'보컬 최우선(2~5k·공기 10k+). 다른 요소는 보컬 대역 양보. 전체적으로 밝고 화사한 하이엔드.'},
+  hiphop:{n:'힙합·트랩',note:'808 저역이 무게 — 킥과 저역 분리 필수. 하이햇 고역, 보컬 존재. 중역 비워 공간감.'},
+  edm:{n:'EDM·하우스',note:'킥 펀치가 중심 — 베이스 저역을 절제해 킥 자리 확보. 사이드체인 펌핑. 신스는 와이드한 고역.'},
+  jazz:{n:'재즈·어쿠스틱',note:'과한 EQ 금물 — 악기 본연의 배음을 살린다. HPF와 가벼운 정리만. 자연스러움이 미학.'},
+  soul:{n:'소울·R&B',note:'따뜻한 중저역 · 로즈/건반 리치하게 · 보컬 부드럽게. 고스트노트 드럼 공간. 부드러운 고역.'},
+  cine:{n:'시네마틱',note:'저역 임팩트(서브)와 고역 텍스처. 총주에서 대역 겹침 관리 — 주선율 악기 살리고 나머지 양보. 넓은 다이내믹.'},
+  ambient:{n:'명상·앰비언트',note:'따뜻한 저역 드론 · 부드러운 고역. 날카로운 2~5k와 치찰 억제. 편안한 곡선(하이 살짝 롤오프).'}
+};
+
+var selGenre=null; const selInst=new Set();
+const $=id=>document.getElementById(id);
+
+// 렌더 칩
+$('EQ_genres').innerHTML=Object.keys(GENRE).map(k=>`<div class="chip gen" data-g="${k}">${GENRE[k].n}</div>`).join('');
+$('EQ_insts').innerHTML=Object.keys(INST).map(k=>`<div class="chip" data-i="${k}">${INST[k].n}</div>`).join('');
+
+$('EQ_genres').onclick=e=>{const c=e.target.closest('.chip');if(!c)return;
+  document.querySelectorAll('#genres .chip').forEach(x=>x.classList.remove('sel'));
+  c.classList.add('sel'); selGenre=c.dataset.g; updateGo();};
+$('EQ_insts').onclick=e=>{const c=e.target.closest('.chip');if(!c)return;
+  const k=c.dataset.i; if(selInst.has(k)){selInst.delete(k);c.classList.remove('sel');}else{selInst.add(k);c.classList.add('sel');} updateGo();};
+function updateGo(){$('EQ_go').disabled=!(selGenre&&selInst.size>0);}
+
+$('EQ_go').onclick=()=>{
+  // 장르 노트
+  $('EQ_gnote').innerHTML='<b>'+GENRE[selGenre].n+'</b> — '+GENRE[selGenre].note;
+  // 악기 표
+  const order=['vocal','kick','bass','eightoh8','snare','hats','perc','eguitar','aguitar','piano','organ','pad','lead','strings','brass','wood'];
+  const chosen=order.filter(k=>selInst.has(k));
+  $('EQ_eqbody').innerHTML=chosen.map(k=>{const o=INST[k];
+    return `<tr><td class="k">${o.n}${o.star?'<span class="role star">주인공</span>':''}</td>
+      <td class="hpf">${o.hpf}</td><td class="cut">${o.cut}</td><td class="boost">${o.boost}</td></tr>`;}).join('');
+  // 충돌 감지
+  const conf=[]; const has=k=>selInst.has(k);
+  if(has('kick')&&(has('bass')||has('eightoh8'))){
+    const b=has('eightoh8')?'808':'베이스';
+    conf.push({warn:true,t:`킥 ↔ ${b} 저역 충돌`,
+      body:`둘 다 저역 주인공이라 뭉친다. <span class="freq">한쪽은 60Hz, 다른쪽은 80~100Hz</span>로 나눈다 — 예: 킥 60 부스트→${b} 60 살짝 컷.`,
+      fix:`사이드체인: ${b}에 컴프 걸고 킥을 트리거로 → 킥 칠 때 ${b}가 순간 눌려 자리를 비운다. EDM은 강하게, 밴드는 -1~2dB.`});
+  }
+  if(has('vocal')){
+    const rivals=[...selInst].filter(k=>INST[k].bands&&INST[k].bands.mid&&k!=='vocal');
+    if(rivals.length){
+      conf.push({warn:false,t:'보컬 ↔ '+rivals.map(k=>INST[k].n).join('·')+' (중고역)',
+        body:`보컬 존재감 <span class="freq">2~5k</span>·바디 <span class="freq">200~500</span>이 이 악기들과 겹친다.`,
+        fix:`보컬을 키우지 말고, ${rivals.map(k=>INST[k].n).join('·')}에서 <span class="freq">2~5k를 -2~-4dB</span> 살짝 컷 → 보컬이 저절로 앞으로. 다이내믹 EQ(보컬 있을 때만 누름)면 더 자연스럽다.`});
+    }
+  }
+  const guitars=[...selInst].filter(k=>k==='eguitar'||k==='aguitar');
+  if(guitars.length+ (has('pad')?1:0) + (has('lead')?1:0) >=2){
+    conf.push({warn:false,t:'중역 악기 다중 — 겹침 주의',
+      body:'기타·신스·패드가 여럿이면 중역이 붐빈다.',
+      fix:'각자 저역/고역 강조를 다르게 + <span class="freq">L/R 팬 분리</span>. 리듬기타 저역은 베이스 자리 위해 HPF 120.'});
+  }
+  if((has('hats')||has('perc'))&&has('vocal')){
+    conf.push({warn:false,t:'심벌 초고역 — 치찰 겹침',
+      body:'보컬 치찰음(6~8k)과 심벌 고역이 겹쳐 거슬릴 수 있다.',
+      fix:'보컬 디에서 + 심벌 <span class="freq">6~8k 살짝 정리</span>. 초고역 광택은 한쪽만 강조.'});
+  }
+  // 장르별 추가 경고
+  if(selGenre==='hiphop'&&has('kick')&&has('eightoh8')){
+    conf.push({warn:true,t:'트랩: 킥 ↔ 808 (핵심)',
+      body:'힙합에서 가장 중요한 정리. 808이 베이스이자 저음의 주인공.',
+      fix:'킥은 짧고 클릭 위주(<span class="freq">2~4k</span>), 808은 서브(<span class="freq">40~60</span>). 킥 저역을 과감히 줄이고 808에 양보 — 또는 사이드체인으로 808을 킥에 살짝 덕킹.'});
+  }
+  if(selGenre==='edm'&&(has('bass')||has('eightoh8'))&&has('kick')){
+    conf.push({warn:true,t:'EDM: 킥 펀치 확보',
+      body:'클럽에서 킥이 뚫고 나와야 한다.',
+      fix:'베이스에 <span class="freq">사이드체인 강하게</span>(펌핑) — 킥마다 베이스가 확 눌렸다 살아난다. 이게 EDM 저역의 심장.'});
+  }
+  $('EQ_conf').innerHTML='<div class="sec-h">충돌 해결</div>'+(conf.length?conf.map(c=>
+    `<div class="conf-card ${c.warn?'warn':''}"><h4>${c.t}</h4><p>${c.body}</p><p class="fix">→ ${c.fix}</p></div>`
+  ).join(''):'<div class="conf-card"><p>선택한 악기 간 큰 충돌은 없습니다. 악기별 기본 정리만 해도 깔끔합니다.</p></div>');
+  $('EQ_out').classList.add('on');
+  $('EQ_out').scrollIntoView({behavior:'smooth',block:'start'});
+};
+$('EQ_reset2').onclick=()=>{$('EQ_out').classList.remove('on');window.scrollTo({top:0,behavior:'smooth'});};
+
+}
+
+function openGenreEQ(g){
+  var d=window.SO_GENRE_EQ[g]; if(!d)return;
+  var h='<p class="lead sm"><b>'+d.label+'</b> — 사운드오아시스 스튜디오 생성기의 실제 편성·EQ. 시작점이며, 세부는 귀로 조정.</p>';
+  if(d.order) h+='<div class="box tip" style="margin-bottom:10px"><b>편성 순서:</b> '+d.order+'</div>';
+  h+='<table class="eqt"><thead><tr><th>트랙</th><th>악기</th><th>EQ</th></tr></thead><tbody>';
+  d.tracks.forEach(function(t){
+    h+='<tr><td class="k">'+t.t+'</td><td style="font-size:11.5px">'+(t.inst||'—')+'</td><td style="font-size:11.5px">'+(t.eq||'—')+'</td></tr>';
+  });
+  h+='</tbody></table><div class="box tip">이 값은 앱이 자동 적용하는 기준선 — 곡마다 충돌(EQ 정리 › 충돌 해결)을 귀로 확인해 다듬는다.</div>';
+  openSheetHTML(d.label+' — 편성·EQ', h);
+}
+function openSheetHTML(title, html){
+  document.getElementById('sheetTitle').textContent=title;
+  document.getElementById('sheetBody').innerHTML=html;
+  document.getElementById('sheet').classList.add('show');
+}
+function renderGenreEQGrid(){
+  var g=window.SO_GENRE_EQ; if(!g)return '';
+  var keys=Object.keys(g);
+  return keys.map(function(k){return '<button class="gchip2" onclick="openGenreEQ(\''+k+'\')">'+g[k].label+'</button>';}).join('');
 }
 </script>
 </body>
